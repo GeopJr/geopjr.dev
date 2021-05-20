@@ -37,7 +37,6 @@
 
 <style lang="scss">
 	.button-container {
-		padding: 0 0 4rem 0;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
