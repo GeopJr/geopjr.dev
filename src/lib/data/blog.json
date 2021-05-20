@@ -1,0 +1,67 @@
+[
+	{
+		"name": "Action-Accessibility",
+		"desc": "A GitHub action for those in need",
+		"techs": ["nodejs"],
+		"date": "2020-08-20",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/action-accessibility-a-github-action-for-those-in-need-hg7",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
+		"name": "asar-cr",
+		"desc": "Injecting electron apps with Crystal",
+		"techs": ["crystal", "electron"],
+		"date": "2020-10-13",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/injecting-electron-apps-with-crystal-4nlk",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
+		"name": "Crycord-GUI",
+		"desc": "Creating fast GUIs with Crystal, GTK and Glade",
+		"techs": ["crystal", "gnome"],
+		"date": "2020-12-19",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/creating-fast-guis-with-crystal-gtk-and-glade-en6",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
+		"name": "Argyle",
+		"desc": "An offline collection of online tools",
+		"techs": ["vuejs", "nuxt"],
+		"date": "2021-01-01",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/argyle-an-offline-collection-of-online-tools-2401",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
+		"name": "BeardBin",
+		"desc": "Create your own privacy focused pastebin alternative",
+		"techs": ["crystal", "vuejs"],
+		"date": "2021-04-23",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/create-your-own-privacy-focused-pastebin-alternative-2kh3",
+				"tooltip": "Dev.to"
+			}
+		]
+	}
+]

@@ -1,0 +1,33 @@
+{
+  "name": "geopjr_portfolio",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@iconify/svelte": "^1.0.4",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.13",
+    "@sveltejs/kit": "next",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "ress": "^4.0.0",
+    "sass": "^1.32.7",
+    "svelte": "^3.34.0",
+    "svelte-copy-to-clipboard": "^0.2.5",
+    "svelte-preprocess": "^4.6.9"
+  },
+  "type": "module",
+  "dependencies": {
+    "@iconify-icons/fa-brands": "^1.1.0",
+    "@iconify-icons/fa-solid": "^1.1.1",
+    "@iconify-icons/simple-icons": "^1.1.25",
+    "@iconify-icons/twemoji": "^1.1.1"
+  }
+}

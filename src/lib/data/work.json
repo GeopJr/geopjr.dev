@@ -1,0 +1,291 @@
+[
+	{
+		"name": "Crycord",
+		"desc": "A Discord Client modification with plugins. Uses BeautifulDiscord's CSS injector. Oh it's also written in Crystal!",
+		"techs": ["crystal"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/Crycord",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://crycord.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "asar-cr",
+		"desc": "A crystal library to read from, pack into and extract from .asar archives",
+		"techs": ["crystal"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/asar-cr",
+				"tooltip": "GitHub Repo"
+			}
+		]
+	},
+	{
+		"name": "action-accessibility",
+		"desc": "Programming is for everyone. No matter what. This action helps achieve that. Uses TTS and OpenDyslexic to create alternative accessibility options on issues and PRs",
+		"techs": ["nodejs"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/action-accessibility",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "githubAlt",
+				"url": "https://github.com/marketplace/actions/action-accessibility",
+				"tooltip": "GitHub Marketplace"
+			}
+		]
+	},
+	{
+		"name": "discord-tanki",
+		"desc": "Discord Rich Presence for Tanki Online, using electron and materializeCSS",
+		"techs": ["electron", "express", "materialdesign"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/discord-tanki",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://discord-tanki.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "Granz",
+		"desc": "A Discord bot/framework(?) written in crystal using discordcr",
+		"techs": ["crystal"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/Granz-cr",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://granz.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "SHRP Theme Builder",
+		"desc": "A theme builder for the SHRP android recovery project",
+		"techs": ["vuejs", "nuxt", "vuetify"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/SHRP/shrp-theme-builder-web",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://shrp.github.io/shrp-theme-builder-web/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "DrKahls Time Machine",
+		"desc": "An online Cuphead save Editor",
+		"techs": ["html5", "css3", "javascript"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/DrKahls-Time-Machine",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://dr.kahls-time-machine.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "Soft & Wet",
+		"desc": "Soft & Wet is a Discord Bot written in javascript. It uses advanced image manipulation to create new images from image templates in under a second!",
+		"techs": ["nodejs", "mongodb"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/Soft-Wet-Bot",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://soft-wet.damon.sh/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "DNOME",
+		"desc": "Adwaita-inspired Discord Theme",
+		"techs": ["less"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/DNOME",
+				"tooltip": "GitHub Repo"
+			}
+		]
+	},
+	{
+		"name": "create-crystal-app",
+		"desc": "An unopinionated user-friendly crystal init alternative",
+		"techs": ["crystal"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/create-crystal-app",
+				"tooltip": "GitHub Repo"
+			}
+		]
+	},
+	{
+		"name": "Hashbrown",
+		"desc": "A simple GUI tool to generate, compare and verify MD5, SHA1 & SHA256 hashes",
+		"techs": ["crystal", "gnome"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/Hashbrown",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "flathub",
+				"url": "https://flathub.org/apps/details/dev.geopjr.Hashbrown",
+				"tooltip": "Flathub"
+			},
+			{
+				"icon": "website",
+				"url": "https://hashbrown.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "pixelfed-js",
+		"desc": "A js wrapper for the Pixelfed API following the PHP one",
+		"techs": ["nodejs"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/pixelfed-js",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "docs",
+				"url": "https://geopjr.github.io/pixelfed-js/",
+				"tooltip": "Docs"
+			},
+			{
+				"icon": "npm",
+				"url": "https://www.npmjs.com/package/pixelfed",
+				"tooltip": "NPM"
+			}
+		]
+	},
+	{
+		"name": "Exorcism",
+		"desc": "Corrupt your mp4 videos. Infinite and negative duration",
+		"techs": ["nodejs", "qt", "svelte"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/exorcism",
+				"tooltip": "GitHub Repo"
+			}
+		]
+	},
+	{
+		"name": "BeardBin",
+		"desc": "A Zero-Knowledge Encrypted Text/Code sharing project written in Crystal",
+		"techs": ["crystal", "vuejs", "vuetify"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/BeardBin",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://milking.men/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "MarketVSX",
+		"desc": "An extension that creates a bridge between vscode marketplace and open-vsx",
+		"techs": ["javascript"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/MarketVSX",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "firefox",
+				"url": "https://addons.mozilla.org/en-US/firefox/addon/marketvsx/",
+				"tooltip": "Firefox Addons"
+			},
+			{
+				"icon": "chromium",
+				"url": "https://chrome.google.com/webstore/detail/marketvsx/fcoiikfhfempfajefakhkjlkmloihmlp",
+				"tooltip": "Chromium Addons"
+			}
+		]
+	},
+	{
+		"name": "Argyle",
+		"desc": "An offline collection of online tools",
+		"techs": ["vuejs", "nuxt"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/argyle",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://argyle.geopjr.dev/",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
+		"name": "SvelteGlass",
+		"desc": "Analyze Svelte Apps",
+		"techs": ["vuejs", "javascript"],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/SvelteGlass",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "firefox",
+				"url": "https://addons.mozilla.org/en-US/firefox/addon/svelteglass/",
+				"tooltip": "Firefox Addons"
+			},
+			{
+				"icon": "chromium",
+				"url": "https://chrome.google.com/webstore/detail/svelteglass/ldclibeepjpbdibeblhodoemjnbpkcfc",
+				"tooltip": "Chromium Addons"
+			}
+		]
+	}
+]
