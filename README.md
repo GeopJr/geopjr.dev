@@ -1,38 +1,27 @@
-# create-svelte
+<p align="center">
+ <img alt="" src="./banner.svg" />
+</p>
+<h1 align="center">geopjr.dev</h1>
+<p align="center">
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/23735e73-af56-431d-9a35-4b8194bdac2b/deploy-status)](https://app.netlify.com/sites/geopjr/deploys)
+</p>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+#
 
-## Creating a project
+## 🐱
 
-If you're seeing this, you've probably already done this step. Congrats!
+This is just my personal website.
 
-```bash
-# create a new project in the current directory
-pnpm init svelte@next
+#
 
-# create a new project in my-app
-pnpm init svelte@next my-app
-```
+## 😼 Icons
 
-> Note: the `@next` is temporary
+- Twemoji [CC-BY 4.0]
+- Font Awesome [CC-BY 4.0]
+- Simple Icons [CC0-1.0]
 
-## Developing
+#
 
-Once you've created a project and installed dependencies with `pnpm install` (or `ppnpm install` or `yarn`), start a development server:
+## 😻 Fonts
 
-```bash
-pnpm run dev
-
-# or start the server and open the app in a new browser tab
-pnpm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-ppnpm run build
-```
-
-> You can preview the built app with `ppnpm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+- Cantarell 11 [OFL-1.1]
