@@ -21,15 +21,18 @@
 <svelte:head>
 	<title>{pageTitle} - GeopJr</title>
 	<meta name="og:title" content="{pageTitle} - GeopJr" />
+	<link rel="canonical" href={'https://geopjr.dev/' + currentPage} />
 </svelte:head>
 
 <Theme />
 <Sidebar {currentPage} {routes} />
-{#key pageTitle}
-	<div class="container" in:blur={{ duration: 666 }}>
-		<slot />
-	</div>
-{/key}
+<main>
+	{#key pageTitle}
+		<div class="container" in:blur={{ duration: 666 }}>
+			<slot />
+		</div>
+	{/key}
+</main>
 
 <style lang="scss">
 	.container {

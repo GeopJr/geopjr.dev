@@ -60,72 +60,80 @@
 
 </script>
 
-<buton
-	class="sidebar-menu-button open"
-	on:click={() => (hideMenu = false)}
-	class:hideSideBar={!hideMenu}
-	tabIndex={shouldTab === '-1' ? '0' : '-1'}
-	on:keydown={(e) => handleKeyEvent(e)}
->
-	<Icon classes="sidebar-item-icon" iconName="bars" />
-</buton>
-<div class="sidebar" class:hideSideBar={hideMenu}>
-	<a
-		class="sidebar-header"
-		data-tooltip="GeopJr"
-		sveltekit:prefetch
-		href="/"
-		tabIndex={shouldTab}
-		on:click={() => (hideMenu = true)}
-	>
-		<img alt="Avatar" src="/images/avi.png" class="avi" />
-	</a>
-	<div class="sidebar-items">
-		{#each Object.entries(routesPlus) as [route, info]}
-			<a
-				class={'sidebar-item' + (shouldUseRainbow ? ' glass-' + info.color : '')}
-				data-tooltip={info.title}
-				sveltekit:prefetch
-				href={route}
-				class:active={currentPage === route}
-				tabIndex={shouldTab}
-				on:click={() => (hideMenu = true)}
-			>
-				<Icon classes="sidebar-item-icon" iconName={info.icon} />
-			</a>
-		{/each}
-	</div>
-	<div class="sidebar-items footer">
-		<button
-			class="sidebar-item"
-			class:glass-blue={shouldUseRainbow}
-			data-tooltip="Contrast Toggle"
-			on:click={() => setTheme(false)}
-			tabIndex={shouldTab}
-		>
-			<Icon classes="sidebar-item-icon" iconName={contrastIcon} />
-		</button>
-		<button
-			class="sidebar-item"
-			class:glass-purple={shouldUseRainbow}
-			data-tooltip="Theme Toggle"
-			on:click={() => setTheme()}
-			tabIndex={shouldTab}
-		>
-			<Icon classes="sidebar-item-icon" iconName={themeIcon} />
-		</button>
-	</div>
-	<div class:hideSideBar={hideMenu} class="closeArea" on:click={() => (hideMenu = true)} />
+<nav>
 	<buton
-		class="sidebar-menu-button"
-		on:click={() => (hideMenu = true)}
-		class:hideSideBar={hideMenu}
-		tabIndex={shouldTab}
-		on:keydown={(e) => handleKeyEvent(e, true)}
+		class="sidebar-menu-button open"
+		on:click={() => (hideMenu = false)}
+		class:hideSideBar={!hideMenu}
+		tabIndex={shouldTab === '-1' ? '0' : '-1'}
+		on:keydown={(e) => handleKeyEvent(e)}
+		aria-label="Open Menu"
 	>
-		<Icon classes="sidebar-item-icon" iconName="times" />
+		<Icon classes="sidebar-item-icon" iconName="bars" />
 	</buton>
-</div>
+	<div class="sidebar" class:hideSideBar={hideMenu}>
+		<a
+			class="sidebar-header"
+			data-tooltip="GeopJr"
+			sveltekit:prefetch
+			href="/"
+			tabIndex={shouldTab}
+			aria-label="Home"
+			on:click={() => (hideMenu = true)}
+		>
+			<img alt="Avatar" src="/images/avi.png" class="avi" />
+		</a>
+		<div class="sidebar-items">
+			{#each Object.entries(routesPlus) as [route, info]}
+				<a
+					class={'sidebar-item' + (shouldUseRainbow ? ' glass-' + info.color : '')}
+					data-tooltip={info.title}
+					sveltekit:prefetch
+					href={route}
+					class:active={currentPage === route}
+					tabIndex={shouldTab}
+					aria-label={info.title}
+					on:click={() => (hideMenu = true)}
+				>
+					<Icon classes="sidebar-item-icon" iconName={info.icon} />
+				</a>
+			{/each}
+		</div>
+		<div class="sidebar-items footer">
+			<button
+				class="sidebar-item"
+				class:glass-blue={shouldUseRainbow}
+				data-tooltip="Contrast Toggle"
+				on:click={() => setTheme(false)}
+				tabIndex={shouldTab}
+				aria-label="Toggle Contrast"
+			>
+				<Icon classes="sidebar-item-icon" iconName={contrastIcon} />
+			</button>
+			<button
+				class="sidebar-item"
+				class:glass-purple={shouldUseRainbow}
+				data-tooltip="Theme Toggle"
+				on:click={() => setTheme()}
+				tabIndex={shouldTab}
+				aria-label="Toggle Theme"
+			>
+				<Icon classes="sidebar-item-icon" iconName={themeIcon} />
+			</button>
+		</div>
+		<div class:hideSideBar={hideMenu} class="closeArea" on:click={() => (hideMenu = true)} />
+		<buton
+			class="sidebar-menu-button"
+			on:click={() => (hideMenu = true)}
+			class:hideSideBar={hideMenu}
+			tabIndex={shouldTab}
+			on:keydown={(e) => handleKeyEvent(e, true)}
+			aria-label="Close Menu"
+		>
+			<Icon classes="sidebar-item-icon" iconName="times" />
+		</buton>
+	</div>
+</nav>
 
 <style lang="scss">
 	$transition-duration: 200ms;
