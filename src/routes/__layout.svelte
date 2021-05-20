@@ -21,7 +21,7 @@
 <svelte:head>
 	<title>{pageTitle} - GeopJr</title>
 	<meta name="og:title" content="{pageTitle} - GeopJr" />
-	<link rel="canonical" href={'https://geopjr.dev/' + currentPage} />
+	<link rel="canonical" href={'https://geopjr.dev' + currentPage} />
 </svelte:head>
 
 <Theme />
