@@ -18,7 +18,6 @@
 
 <style lang="scss">
 	.card-container {
-		padding: 0 0 4rem 0;
 		display: grid;
 		gap: 30px;
 		grid-template-columns: 1fr;
