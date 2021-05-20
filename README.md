@@ -3,7 +3,9 @@
 </p>
 <h1 align="center">geopjr.dev</h1>
 <p align="center">
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/23735e73-af56-431d-9a35-4b8194bdac2b/deploy-status)](https://app.netlify.com/sites/geopjr/deploys)
+ <a alt="netlify build status" href="https://app.netlify.com/sites/geopjr/deploys">
+  <img alt="netlify badge" src="https://api.netlify.com/api/v1/badges/23735e73-af56-431d-9a35-4b8194bdac2b/deploy-status" />
+ </a>
 </p>
 
 #
