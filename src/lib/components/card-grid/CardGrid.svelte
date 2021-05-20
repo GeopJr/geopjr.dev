@@ -22,12 +22,10 @@
 		gap: 30px;
 		grid-template-columns: 1fr;
 		// grid-template-rows: 1fr 1fr 1fr; // Make all heights equal
-		@media (min-width: 1024px) {
-			padding: 4rem 0;
+		@media only screen and (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
-		@media (min-width: 768px) and (max-width: 1023px) {
-			padding: 4rem 0;
+		@media only screen and (min-width: 768px) and (max-width: 1023px) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}

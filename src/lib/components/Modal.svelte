@@ -127,6 +127,7 @@
 				flex-direction: column;
 				> .textbox {
 					background-color: var(--sidebar-secondary-color);
+					color: var(--pseudo-text-color);
 					padding: 0.2rem 1rem;
 					border-radius: 0.25rem;
 					font-weight: bold;
@@ -137,6 +138,7 @@
 					display: flex;
 					gap: 15px;
 					flex-direction: row;
+					color: var(--pseudo-text-color);
 				}
 				@media only screen and (min-width: 768px) {
 					flex-direction: row;

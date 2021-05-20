@@ -19,7 +19,7 @@
 	import faEmail from '@iconify-icons/fa-solid/at';
 	import faCopy from '@iconify-icons/fa-solid/copy';
 
-	import faPaypal from '@iconify-icons/fa-brands/paypal';
+	import siPaypal from '@iconify-icons/simple-icons/paypal';
 	import faPatreon from '@iconify-icons/fa-brands/patreon';
 	import faMonero from '@iconify-icons/fa-brands/monero';
 	import faGithub from '@iconify-icons/fa-brands/github';
@@ -99,7 +99,7 @@
 		materialdesign: siMaterialDesign,
 		mongodb: siMongoDb,
 
-		paypal: faPaypal,
+		paypal: siPaypal,
 		patreon: faPatreon,
 		monero: faMonero,
 		flattr: siFlattr,

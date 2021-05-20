@@ -41,13 +41,11 @@
 		grid-template-columns: 1fr;
 		gap: 1rem;
 		// 1242 instead of 1024 this time due to size
-		@media (min-width: 1242px) {
-			padding: 4rem 0;
+		@media only screen and (min-width: 1242px) {
 			grid-template-columns: 1fr 1fr 1fr;
 			gap: 5rem;
 		}
-		@media (min-width: 768px) and (max-width: 1241px) {
-			padding: 4rem 0;
+		@media only screen and (min-width: 768px) and (max-width: 1241px) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}

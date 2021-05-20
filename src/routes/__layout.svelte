@@ -3,6 +3,7 @@
 	import Sidebar from '$lib/layout/Sidebar.svelte';
 	import Theme from '$lib/Theme.svelte';
 	import { page } from '$app/stores';
+	import { blur } from 'svelte/transition';
 
 	const routes = {
 		'/': 'Home',
@@ -24,14 +25,15 @@
 
 <Theme />
 <Sidebar {currentPage} {routes} />
-<div class="container">
-	<slot />
-</div>
+{#key pageTitle}
+	<div class="container" in:blur={{ duration: 666 }}>
+		<slot />
+	</div>
+{/key}
 
 <style lang="scss">
 	.container {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
+		padding: 4rem 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -41,7 +43,10 @@
 		width: 80vw;
 		color: var(--text-color);
 		@media only screen and (min-width: 768px) {
-			padding-left: 4rem;
+			padding-left: 4rem !important;
+			@media only screen and (max-height: 910px) {
+				padding: 1rem 0;
+			}
 		}
 	}
 

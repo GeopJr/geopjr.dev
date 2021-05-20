@@ -49,7 +49,7 @@
 		text-decoration: none;
 		color: black;
 		align-content: center;
-		justify-content: center;
+		justify-content: left;
 		@media only screen and (min-width: 768px) {
 			&.chonk {
 				flex-direction: column;

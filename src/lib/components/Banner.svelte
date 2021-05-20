@@ -12,8 +12,8 @@
 		font-weight: bold;
 		margin-top: -4rem;
 		margin-bottom: 2rem;
-		@media only screen and (min-width: 768px) {
-			margin-bottom: 0;
+		@media only screen and (min-width: 768px) and (max-height: 910px) {
+			margin-top: -1rem;
 		}
 	}
 

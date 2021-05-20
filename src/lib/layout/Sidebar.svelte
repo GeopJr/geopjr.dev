@@ -70,7 +70,14 @@
 	<Icon classes="sidebar-item-icon" iconName="bars" />
 </buton>
 <div class="sidebar" class:hideSideBar={hideMenu}>
-	<a class="sidebar-header" data-tooltip="GeopJr" sveltekit:prefetch href="/" tabIndex={shouldTab}>
+	<a
+		class="sidebar-header"
+		data-tooltip="GeopJr"
+		sveltekit:prefetch
+		href="/"
+		tabIndex={shouldTab}
+		on:click={() => (hideMenu = true)}
+	>
 		<img alt="Avatar" src="/images/avi.png" class="avi" />
 	</a>
 	<div class="sidebar-items">
@@ -199,7 +206,7 @@
 		.closeArea {
 			position: fixed;
 			bottom: 0px;
-			height: 30vh;
+			height: 25vh;
 			width: 100vw;
 			background-color: rgba(0, 0, 0, 0.37);
 			transition-duration: $transition-duration;
