@@ -3,7 +3,7 @@
 	export let size;
 	export let classes;
 
-	import IconifyIcon from '@iconify/svelte';
+	import IconifyIcon, { addCollection } from '@iconify/svelte';
 
 	import twWave from '@iconify-icons/twemoji/waving-hand';
 
@@ -63,10 +63,26 @@
 	import siKoFi from '@iconify-icons/simple-icons/ko-fi';
 	import siMatrix from '@iconify-icons/simple-icons/matrix';
 
-	import cSession from '$lib/logos/session.svg';
-	import cOxen from '$lib/logos/oxen.svg';
-	import cCoil from '$lib/logos/coil.svg';
-	import cPixelfed from '$lib/logos/pixelfed.svg';
+	import cSession from '$lib/logos/session.svg?raw';
+	import cOxen from '$lib/logos/oxen.svg?raw';
+	import cPixelfed from '$lib/logos/pixelfed.svg?raw';
+
+	addCollection({
+		prefix: 'custom',
+		icons: {
+			session: {
+				body: cSession
+			},
+			oxen: {
+				body: cOxen
+			},
+			pixelfed: {
+				body: cPixelfed
+			}
+		},
+		width: 24,
+		height: 24
+	});
 
 	const icons = {
 		wavinghand: twWave,
@@ -126,30 +142,16 @@
 		telegram: faTelegram,
 		twitter: faTwitter,
 		email: faEmail,
-		matrixorg: siMatrix
-	};
+		matrixorg: siMatrix,
 
-	const staticIcons = {
-		session: cSession,
-		coil: cCoil,
-		oxen: cOxen,
-		pixelfed: cPixelfed
+		session: 'custom:session',
+		oxen: 'custom:oxen',
+		pixelfed: 'custom:pixelfed'
 	};
 
 	function getIcon(icon) {
-		return (icons[icon.toLowerCase()] || staticIcons[icon.toLowerCase()]) ?? null;
+		return icons[icon.toLowerCase()] ?? null;
 	}
-
 </script>
 
-{#if icons[iconName.toLowerCase()]}
-	<IconifyIcon class={classes} style={size ? 'font-size: ' + size : ''} icon={getIcon(iconName)} />
-{:else}
-	<img
-		class={classes}
-		style={size ? 'height: ' + size + ';width: ' + size : ''}
-		src={getIcon(iconName)}
-		alt=""
-		draggable="false"
-	/>
-{/if}
+<IconifyIcon class={classes} style={size ? 'font-size: ' + size : ''} icon={getIcon(iconName)} />
