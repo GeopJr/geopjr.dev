@@ -13,6 +13,19 @@
 		]
 	},
 	{
+		"name": "BeardBin",
+		"desc": "Create your own privacy focused pastebin alternative",
+		"techs": ["crystal", "vuejs"],
+		"date": "2021-04-23",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/create-your-own-privacy-focused-pastebin-alternative-2kh3",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
 		"name": "asar-cr",
 		"desc": "Injecting electron apps with Crystal",
 		"techs": ["crystal", "electron"],
@@ -39,6 +52,19 @@
 		]
 	},
 	{
+		"name": "Crystal Flatpak",
+		"desc": "Packaging your Crystal app into a Flatpak ",
+		"techs": ["crystal"],
+		"date": "2021-05-23",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/packaging-your-crystal-app-into-a-flatpak-49bp",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
 		"name": "Argyle",
 		"desc": "An offline collection of online tools",
 		"techs": ["vuejs", "nuxt"],
@@ -47,19 +73,6 @@
 			{
 				"icon": "dev",
 				"url": "https://dev.to/geopjr/argyle-an-offline-collection-of-online-tools-2401",
-				"tooltip": "Dev.to"
-			}
-		]
-	},
-	{
-		"name": "BeardBin",
-		"desc": "Create your own privacy focused pastebin alternative",
-		"techs": ["crystal", "vuejs"],
-		"date": "2021-04-23",
-		"links": [
-			{
-				"icon": "dev",
-				"url": "https://dev.to/geopjr/create-your-own-privacy-focused-pastebin-alternative-2kh3",
 				"tooltip": "Dev.to"
 			}
 		]
