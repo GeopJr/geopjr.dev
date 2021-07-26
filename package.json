@@ -9,25 +9,25 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@iconify/svelte": "^1.0.4",
-    "@sveltejs/adapter-netlify": "^1.0.0-next.13",
+    "@iconify/svelte": "^2.0.0-beta.1",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.25",
     "@sveltejs/kit": "next",
-    "eslint": "^7.22.0",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.0",
     "prettier": "~2.2.1",
-    "prettier-plugin-svelte": "^2.2.0",
+    "prettier-plugin-svelte": "^2.3.1",
     "ress": "^4.0.0",
-    "sass": "^1.32.7",
-    "svelte": "^3.34.0",
+    "sass": "^1.36.0",
+    "svelte": "^3.40.3",
     "svelte-copy-to-clipboard": "^0.2.5",
-    "svelte-preprocess": "^4.6.9"
+    "svelte-preprocess": "^4.7.4"
   },
   "type": "module",
   "dependencies": {
     "@iconify-icons/fa-brands": "^1.1.0",
     "@iconify-icons/fa-solid": "^1.1.1",
-    "@iconify-icons/simple-icons": "^1.1.25",
-    "@iconify-icons/twemoji": "^1.1.1"
+    "@iconify-icons/simple-icons": "^1.1.34",
+    "@iconify-icons/twemoji": "^1.1.2"
   }
 }
