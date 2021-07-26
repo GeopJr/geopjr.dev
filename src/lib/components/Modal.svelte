@@ -18,7 +18,6 @@
 	let response = '';
 
 	$: response = !visible ? '' : response;
-
 </script>
 
 <div class="modal" class:hidden={!visible}>
@@ -96,6 +95,7 @@
 		&.hidden {
 			// display: none;
 			z-index: -100;
+			transition-delay: 200ms;
 		}
 		> .card {
 			max-width: 90vw;
@@ -146,5 +146,4 @@
 			}
 		}
 	}
-
 </style>
