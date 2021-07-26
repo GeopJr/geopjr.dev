@@ -16,30 +16,36 @@
 	}
 
 	function shouldOpenModal() {
-		if (shouldOpenLink()) return;
 		showModal = {
 			visible: true,
 			text: url,
 			provider: provider
 		};
 	}
-
 </script>
 
-<a
-	href={shouldOpenLink() ? url : ''}
-	title={tooltip}
-	class:chonk
-	target="_blank"
-	rel="noopener noreferrer"
-	class={'button ' + type}
-	on:click={() => shouldOpenModal()}
->
-	<div class="icon">
-		<Icon size="30px" iconName={provider} />
-	</div>
-	<div class="content">{provider}</div>
-</a>
+{#if !shouldOpenLink()}
+	<button title={tooltip} class:chonk class={'button ' + type} on:click={() => shouldOpenModal()}>
+		<div class="icon">
+			<Icon size="30px" iconName={provider} />
+		</div>
+		<div class="content">{provider}</div>
+	</button>
+{:else}
+	<a
+		href={url}
+		title={tooltip}
+		class:chonk
+		target="_blank"
+		rel="noopener noreferrer"
+		class={'button ' + type}
+	>
+		<div class="icon">
+			<Icon size="30px" iconName={provider} />
+		</div>
+		<div class="content">{provider}</div>
+	</a>
+{/if}
 
 <style lang="scss">
 	@use 'sass:list';
@@ -50,17 +56,10 @@
 		color: black;
 		align-content: center;
 		justify-content: left;
+		flex-direction: column;
 		@media only screen and (min-width: 768px) {
 			&.chonk {
-				flex-direction: column;
-				> .icon {
-					border-bottom-left-radius: 0rem;
-					border-top-right-radius: 0.75rem;
-				}
 				> .content {
-					border-top-right-radius: 0rem;
-					border-bottom-left-radius: 0.75rem;
-					flex-flow: row-reverse;
 					padding: 5rem 1rem 1rem 15rem;
 				}
 			}
@@ -69,21 +68,25 @@
 			background-color: var(--accent);
 			padding: 1rem;
 			border-top-left-radius: 0.75rem;
-			border-bottom-left-radius: 0.75rem;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			border-bottom-left-radius: 0rem;
+			border-top-right-radius: 0.75rem;
 		}
 		> .content {
 			text-transform: capitalize;
 			padding: 1rem 2rem;
 			background-color: white;
-			border-top-right-radius: 0.75rem;
 			border-bottom-right-radius: 0.75rem;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			font-weight: bold;
+			border-top-right-radius: 0rem;
+			border-bottom-left-radius: 0.75rem;
+			flex-flow: row-reverse;
+			padding: 1rem 1rem 1rem 6rem;
 		}
 	}
 
@@ -224,5 +227,4 @@
 			}
 		}
 	}
-
 </style>
