@@ -7,7 +7,6 @@
 		Data.length > 0 && Data[0].date ? Data.sort((b, a) => a.date.localeCompare(b.date)) : Data;
 
 	// TODO: infinite scrolling if data exceeds 20 cards
-
 </script>
 
 <div class="card-container">
@@ -29,5 +28,4 @@
 			grid-template-columns: 1fr 1fr;
 		}
 	}
-
 </style>

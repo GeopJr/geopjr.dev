@@ -57,7 +57,6 @@
 	$: themeIcon = isDark($theme) ? 'sun' : 'moon';
 	$: shouldUseRainbow = $theme === themes.dark[1] ? true : false;
 	$: shouldTab = hideMenu ? '-1' : '0';
-
 </script>
 
 <nav>
@@ -423,5 +422,4 @@
 			}
 		}
 	}
-
 </style>

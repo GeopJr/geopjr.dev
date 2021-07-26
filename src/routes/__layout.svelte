@@ -15,7 +15,6 @@
 
 	$: currentPage = $page.path.toLowerCase();
 	$: pageTitle = routes[currentPage] ?? 'Error';
-
 </script>
 
 <svelte:head>
@@ -52,5 +51,4 @@
 			}
 		}
 	}
-
 </style>

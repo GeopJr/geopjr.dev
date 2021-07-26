@@ -6,14 +6,12 @@
 			}
 		};
 	}
-
 </script>
 
 <script>
 	export let title;
 	console.error(title);
 	$: error = title.length > 30 ? title.substring(0, 33) + '...' : title;
-
 </script>
 
 <div class="error">
@@ -42,5 +40,4 @@
 			border-radius: 2rem;
 		}
 	}
-
 </style>

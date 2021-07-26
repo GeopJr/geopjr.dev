@@ -2,7 +2,6 @@
 	export let Project;
 
 	import Icon from '$lib/Icon.svelte';
-
 </script>
 
 <div class="card">
@@ -72,5 +71,4 @@
 			}
 		}
 	}
-
 </style>

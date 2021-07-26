@@ -23,7 +23,6 @@
 		document.documentElement.setAttribute('theme', $theme);
 		localStorage.setItem(key, $theme);
 	});
-
 </script>
 
 <slot />

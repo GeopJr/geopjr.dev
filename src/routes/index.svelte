@@ -2,7 +2,6 @@
 	import Data from '$lib/data/index.json';
 
 	import Icon from '$lib/Icon.svelte';
-
 </script>
 
 <div class="title">
@@ -87,5 +86,4 @@
 			margin: 0;
 		}
 	}
-
 </style>

@@ -14,7 +14,6 @@
 		text: '',
 		provider: ''
 	};
-
 </script>
 
 <Modal
@@ -49,5 +48,4 @@
 			grid-template-columns: 1fr 1fr;
 		}
 	}
-
 </style>

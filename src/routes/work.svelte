@@ -3,7 +3,6 @@
 
 	import CardGrid from '$lib/components/card-grid/CardGrid.svelte';
 	import Banner from '$lib/components/Banner.svelte';
-
 </script>
 
 <Banner>
@@ -20,5 +19,4 @@
 		color: var(--accent);
 		text-decoration: none;
 	}
-
 </style>
