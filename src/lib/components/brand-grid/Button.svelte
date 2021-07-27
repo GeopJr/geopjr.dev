@@ -26,10 +26,10 @@
 
 {#if !shouldOpenLink()}
 	<button title={tooltip} class:chonk class={'button ' + type} on:click={() => shouldOpenModal()}>
-		<div class="icon">
+		<div class="icon btn">
 			<Icon size="30px" iconName={provider} />
 		</div>
-		<div class="content">{provider}</div>
+		<div class="content btn">{provider}</div>
 	</button>
 {:else}
 	<a
@@ -73,6 +73,9 @@
 			align-items: center;
 			border-bottom-left-radius: 0rem;
 			border-top-right-radius: 0.75rem;
+			&.btn {
+				width: 100%;
+			}
 		}
 		> .content {
 			text-transform: capitalize;
@@ -87,6 +90,9 @@
 			border-bottom-left-radius: 0.75rem;
 			flex-flow: row-reverse;
 			padding: 1rem 1rem 1rem 6rem;
+			&.btn {
+				width: 100%;
+			}
 		}
 	}
 
