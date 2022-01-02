@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Host: https://geopjr.dev/
+Sitemap: https://geopjr.dev/sitemap.xml

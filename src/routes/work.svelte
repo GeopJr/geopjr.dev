@@ -1,6 +1,5 @@
 <script>
 	import Data from '$lib/data/work.json';
-
 	import CardGrid from '$lib/components/card-grid/CardGrid.svelte';
 	import Banner from '$lib/components/Banner.svelte';
 </script>
@@ -12,11 +11,4 @@
 		rel="noopener noreferrer">GitHub Profile</a
 	>.
 </Banner>
-<CardGrid {Data} />
-
-<style lang="scss">
-	a {
-		color: var(--accent);
-		text-decoration: none;
-	}
-</style>
+<CardGrid {Data} icons />

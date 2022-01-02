@@ -1,5 +1,18 @@
 [
 	{
+		"name": "CO2",
+		"desc": "Calculate your website's Carbon emissions using GitHub Actions",
+		"techs": ["nodejs", "docker"],
+		"date": "2021-12-07",
+		"links": [
+			{
+				"icon": "dev",
+				"url": "https://dev.to/geopjr/calculate-your-websites-carbon-emissions-using-github-actions-1jp5",
+				"tooltip": "Dev.to"
+			}
+		]
+	},
+	{
 		"name": "Action-Accessibility",
 		"desc": "A GitHub action for those in need",
 		"techs": ["nodejs"],
