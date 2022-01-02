@@ -3,55 +3,74 @@
 	export let visible;
 	export let provider;
 
-	import Icon from '$lib/Icon.svelte';
-
+	import Icon from '$lib/components/Icon.svelte';
+	import { scale, fade } from 'svelte/transition';
 	import CopyToClipboard from 'svelte-copy-to-clipboard';
 
+	/**
+	 * Sets the copy response to success
+	 * @returns {void}
+	 */
 	const handleSuccessfullyCopied = () => {
 		response = 'Successfully copied!';
 	};
 
+	/**
+	 * Sets the copy response to failure
+	 * @returns {void}
+	 */
 	const handleFailedCopy = () => {
 		response = 'Failed to copy!';
 	};
+
+	/**
+	 * [A11Y]: Hides the modal on Esc
+	 * @param event Keypress event
+	 * @returns {void}
+	 */
+	function handleKeyEvent(event) {
+		if (!event || event.key !== 'Escape') return;
+		visible = false;
+	}
 
 	let response = '';
 
 	$: response = !visible ? '' : response;
 </script>
 
-<div class="modal" class:hidden={!visible}>
-	<div class="card" class:hidden={!visible}>
-		<div class="title">
-			{provider}
-		</div>
-		<div class="textarea">
-			<div class="textbox">
-				{text}
+<svelte:window on:keydown={(e) => handleKeyEvent(e)} />
+
+{#if visible}
+	<div class="modal">
+		<div class="card" transition:scale={{ duration: 200 }}>
+			<div class="title">
+				{provider}
 			</div>
-			<div class="actions">
-				<CopyToClipboard
+			<div class="textarea">
+				<div class="textbox">
 					{text}
-					on:copy={handleSuccessfullyCopied}
-					on:fail={handleFailedCopy}
-					let:copy
-				>
-					<button tabIndex={visible ? '0' : '-1'} class="copyBtn" title="Copy" on:click={copy}
-						><Icon size="20px" iconName="copy" /></button
+				</div>
+				<div class="actions">
+					<CopyToClipboard
+						{text}
+						on:copy={handleSuccessfullyCopied}
+						on:fail={handleFailedCopy}
+						let:copy
 					>
-				</CopyToClipboard>
-				<button
-					tabIndex={visible ? '0' : '-1'}
-					class="copyBtn"
-					title="Close"
-					on:click={() => (visible = false)}><Icon size="20px" iconName="times" /></button
-				>
+						<button tabIndex="0" class="copyBtn" title="Copy" on:click={copy}
+							><Icon size="20px" iconName="copy" /></button
+						>
+					</CopyToClipboard>
+					<button tabIndex="0" class="copyBtn" title="Close" on:click={() => (visible = false)}
+						><Icon size="20px" iconName="times" /></button
+					>
+				</div>
 			</div>
+			<span class="response">{response}</span>
 		</div>
-		<span class="response">{response}</span>
+		<div class="modalBg" on:click={() => (visible = false)} transition:fade={{ duration: 200 }} />
 	</div>
-	<div class="modalBg" class:hidden={!visible} on:click={() => (visible = false)} />
-</div>
+{/if}
 
 <style lang="scss">
 	.modalBg {
@@ -63,15 +82,10 @@
 		left: 0;
 		z-index: 9;
 		transition-duration: 200ms;
-
-		&.hidden {
-			transition-duration: 200ms;
-			height: 0px;
-		}
 	}
 	.copyBtn {
 		background-color: var(--sidebar-secondary-color);
-		padding: 0.2rem 0.5rem;
+		padding: 0.5rem;
 		border-radius: 0.25rem;
 		display: flex;
 		flex-direction: row;
@@ -92,23 +106,15 @@
 		@media only screen and (min-width: 768px) {
 			padding-left: 4rem;
 		}
-		&.hidden {
-			// display: none;
-			z-index: -100;
-			transition-delay: 200ms;
-		}
 		> .card {
 			max-width: 90vw;
 			background-color: var(--sidebar-primary-color);
 			padding: 5rem;
 			border-radius: 0.75rem;
 			display: flex;
-			gap: 22px;
+			gap: 1.3rem;
 			flex-direction: column;
 			z-index: 10;
-			&.hidden {
-				display: none;
-			}
 			> .title {
 				font-weight: bold;
 				text-align: center;
@@ -121,14 +127,14 @@
 			}
 			> .textarea {
 				display: flex;
-				gap: 22px;
+				gap: 1.3rem;
 				justify-content: center;
 				align-items: center;
 				flex-direction: column;
 				> .textbox {
 					background-color: var(--sidebar-secondary-color);
 					color: var(--pseudo-text-color);
-					padding: 0.2rem 1rem;
+					padding: 0.5rem;
 					border-radius: 0.25rem;
 					font-weight: bold;
 					word-wrap: break-word;
@@ -136,7 +142,7 @@
 				}
 				> .actions {
 					display: flex;
-					gap: 15px;
+					gap: 1rem;
 					flex-direction: row;
 					color: var(--pseudo-text-color);
 				}

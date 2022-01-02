@@ -5,6 +5,11 @@
 	import Button from '$lib/components/brand-grid/Button.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 
+	/**
+	 * Capitalize text
+	 * @param {string} text The text to be capitalized
+	 * @returns {string} The capitalized text
+	 */
 	function capitalize(text) {
 		return text.charAt(0).toUpperCase() + text.slice(1);
 	}

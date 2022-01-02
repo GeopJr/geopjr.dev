@@ -1,6 +1,6 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
-	import { theme, themes } from '../stores';
+	import { theme, themes } from '../../stores';
 
 	const key = 'theme';
 	const themesArr = [].concat.apply([], Object.values(themes));

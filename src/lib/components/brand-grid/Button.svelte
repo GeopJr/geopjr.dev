@@ -6,8 +6,12 @@
 	export let chonk;
 	export let showModal;
 
-	import Icon from '$lib/Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
+	/**
+	 * Whether or not the link is external
+	 * @returns {boolean} Whether or not the link is external
+	 */
 	function shouldOpenLink() {
 		const ignoreList = ['http', 'mailto'];
 		return (
@@ -15,6 +19,10 @@
 		);
 	}
 
+	/**
+	 * Triggers a modal
+	 * @returns {void}
+	 */
 	function shouldOpenModal() {
 		showModal = {
 			visible: true,
@@ -39,6 +47,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		class={'button ' + type}
+		aria-label={tooltip}
 	>
 		<div class="icon">
 			<Icon size="30px" iconName={provider} />
@@ -215,11 +224,12 @@
 			white
 		)
 	);
-
+	$transition-duration: 200ms;
 	@each $color-name, $color-list in $colors-brands {
 		.brand-#{$color-name} {
 			color: list.nth($color-list, 2) !important;
-			transition-duration: 200ms;
+			transition-duration: $transition-duration;
+			filter: drop-shadow(0 0 0.2rem transparent);
 			> .content {
 				background-color: list.nth($color-list, 1) !important;
 			}
@@ -229,7 +239,10 @@
 			&:hover,
 			&:focus-visible {
 				transform: scale(1.1);
-				transition-duration: 200ms;
+				transition-duration: $transition-duration;
+			}
+			&:hover {
+				filter: drop-shadow(0 0 0.2rem var(--accent));
 			}
 		}
 	}
