@@ -3,8 +3,6 @@
 </p>
 <h1 align="center">geopjr.dev</h1>
 
-#
-
 ## 🐱
 
 This is just my personal website.
