@@ -1,33 +1,34 @@
 {
-  "name": "geopjr_portfolio",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. ."
-  },
-  "devDependencies": {
-    "@iconify/svelte": "^2.0.0-beta.1",
-    "@sveltejs/adapter-netlify": "^1.0.0-next.25",
-    "@sveltejs/kit": "next",
-    "eslint": "^7.31.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^3.2.0",
-    "prettier": "~2.2.1",
-    "prettier-plugin-svelte": "^2.3.1",
-    "ress": "^4.0.0",
-    "sass": "^1.36.0",
-    "svelte": "^3.40.3",
-    "svelte-copy-to-clipboard": "^0.2.5",
-    "svelte-preprocess": "^4.7.4"
-  },
-  "type": "module",
-  "dependencies": {
-    "@iconify-icons/fa-brands": "^1.1.0",
-    "@iconify-icons/fa-solid": "^1.1.1",
-    "@iconify-icons/simple-icons": "^1.1.34",
-    "@iconify-icons/twemoji": "^1.1.2"
-  }
+	"name": "geopjr_portfolio",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"sitemap": "node sitemap.js | npx sitemap@7.1.0 > static/sitemap.xml",
+		"preview": "svelte-kit preview",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@iconify-json/fa-brands": "^1.0.2",
+		"@iconify-json/fa-solid": "^1.0.2",
+		"@iconify-json/mdi": "^1.0.10",
+		"@iconify-json/simple-icons": "^1.0.8",
+		"@iconify-json/twemoji": "^1.0.2",
+		"@iconify/svelte": "^2.0.0-beta.1",
+		"@sveltejs/adapter-cloudflare": "^1.0.0-next.5",
+		"@sveltejs/kit": "next",
+		"eslint": "^7.31.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^3.2.0",
+		"prettier": "~2.2.1",
+		"prettier-plugin-svelte": "^2.3.1",
+		"ress": "^4.0.0",
+		"sass": "1.43.4",
+		"svelte": "3.44.1",
+		"svelte-copy-to-clipboard": "^0.2.5",
+		"svelte-preprocess": "4.9.8",
+		"unplugin-icons": "^0.12.18"
+	},
+	"type": "module"
 }
