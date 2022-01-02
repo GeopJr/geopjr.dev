@@ -10,12 +10,18 @@
 
 <script>
 	export let title;
+
+	import { theme, themes } from '../stores';
+
 	console.error(title);
 	$: error = title.length > 30 ? title.substring(0, 33) + '...' : title;
+	$: flag = `${themes.dark.includes($theme) ? 'dark' : 'light'}${
+		themes.contrast.includes($theme) ? '_contrast' : ''
+	}`;
 </script>
 
 <div class="error">
-	<img src="/images/error.svg" alt="" class="flag" />
+	<img src={`/images/error/${flag}.svg`} alt="" class="flag" />
 	<h1 class="errorMsg">{error}</h1>
 </div>
 
@@ -25,8 +31,8 @@
 	}
 
 	.flag {
-		max-height: 50vh;
-		max-width: 50vh;
+		max-height: 200px;
+		max-width: 300px;
 		border-radius: 2rem;
 	}
 	.errorMsg {
