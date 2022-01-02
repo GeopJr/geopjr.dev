@@ -1,7 +1,6 @@
 @charset "utf-8";
 @use 'sass:list';
 @import '../node_modules/ress/dist/ress.min';
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import '$lib/fonts/Cantarell-400.css';
 @import '$lib/fonts/Cantarell-700.css';
 
@@ -14,62 +13,6 @@ $geopjr-red: #a56262;
 $geopjr-blurple: #7f77bc;
 $geopjr-dark: #262329;
 
-$rainbow-red-pastel: #df382b;
-$rainbow-orange-pastel: #ff711f;
-$rainbow-yellow-pastel: #fabb06;
-$rainbow-green-pastel: #34a853;
-$rainbow-blue-pastel: #4285f4;
-$rainbow-purple-pastel: #9d41f9;
-
-$rainbow-red-hot: #ff0018;
-$rainbow-orange-hot: #ffa52c;
-$rainbow-yellow-hot: #ffff41;
-$rainbow-green-hot: #00ac1f;
-$rainbow-blue-hot: #0084ff;
-$rainbow-purple-hot: #ff00ee;
-
-$colors-rainbow: (
-	'red': (
-		$rainbow-red-hot,
-		$rainbow-red-pastel
-	),
-	'orange': (
-		$rainbow-orange-hot,
-		$rainbow-orange-pastel
-	),
-	'yellow': (
-		$rainbow-yellow-hot,
-		$rainbow-yellow-pastel
-	),
-	'green': (
-		$rainbow-green-hot,
-		$rainbow-green-pastel
-	),
-	'blue': (
-		$rainbow-blue-hot,
-		$rainbow-blue-pastel
-	),
-	'purple': (
-		$rainbow-purple-hot,
-		$rainbow-purple-pastel
-	)
-);
-
-@each $color-name, $color-list in $colors-rainbow {
-	.glass-#{$color-name} {
-		&.active {
-			border-color: rgba(list.nth($color-list, 2), 0.5) !important;
-		}
-		&:hover {
-			color: list.nth($color-list, 1) !important;
-			background-color: semiTransparent(list.nth($color-list, 2)) !important;
-			&[data-tooltip]:after {
-				color: list.nth($color-list, 1) !important;
-			}
-		}
-	}
-}
-
 :root {
 	--geopjr-yellow: #{$geopjr-yellow};
 	--geopjr-red: #{$geopjr-red};
@@ -77,30 +20,30 @@ $colors-rainbow: (
 	--geopjr-dark: #{$geopjr-dark};
 }
 
-$mother-mother-accent: #e53170;
-:root[theme='mother mother'] {
-	--accent: #{$mother-mother-accent};
+$pantherina-blue-3: #000814;
+$pantherina-blue-2: #001d3d;
+$pantherina-blue-1: #003566;
+$pantherina-yellow-1: #ffd60a;
+$pantherina-yellow-2: #ffc300;
+:root[theme='amanita pantherina'] {
+	--accent: #{$pantherina-yellow-1};
 	--accent-text: var(--sidebar-secondary-color);
 
-	--sidebar-primary-color: #000000;
-	--sidebar-secondary-color: #222222;
-	--sidebar-secondary-alt-color: #333333;
+	--sidebar-primary-color: #{$pantherina-blue-2};
+	--sidebar-secondary-color: #{$pantherina-blue-1};
+	--sidebar-secondary-alt-color: #{$pantherina-blue-2};
 	--sidebar-text-color: #ffffff;
-	--sidebar-text-color-hover: #{$mother-mother-accent};
-	--sidebar-background-hover: #{semiTransparent($mother-mother-accent)};
-	--sidebar-active-color: var(--sidebar-secondary-color);
+	--sidebar-text-color-hover: #{$pantherina-blue-1};
+	--sidebar-background-hover: #{$pantherina-yellow-2};
+	--sidebar-active-color: #{$pantherina-yellow-1};
 
-	--background-color: #16161a;
-	--pseudo-text-color: var(--sidebar-text-color);
+	--background-color: #{$pantherina-blue-3};
+	--pseudo-text-color: #{$pantherina-yellow-1};
 	--text-color: white;
 }
 
-$_100-gecs-green: #8aa4b8;
-$_100-gecs-blurple: #6d7eae;
-$_100-gecs-brown: #bea89b;
-$_100-gecs-dark: #363a3a;
 :root,
-:root[theme='100 gecs'] {
+:root[theme='amanita muscaria'] {
 	--accent: var(--geopjr-yellow);
 	--accent-text: var(--geopjr-dark);
 
@@ -117,57 +60,43 @@ $_100-gecs-dark: #363a3a;
 	--text-color: white;
 }
 
-$cavetown-mint: #9cb0d5;
-$cavetown-blurple: #6b58ba;
-$cavetown-light: #49ac8e;
-$cavetown-dark: #2d2c2a;
-:root[theme='cavetown'] {
-	--accent: #{darken($cavetown-blurple, 25%)};
+$caesarea-mint: #97e7c0;
+$caesarea-blurple: #7aace1;
+$caesarea-light: #3f2077;
+:root[theme='amanita caesarea'] {
+	--accent: #{$caesarea-light};
 	--accent-text: var(--pseudo-text-color);
 
-	--sidebar-primary-color: #{$cavetown-mint};
-	--sidebar-secondary-color: #{$cavetown-blurple};
-	--sidebar-secondary-alt-color: #{$cavetown-dark};
-	--sidebar-text-color: #{$cavetown-dark};
-	--sidebar-text-color-hover: #{$cavetown-light};
-	--sidebar-background-hover: #{$cavetown-dark};
-	--sidebar-active-color: var(--sidebar-secondary-color);
+	--sidebar-primary-color: #{$caesarea-mint};
+	--sidebar-secondary-color: #{$caesarea-blurple};
+	--sidebar-secondary-alt-color: #504bcb;
+	--sidebar-text-color: #{$caesarea-light};
+	--sidebar-text-color-hover: #2dcda9;
+	--sidebar-background-hover: #504bcb;
+	--sidebar-active-color: #504bcb;
 
-	--background-color: #daebf3;
+	--background-color: #f1f1ff;
 	--pseudo-text-color: white;
 	--text-color: black;
 }
 
-// $rebecca-sugar-pink: #fcb9c2;
-// $rebecca-sugar-orange: #fcccb1;
-// $rebecca-sugar-purple: #3e6897;
-// $rebecca-sugar-teal: #c1fff0;
-// $rebecca-sugar-light: #fffff2;
-// $rebecca-sugar-marble: #ffeee4;
-// $rebecca-sugar-blue: #58d7d5;
-// $rebecca-sugar-gray: #99c8c1;
-
-$rebecca-sugar-pink: #fcb9c2;
-$rebecca-sugar-orange: #ff8ba7;
-$rebecca-sugar-purple: #3e6897;
-$rebecca-sugar-teal: #c3f0ca;
-$rebecca-sugar-light: #fffff2;
-$rebecca-sugar-marble: #ffeee4;
-$rebecca-sugar-blue: #58d7d5;
-$rebecca-sugar-gray: #33272a;
-:root[theme='rebecca sugar'] {
-	--accent: #{$rebecca-sugar-purple};
+$phalloides-grey-1: #ded9c4;
+$phalloides-blue: #89b5af;
+$phalloides-grey-2: #d0cab2;
+$phalloides-light: #fffff5;
+:root[theme='amanita phalloides'] {
+	--accent: #{darken($phalloides-blue, 25%)};
 	--accent-text: var(--pseudo-text-color);
 
-	--sidebar-primary-color: #{$rebecca-sugar-teal};
-	--sidebar-secondary-color: #{$rebecca-sugar-orange};
-	--sidebar-secondary-alt-color: #{$rebecca-sugar-purple};
-	--sidebar-text-color: #{$rebecca-sugar-purple};
-	--sidebar-text-color-hover: #{$rebecca-sugar-orange};
-	--sidebar-background-hover: #{$rebecca-sugar-gray};
-	--sidebar-active-color: #{$rebecca-sugar-orange};
+	--sidebar-primary-color: #{$phalloides-grey-1};
+	--sidebar-secondary-color: #{$phalloides-blue};
+	--sidebar-secondary-alt-color: #{$phalloides-grey-2};
+	--sidebar-text-color: #{darken($phalloides-blue, 25%)};
+	--sidebar-text-color-hover: #{$phalloides-grey-1};
+	--sidebar-background-hover: #{darken($phalloides-grey-2, 25%)};
+	--sidebar-active-color: #{$phalloides-blue};
 
-	--background-color: #{$rebecca-sugar-light};
+	--background-color: #{$phalloides-light};
 	--pseudo-text-color: white;
 	--text-color: black;
 }
@@ -186,22 +115,18 @@ $rebecca-sugar-gray: #33272a;
 	}
 }
 
-html,
-body {
+html {
 	height: 100%;
 	width: 100vw;
 	overflow-x: hidden;
-}
-
-img {
-	pointer-events: none;
-}
-
-html {
 	background-color: var(--background-color);
 	transition-duration: 200ms;
 	font-family: 'Cantarell', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Noto Sans',
 		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+img {
+	pointer-events: none;
 }
 
 *:focus-visible {
@@ -217,15 +142,28 @@ html {
 		&:focus-visible,
 		&:hover {
 			transition-duration: 0ms !important;
+			animation: none !important;
 			&:before,
 			&:after {
 				transition-duration: 0ms !important;
+				animation: none !important;
 			}
 		}
 		transition-duration: 0ms !important;
+		animation: none !important;
 		&:before,
 		&:after {
 			transition-duration: 0ms !important;
+			animation: none !important;
 		}
 	}
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: var(--accent);
+	text-decoration: none;
 }

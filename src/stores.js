@@ -1,8 +1,8 @@
 import { writable } from 'svelte/store';
 
 const themesObj = {
-	dark: ['100 gecs', 'mother mother'],
-	light: ['cavetown', 'rebecca sugar']
+	dark: ['amanita muscaria', 'amanita pantherina'],
+	light: ['amanita caesarea', 'amanita phalloides']
 };
 
 Object.values(themesObj).forEach((x) => {
@@ -12,3 +12,4 @@ Object.values(themesObj).forEach((x) => {
 
 export const themes = themesObj;
 export const theme = writable(themes.dark[0]);
+export const eggHint = writable(false);
