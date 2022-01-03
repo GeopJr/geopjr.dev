@@ -19,7 +19,7 @@ specifiers:
   svelte: 3.44.3
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.9.8
-  unplugin-icons: 0.12.23
+  unplugin-icons: 0.13.0
 
 devDependencies:
   '@iconify-json/fa-brands': 1.0.2
@@ -40,7 +40,7 @@ devDependencies:
   svelte: 3.44.3
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.9.8_sass@1.45.2+svelte@3.44.3
-  unplugin-icons: 0.12.23
+  unplugin-icons: 0.13.0
 
 packages:
 
@@ -51,8 +51,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /@antfu/utils/0.3.0:
-    resolution: {integrity: sha512-UU8TLr/EoXdg7OjMp0h9oDoIAVr+Z/oW9cpOxQQyrsz6Qzd2ms/1CdWx8fl2OQdFpxGmq5Vc4TwfLHId6nAZjA==}
+  /@antfu/utils/0.4.0:
+    resolution: {integrity: sha512-gqkpvjkgFUu+s3kP+Ly33OKpo5zvVY3FDFhv5BIb98SncS3KD6DNxPfNDjwHIoyXbz1leWo1j8DtRLZ1D2Jv+Q==}
     dependencies:
       '@types/throttle-debounce': 2.1.0
     dev: true
@@ -1542,8 +1542,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unplugin-icons/0.12.23:
-    resolution: {integrity: sha512-jhCogt+/3WEdPrfHkUGwiLnNJAOrE469J/Zlsh57KAaeEDxrw+PMqXDXRFA/fZjtal/btGPFcDOeQPPHGW6JHg==}
+  /unplugin-icons/0.13.0:
+    resolution: {integrity: sha512-CyAl0HV3bZUGT7ut9agpPRhEYXCvufr80Fh72yrkD57BVCTZ7ze10Rt63ZrvPXiJQpd+aI/Bizm2aqOf3WPSfg==}
     peerDependencies:
       '@svgr/core': ^5.5.0
       '@vue/compiler-sfc': ^3.0.2
@@ -1560,7 +1560,7 @@ packages:
         optional: true
     dependencies:
       '@antfu/install-pkg': 0.1.0
-      '@antfu/utils': 0.3.0
+      '@antfu/utils': 0.4.0
       '@iconify/utils': 1.0.20
       debug: 4.3.3
       kolorist: 1.5.1
