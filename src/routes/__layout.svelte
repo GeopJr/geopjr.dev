@@ -9,7 +9,7 @@
 		'/': {
 			title: 'Home',
 			desc:
-				'Personal Portfolio - IT Student @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more'
+				'Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more'
 		},
 		'/about': { title: 'About', icon: 'user', desc: 'About GeopJr - Who I am and what I do' },
 		'/work': {
