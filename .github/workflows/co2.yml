@@ -3,8 +3,9 @@ name: Calculate CO2 🌱
 on: [push, pull_request]
 
 jobs:
-  audit:
+  co2:
     runs-on: ubuntu-latest
+    if: github.actor != 'renovate[bot]' && github.actor != 'renovate' && github.event.pull_request.user.login != 'renovate[bot]' && github.event.pull_request.user.login != 'renovate'
     steps:
       - name: Await CF Pages
         uses: WalshyDev/cf-pages-await@v1.0.1
