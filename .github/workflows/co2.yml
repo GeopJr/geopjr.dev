@@ -8,7 +8,7 @@ jobs:
     if: github.actor != 'renovate[bot]' && github.actor != 'renovate' && github.event.pull_request.user.login != 'renovate[bot]' && github.event.pull_request.user.login != 'renovate'
     steps:
       - name: Await CF Pages
-        uses: WalshyDev/cf-pages-await@v1.0.1
+        uses: WalshyDev/cf-pages-await@v1.1.0
         id: cf
         with:
           accountEmail: ${{ secrets.CF_ACCOUNT_EMAIL }}
