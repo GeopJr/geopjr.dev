@@ -18,7 +18,7 @@ specifiers:
   sass: 1.48.0
   svelte: 3.46.2
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 4.10.1
+  svelte-preprocess: 4.10.2
   unplugin-icons: 0.13.0
 
 devDependencies:
@@ -29,7 +29,7 @@ devDependencies:
   '@iconify-json/twemoji': 1.0.2
   '@iconify/svelte': 2.1.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.7
-  '@sveltejs/kit': 1.0.0-next.231_sass@1.48.0+svelte@3.46.2
+  '@sveltejs/kit': 1.0.0-next.232_sass@1.48.0+svelte@3.46.2
   eslint: 8.7.0
   eslint-config-prettier: 8.3.0_eslint@8.7.0
   eslint-plugin-svelte3: 3.4.0_eslint@8.7.0+svelte@3.46.2
@@ -39,7 +39,7 @@ devDependencies:
   sass: 1.48.0
   svelte: 3.46.2
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 4.10.1_sass@1.48.0+svelte@3.46.2
+  svelte-preprocess: 4.10.2_sass@1.48.0+svelte@3.46.2
   unplugin-icons: 0.13.0
 
 packages:
@@ -149,8 +149,8 @@ packages:
       esbuild: 0.13.15
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.231_sass@1.48.0+svelte@3.46.2:
-    resolution: {integrity: sha512-utG2cfgweIIwFA1IcDDzDTa7cz+UiJX03ELG9cvpwkGIlHypzbGr0AnUzRAX60HUsBQLNhtjNCU2BUUy8IQLPw==}
+  /@sveltejs/kit/1.0.0-next.232_sass@1.48.0+svelte@3.46.2:
+    resolution: {integrity: sha512-STQ0hnJozIop8k9I313nwVasBIQ45Z2K1pUOkDVjCSOGijgsj+De5q0prQBtL1ZlqqisfkYlOf8W9gvDSyTLEA==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -1306,20 +1306,20 @@ packages:
       svelte: 3.46.2
     dev: true
 
-  /svelte-preprocess/4.10.1_sass@1.48.0+svelte@3.46.2:
-    resolution: {integrity: sha512-NSNloaylf+o9UeyUR2KvpdxrAyMdHl3U7rMnoP06/sG0iwJvlUM4TpMno13RaNqovh4AAoGsx1jeYcIyuGUXMw==}
+  /svelte-preprocess/4.10.2_sass@1.48.0+svelte@3.46.2:
+    resolution: {integrity: sha512-aPpkCreSo8EL/y8kJSa1trhiX0oyAtTjlNNM7BNjRAsMJ8Yy2LtqHt0zyd4pQPXt+D4PzbO3qTjjio3kwOxDlA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
       '@babel/core': ^7.10.2
       coffeescript: ^2.5.1
-      less: ^3.11.3
+      less: ^3.11.3 || ^4.0.0
       node-sass: '*'
       postcss: ^7 || ^8
       postcss-load-config: ^2.1.0 || ^3.0.0
       pug: ^3.0.0
       sass: ^1.26.8
-      stylus: ^0.54.7
+      stylus: ^0.55.0
       sugarss: ^2.0.0
       svelte: ^3.23.0
       typescript: ^4.5.2
