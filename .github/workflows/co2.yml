@@ -15,6 +15,8 @@ jobs:
           apiKey: ${{ secrets.CF_API_KEY }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           project: ${{ secrets.CF_PROJECT_NAME }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - run: sleep 60
       - name: Calculate CO2 🌱
         uses: GeopJr/CO2@v1
         with:
