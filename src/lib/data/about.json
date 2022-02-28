@@ -54,7 +54,7 @@
 			"Electron": { "name": "Electron", "website": "https://www.electronjs.org/" },
 			"Flutter": { "name": "Flutter", "website": "https://flutter.dev/" },
 			"GNOME": { "name": "GTK/GNOME Platform", "website": "https://www.gtk.org/" },
-			"Quasar": { "name": "Quasar", "website": "https://" },
+			"Quasar": { "name": "Quasar", "website": "https://quasar.dev/" },
 			"Qt": { "name": "Qt", "website": "https://www.qt.io/" }
 		},
 		"Mobile": {
