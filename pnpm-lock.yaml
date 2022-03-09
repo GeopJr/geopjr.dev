@@ -14,7 +14,7 @@ specifiers:
   eslint-plugin-svelte3: 3.4.1
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0
-  ress: 4.0.0
+  ress: 5.0.2
   sass: 1.49.9
   svelte: 3.46.4
   svelte-copy-to-clipboard: 0.2.5
@@ -35,7 +35,7 @@ devDependencies:
   eslint-plugin-svelte3: 3.4.1_eslint@8.10.0+svelte@3.46.4
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
-  ress: 4.0.0
+  ress: 5.0.2
   sass: 1.49.9
   svelte: 3.46.4
   svelte-copy-to-clipboard: 0.2.5
@@ -1203,8 +1203,8 @@ packages:
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
-  /ress/4.0.0:
-    resolution: {integrity: sha512-awpQM9e6VL6ljw4XuH/ww2q4IEU0SAY9Lcvu4h4nIB5c5XhTUXH3Me8WA0zW3s3naU79lY8uVUJg30dvKJ5cNw==}
+  /ress/5.0.2:
+    resolution: {integrity: sha512-oHBtOWo/Uc8SzQMbQNIKTcgi8wKmAs7IlNlRywmXudbOtF+c27FlOIq7tnwLDVcTywe6JXYo1pDXHO6kABwNYA==}
     dev: true
 
   /rimraf/2.7.1:
