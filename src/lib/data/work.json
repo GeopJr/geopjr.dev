@@ -25,17 +25,17 @@
 		"links": [
 			{
 				"icon": "github",
-				"url": "https://github.com/GeopJr/Hashbrown",
+				"url": "https://github.com/GeopJr/Collision",
 				"tooltip": "GitHub Repo"
 			},
 			{
 				"icon": "flathub",
-				"url": "https://flathub.org/apps/details/dev.geopjr.Hashbrown",
+				"url": "https://flathub.org/apps/details/dev.geopjr.Collision",
 				"tooltip": "Flathub"
 			},
 			{
 				"icon": "website",
-				"url": "https://hashbrown.geopjr.dev/",
+				"url": "https://collision.geopjr.dev/",
 				"tooltip": "Website"
 			}
 		]
