@@ -11,7 +11,7 @@
 			</div>
 			<div class="card-body">
 				<p>
-					{@html About.about.replace('{arg1}', new Date().getFullYear() - 2015)}
+					{@html About.about.replace('{arg1}', new Date().getFullYear() - 2017)}
 				</p>
 			</div>
 		</div>
