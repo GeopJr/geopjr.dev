@@ -6,7 +6,7 @@ specifiers:
   '@iconify-json/mdi': 1.1.2
   '@iconify-json/simple-icons': 1.1.4
   '@iconify-json/twemoji': 1.1.2
-  '@iconify/svelte': 2.1.2
+  '@iconify/svelte': 2.2.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.16
   '@sveltejs/kit': next
   eslint: 8.11.0
@@ -27,9 +27,9 @@ devDependencies:
   '@iconify-json/mdi': 1.1.2
   '@iconify-json/simple-icons': 1.1.4
   '@iconify-json/twemoji': 1.1.2
-  '@iconify/svelte': 2.1.2
+  '@iconify/svelte': 2.2.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.16
-  '@sveltejs/kit': 1.0.0-next.298_sass@1.49.9+svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.301_sass@1.49.9+svelte@3.46.4
   eslint: 8.11.0
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   eslint-plugin-svelte3: 3.4.1_eslint@8.11.0+svelte@3.46.4
@@ -123,12 +123,8 @@ packages:
       '@iconify/types': 1.0.12
     dev: true
 
-  /@iconify/svelte/2.1.2:
-    resolution: {integrity: sha512-NvWPg/lKNDlzyB698vLv8hYT5eRDxSIk0QnMtB7UMOZ7/SbmInyBqsb8t3SXoCYVsNG3poznW+pwYrJZ7kY+mQ==}
-    dependencies:
-      cross-fetch: 3.1.5
-    transitivePeerDependencies:
-      - encoding
+  /@iconify/svelte/2.2.0:
+    resolution: {integrity: sha512-Zs+WBMVKhbUOA+w7LX1zjQGs4EvGF9alwKxr3e8j1ZoUqCwWDLGrZTypeCXiMxfGYYRgE6jrJ3wnIkk0Mpa9/A==}
     dev: true
 
   /@iconify/types/1.0.12:
@@ -162,8 +158,8 @@ packages:
       esbuild: 0.14.21
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.298_sass@1.49.9+svelte@3.46.4:
-    resolution: {integrity: sha512-HUna2KgBc9NdeSCAqZBo6NUuRHab1tRMW6O3OtLvPs7ldSY+cEarDmUJb1ZeHwPrbcS2RTHSnBNNc0l+UyiFIw==}
+  /@sveltejs/kit/1.0.0-next.301_sass@1.49.9+svelte@3.46.4:
+    resolution: {integrity: sha512-F/XP1VEu+fpvgY04JekNxAFupccNMKOyXtbox0LwNJvBulL15/Tzy6tf4g+9t2Jy7mprwI3h0ZC9G/nVujRFnQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -352,14 +348,6 @@ packages:
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
-    dev: true
-
-  /cross-fetch/3.1.5:
-    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
-    dependencies:
-      node-fetch: 2.6.7
-    transitivePeerDependencies:
-      - encoding
     dev: true
 
   /cross-spawn/7.0.3:
@@ -1050,18 +1038,6 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /node-fetch/2.6.7:
-    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-    dev: true
-
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
@@ -1415,10 +1391,6 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /tr46/0.0.3:
-    resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
-    dev: true
-
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -1519,19 +1491,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /webidl-conversions/3.0.1:
-    resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
-    dev: true
-
   /webpack-virtual-modules/0.4.3:
     resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==}
-    dev: true
-
-  /whatwg-url/5.0.0:
-    resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
-    dependencies:
-      tr46: 0.0.3
-      webidl-conversions: 3.0.1
     dev: true
 
   /which/2.0.2:
