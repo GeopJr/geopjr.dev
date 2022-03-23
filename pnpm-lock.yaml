@@ -19,7 +19,7 @@ specifiers:
   svelte: 3.46.4
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.4
-  unplugin-icons: 0.14.0
+  unplugin-icons: 0.14.1
 
 devDependencies:
   '@iconify-json/fa-brands': 1.1.1
@@ -29,7 +29,7 @@ devDependencies:
   '@iconify-json/twemoji': 1.1.2
   '@iconify/svelte': 2.2.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.16
-  '@sveltejs/kit': 1.0.0-next.301_sass@1.49.9+svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.302_sass@1.49.9+svelte@3.46.4
   eslint: 8.11.0
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   eslint-plugin-svelte3: 3.4.1_eslint@8.11.0+svelte@3.46.4
@@ -40,7 +40,7 @@ devDependencies:
   svelte: 3.46.4
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.4_sass@1.49.9+svelte@3.46.4
-  unplugin-icons: 0.14.0
+  unplugin-icons: 0.14.1
 
 packages:
 
@@ -49,12 +49,6 @@ packages:
     dependencies:
       execa: 5.1.1
       find-up: 5.0.0
-    dev: true
-
-  /@antfu/utils/0.3.0:
-    resolution: {integrity: sha512-UU8TLr/EoXdg7OjMp0h9oDoIAVr+Z/oW9cpOxQQyrsz6Qzd2ms/1CdWx8fl2OQdFpxGmq5Vc4TwfLHId6nAZjA==}
-    dependencies:
-      '@types/throttle-debounce': 2.1.0
     dev: true
 
   /@antfu/utils/0.5.0:
@@ -135,12 +129,16 @@ packages:
     resolution: {integrity: sha512-jrJJVPnRM1HsMDnuHRTzMfgiSG6Z1U/2IYI7s8spFu9c7n1q3jcXa+3/YQz4tJVNgAhzm1dbnMxfIAyLDpCaWg==}
     dev: true
 
-  /@iconify/utils/1.0.26:
-    resolution: {integrity: sha512-Mz6l1fOGgdqLjoXNirmX6Zpc+DPcU4Xyns7oBWcHoTVRnZ2QuFbWMaGa9/FeYSoZwk5s14Vsl0wilmaToS9g9w==}
+  /@iconify/types/1.1.0:
+    resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
+    dev: true
+
+  /@iconify/utils/1.0.30:
+    resolution: {integrity: sha512-Hmr5TWeWZLcLr5/r8pSga2d1OfN7LVlaQilb41kpgFmiEKS7+JRmNKGtgT4dI82hGiAzNpFEgLC1hKeqNF+pbA==}
     dependencies:
       '@antfu/install-pkg': 0.1.0
-      '@antfu/utils': 0.3.0
-      '@iconify/types': 1.0.13
+      '@antfu/utils': 0.5.0
+      '@iconify/types': 1.1.0
       debug: 4.3.4
       kolorist: 1.5.1
       local-pkg: 0.4.1
@@ -162,8 +160,8 @@ packages:
       esbuild: 0.14.21
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.301_sass@1.49.9+svelte@3.46.4:
-    resolution: {integrity: sha512-F/XP1VEu+fpvgY04JekNxAFupccNMKOyXtbox0LwNJvBulL15/Tzy6tf4g+9t2Jy7mprwI3h0ZC9G/nVujRFnQ==}
+  /@sveltejs/kit/1.0.0-next.302_sass@1.49.9+svelte@3.46.4:
+    resolution: {integrity: sha512-+YUSU7uN5n8i0NOVRaBQgxbaCgFqn63YNudm8kqu27iaw8iCw9Ua6YuE0uMeAtYif+uSletFiMy73f55mMfJNQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -216,10 +214,6 @@ packages:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
       '@types/node': 17.0.6
-    dev: true
-
-  /@types/throttle-debounce/2.1.0:
-    resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
     dev: true
 
   /acorn-jsx/5.3.2_acorn@8.7.0:
@@ -1419,8 +1413,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unplugin-icons/0.14.0:
-    resolution: {integrity: sha512-VznBG8Jl9D4jtsAIY8hycyQZEDB8KVjnk19MzMlifLLs4QoIUPx8TILDoy6U46yDeYViqZu4hvb5fYI5OarekQ==}
+  /unplugin-icons/0.14.1:
+    resolution: {integrity: sha512-drZFbMctvT3ZJPfdCgBv5+LKO8hGbZApRCoBRAUhQFRJQVNGUhGThrOKs+CvWq3XDBPptGNBmst8WyObbr4xiQ==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
@@ -1438,7 +1432,7 @@ packages:
     dependencies:
       '@antfu/install-pkg': 0.1.0
       '@antfu/utils': 0.5.0
-      '@iconify/utils': 1.0.26
+      '@iconify/utils': 1.0.30
       debug: 4.3.4
       kolorist: 1.5.1
       local-pkg: 0.4.1
