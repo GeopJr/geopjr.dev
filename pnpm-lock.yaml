@@ -18,7 +18,7 @@ specifiers:
   sass: 1.49.11
   svelte: 3.46.6
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 4.10.4
+  svelte-preprocess: 4.10.5
   unplugin-icons: 0.14.1
 
 devDependencies:
@@ -39,7 +39,7 @@ devDependencies:
   sass: 1.49.11
   svelte: 3.46.6
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 4.10.4_sass@1.49.11+svelte@3.46.6
+  svelte-preprocess: 4.10.5_sass@1.49.11+svelte@3.46.6
   unplugin-icons: 0.14.1
 
 packages:
@@ -1522,8 +1522,8 @@ packages:
       svelte: 3.46.6
     dev: true
 
-  /svelte-preprocess/4.10.4_sass@1.49.11+svelte@3.46.6:
-    resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
+  /svelte-preprocess/4.10.5_sass@1.49.11+svelte@3.46.6:
+    resolution: {integrity: sha512-VKXPRScCzAZqeBZOGq4LLwtNrAu++mVn7XvQox3eFDV7Ciq0Lg70Q8QWjH9iXF7J+pMlXhPsSFwpCb2E+hoeyA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:

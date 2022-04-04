@@ -27,7 +27,7 @@
 		"sass": "1.49.11",
 		"svelte": "3.46.6",
 		"svelte-copy-to-clipboard": "0.2.5",
-		"svelte-preprocess": "4.10.4",
+		"svelte-preprocess": "4.10.5",
 		"unplugin-icons": "0.14.1"
 	},
 	"type": "module"
