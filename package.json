@@ -28,7 +28,7 @@
 		"svelte": "3.48.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.6",
-		"unplugin-icons": "0.14.1"
+		"unplugin-icons": "0.14.3"
 	},
 	"type": "module"
 }
