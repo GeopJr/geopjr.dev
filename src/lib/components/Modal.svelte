@@ -90,6 +90,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		color: var(--pseudo-text-color);
 	}
 	.modal {
 		position: fixed;
