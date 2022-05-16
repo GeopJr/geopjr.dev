@@ -8,14 +8,13 @@
 	const routes = {
 		'/': {
 			title: 'Home',
-			desc:
-				'Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more'
+			desc: 'Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more'
 		},
 		'/about': { title: 'About', icon: 'user', desc: 'About GeopJr - Who I am and what I do' },
 		'/work': {
 			title: 'Work',
 			icon: 'briefcase',
-			desc: "GeopJr's projects - Stuff I've made and I'm proud to list"
+			desc: "GeopJr's projects - Stuff I've made"
 		},
 		'/blog': {
 			title: 'Blog',
