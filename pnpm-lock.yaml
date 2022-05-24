@@ -7,7 +7,7 @@ specifiers:
   '@iconify-json/simple-icons': 1.1.13
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.19
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.20
   '@sveltejs/kit': next
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0
@@ -28,8 +28,8 @@ devDependencies:
   '@iconify-json/simple-icons': 1.1.13
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.19
-  '@sveltejs/kit': 1.0.0-next.340_sass@1.52.1+svelte@3.48.0
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.20
+  '@sveltejs/kit': 1.0.0-next.343_sass@1.52.1+svelte@3.48.0
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0_eslint@8.16.0
   eslint-plugin-svelte3: 4.0.0_vypdqzeyqutkgs6qzc7qod4c64
@@ -150,15 +150,15 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.19:
-    resolution: {integrity: sha512-LET3DUYpl+deoKhkWCzhHUT7iipYkgVkOcRIJX7qT4m23A+MAbzcAC3npgwEYSe9RokOSWMVBr3tVujeES5EeA==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.20:
+    resolution: {integrity: sha512-Qa5L3Vto/Q3/KI5w2YIfqrUC5ydBCi5nzhybe8tOOafer2Y6CbDAV8dg0lZiwn7fwkVyk1QCVqkmpKpqu3oqvA==}
     dependencies:
       esbuild: 0.14.29
-      worktop: 0.8.0-next.13
+      worktop: 0.8.0-next.14
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.340_sass@1.52.1+svelte@3.48.0:
-    resolution: {integrity: sha512-s9EDSyYIYUmBnJWs8+ovpVfTbxv+z+2TbTmr9DBfP3bMqFcpjAFnFmPz9TmmDt976hrD6SgeoKEAb3VURDS2Ig==}
+  /@sveltejs/kit/1.0.0-next.343_sass@1.52.1+svelte@3.48.0:
+    resolution: {integrity: sha512-M+K2To/QdEBl8OZS1V7JzsV9zZUNJRAay1ZVtDnlC75UgHECHhu72E5BtJWFXtINezQaMgGl62LuAGHItQxPlA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
@@ -1523,8 +1523,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /worktop/0.8.0-next.13:
-    resolution: {integrity: sha512-aLPWSneFtPJr3RAf841orF9GNlVdVkQd2Wj/BbcGHp3whBZoXx6dcwwClA9fezm7muNan4SuT+ZTyMWdoJSCAg==}
+  /worktop/0.8.0-next.14:
+    resolution: {integrity: sha512-RZgqHu1w/JcUdWOE/BUEAzarrUUHh39eWkLdX8XpA6MfgLJF6X5Vl26CV7/wcm4O/UpZvHMGJUtB9eYTqDjc9g==}
     engines: {node: '>=12'}
     dependencies:
       mrmime: 1.0.0
