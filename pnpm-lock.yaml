@@ -7,7 +7,7 @@ specifiers:
   '@iconify-json/simple-icons': 1.1.13
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.20
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.21
   '@sveltejs/kit': next
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0
@@ -28,7 +28,7 @@ devDependencies:
   '@iconify-json/simple-icons': 1.1.13
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.20
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.21
   '@sveltejs/kit': 1.0.0-next.344_sass@1.52.1+svelte@3.48.0
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0_eslint@8.16.0
@@ -150,8 +150,8 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.20:
-    resolution: {integrity: sha512-Qa5L3Vto/Q3/KI5w2YIfqrUC5ydBCi5nzhybe8tOOafer2Y6CbDAV8dg0lZiwn7fwkVyk1QCVqkmpKpqu3oqvA==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.21:
+    resolution: {integrity: sha512-bPD62sGuCfo20jCz01ihd5ArxyiCu7iogQrQQK+higbz6OR1q34VnXCuNg/vHuDp+6kegLvRTRD0Qe22WVOZbw==}
     dependencies:
       esbuild: 0.14.29
       worktop: 0.8.0-next.14
