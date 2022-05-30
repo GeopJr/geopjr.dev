@@ -4,7 +4,7 @@ specifiers:
   '@iconify-json/fa-brands': 1.1.1
   '@iconify-json/fa-solid': 1.1.1
   '@iconify-json/mdi': 1.1.19
-  '@iconify-json/simple-icons': 1.1.13
+  '@iconify-json/simple-icons': 1.1.14
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.21
@@ -25,7 +25,7 @@ devDependencies:
   '@iconify-json/fa-brands': 1.1.1
   '@iconify-json/fa-solid': 1.1.1
   '@iconify-json/mdi': 1.1.19
-  '@iconify-json/simple-icons': 1.1.13
+  '@iconify-json/simple-icons': 1.1.14
   '@iconify-json/twemoji': 1.1.4
   '@iconify/svelte': 2.2.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.21
@@ -105,8 +105,8 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
-  /@iconify-json/simple-icons/1.1.13:
-    resolution: {integrity: sha512-B3Zs7aKIKCzn+Wcs1Ub46ZYU+d/LZYRUprgl4mCUyd1Dqko/NkG8bw3BvaXbTCRtGEd8Af0VzGv3Yy9rINDgPA==}
+  /@iconify-json/simple-icons/1.1.14:
+    resolution: {integrity: sha512-M16V4YWqzCQICp5YIXQjIVdoLAzjEA/l9AParht4S4G/5tYQ1/1guDsRu6kzsUba5bDjeGFyhUIhX6LT79Fulg==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true
