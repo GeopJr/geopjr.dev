@@ -19,7 +19,7 @@ specifiers:
   svelte: 3.48.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7
-  unplugin-icons: 0.14.4
+  unplugin-icons: 0.14.5
 
 devDependencies:
   '@iconify-json/fa-brands': 1.1.1
@@ -40,7 +40,7 @@ devDependencies:
   svelte: 3.48.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7_sass@1.52.3+svelte@3.48.0
-  unplugin-icons: 0.14.4
+  unplugin-icons: 0.14.5
 
 packages:
 
@@ -129,8 +129,8 @@ packages:
     resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
     dev: true
 
-  /@iconify/utils/1.0.32:
-    resolution: {integrity: sha512-m+rnw7qKHq/XF7DAi4BcFoEAcXBfqqMgQJh8brGEHeqE/RUvgDMjmxsHgWnVpFsG+VmjGyAiI7nwXdliCwEU0Q==}
+  /@iconify/utils/1.0.33:
+    resolution: {integrity: sha512-vGeAqo7aGPxOQmGdVoXFUOuyN+0V7Lcrx2EvaiRjxUD1x6Om0Tvq2bdm7E24l2Pz++4S0mWMCVFXe/17EtKImQ==}
     dependencies:
       '@antfu/install-pkg': 0.1.0
       '@antfu/utils': 0.5.2
@@ -1412,8 +1412,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unplugin-icons/0.14.4:
-    resolution: {integrity: sha512-+5+U5MV/d1HU3rW9bHqPLCC+rikt6OCXwjW9gSbryE2qyezzOyJ7ZNnwWLksxf5A+cVj1D6pcAbpmSjojN8zCg==}
+  /unplugin-icons/0.14.5:
+    resolution: {integrity: sha512-fxi/fuBZXtZu64L8iAPj+ecu/rnSvTbfR14RO44xIWdsI/Ohpzs9Gve7+nHIgD6JFrdtCfzGnXWBEVPbMGWX3A==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
@@ -1431,7 +1431,7 @@ packages:
     dependencies:
       '@antfu/install-pkg': 0.1.0
       '@antfu/utils': 0.5.2
-      '@iconify/utils': 1.0.32
+      '@iconify/utils': 1.0.33
       debug: 4.3.4
       kolorist: 1.5.1
       local-pkg: 0.4.1
