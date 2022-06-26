@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify-json/fa-brands': 1.1.1
+  '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.1
   '@iconify-json/mdi': 1.1.23
   '@iconify-json/simple-icons': 1.1.16
@@ -22,7 +22,7 @@ specifiers:
   unplugin-icons: 0.14.5
 
 devDependencies:
-  '@iconify-json/fa-brands': 1.1.1
+  '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.1
   '@iconify-json/mdi': 1.1.23
   '@iconify-json/simple-icons': 1.1.16
@@ -87,10 +87,10 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/fa-brands/1.1.1:
-    resolution: {integrity: sha512-0GSUO4ksU+I9gD/laa12bV0PhTaOKNc4MekBrcJ9C3qZ/nV87cXMgGw9bh/bJdO6YSp1lndUTi75dc+Pej690A==}
+  /@iconify-json/fa-brands/1.1.2:
+    resolution: {integrity: sha512-ByUw5MMEsc6gjbtHD3FTrX1689/CN1Mg+qPOnofckOw/M2SOH8qFgoQTi3bafQQQWNxUV45ttM85bscou52AzA==}
     dependencies:
-      '@iconify/types': 1.0.12
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify-json/fa-solid/1.1.1:
