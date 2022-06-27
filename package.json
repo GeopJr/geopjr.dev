@@ -15,7 +15,7 @@
 		"@iconify-json/fa-solid": "1.1.1",
 		"@iconify-json/mdi": "1.1.24",
 		"@iconify-json/simple-icons": "1.1.16",
-		"@iconify-json/twemoji": "1.1.4",
+		"@iconify-json/twemoji": "1.1.5",
 		"@iconify/svelte": "2.2.1",
 		"@sveltejs/adapter-cloudflare": "1.0.0-next.23",
 		"@sveltejs/kit": "next",
