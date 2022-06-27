@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@iconify-json/fa-brands': 1.1.2
-  '@iconify-json/fa-solid': 1.1.1
+  '@iconify-json/fa-solid': 1.1.2
   '@iconify-json/mdi': 1.1.24
   '@iconify-json/simple-icons': 1.1.16
   '@iconify-json/twemoji': 1.1.5
@@ -23,7 +23,7 @@ specifiers:
 
 devDependencies:
   '@iconify-json/fa-brands': 1.1.2
-  '@iconify-json/fa-solid': 1.1.1
+  '@iconify-json/fa-solid': 1.1.2
   '@iconify-json/mdi': 1.1.24
   '@iconify-json/simple-icons': 1.1.16
   '@iconify-json/twemoji': 1.1.5
@@ -93,10 +93,10 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
-  /@iconify-json/fa-solid/1.1.1:
-    resolution: {integrity: sha512-Tfrcukcq8ywJ/Fc2dP8MZ6uKbOCfNA96uA3KxNFSLYX136mtlZ0LksuPw7BV8ukwDq9YEdjW95W+2Zx2ckRBrw==}
+  /@iconify-json/fa-solid/1.1.2:
+    resolution: {integrity: sha512-dJTmbcHh104VWMrNDBxIIy9o26CN1nrT9euWfEleU0CYJNMhk8RIM6inquctAP1+QoS/J1y3bO+8YblwhdzCrQ==}
     dependencies:
-      '@iconify/types': 1.0.12
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify-json/mdi/1.1.24:
@@ -119,10 +119,6 @@ packages:
 
   /@iconify/svelte/2.2.1:
     resolution: {integrity: sha512-eWZq8CRrr3WfnKAj8SWknfE3S/d+j/AzEcypeJaHurS1s4zTdFnkjATcFa8lerGtcX0PAtXiVL94tbIEd69N+w==}
-    dev: true
-
-  /@iconify/types/1.0.12:
-    resolution: {integrity: sha512-6er6wSGF3hgc1JEZqiGpg21CTCjHBYOUwqLmb2Idzkjiw6ogalGP0ZMLVutCzah+0WB4yP+Zd2oVPN8jvJ+Ftg==}
     dev: true
 
   /@iconify/types/1.1.0:
