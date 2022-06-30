@@ -19,7 +19,7 @@ specifiers:
   svelte: 3.48.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7
-  unplugin-icons: 0.14.6
+  unplugin-icons: 0.14.7
 
 devDependencies:
   '@iconify-json/fa-brands': 1.1.2
@@ -40,7 +40,7 @@ devDependencies:
   svelte: 3.48.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7_sass@1.53.0+svelte@3.48.0
-  unplugin-icons: 0.14.6
+  unplugin-icons: 0.14.7
 
 packages:
 
@@ -1408,8 +1408,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unplugin-icons/0.14.6:
-    resolution: {integrity: sha512-8sxDiL4l+TV4zufZfrskgHZZSDFoGOCBgYsefRMM4inQ3Z6KhgMSuNyew7U7D/xG//rwxgD7bN+Dv+YAZEEfEw==}
+  /unplugin-icons/0.14.7:
+    resolution: {integrity: sha512-TrNnEdpaXMdiG5BsCgvU6cv/gSLYvIk1f8wGCGZmOo4wmi3nqYBuqIEuiXhmmyXdDZuRRpCaOzCnCYYZ5H7U8g==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
