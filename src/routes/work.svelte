@@ -5,7 +5,7 @@
 </script>
 
 <Banner>
-	You can find most of my FLOSS projects on my <a
+	You can find most of my FOSS projects on my <a
 		href="https://github.com/GeopJr"
 		target="_blank"
 		rel="noopener noreferrer">GitHub Profile</a

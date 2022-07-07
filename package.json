@@ -2,10 +2,10 @@
 	"name": "geopjr_portfolio",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"dev": "vite dev",
+		"build": "vite build",
 		"sitemap": "node sitemap.js | npx sitemap@7.1.0 > static/sitemap.xml",
-		"preview": "svelte-kit preview",
+		"preview": "vite preview",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"prepare": "svelte-kit sync"
@@ -29,7 +29,8 @@
 		"svelte": "3.48.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.7",
-		"unplugin-icons": "0.14.7"
+		"unplugin-icons": "0.14.7",
+		"vite": "2.9.13"
 	},
 	"type": "module"
 }
