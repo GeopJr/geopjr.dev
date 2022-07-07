@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.2
-  '@iconify-json/mdi': 1.1.24
+  '@iconify-json/mdi': 1.1.25
   '@iconify-json/simple-icons': 1.1.19
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 2.2.1
@@ -25,7 +25,7 @@ specifiers:
 devDependencies:
   '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.2
-  '@iconify-json/mdi': 1.1.24
+  '@iconify-json/mdi': 1.1.25
   '@iconify-json/simple-icons': 1.1.19
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 2.2.1
@@ -101,8 +101,8 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
-  /@iconify-json/mdi/1.1.24:
-    resolution: {integrity: sha512-pWz37BD5NmuNlWe5g7bnL5JhlDsbAzhm60H1XBlQWeuxT3ksfTdka99lLOl7RgWzfv54ff44BDuRT0bt2RhlVg==}
+  /@iconify-json/mdi/1.1.25:
+    resolution: {integrity: sha512-AABK/uILIYlXDcFoOvwiuAD5SI+TyiTYqvQ88Q5lScUnWUrcW9oTtqS5Cb/vX07Va76iZLwMzzvydNSVfI7jIg==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true
