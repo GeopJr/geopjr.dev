@@ -151,7 +151,7 @@
 
 	nav {
 		position: fixed;
-		height: 100vh;
+		height: 100%;
 		left: 0;
 		z-index: 50;
 	}
@@ -220,7 +220,7 @@
 		background-color: var(--sidebar-primary-color);
 		border-bottom-right-radius: 2rem;
 		width: $sidebar-width-mobile;
-		height: 100vh;
+		height: 100%;
 		position: absolute;
 		left: 0;
 		:global(.sidebar-item-icon) {
