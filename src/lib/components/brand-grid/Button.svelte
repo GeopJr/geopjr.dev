@@ -133,28 +133,17 @@
 	$telegram: #0088cc;
 	$twitter: #1da1f2;
 	$email: #76bb21;
+	$codeberg: #2185D0;
 
 	$colors-brands: (
 		'paypal': (
 			$paypal,
 			white
 		),
-		'patreon': (
-			$patreon,
-			white
-		),
-		'ko-fi': (
-			$ko-fi,
-			white
-		),
-		'liberapay': (
-			$liberapay,
-			black
-		),
-		'coil': (
-			$coil,
-			white
-		),
+		// 'ko-fi': (
+		// 	$ko-fi,
+		// 	white
+		// ),
 		'flattr': (
 			$flattr,
 			black
@@ -175,18 +164,14 @@
 			$gitlab,
 			white
 		),
-		'bitbucket': (
-			$bitbucket,
-			white
-		),
-		'discord': (
-			$discord,
-			white
-		),
-		'linkedin': (
-			$linkedin,
-			white
-		),
+		// 'discord': (
+		// 	$discord,
+		// 	white
+		// ),
+		// 'linkedin': (
+		// 	$linkedin,
+		// 	white
+		// ),
 		'mastodon': (
 			$mastodon,
 			white
@@ -215,12 +200,16 @@
 			$twitter,
 			white
 		),
-		'keybase': (
-			$keybase,
-			white
-		),
+		// 'keybase': (
+		// 	$keybase,
+		// 	white
+		// ),
 		'email': (
 			$email,
+			white
+		),
+		'codeberg': (
+			$codeberg,
 			white
 		)
 	);

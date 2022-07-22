@@ -1,5 +1,5 @@
 {
-	"about": "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">CS Student</strong> @ <strong class=\"accent\">NKUA</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{arg1}</strong> years, mostly as a <strong class=\"accent\">freelance full-stack web dev</strong> & <strong class=\"accent\">sysadmin</strong>! 🌐",
+	"about": "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">CS Student</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{arg1}</strong> years, mostly as a <strong class=\"accent\">freelance full-stack web dev</strong> & <strong class=\"accent\">sysadmin</strong>! 🌐",
 	"interests": [
 		"Accessibility",
 		"Ethical Tech",
@@ -20,48 +20,126 @@
 	"whatido": "Ever since I can remember myself, I've always been fascinated with technology and eventually grew up on the internet.<br />Over the years, I started contributing a lot to open source projects as well as create my own, from custom Android ROMs & iOS jailbreak tweaks to fully client-side E2E encrypted text bins (see {arg1}).<br />Moving forward I consciously choose to use the (limited) power I hold to ethically improve the lives of the people around me, fight climate change, protect activists and human rights and create accessible tech for everyone.",
 	"skills": {
 		"Languages": {
-			"Crystal": { "name": "Crystal", "website": "https://crystal-lang.org/" },
-			"Dart": { "name": "Dart", "website": "https://dart.dev/" },
-			"Elixir": { "name": "Elixir", "website": "https://elixir-lang.org/" },
+			"Crystal": {
+				"name": "Crystal",
+				"website": "https://crystal-lang.org/"
+			},
+			"Dart": {
+				"name": "Dart",
+				"website": "https://dart.dev/"
+			},
+			"Elixir": {
+				"name": "Elixir",
+				"website": "https://elixir-lang.org/"
+			},
 			"Javascript": {
 				"name": "JavaScript",
 				"website": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
 			},
-			"PHP": { "name": "PHP", "website": "https://www.php.net/" },
-			"Ruby": { "name": "Ruby", "website": "https://www.ruby-lang.org/" }
+			"PHP": {
+				"name": "PHP",
+				"website": "https://www.php.net/"
+			},
+			"Ruby": {
+				"name": "Ruby",
+				"website": "https://www.ruby-lang.org/"
+			}
 		},
 		"Web Frontend": {
 			"Javascript": {
 				"name": "JavaScript",
 				"website": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
 			},
-			"Less": { "name": "Less", "website": "https://lesscss.org/" },
-			"sass": { "name": "Sass", "website": "https://sass-lang.com/" },
-			"Svelte": { "name": "Svelte", "website": "https://svelte.dev/" },
-			"Vuejs": { "name": "Vue.js", "website": "https://vuejs.org/" },
-			"Windi": { "name": "Windi CSS", "website": "https://windicss.org/" }
+			"Less": {
+				"name": "Less",
+				"website": "https://lesscss.org/"
+			},
+			"sass": {
+				"name": "Sass",
+				"website": "https://sass-lang.com/"
+			},
+			"Svelte": {
+				"name": "Svelte",
+				"website": "https://svelte.dev/"
+			},
+			"Vuejs": {
+				"name": "Vue.js",
+				"website": "https://vuejs.org/"
+			},
+			"Windi": {
+				"name": "Windi CSS",
+				"website": "https://windicss.org/"
+			}
 		},
 		"Web Backend": {
-			"Crystal": { "name": "Crystal", "website": "https://crystal-lang.org/" },
-			"Express": { "name": "Express", "website": "https://expressjs.com/" },
-			"Nodejs": { "name": "Node.js", "website": "https://nodejs.org/" },
-			"nuxt": { "name": "Nuxt", "website": "https://nuxtjs.org/" },
-			"Phoenix": { "name": "Phoenix", "website": "https://www.phoenixframework.org/" },
-			"ROR": { "name": "Ruby on Rails", "website": "https://rubyonrails.org/" },
-			"Svelte": { "name": "SvelteKit", "website": "https://kit.svelte.dev/" }
+			"Crystal": {
+				"name": "Crystal",
+				"website": "https://crystal-lang.org/"
+			},
+			"Express": {
+				"name": "Express",
+				"website": "https://expressjs.com/"
+			},
+			"Nodejs": {
+				"name": "Node.js",
+				"website": "https://nodejs.org/"
+			},
+			"nuxt": {
+				"name": "Nuxt",
+				"website": "https://nuxtjs.org/"
+			},
+			"Phoenix": {
+				"name": "Phoenix",
+				"website": "https://www.phoenixframework.org/"
+			},
+			"ROR": {
+				"name": "Ruby on Rails",
+				"website": "https://rubyonrails.org/"
+			},
+			"Svelte": {
+				"name": "SvelteKit",
+				"website": "https://kit.svelte.dev/"
+			}
 		},
 		"Desktop": {
-			"Electron": { "name": "Electron", "website": "https://www.electronjs.org/" },
-			"Flutter": { "name": "Flutter", "website": "https://flutter.dev/" },
-			"GNOME": { "name": "GTK/GNOME Platform", "website": "https://www.gtk.org/" },
-			"Quasar": { "name": "Quasar", "website": "https://quasar.dev/" },
-			"Qt": { "name": "Qt", "website": "https://www.qt.io/" }
+			"Electron": {
+				"name": "Electron",
+				"website": "https://www.electronjs.org/"
+			},
+			"Flutter": {
+				"name": "Flutter",
+				"website": "https://flutter.dev/"
+			},
+			"GNOME": {
+				"name": "GTK/GNOME Platform",
+				"website": "https://www.gtk.org/"
+			},
+			"Quasar": {
+				"name": "Quasar",
+				"website": "https://quasar.dev/"
+			},
+			"Qt": {
+				"name": "Qt",
+				"website": "https://www.qt.io/"
+			}
 		},
 		"Mobile": {
-			"Capacitor": { "name": "Capacitor", "website": "https://capacitorjs.com/" },
-			"Flutter": { "name": "Flutter", "website": "https://flutter.dev/" },
-			"NativeScript": { "name": "NativeScript", "website": "https://nativescript.org/" },
-			"Quasar": { "name": "Quasar", "website": "https://quasar.dev/" }
+			"Capacitor": {
+				"name": "Capacitor",
+				"website": "https://capacitorjs.com/"
+			},
+			"Flutter": {
+				"name": "Flutter",
+				"website": "https://flutter.dev/"
+			},
+			"NativeScript": {
+				"name": "NativeScript",
+				"website": "https://nativescript.org/"
+			},
+			"Quasar": {
+				"name": "Quasar",
+				"website": "https://quasar.dev/"
+			}
 		}
 	}
 }

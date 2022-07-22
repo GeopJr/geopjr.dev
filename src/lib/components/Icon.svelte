@@ -63,13 +63,13 @@
 	import faEmail from '~icons/fa-solid/at';
 	import faDev from '~icons/fa-brands/dev';
 	import faGitlab from '~icons/fa-brands/gitlab';
-	import faBitbucket from '~icons/fa-brands/bitbucket';
-	import faDiscord from '~icons/fa-brands/discord';
+	// import faDiscord from '~icons/fa-brands/discord';
 	import faMastodon from '~icons/fa-brands/mastodon';
 	import faSteam from '~icons/fa-brands/steam';
 	import faTelegram from '~icons/fa-brands/telegram';
 	import faTwitter from '~icons/fa-brands/twitter';
 	import siMatrix from '~icons/simple-icons/matrix';
+	import siCodeberg from '~icons/simple-icons/codeberg';
 
 	// Donate
 	import siPaypal from '~icons/simple-icons/paypal';
@@ -77,7 +77,6 @@
 	import faMonero from '~icons/fa-brands/monero';
 	import faGithub from '~icons/fa-brands/github';
 	import siFlattr from '~icons/simple-icons/flattr';
-	import siLiberapay from '~icons/simple-icons/liberapay';
 
 	// Custom Icons
 	import cSveltePress from '~icons/custom/sveltepress';
@@ -88,7 +87,6 @@
 	import cBeardBin from '~icons/custom/beardbin';
 	import cCrycord from '~icons/custom/crycord';
 	import cExorcism from '~icons/custom/exorcism';
-	// import cHashbrown from '~icons/custom/hashbrown';
 	import cCollision from '~icons/custom/collision';
 	import cMarketVSX from '~icons/custom/marketvsx';
 	import cPronounBird from '~icons/custom/pronounbird';
@@ -100,6 +98,7 @@
 	import cVitePluginDart from '~icons/custom/viteplugindart';
 	import cLibadwaitacr from '~icons/custom/libadwaitacr';
 	import cShipwreck from '~icons/custom/shipwreck';
+	import cSaboTabby from '~icons/custom/sabotabby';
 
 	const icons = {
 		viteplugindart: cVitePluginDart,
@@ -153,7 +152,7 @@
 		patreon: faPatreon,
 		monero: faMonero,
 		flattr: siFlattr,
-		liberapay: siLiberapay,
+		// liberapay: siLiberapay,
 
 		user: faUser,
 		briefcase: faBriefcase,
@@ -168,8 +167,8 @@
 		copy: faCopy,
 
 		gitlab: faGitlab,
-		bitbucket: faBitbucket,
-		discord: faDiscord,
+		codeberg: siCodeberg,
+		// discord: faDiscord,
 
 		mastodon: faMastodon,
 		steam: faSteam,
@@ -195,7 +194,8 @@
 		dnome: cDNOME,
 		discord_tanki: cDiscordTanki,
 		a11y: faA11y,
-		collision: cCollision
+		collision: cCollision,
+		sabotabby: cSaboTabby
 	};
 
 	/**

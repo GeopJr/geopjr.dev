@@ -3,7 +3,12 @@
 		"name": "SveltePress",
 		"desc": " Documentation for humans.",
 		"icon": "sveltepress",
-		"techs": ["svelte", "gnome", "qt", "flutter"],
+		"techs": [
+			"svelte",
+			"gnome",
+			"qt",
+			"flutter"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -21,7 +26,10 @@
 		"name": "Collision",
 		"desc": "Verify hashes for your files.",
 		"icon": "collision",
-		"techs": ["crystal", "gnome"],
+		"techs": [
+			"crystal",
+			"gnome"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -44,7 +52,11 @@
 		"name": "BeardBin",
 		"desc": "A Zero-Knowledge Encrypted Text/Code sharing project.",
 		"icon": "beardbin",
-		"techs": ["crystal", "vuejs", "vuetify"],
+		"techs": [
+			"crystal",
+			"vuejs",
+			"vuetify"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -62,7 +74,9 @@
 		"name": "Crycord",
 		"desc": "A Discord Client modification with plugins. Uses BeautifulDiscord's CSS injector.",
 		"icon": "crycord",
-		"techs": ["crystal"],
+		"techs": [
+			"crystal"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -80,7 +94,10 @@
 		"name": "CO2",
 		"desc": "A GitHub action that notifies you about your website's carbon emissions.",
 		"icon": "seedling",
-		"techs": ["nodejs", "docker"],
+		"techs": [
+			"nodejs",
+			"docker"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -98,7 +115,11 @@
 		"name": "SHRP Theme Builder",
 		"desc": "A theme builder for the SHRP android recovery project.",
 		"icon": "shrp",
-		"techs": ["vuejs", "nuxt", "vuetify"],
+		"techs": [
+			"vuejs",
+			"nuxt",
+			"vuetify"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -113,10 +134,32 @@
 		]
 	},
 	{
+		"name": "sabo-tabby",
+		"desc": "Extremely Fast Static File Server.",
+		"icon": "sabotabby",
+		"techs": [
+			"crystal"
+		],
+		"links": [
+			{
+				"icon": "github",
+				"url": "https://github.com/GeopJr/sabo-tabby",
+				"tooltip": "GitHub Repo"
+			},
+			{
+				"icon": "website",
+				"url": "https://sabo-tabby.queer.software",
+				"tooltip": "Website"
+			}
+		]
+	},
+	{
 		"name": "create-crystal-app",
 		"desc": "An unopinionated user-friendly crystal init alternative.",
 		"image": "https://i.imgur.com/85DnHA7.png",
-		"techs": ["crystal"],
+		"techs": [
+			"crystal"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -129,7 +172,10 @@
 		"name": "Argyle",
 		"desc": "An offline collection of online tools.",
 		"icon": "argyle",
-		"techs": ["vuejs", "nuxt"],
+		"techs": [
+			"vuejs",
+			"nuxt"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -147,7 +193,10 @@
 		"name": "vite-plugin-dart",
 		"desc": "Import .dart files effortlessly.",
 		"icon": "viteplugindart",
-		"techs": ["vite", "dart"],
+		"techs": [
+			"vite",
+			"dart"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -165,7 +214,10 @@
 		"name": "libadwaita.cr",
 		"desc": "libadwaita bindings for Crystal.",
 		"icon": "libadwaitacr",
-		"techs": ["crystal", "gnome"],
+		"techs": [
+			"crystal",
+			"gnome"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -188,7 +240,9 @@
 		"name": "Shipwreck",
 		"desc": "Automatically create Crystal JSON mappings from input.",
 		"icon": "shipwreck",
-		"techs": ["svelte"],
+		"techs": [
+			"svelte"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -206,7 +260,9 @@
 		"name": "pixelfed-js",
 		"desc": "A js wrapper for the Pixelfed API following the PHP one.",
 		"icon": "pixelfedjs",
-		"techs": ["nodejs"],
+		"techs": [
+			"nodejs"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -229,7 +285,9 @@
 		"name": "asar-cr",
 		"desc": "A crystal library to read from, pack into and extract from .asar archives.",
 		"icon": "electron",
-		"techs": ["crystal"],
+		"techs": [
+			"crystal"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -242,7 +300,9 @@
 		"name": "Granz",
 		"desc": "A Discord bot/framework(?) for Crystal.",
 		"image": "https://i.imgur.com/vYD4xJMs.jpg",
-		"techs": ["crystal"],
+		"techs": [
+			"crystal"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -256,12 +316,13 @@
 			}
 		]
 	},
-
 	{
 		"name": "Soft & Wet",
 		"desc": "A Discord Bot that uses advanced image manipulation to create new images from templates in under a second.",
 		"image": "https://i.imgur.com/3tStuJqs.png",
-		"techs": ["nodejs"],
+		"techs": [
+			"nodejs"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -279,7 +340,9 @@
 		"name": "DNOME",
 		"desc": "Adwaita-inspired Discord Theme.",
 		"icon": "dnome",
-		"techs": ["less"],
+		"techs": [
+			"less"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -292,7 +355,11 @@
 		"name": "Exorcism",
 		"desc": "Corrupt your mp4 videos.",
 		"icon": "exorcism",
-		"techs": ["nodejs", "qt", "svelte"],
+		"techs": [
+			"nodejs",
+			"qt",
+			"svelte"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -305,7 +372,9 @@
 		"name": "PronounBird",
 		"desc": "Automatically add people's pronouns next to their name while browsing Twitter.",
 		"icon": "pronounbird",
-		"techs": ["javascript"],
+		"techs": [
+			"javascript"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -328,7 +397,9 @@
 		"name": "MarketVSX",
 		"desc": "A browser extension that creates a bridge between vscode marketplace and open-vsx.",
 		"icon": "marketvsx",
-		"techs": ["javascript"],
+		"techs": [
+			"javascript"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -351,7 +422,9 @@
 		"name": "action-accessibility",
 		"desc": "A GitHub action that creates alternative accessibility options on issues and PRs.",
 		"icon": "a11y",
-		"techs": ["nodejs"],
+		"techs": [
+			"nodejs"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -364,7 +437,11 @@
 		"name": "discord-tanki",
 		"desc": "Discord Rich Presence for Tanki Online.",
 		"icon": "discord_tanki",
-		"techs": ["electron", "express", "materialdesign"],
+		"techs": [
+			"electron",
+			"express",
+			"materialdesign"
+		],
 		"links": [
 			{
 				"icon": "github",
@@ -373,12 +450,14 @@
 			}
 		]
 	},
-
 	{
 		"name": "SvelteGlass",
 		"desc": "Analyze Svelte Apps.",
 		"icon": "svelteglass",
-		"techs": ["vuejs", "javascript"],
+		"techs": [
+			"vuejs",
+			"javascript"
+		],
 		"links": [
 			{
 				"icon": "github",
