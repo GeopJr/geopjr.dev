@@ -29,7 +29,7 @@
 		"svelte": "3.49.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.7",
-		"unplugin-icons": "0.14.7",
+		"unplugin-icons": "0.14.8",
 		"vite": "3.0.4"
 	},
 	"type": "module"
