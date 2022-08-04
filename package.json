@@ -7,8 +7,7 @@
 		"sitemap": "node sitemap.js | npx sitemap@7.1.0 > static/sitemap.xml",
 		"preview": "vite preview",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --write --plugin-search-dir=. .",
-		"prepare": "svelte-kit sync"
+		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
 		"@iconify-json/fa-brands": "1.1.2",

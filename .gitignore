@@ -5,3 +5,7 @@ node_modules
 /functions
 _*.svelte
 sitemap.xml
+/package
+.env
+.env.*
+!.env.example
