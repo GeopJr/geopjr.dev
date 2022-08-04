@@ -63,7 +63,6 @@
 	import faEmail from '~icons/fa-solid/at';
 	import faDev from '~icons/fa-brands/dev';
 	import faGitlab from '~icons/fa-brands/gitlab';
-	// import faDiscord from '~icons/fa-brands/discord';
 	import faMastodon from '~icons/fa-brands/mastodon';
 	import faSteam from '~icons/fa-brands/steam';
 	import faTelegram from '~icons/fa-brands/telegram';
@@ -73,10 +72,10 @@
 
 	// Donate
 	import siPaypal from '~icons/simple-icons/paypal';
-	import faPatreon from '~icons/fa-brands/patreon';
 	import faMonero from '~icons/fa-brands/monero';
 	import faGithub from '~icons/fa-brands/github';
 	import siFlattr from '~icons/simple-icons/flattr';
+	import siKofi from '~icons/simple-icons/kofi';
 
 	// Custom Icons
 	import cSveltePress from '~icons/custom/sveltepress';
@@ -149,10 +148,9 @@
 		quasar: siQuasar,
 
 		paypal: siPaypal,
-		patreon: faPatreon,
 		monero: faMonero,
 		flattr: siFlattr,
-		// liberapay: siLiberapay,
+		'ko-fi': siKofi,
 
 		user: faUser,
 		briefcase: faBriefcase,
@@ -168,7 +166,6 @@
 
 		gitlab: faGitlab,
 		codeberg: siCodeberg,
-		// discord: faDiscord,
 
 		mastodon: faMastodon,
 		steam: faSteam,
@@ -185,7 +182,6 @@
 		beardbin: cBeardBin,
 		crycord: cCrycord,
 		exorcism: cExorcism,
-		// hashbrown: cHashbrown,
 		marketvsx: cMarketVSX,
 		pronounbird: cPronounBird,
 		shrp: cSHRP,

@@ -37,9 +37,7 @@
 		</div>
 	</a>
 </div>
-{#if true}
-	<div class="tip">Psst... Theme settings!</div>
-{/if}
+<div class="tip">Psst... Theme settings!</div>
 
 <style lang="scss">
 	$transition-duration: 200ms;

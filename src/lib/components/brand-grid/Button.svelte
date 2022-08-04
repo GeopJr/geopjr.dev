@@ -110,8 +110,7 @@
 	}
 
 	$paypal: #003087;
-	$patreon: #f96854;
-	$ko-fi: #29abe0;
+	$ko-fi: #ff5e5b;
 	$liberapay: #f6c915;
 	$flattr: rgb(233, 233, 233);
 	$coil: black;
@@ -121,8 +120,6 @@
 
 	$github: #333;
 	$gitlab: #fc6d26;
-	$bitbucket: #2684ff;
-	$discord: #5865f2;
 	$keybase: #ff6f21;
 	$linkedin: #0077b5;
 	$mastodon: #4ea2df;
@@ -140,10 +137,10 @@
 			$paypal,
 			white
 		),
-		// 'ko-fi': (
-		// 	$ko-fi,
-		// 	white
-		// ),
+		'ko-fi': (
+			$ko-fi,
+			white
+		),
 		'flattr': (
 			$flattr,
 			black
@@ -164,10 +161,6 @@
 			$gitlab,
 			white
 		),
-		// 'discord': (
-		// 	$discord,
-		// 	white
-		// ),
 		// 'linkedin': (
 		// 	$linkedin,
 		// 	white
@@ -200,10 +193,6 @@
 			$twitter,
 			white
 		),
-		// 'keybase': (
-		// 	$keybase,
-		// 	white
-		// ),
 		'email': (
 			$email,
 			white
