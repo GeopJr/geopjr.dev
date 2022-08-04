@@ -25,7 +25,10 @@ $pantherina-blue-2: #001d3d;
 $pantherina-blue-1: #003566;
 $pantherina-yellow-1: #ffd60a;
 $pantherina-yellow-2: #ffc300;
+
 :root[theme='amanita pantherina'] {
+	color-scheme: dark;
+
 	--accent: #{$pantherina-yellow-1};
 	--accent-text: var(--sidebar-secondary-color);
 
@@ -44,6 +47,8 @@ $pantherina-yellow-2: #ffc300;
 
 :root,
 :root[theme='amanita muscaria'] {
+	color-scheme: dark;
+
 	--accent: var(--geopjr-yellow);
 	--accent-text: var(--geopjr-dark);
 
@@ -60,22 +65,26 @@ $pantherina-yellow-2: #ffc300;
 	--text-color: white;
 }
 
-$caesarea-mint: #97e7c0;
-$caesarea-blurple: #7aace1;
-$caesarea-light: #3f2077;
+$caesarea-green: #CFE6D0;
+$caesarea-blurple: #94BAFF;
+$caesarea-blue: #44536B;
+$caesarea-b: #FFD8CC;
+
 :root[theme='amanita caesarea'] {
-	--accent: #{$caesarea-light};
+	color-scheme: light;
+
+	--accent: #{$caesarea-blue};
 	--accent-text: var(--pseudo-text-color);
 
-	--sidebar-primary-color: #{$caesarea-mint};
+	--sidebar-primary-color: #{$caesarea-green};
 	--sidebar-secondary-color: #{$caesarea-blurple};
-	--sidebar-secondary-alt-color: #504bcb;
-	--sidebar-text-color: #{$caesarea-light};
-	--sidebar-text-color-hover: #2dcda9;
-	--sidebar-background-hover: #504bcb;
-	--sidebar-active-color: #504bcb;
+	--sidebar-secondary-alt-color: #{$caesarea-b};
+	--sidebar-text-color: #{$caesarea-blue};
+	--sidebar-text-color-hover: #{$caesarea-b};
+	--sidebar-background-hover: #{$caesarea-blue};
+	--sidebar-active-color: #{$caesarea-blue};
 
-	--background-color: #f1f1ff;
+	--background-color: #FFFFFF;
 	--pseudo-text-color: white;
 	--text-color: black;
 }
@@ -84,7 +93,10 @@ $phalloides-grey-1: #ded9c4;
 $phalloides-blue: #89b5af;
 $phalloides-grey-2: #d0cab2;
 $phalloides-light: #fffff5;
+
 :root[theme='amanita phalloides'] {
+	color-scheme: light;
+
 	--accent: #{darken($phalloides-blue, 25%)};
 	--accent-text: var(--pseudo-text-color);
 
@@ -103,6 +115,7 @@ $phalloides-light: #fffff5;
 
 .accent {
 	color: var(--accent);
+
 	&--block {
 		color: var(--accent-text);
 		background-color: var(--accent);
@@ -137,19 +150,23 @@ img {
 // Don't have any transitions if user prefers reduced motion
 @media (prefers-reduced-motion) {
 	* {
+
 		&:focus,
 		&:focus-visible,
 		&:hover {
 			transition-duration: 0ms !important;
 			animation: none !important;
+
 			&:before,
 			&:after {
 				transition-duration: 0ms !important;
 				animation: none !important;
 			}
 		}
+
 		transition-duration: 0ms !important;
 		animation: none !important;
+
 		&:before,
 		&:after {
 			transition-duration: 0ms !important;
