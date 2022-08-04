@@ -23,7 +23,7 @@
 					src={Project.image}
 					alt={'Icon for ' + Project.name}
 					class="sticker"
-					style="max-width: 100px;"
+					style="max-width:100px;max-height:100px;"
 				/>
 			{/if}
 		{/if}
