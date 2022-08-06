@@ -5,6 +5,7 @@ import adapterCF from '@sveltejs/adapter-cloudflare';
 import adapterStatic from '@sveltejs/adapter-static';
 
 const adapter = staticRender ? adapterStatic : adapterCF;
+const adapterOptions = staticRender ? { fallback: "404.html" } : {}
 // const prod = process.env.NODE_ENV === "production";
 
 import { mdsvex } from 'mdsvex';
@@ -28,7 +29,7 @@ const config = {
 		...blogExtensions
 	],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter(adapterOptions),
 	},
 	preprocess: [
 		sveltePreprocess({
