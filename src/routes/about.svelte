@@ -61,7 +61,7 @@
 								href={sticker.website}
 								target="_blank"
 								rel="noopener noreferrer"
-								class={'tech-item brand-' + name.toLowerCase()}
+								class={`tech-item brand-${name.toLowerCase()}`}
 								aria-label={sticker.name}
 							>
 								<Icon size="80px" classes="about-icon" iconName={name} />
@@ -77,6 +77,7 @@
 
 <style lang="scss">
 	@use 'sass:list';
+	@import '../lib/styles/technologies.scss';
 
 	.card-container {
 		@media (min-width: 1024px) {
@@ -107,139 +108,8 @@
 
 	$transition-duration: 200ms;
 
-	$Capacitor: #53b9ff;
-	$Crystal: #000000;
-	$CSS3: #2965f1;
-	$Dart: #40c4ff;
-	$Electron: #9feaf9;
-	$Elixir: #674773;
-	$Flutter: #45d1fd;
-	$GNOME: #4a86cf;
-	$Javascript: #f7df1e;
-	$Less: #1d365d;
-	$NativeScript: #65adf1;
-	$NodeJs: #6cc24a;
-	$PHP: #8892be;
-	$Qt: #41cd52;
-	$Ruby: #cc342d;
-	$sass: #cc6699;
-	$Svelte: #ff3e00;
-	$Typescript: #3178c6;
-	$Vuejs: #42b883;
-	$Windicss: #0ea5e9;
-	$Nuxt: #00dc82;
-	$Express: #3b4854;
-	$Phoenix: #f05423;
-	$Ror: #d30001;
-	$Quasar: #00b4ff;
-
-	$colors-brands: (
-		'capacitor': (
-			$Capacitor,
-			white
-		),
-		'crystal': (
-			$Crystal,
-			white
-		),
-		'css3': (
-			$CSS3,
-			white
-		),
-		'dart': (
-			$Dart,
-			white
-		),
-		'electron': (
-			$Electron,
-			black
-		),
-		'elixir': (
-			$Elixir,
-			white
-		),
-		'flutter': (
-			$Flutter,
-			white
-		),
-		'gnome': (
-			$GNOME,
-			white
-		),
-		'javascript': (
-			$Javascript,
-			black
-		),
-		'less': (
-			$Less,
-			white
-		),
-		'nativescript': (
-			$NativeScript,
-			white
-		),
-		'nodejs': (
-			$NodeJs,
-			white
-		),
-		'php': (
-			$PHP,
-			white
-		),
-		'qt': (
-			$Qt,
-			white
-		),
-		'ruby': (
-			$Ruby,
-			white
-		),
-		'sass': (
-			$sass,
-			white
-		),
-		'svelte': (
-			$Svelte,
-			white
-		),
-		'typescript': (
-			$Typescript,
-			white
-		),
-		'vuejs': (
-			$Vuejs,
-			white
-		),
-		'windi': (
-			$Windicss,
-			white
-		),
-		'nuxt': (
-			$Nuxt,
-			white
-		),
-		'express': (
-			$Express,
-			white
-		),
-		'phoenix': (
-			$Phoenix,
-			white
-		),
-		'ror': (
-			$Ror,
-			white
-		),
-		'quasar': (
-			$Quasar,
-			white
-		)
-	);
-
-	@each $color-name, $color-list in $colors-brands {
+	@each $color-name, $color-list in $colors-tech {
 		.brand-#{$color-name} {
-			transition-duration: $transition-duration;
-			filter: drop-shadow(0 0 0.2rem transparent);
 			> .subtitle {
 				background-color: list.nth($color-list, 1);
 				color: list.nth($color-list, 2);
@@ -248,8 +118,6 @@
 			&:hover,
 			&:focus-visible {
 				color: list.nth($color-list, 1) !important;
-				filter: drop-shadow(0 0 0.2rem var(--accent));
-				transition-duration: $transition-duration;
 			}
 		}
 	}
@@ -269,6 +137,7 @@
 		margin-top: 1rem;
 		justify-content: center;
 		> .tech-item {
+			filter: drop-shadow(0 0 0.2rem transparent);
 			position: relative;
 			transition-duration: $transition-duration;
 			display: flex;
@@ -278,6 +147,8 @@
 			z-index: 0;
 			&:hover,
 			&:focus-visible {
+				filter: drop-shadow(0 0 0.2rem var(--accent));
+				transition-duration: $transition-duration;
 				z-index: 10;
 				> .subtitle {
 					opacity: 1;

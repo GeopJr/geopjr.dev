@@ -1,0 +1,61 @@
+$paypal: #003087;
+$ko-fi: #ff5e5b;
+$liberapay: #f6c915;
+$flattr: rgb(233, 233, 233);
+$coil: black;
+
+$monero: #f26822;
+$oxen: #12c7ba;
+
+$github: #333;
+$gitlab: #fc6d26;
+$keybase: #ff6f21;
+$linkedin: #0077b5;
+$mastodon: #4ea2df;
+$matrixorg: black;
+$pixelfed: rgb(233, 233, 233);
+$session: #00f782;
+$steam: #171a21;
+$telegram: #0088cc;
+$twitter: #1da1f2;
+$email: #76bb21;
+$codeberg: #2185D0;
+
+$colors-brands: (
+	'paypal': ($paypal,
+		white),
+	'ko-fi': ($ko-fi,
+		white),
+	'flattr': ($flattr,
+		black),
+	'monero': ($monero,
+		white),
+	'oxen': ($oxen,
+		black),
+	'github': ($github,
+		white),
+	'gitlab': ($gitlab,
+		white),
+	// 'linkedin': (
+	// 	$linkedin,
+	// 	white
+	// ),
+	'mastodon': ($mastodon,
+		white),
+	'matrixorg': ($matrixorg,
+		white),
+	'pixelfed': ($pixelfed,
+		black),
+	'session': ($session,
+		black),
+	'steam': ($steam,
+		white),
+	'telegram': ($telegram,
+		white),
+	'twitter': ($twitter,
+		white),
+	'email': ($email,
+		white),
+	'codeberg': ($codeberg,
+		white)
+);

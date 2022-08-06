@@ -1,0 +1,149 @@
+:root[theme='amanita phalloides'] [class*="language-"] .namespace , :root[theme='amanita caesarea'][class*="language-"] .namespace  {
+	opacity: 0.7;
+}
+
+:root[theme='amanita phalloides'] .token.atrule , :root[theme='amanita caesarea'] .token.atrule  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.attr-name , :root[theme='amanita caesarea'] .token.attr-name  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.attr-value , :root[theme='amanita caesarea'] .token.attr-value  {
+	color: #f6a434;
+}
+
+:root[theme='amanita phalloides'] .token.attribute , :root[theme='amanita caesarea'] .token.attribute  {
+	color: #f6a434;
+}
+
+:root[theme='amanita phalloides'] .token.boolean , :root[theme='amanita caesarea'] .token.boolean  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.builtin , :root[theme='amanita caesarea'] .token.builtin  {
+	color: #911019;
+}
+
+:root[theme='amanita phalloides'] .token.cdata , :root[theme='amanita caesarea'] .token.cdata  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.char , :root[theme='amanita caesarea'] .token.char  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.class , :root[theme='amanita caesarea'] .token.class  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.class-name , :root[theme='amanita caesarea'] .token.class-name  {
+	color: #6182b8;
+}
+
+:root[theme='amanita phalloides'] .token.comment , :root[theme='amanita caesarea'] .token.comment  {
+	color: #383f42;
+}
+
+:root[theme='amanita phalloides'] .token.constant , :root[theme='amanita caesarea'] .token.constant  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.deleted , :root[theme='amanita caesarea'] .token.deleted  {
+	color: #e53935;
+}
+
+:root[theme='amanita phalloides'] .token.doctype , :root[theme='amanita caesarea'] .token.doctype  {
+	color: #aabfc9;
+}
+
+:root[theme='amanita phalloides'] .token.entity , :root[theme='amanita caesarea'] .token.entity  {
+	color: #e53935;
+}
+
+:root[theme='amanita phalloides'] .token.function , :root[theme='amanita caesarea'] .token.function  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.hexcode , :root[theme='amanita caesarea'] .token.hexcode  {
+	color: #f76d47;
+}
+
+:root[theme='amanita phalloides'] .token.id , :root[theme='amanita caesarea'] .token.id  {
+	color: #7c4dff;
+	font-weight: bold;
+}
+
+:root[theme='amanita phalloides'] .token.important , :root[theme='amanita caesarea'] .token.important  {
+	color: #7c4dff;
+	font-weight: bold;
+}
+
+:root[theme='amanita phalloides'] .token.inserted , :root[theme='amanita caesarea'] .token.inserted  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.keyword , :root[theme='amanita caesarea'] .token.keyword  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.number , :root[theme='amanita caesarea'] .token.number  {
+	color: #0f4d73;
+}
+
+:root[theme='amanita phalloides'] .token.operator , :root[theme='amanita caesarea'] .token.operator  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.prolog , :root[theme='amanita caesarea'] .token.prolog  {
+	color: #aabfc9;
+}
+
+:root[theme='amanita phalloides'] .token.property , :root[theme='amanita caesarea'] .token.property  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.pseudo-class , :root[theme='amanita caesarea'] .token.pseudo-class  {
+	color: #f6a434;
+}
+
+:root[theme='amanita phalloides'] .token.pseudo-element , :root[theme='amanita caesarea'] .token.pseudo-element  {
+	color: #f6a434;
+}
+
+:root[theme='amanita phalloides'] .token.punctuation , :root[theme='amanita caesarea'] .token.punctuation  {
+	color: #39adb5;
+}
+
+:root[theme='amanita phalloides'] .token.regex , :root[theme='amanita caesarea'] .token.regex  {
+	color: #6182b8;
+}
+
+:root[theme='amanita phalloides'] .token.selector , :root[theme='amanita caesarea'] .token.selector  {
+	color: #e53935;
+}
+
+:root[theme='amanita phalloides'] .token.string , :root[theme='amanita caesarea'] .token.string  {
+	color: #3441f6;
+}
+
+:root[theme='amanita phalloides'] .token.symbol , :root[theme='amanita caesarea'] .token.symbol  {
+	color: #7c4dff;
+}
+
+:root[theme='amanita phalloides'] .token.tag , :root[theme='amanita caesarea'] .token.tag  {
+	color: #e53935;
+}
+
+:root[theme='amanita phalloides'] .token.unit , :root[theme='amanita caesarea'] .token.unit  {
+	color: #f76d47;
+}
+
+:root[theme='amanita phalloides'] .token.url , :root[theme='amanita caesarea'] .token.url  {
+	color: #e53935;
+}
+
+:root[theme='amanita phalloides'] .token.variable , :root[theme='amanita caesarea'] .token.variable  {
+	color: #e53935;
+}

@@ -59,9 +59,20 @@
 	import siFlathub from '~icons/simple-icons/flathub';
 	import faExternalLinkAlt from '~icons/fa-solid/external-link-alt';
 
+	// Blog
+	import faEye from '~icons/fa-solid/eye';
+	import faLock from '~icons/fa-solid/lock';
+	import siAndroid from '~icons/simple-icons/android';
+	import siLinux from '~icons/simple-icons/linux';
+	import siCSS from '~icons/simple-icons/css3';
+	import siWASM from '~icons/simple-icons/webassembly';
+	import siTS from '~icons/simple-icons/typescript';
+	import mdiIncognito from '~icons/mdi/incognito';
+	import faAward from '~icons/fa-solid/award';
+	import faComment from '~icons/fa-solid/comment'
+
 	// Contact
 	import faEmail from '~icons/fa-solid/at';
-	import faDev from '~icons/fa-brands/dev';
 	import faGitlab from '~icons/fa-brands/gitlab';
 	import faMastodon from '~icons/fa-brands/mastodon';
 	import faSteam from '~icons/fa-brands/steam';
@@ -99,7 +110,7 @@
 	import cShipwreck from '~icons/custom/shipwreck';
 	import cSaboTabby from '~icons/custom/sabotabby';
 
-	const icons = {
+	let icons = {
 		viteplugindart: cVitePluginDart,
 		libadwaitacr: cLibadwaitacr,
 		shipwreck: cShipwreck,
@@ -112,10 +123,10 @@
 		githubalt: faGithubAlt,
 		flathub: siFlathub,
 		docs: faBook,
+		guide: faBook,
 		npm: faNpm,
 		firefox: faFirefoxBrowser,
 		chromium: faChrome,
-		dev: faDev,
 		book: faBook,
 		windi: siWindi,
 		seedling: faSeedling,
@@ -133,6 +144,7 @@
 		less: siLess,
 		nodejs: siNode,
 		gnome: mdiGNOME,
+		gtk: mdiGNOME,
 		qt: siQt,
 		nuxt: siNuxt,
 		vuetify: siVuetify,
@@ -167,6 +179,20 @@
 		gitlab: faGitlab,
 		codeberg: siCodeberg,
 
+		eye: faEye,
+		android: siAndroid,
+		aosp: siAndroid,
+		linux: siLinux,
+		css: siCSS,
+		wasm: siWASM,
+		webassembly: siWASM,
+		typescript: siTS,
+		privacy: mdiIncognito,
+		encryption: faLock,
+		hackathon: faAward,
+		ecology: faSeedling,
+		opinion: faComment,
+
 		mastodon: faMastodon,
 		steam: faSteam,
 		telegram: faTelegram,
@@ -190,6 +216,7 @@
 		dnome: cDNOME,
 		discord_tanki: cDiscordTanki,
 		a11y: faA11y,
+		accessibility: faA11y,
 		collision: cCollision,
 		sabotabby: cSaboTabby
 	};
@@ -207,5 +234,6 @@
 <svelte:component
 	this={getIcon(iconName)}
 	class={classes}
+	aria-label={`${iconName} icon`}
 	style={size ? 'font-size: ' + size : null}
 />

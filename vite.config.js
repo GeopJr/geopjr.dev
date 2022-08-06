@@ -1,9 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import Icons from 'unplugin-icons/vite'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders' 
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 /** @type {import('vite').UserConfig} */
 const config = {
+    define: {
+        __BLOG_TAG_SLUG__: ['tag', 'cat', 'category', 'topic', 't', 'c']
+    },
     plugins: [
         sveltekit(),
         Icons({

@@ -34,33 +34,44 @@
 	};
 
 	$: currentPage = $page.url.pathname.toLowerCase();
-	$: pageTitle = routes[currentPage]?.title ?? 'Error';
+	$: isBlogTag = __BLOG_TAG_SLUG__.some((str) => currentPage.startsWith(`/blog/${str}/`));
+	$: pageTitle = routes[isBlogTag ? '/blog' : currentPage]?.title ?? 'Error';
+	$: isBlogPost = currentPage.startsWith('/blog/') && !isBlogTag;
 </script>
 
 <svelte:head>
-	<title>{pageTitle} - GeopJr</title>
-	<meta name="title" content={pageTitle + '- GeopJr'} />
-	<meta name="description" content={routes[currentPage]?.desc ?? 'This page does not exist'} />
-	<link rel="canonical" href={'https://geopjr.dev' + currentPage} />
-	<meta name="og:title" content={pageTitle + '- GeopJr'} />
-	<meta name="og:description" content={routes[currentPage]?.desc ?? 'This page does not exist'} />
-	<meta name="og:url" content={'https://geopjr.dev/' + currentPage} />
-	<meta property="twitter:title" content={pageTitle + '- GeopJr'} />
-	<meta property="twitter:url" content={'https://geopjr.dev/' + currentPage} />
-	<meta
-		property="twitter:description"
-		content={routes[currentPage]?.desc ?? 'This page does not exist'}
-	/>
+	{#if !isBlogPost}
+		<title>{pageTitle} - GeopJr</title>
+		<meta name="title" content={pageTitle + '- GeopJr'} />
+		<meta name="description" content={routes[currentPage]?.desc ?? 'This page does not exist'} />
+		<link rel="canonical" href={'https://geopjr.dev' + currentPage} />
+		<meta name="og:title" content={pageTitle + '- GeopJr'} />
+		<meta name="og:description" content={routes[currentPage]?.desc ?? 'This page does not exist'} />
+		<meta name="og:url" content={'https://geopjr.dev/' + currentPage} />
+		<meta property="twitter:title" content={pageTitle + '- GeopJr'} />
+		<meta property="twitter:url" content={'https://geopjr.dev/' + currentPage} />
+		<meta
+			property="twitter:description"
+			content={routes[currentPage]?.desc ?? 'This page does not exist'}
+		/>
+	{/if}
 </svelte:head>
 
 <Theme />
 <Sidebar
 	{currentPage}
+	shouldHighlight={isBlogPost || isBlogTag || pageTitle !== 'Error'}
 	routes={Object.fromEntries(Object.entries(routes).filter(([x]) => x !== '/'))}
 />
 <main>
 	{#key pageTitle}
-		<div class="container" in:blur={{ duration: 500 }}>
+		<div
+			class="container"
+			style={(currentPage === '/blog' || isBlogTag) && pageTitle !== 'Error'
+				? 'padding-top: 0rem;justify-content: start;'
+				: null}
+			in:blur={{ duration: isBlogPost ? 0 : 500 }}
+		>
 			<slot />
 		</div>
 	{/key}

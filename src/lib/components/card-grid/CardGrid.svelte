@@ -1,16 +1,17 @@
 <script>
 	export let Data;
+	export let showDate = false;
 	export let icons = false;
 
 	import Card from '$lib/components/card-grid/Card.svelte';
 
-	let sortedData =
+	$: sortedData =
 		Data.length > 0 && Data[0].date ? Data.sort((b, a) => a.date.localeCompare(b.date)) : Data;
 </script>
 
 <div class="card-container">
 	{#each sortedData as Project}
-		<Card {Project} {icons} />
+		<Card {Project} {icons} {showDate} />
 	{/each}
 </div>
 

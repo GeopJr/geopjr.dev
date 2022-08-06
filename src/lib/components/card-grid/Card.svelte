@@ -1,5 +1,6 @@
 <script>
 	export let Project;
+	export let showDate = false;
 	export let icons = false;
 
 	import Icon from '$lib/components/Icon.svelte';
@@ -11,7 +12,7 @@
 			<strong class="accent--block">{Project.name}</strong>
 			<div class="card-badges">
 				{#each Project.techs as tech}
-					<Icon classes="sidebar-item-icon header" iconName={tech} />
+					<Icon size="25px" iconName={tech} />
 				{/each}
 			</div>
 		</div>
@@ -28,18 +29,24 @@
 			{/if}
 		{/if}
 	</div>
-	<div class="card-desc">{Project.desc}</div>
+	{#if Project.desc}
+		<div class="card-desc">{Project.desc}</div>
+	{/if}
+	{#if showDate}
+		<div class="card-date">{Project.date}</div>
+	{/if}
 	<div class="card-actions">
 		{#each Project.links as link}
 			<a
 				class="card-action"
 				title={link.tooltip ?? ''}
 				href={link.url}
-				target="_blank"
+				target={link.url.startsWith('/') ? null : '_blank'}
+				sveltekit:prefetch
 				rel="noopener noreferrer"
 				aria-label={link.tooltip ?? null}
 			>
-				<Icon classes="sidebar-item-icon header" iconName={link.icon} />
+				<Icon size="25px" iconName={link.icon} />
 			</a>
 		{/each}
 	</div>
@@ -68,6 +75,7 @@
 		gap: 1rem;
 		border: 0.25rem solid transparent;
 		transition-duration: $transition-duration;
+		position: relative;
 		&:hover {
 			border: 0.25rem solid var(--accent);
 			transition-duration: $transition-duration;
@@ -95,6 +103,12 @@
 					flex-wrap: wrap;
 				}
 			}
+		}
+		> .card-date {
+			font-size: small;
+			position: absolute;
+			bottom: 2rem;
+			font-weight: bold;
 		}
 		> .card-actions {
 			display: flex;

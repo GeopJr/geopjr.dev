@@ -1,6 +1,7 @@
 <script>
 	export let currentPage;
 	export let routes;
+	export let shouldHighlight;
 	import { onMount } from 'svelte';
 	import { theme, themes } from '../../stores';
 	import { fade } from 'svelte/transition';
@@ -104,7 +105,7 @@
 					data-tooltip={info.title}
 					sveltekit:prefetch
 					href={route}
-					class:active={currentPage === route}
+					class:active={shouldHighlight && currentPage.startsWith(route)}
 					tabIndex={shouldTab}
 					aria-label={info.title}
 					on:click={() => safeHideMenu()}

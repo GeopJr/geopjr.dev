@@ -1,0 +1,149 @@
+:root[theme='amanita pantherina'] [class*="language-"] .namespace , :root[theme='amanita muscaria'][class*="language-"] .namespace  {
+	opacity: 0.7;
+}
+
+:root[theme='amanita pantherina'] .token.atrule , :root[theme='amanita muscaria'] .token.atrule  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.attr-name , :root[theme='amanita muscaria'] .token.attr-name  {
+	color: #ffcb6b;
+}
+
+:root[theme='amanita pantherina'] .token.attr-value , :root[theme='amanita muscaria'] .token.attr-value  {
+	color: #a5e844;
+}
+
+:root[theme='amanita pantherina'] .token.attribute , :root[theme='amanita muscaria'] .token.attribute  {
+	color: #a5e844;
+}
+
+:root[theme='amanita pantherina'] .token.boolean , :root[theme='amanita muscaria'] .token.boolean  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.builtin , :root[theme='amanita muscaria'] .token.builtin  {
+	color: #ffcb6b;
+}
+
+:root[theme='amanita pantherina'] .token.cdata , :root[theme='amanita muscaria'] .token.cdata  {
+	color: #80cbc4;
+}
+
+:root[theme='amanita pantherina'] .token.char , :root[theme='amanita muscaria'] .token.char  {
+	color: #80cbc4;
+}
+
+:root[theme='amanita pantherina'] .token.class , :root[theme='amanita muscaria'] .token.class  {
+	color: #ffcb6b;
+}
+
+:root[theme='amanita pantherina'] .token.class-name , :root[theme='amanita muscaria'] .token.class-name  {
+	color: #f2ff00;
+}
+
+:root[theme='amanita pantherina'] .token.comment , :root[theme='amanita muscaria'] .token.comment  {
+	color: #616161;
+}
+
+:root[theme='amanita pantherina'] .token.constant , :root[theme='amanita muscaria'] .token.constant  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.deleted , :root[theme='amanita muscaria'] .token.deleted  {
+	color: #ff6666;
+}
+
+:root[theme='amanita pantherina'] .token.doctype , :root[theme='amanita muscaria'] .token.doctype  {
+	color: #616161;
+}
+
+:root[theme='amanita pantherina'] .token.entity , :root[theme='amanita muscaria'] .token.entity  {
+	color: #ff6666;
+}
+
+:root[theme='amanita pantherina'] .token.function , :root[theme='amanita muscaria'] .token.function  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.hexcode , :root[theme='amanita muscaria'] .token.hexcode  {
+	color: #f2ff00;
+}
+
+:root[theme='amanita pantherina'] .token.id , :root[theme='amanita muscaria'] .token.id  {
+	color: #c792ea;
+	font-weight: bold;
+}
+
+:root[theme='amanita pantherina'] .token.important , :root[theme='amanita muscaria'] .token.important  {
+	color: #c792ea;
+	font-weight: bold;
+}
+
+:root[theme='amanita pantherina'] .token.inserted , :root[theme='amanita muscaria'] .token.inserted  {
+	color: #80cbc4;
+}
+
+:root[theme='amanita pantherina'] .token.keyword , :root[theme='amanita muscaria'] .token.keyword  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.number , :root[theme='amanita muscaria'] .token.number  {
+	color: #fd9170;
+}
+
+:root[theme='amanita pantherina'] .token.operator , :root[theme='amanita muscaria'] .token.operator  {
+	color: #89ddff;
+}
+
+:root[theme='amanita pantherina'] .token.prolog , :root[theme='amanita muscaria'] .token.prolog  {
+	color: #616161;
+}
+
+:root[theme='amanita pantherina'] .token.property , :root[theme='amanita muscaria'] .token.property  {
+	color: #80cbc4;
+}
+
+:root[theme='amanita pantherina'] .token.pseudo-class , :root[theme='amanita muscaria'] .token.pseudo-class  {
+	color: #a5e844;
+}
+
+:root[theme='amanita pantherina'] .token.pseudo-element , :root[theme='amanita muscaria'] .token.pseudo-element  {
+	color: #a5e844;
+}
+
+:root[theme='amanita pantherina'] .token.punctuation , :root[theme='amanita muscaria'] .token.punctuation  {
+	color: #89ddff;
+}
+
+:root[theme='amanita pantherina'] .token.regex , :root[theme='amanita muscaria'] .token.regex  {
+	color: #f2ff00;
+}
+
+:root[theme='amanita pantherina'] .token.selector , :root[theme='amanita muscaria'] .token.selector  {
+	color: #ff6666;
+}
+
+:root[theme='amanita pantherina'] .token.string , :root[theme='amanita muscaria'] .token.string  {
+	color: #a5e844;
+}
+
+:root[theme='amanita pantherina'] .token.symbol , :root[theme='amanita muscaria'] .token.symbol  {
+	color: #c792ea;
+}
+
+:root[theme='amanita pantherina'] .token.tag , :root[theme='amanita muscaria'] .token.tag  {
+	color: #ff6666;
+}
+
+:root[theme='amanita pantherina'] .token.unit , :root[theme='amanita muscaria'] .token.unit  {
+	color: #fd9170;
+}
+
+:root[theme='amanita pantherina'] .token.url , :root[theme='amanita muscaria'] .token.url  {
+	color: #ff6666;
+}
+
+:root[theme='amanita pantherina'] .token.variable , :root[theme='amanita muscaria'] .token.variable  {
+	color: #ff6666;
+}

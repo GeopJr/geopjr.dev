@@ -29,11 +29,11 @@
 <div class="button-container">
 	{#each Object.entries(Data) as [provider, url]}
 		<Button
-			type={'brand-' + provider}
+			type={`brand brand-${provider}`}
 			{provider}
 			{url}
 			tooltip={tooltipPrefix + ' ' + capitalize(provider)}
-			chonk={true}
+			big={true}
 			bind:showModal
 		/>
 	{/each}
