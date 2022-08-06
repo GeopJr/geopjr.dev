@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"sitemap": "node sitemap.js | npx sitemap@7.1.0 > static/sitemap.xml",
+		"postbuild": "npx svelte-sitemap --domain https://geopjr.dev/",		  
 		"preview": "vite preview",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. ."
