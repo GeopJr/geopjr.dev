@@ -227,7 +227,7 @@
 	 * @returns {any} The icon
 	 */
 	function getIcon(icon) {
-		return icons[icon.toLowerCase()] ?? null;
+		return icons[icon?.toLowerCase()] ?? null;
 	}
 </script>
 
