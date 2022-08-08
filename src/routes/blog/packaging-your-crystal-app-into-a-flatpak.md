@@ -9,7 +9,7 @@ tags:
 
 # Edit
 
-You should really take a look at the [Ultimate GTK4 Crystal Guide](ultimate-gtk4-crystal-guide.geopjr.dev/) instead.
+You should really take a look at the [Ultimate GTK4 Crystal Guide](https://ultimate-gtk4-crystal-guide.geopjr.dev/) instead.
 
 A guide that will teach you how to make GTK4 apps with Crystal covering everything from UI to I18N.
 

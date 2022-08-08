@@ -5,7 +5,8 @@ import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 /** @type {import('vite').UserConfig} */
 const config = {
     define: {
-        __BLOG_TAG_SLUG__: ['tag', 'cat', 'category', 'topic', 't', 'c']
+        __BLOG_TAG_SLUG__: ['tag', 'cat', 'category', 'topic', 't', 'c'],
+        __BLOG_BASE__: `"/blog"`
     },
     plugins: [
         sveltekit(),

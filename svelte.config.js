@@ -33,7 +33,6 @@ const config = {
 	},
 	preprocess: [
 		sveltePreprocess({
-			postcss: false,
 			scss: true,
 			sass: true
 		}),
