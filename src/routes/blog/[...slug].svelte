@@ -1,90 +1,26 @@
-<script context="module">
-	export async function load({ params }) {
-		const slug = params.slug.replaceAll(' ', '').replace(/\/\/+/g, '/');
-		const parts = slug.split('/').filter((n) => n && n !== '');
-
-		if (slug === '') {
-			return {
-				status: 200,
-				props: {
-					tag: ''
-				}
-			};
-		} else if (
-			parts.length > 2 ||
-			parts.length === 0 ||
-			!__BLOG_TAG_SLUG__.includes(parts[0].toLowerCase())
-		) {
-			return {
-				status: 301,
-				redirect: '/blog'
-			};
-		}
-		return {
-			status: 200,
-			props: {
-				tag: `${parts[1]?.toLowerCase() ?? ''}`
-			}
-		};
-	}
-</script>
-
 <script>
 	export let tag;
+	export let posts;
+	export let tags;
 
 	import CardGrid from '$lib/components/card-grid/CardGrid.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import Casing from '$lib/data/casing.json';
 
-	const modules = import.meta.glob('./*.md', { eager: true, import: 'metadata' });
-	const blogBase = '/blog';
-	const posts = [];
-	let tags = [];
-
-	for (const path in modules) {
-		const metadata = modules[path];
-		const slug = path.split('.').slice(0, -1).join('.').substring(1);
-
-		const post = {
-			name: metadata.title,
-			desc: metadata.subtitle,
-			date: metadata.updated?.split('T')[0] ?? metadata.date?.split('T')[0],
-			techs: metadata.tags,
-			links: [
-				{
-					icon: 'eye',
-					url: `${blogBase}${slug}`,
-					tooltip: 'Read More'
-				}
-			]
-		};
-
-		posts.push(post);
-		tags = tags.concat(metadata.tags);
-	}
-
-	tags = tags.map((x) => x.toLowerCase()).sort();
-	tags = ['all', ...new Set(tags)];
-
-	$: Data = tag
-		? posts.filter((x) => x.techs.map((x) => x.toLowerCase()).includes(tag.toLowerCase()))
-		: posts;
-	$: filteredTags =
-		tag && tag.toLowerCase() !== 'all'
-			? tags.filter((x) => x.toLowerCase() !== tag)
-			: tags.slice(1);
+	const blogBase = __BLOG_BASE__;
 </script>
 
 <header>
 	<h1>Categories</h1>
 	<div class="tags">
-		{#each filteredTags as blogTag}
+		{#each tags as blogTag}
 			<a
 				class={`tag brand-${blogTag.toLowerCase()}`}
 				class:capitalize={!Casing[blogTag]}
 				title={Casing[blogTag] ?? blogTag}
 				href={blogTag === 'all' ? blogBase : `${blogBase}/tag/${blogTag}`}
 				aria-label={Casing[blogTag] ?? blogTag}
+				class:active={blogTag === tag}
 				sveltekit:prefetch
 			>
 				<Icon iconName={blogTag} />
@@ -94,10 +30,10 @@
 	</div>
 </header>
 
-{#if Data.length === 0}
+{#if posts.length === 0}
 	<h1 style="text-align:center">No posts found in selected category</h1>
 {:else}
-	<CardGrid {Data} showDate />
+	<CardGrid Data={posts} showDate />
 {/if}
 
 <style lang="scss">
@@ -113,7 +49,8 @@
 			color: list.nth($color-list, 2) !important;
 			background-color: list.nth($color-list, 1) !important;
 			&:hover,
-			&:focus-visible {
+			&:focus-visible,
+			&.active {
 				color: list.nth($color-list, 1) !important;
 				background-color: list.nth($color-list, 2) !important;
 			}
@@ -141,7 +78,8 @@
 					text-transform: capitalize;
 				}
 				&:hover,
-				&:focus-visible {
+				&:focus-visible,
+				&.active {
 					transition-duration: $transition-duration;
 					background-color: var(--accent-text);
 					color: var(--accent);
