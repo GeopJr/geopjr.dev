@@ -30,7 +30,7 @@
 		"rehype-urls": "^1.1.1",
 		"remark-oembed": "^1.2.2",
 		"ress": "5.0.2",
-		"sass": "1.54.3",
+		"sass": "1.54.4",
 		"svelte": "3.49.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.7",
