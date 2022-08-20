@@ -1,7 +1,6 @@
 <script>
-	export let tag;
-	export let posts;
-	export let tags;
+	/** @type {import('./$types').PageData} */
+	export let data;
 
 	import CardGrid from '$lib/components/card-grid/CardGrid.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -13,14 +12,14 @@
 <header>
 	<h1>Categories</h1>
 	<div class="tags">
-		{#each tags as blogTag}
+		{#each data.tags as blogTag}
 			<a
 				class={`tag brand-${blogTag.toLowerCase()}`}
 				class:capitalize={!Casing[blogTag]}
 				title={Casing[blogTag] ?? blogTag}
 				href={blogTag === 'all' ? blogBase : `${blogBase}/tag/${blogTag}`}
 				aria-label={Casing[blogTag] ?? blogTag}
-				class:active={blogTag === tag}
+				class:active={blogTag === data.tag}
 				sveltekit:prefetch
 			>
 				<Icon iconName={blogTag} />
@@ -30,17 +29,17 @@
 	</div>
 </header>
 
-{#if posts.length === 0}
+{#if data.posts.length === 0}
 	<h1 style="text-align:center">No posts found in selected category</h1>
 {:else}
-	<CardGrid Data={posts} showDate />
+	<CardGrid Data={data.posts} showDate />
 {/if}
 
 <style lang="scss">
 	@use 'sass:list';
-	@import '../../lib/styles/technologies.scss';
-	@import '../../lib/components/brand-grid/BrandStyles.scss';
-	@import '../../lib/styles/categories.scss';
+	@import '../../../lib/styles/technologies.scss';
+	@import '../../../lib/components/brand-grid/BrandStyles.scss';
+	@import '../../../lib/styles/categories.scss';
 	$transition-duration: 200ms;
 	$all-colors: map-merge(map-merge($colors-tech, $colors-brands), $colors-blog-tags);
 

@@ -77,7 +77,7 @@
 
 <style lang="scss">
 	@use 'sass:list';
-	@import '../lib/styles/technologies.scss';
+	@import '../../lib/styles/technologies.scss';
 
 	.card-container {
 		@media (min-width: 1024px) {

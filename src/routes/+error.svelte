@@ -1,20 +1,11 @@
-<script context="module">
-	export function load({ error, status }) {
-		return {
-			props: {
-				title: `${status}: ${error.message}`
-			}
-		};
-	}
-</script>
-
 <script>
-	export let title;
-
+	import { page } from '$app/stores';
 	import { theme, themes } from '../stores';
 
-	console.error(title);
-	$: error = title.length > 30 ? title.substring(0, 33) + '...' : title;
+	$: error_raw = `${$page.status} ${$page.error.message}`;
+	$: console.error(error_raw);
+
+	$: error = error_raw.length > 30 ? error_raw.substring(0, 33) + '...' : error_raw;
 	$: flag = `${themes.dark.includes($theme) ? 'dark' : 'light'}${
 		themes.contrast.includes($theme) ? '_contrast' : ''
 	}`;
