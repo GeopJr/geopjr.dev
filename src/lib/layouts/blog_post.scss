@@ -137,8 +137,11 @@ $header-height-mobile: calc($header-height + 4rem);
         white-space: pre;
         overflow-x: auto;
         background-color: var(--sidebar-primary-color);
-        padding: 2rem;
         border-radius: 0.5rem;
+        > :global(code) {
+            display: inline-block;
+            margin: 2rem;
+        }
     }
 
     :global(blockquote) {

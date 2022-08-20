@@ -7,10 +7,10 @@ export async function load({ params }) {
     const posts = [];
     let tags = [];
 
-    const modules = import.meta.glob('../*.md', { eager: true, import: 'metadata' });
+    const modules = import.meta.glob('../*/+page.md', { eager: true, import: 'metadata' });
     for (const path in modules) {
         const metadata = modules[path];
-        const slugMd = path.split('.').slice(1, -1).join('.').substring(1);
+        const slugMd = path.replace(/(\.\.)|(\/\+page\.md)/gi, "")
 
         const post = {
             name: metadata.title,
