@@ -20,7 +20,7 @@ specifiers:
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0
   rehype-accessible-emojis: 0.3.2
-  rehype-external-links: 2.0.0
+  rehype-external-links: 2.0.1
   rehype-urls: 1.1.1
   remark-oembed: 1.2.2
   ress: 5.0.2
@@ -40,7 +40,7 @@ devDependencies:
   '@iconify/svelte': 2.2.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.31
   '@sveltejs/adapter-static': 1.0.0-next.39
-  '@sveltejs/kit': 1.0.0-next.428_svelte@3.49.0+vite@3.0.9
+  '@sveltejs/kit': 1.0.0-next.431_svelte@3.49.0+vite@3.0.9
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-svelte3: 4.0.0_laaqauvsmoyypsiqkozwyi2fn4
@@ -48,7 +48,7 @@ devDependencies:
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_o3ioganyptcsrh6x4hnxvjkpqi
   rehype-accessible-emojis: 0.3.2
-  rehype-external-links: 2.0.0
+  rehype-external-links: 2.0.1
   rehype-urls: 1.1.1
   remark-oembed: 1.2.2
   ress: 5.0.2
@@ -213,8 +213,8 @@ packages:
     resolution: {integrity: sha512-EeD39H6iEe0UEKnKxLFTZFZpi/FcX5xfbAvsMQ+B09aDZccpQmkJBSIo+4kq1JsQGSjwi/+J3aE9bR67R6CIyQ==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.428_svelte@3.49.0+vite@3.0.9:
-    resolution: {integrity: sha512-CVp7zltQ+3VOII1s7KuvgvGEFwD0PSqts9R3q4eaj0CNoC3gpdzcbEZayyQwXX/3lI1HdSNSF8gxbX0TRUoFuA==}
+  /@sveltejs/kit/1.0.0-next.431_svelte@3.49.0+vite@3.0.9:
+    resolution: {integrity: sha512-kK3FCw0cBB/nqjgV8G9W5ctDxemQpkqxidsKVr3aEXSExm4mdM3MYgNf6y2OuvOH9zLD+/t6DAxQQC/RPxuz8Q==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true
@@ -1778,8 +1778,8 @@ packages:
       unist-util-flatmap: 1.0.0
     dev: true
 
-  /rehype-external-links/2.0.0:
-    resolution: {integrity: sha512-Nhq4Wq2TpNdZ1rYec0LThCOoVLkIz5CLhDSo7k4nFhhlwE5vYcRleAM92ozZx6CcWTvzalLCpxq4PQLMucI1Vw==}
+  /rehype-external-links/2.0.1:
+    resolution: {integrity: sha512-u2dNypma+ps12SJWlS23zvbqwNx0Hl24t0YHXSM/6FCZj/pqWETCO3WyyrvALv4JYvRtuPjhiv2Lpen15ESqbA==}
     dependencies:
       '@types/hast': 2.3.4
       extend: 3.0.2
