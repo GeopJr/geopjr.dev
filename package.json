@@ -16,7 +16,7 @@
 		"@iconify-json/simple-icons": "1.1.23",
 		"@iconify-json/twemoji": "1.1.5",
 		"@iconify/svelte": "2.2.1",
-		"@sveltejs/adapter-cloudflare": "1.0.0-next.31",
+		"@sveltejs/adapter-cloudflare": "1.0.0-next.32",
 		"@sveltejs/adapter-static": "1.0.0-next.39",
 		"@sveltejs/kit": "next",
 		"eslint": "8.22.0",
