@@ -6,7 +6,7 @@ overrides:
 specifiers:
   '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.2
-  '@iconify-json/mdi': 1.1.30
+  '@iconify-json/mdi': 1.1.31
   '@iconify-json/simple-icons': 1.1.23
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 2.2.1
@@ -34,13 +34,13 @@ specifiers:
 devDependencies:
   '@iconify-json/fa-brands': 1.1.2
   '@iconify-json/fa-solid': 1.1.2
-  '@iconify-json/mdi': 1.1.30
+  '@iconify-json/mdi': 1.1.31
   '@iconify-json/simple-icons': 1.1.23
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 2.2.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.32
   '@sveltejs/adapter-static': 1.0.0-next.39
-  '@sveltejs/kit': 1.0.0-next.434_svelte@3.49.0+vite@3.0.9
+  '@sveltejs/kit': 1.0.0-next.442_svelte@3.49.0+vite@3.0.9
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-svelte3: 4.0.0_laaqauvsmoyypsiqkozwyi2fn4
@@ -124,8 +124,8 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
-  /@iconify-json/mdi/1.1.30:
-    resolution: {integrity: sha512-mNhZT/14mReJRNDd//cs3oJ2RQq3nBkYj1fcDFr8sgYce4k8Br3CsOC61SIPsdw5rfNBMsXEpfJ4AOry36i0XQ==}
+  /@iconify-json/mdi/1.1.31:
+    resolution: {integrity: sha512-2lUKoj6tqvVQ6q8XmhxfeqWdC34IhUpjz6eYMvwLLEgF+0cIL0ANLqBL7+/Vklt7Ugv5vJ0btJBHvW5Ij9Ikyw==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true
@@ -213,8 +213,8 @@ packages:
     resolution: {integrity: sha512-EeD39H6iEe0UEKnKxLFTZFZpi/FcX5xfbAvsMQ+B09aDZccpQmkJBSIo+4kq1JsQGSjwi/+J3aE9bR67R6CIyQ==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.434_svelte@3.49.0+vite@3.0.9:
-    resolution: {integrity: sha512-/TcONzxn7lW/yI5uCp1PJr5RhHLOtaoajlNCTv/Ncx/D857E3hXprPeXNfxw3m6hWYZHUBa02+zguCq8Rvd7xA==}
+  /@sveltejs/kit/1.0.0-next.442_svelte@3.49.0+vite@3.0.9:
+    resolution: {integrity: sha512-xFGgyQuQEvIrBpdfsGQNG9cHINxpqmaa5LMENUdAt0lpbLuRrc4V2Zi2T11MPT2znNBn3rHEFsqCH9zviEcCRw==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true
