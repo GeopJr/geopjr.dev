@@ -6,7 +6,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { eggHint } from '../../stores.js';
 	import { onDestroy, onMount } from 'svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	const patterns = ['666', '11037'];
 	let input = '';
