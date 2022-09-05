@@ -24,7 +24,7 @@
 				<p>
 					{@html About.whatido.replace(
 						'{arg1}',
-						'<a class="about-text-anchor" href="/work" sveltekit:prefetch>Work</a>'
+						'<a class="about-text-anchor" href="/work" data-sveltekit-prefetch>Work</a>'
 					)}
 				</p>
 			</div>

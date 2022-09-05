@@ -20,7 +20,7 @@
 				href={blogTag === 'all' ? blogBase : `${blogBase}/tag/${blogTag}`}
 				aria-label={Casing[blogTag] ?? blogTag}
 				class:active={blogTag === data.tag}
-				sveltekit:prefetch
+				data-sveltekit-prefetch
 			>
 				<Icon iconName={blogTag} />
 				{Casing[blogTag] ?? blogTag}

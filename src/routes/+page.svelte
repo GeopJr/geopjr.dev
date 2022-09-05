@@ -12,25 +12,25 @@
 	</Egg>
 </div>
 <div class="card-container">
-	<a sveltekit:prefetch class="card" href="/about">
+	<a data-sveltekit-prefetch class="card" href="/about">
 		<div class="card-title">Learn more about me.</div>
 		<div class="arrow">
 			<Icon iconName="user" />
 		</div>
 	</a>
-	<a sveltekit:prefetch class="card" href="/work">
+	<a data-sveltekit-prefetch class="card" href="/work">
 		<div class="card-title">Check out my work.</div>
 		<div class="arrow">
 			<Icon iconName="briefcase" />
 		</div>
 	</a>
-	<a sveltekit:prefetch class="card" href="/blog">
+	<a data-sveltekit-prefetch class="card" href="/blog">
 		<div class="card-title">Read my blog.</div>
 		<div class="arrow">
 			<Icon iconName="book" />
 		</div>
 	</a>
-	<a sveltekit:prefetch class="card" href="/contact">
+	<a data-sveltekit-prefetch class="card" href="/contact">
 		<div class="card-title">Get in touch.</div>
 		<div class="arrow">
 			<Icon iconName="address-card" />

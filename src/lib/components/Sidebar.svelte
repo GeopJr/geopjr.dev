@@ -90,7 +90,7 @@
 		<a
 			class="sidebar-header"
 			data-tooltip="GeopJr"
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 			href="/"
 			tabIndex={shouldTab}
 			aria-label="Home"
@@ -103,7 +103,7 @@
 				<a
 					class="sidebar-item"
 					data-tooltip={info.title}
-					sveltekit:prefetch
+					data-sveltekit-prefetch
 					href={route}
 					class:active={shouldHighlight && currentPage.startsWith(route)}
 					tabIndex={shouldTab}

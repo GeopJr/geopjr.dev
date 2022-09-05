@@ -42,7 +42,7 @@
 				title={link.tooltip ?? ''}
 				href={link.url}
 				target={link.url.startsWith('/') ? null : '_blank'}
-				sveltekit:prefetch
+				data-sveltekit-prefetch
 				rel="noopener noreferrer"
 				aria-label={link.tooltip ?? null}
 			>

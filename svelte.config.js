@@ -51,10 +51,10 @@ const config = {
 	]
 };
 
-if (staticRender) {
-	config.kit.prerender = {
-		default: true
-	}
-}
+// if (staticRender) {
+// 	config.kit.prerender = {
+// 		default: true
+// 	}
+// }
 
 export default config;
