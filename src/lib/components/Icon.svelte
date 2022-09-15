@@ -69,7 +69,7 @@
 	import siTS from '~icons/simple-icons/typescript';
 	import mdiIncognito from '~icons/mdi/incognito';
 	import faAward from '~icons/fa-solid/award';
-	import faComment from '~icons/fa-solid/comment'
+	import faComment from '~icons/fa-solid/comment';
 
 	// Contact
 	import faEmail from '~icons/fa-solid/at';
@@ -83,7 +83,6 @@
 
 	// Donate
 	import siPaypal from '~icons/simple-icons/paypal';
-	import faMonero from '~icons/fa-brands/monero';
 	import faGithub from '~icons/fa-brands/github';
 	import siFlattr from '~icons/simple-icons/flattr';
 	import siKofi from '~icons/simple-icons/kofi';
@@ -91,7 +90,6 @@
 	// Custom Icons
 	import cSveltePress from '~icons/custom/sveltepress';
 	import cSession from '~icons/custom/session';
-	import cOxen from '~icons/custom/oxen';
 	import cPixelfed from '~icons/custom/pixelfed';
 	import cArgyle from '~icons/custom/argyle';
 	import cBeardBin from '~icons/custom/beardbin';
@@ -160,7 +158,6 @@
 		quasar: siQuasar,
 
 		paypal: siPaypal,
-		monero: faMonero,
 		flattr: siFlattr,
 		'ko-fi': siKofi,
 
@@ -202,7 +199,6 @@
 
 		sveltepress: cSveltePress,
 		session: cSession,
-		oxen: cOxen,
 		pixelfed: cPixelfed,
 		argyle: cArgyle,
 		beardbin: cBeardBin,
