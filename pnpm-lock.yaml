@@ -10,7 +10,7 @@ specifiers:
   '@iconify-json/simple-icons': 1.1.27
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 3.0.0
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.37
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.38
   '@sveltejs/adapter-static': 1.0.0-next.43
   '@sveltejs/kit': next
   eslint: 8.23.1
@@ -38,7 +38,7 @@ devDependencies:
   '@iconify-json/simple-icons': 1.1.27
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 3.0.0_svelte@3.50.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.37
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.38
   '@sveltejs/adapter-static': 1.0.0-next.43
   '@sveltejs/kit': 1.0.0-next.493_svelte@3.50.1+vite@3.1.3
   eslint: 8.23.1
@@ -224,8 +224,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.37:
-    resolution: {integrity: sha512-Y/k+VSw0e+IH2rPGMW6td+8WkTDwoWvsdv7NVbxCXzl+VGCODDYfZ5msPxpFHLeGmRxB9wSvNmU4PDsmyGmO8Q==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.38:
+    resolution: {integrity: sha512-N6jdTomRZkdKlcNoguwYD7lpdXSt0beIyUJsp0MS/YLm/4gI83y698zFYInFKJ9t5e6DAnuEBSAXcg568z2oFA==}
     dependencies:
       '@cloudflare/workers-types': 3.14.1
       esbuild: 0.15.7
