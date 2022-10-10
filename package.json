@@ -24,7 +24,7 @@
 		"eslint-plugin-svelte3": "4.0.0",
 		"mdsvex": "0.10.6",
 		"prettier": "2.7.1",
-		"prettier-plugin-svelte": "2.7.1",
+		"prettier-plugin-svelte": "2.8.0",
 		"rehype-accessible-emojis": "0.3.2",
 		"rehype-external-links": "2.0.1",
 		"rehype-urls": "1.1.1",
