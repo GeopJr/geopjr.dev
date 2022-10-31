@@ -11,7 +11,7 @@ specifiers:
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 3.0.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.40
-  '@sveltejs/adapter-static': 1.0.0-next.46
+  '@sveltejs/adapter-static': 1.0.0-next.47
   '@sveltejs/kit': next
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0
@@ -39,7 +39,7 @@ devDependencies:
   '@iconify-json/twemoji': 1.1.5
   '@iconify/svelte': 3.0.0_svelte@3.52.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.40
-  '@sveltejs/adapter-static': 1.0.0-next.46
+  '@sveltejs/adapter-static': 1.0.0-next.47
   '@sveltejs/kit': 1.0.0-next.529_svelte@3.52.0+vite@3.2.2
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0_eslint@8.26.0
@@ -247,8 +247,8 @@ packages:
       worktop: 0.8.0-next.14
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.46:
-    resolution: {integrity: sha512-8BlgwD3fjAbtUUgvREjrq5okZSXMTU/Qla99RhTqGaFo+uOrUzguKrXvjeaD4GzxQZdQUNyTX9hKT0V7tX6TMw==}
+  /@sveltejs/adapter-static/1.0.0-next.47:
+    resolution: {integrity: sha512-pYY9/FhJAIWB3BXnLoKXj5yMZjQjtD9ZsW8UOqKE51H5sbCNHu+wdBlh2CkW20ww4yhfYrlvLWioxij6DPRO9w==}
     dev: true
 
   /@sveltejs/kit/1.0.0-next.529_svelte@3.52.0+vite@3.2.2:
