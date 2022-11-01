@@ -34,7 +34,7 @@
 		"svelte": "3.52.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.7",
-		"unplugin-icons": "0.14.12",
+		"unplugin-icons": "0.14.13",
 		"vite": "3.2.2"
 	},
 	"overrides": {

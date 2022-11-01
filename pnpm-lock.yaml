@@ -28,7 +28,7 @@ specifiers:
   svelte: 3.52.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7
-  unplugin-icons: 0.14.12
+  unplugin-icons: 0.14.13
   vite: 3.2.2
 
 devDependencies:
@@ -40,7 +40,7 @@ devDependencies:
   '@iconify/svelte': 3.0.0_svelte@3.52.0
   '@sveltejs/adapter-cloudflare': 1.0.0-next.40
   '@sveltejs/adapter-static': 1.0.0-next.47
-  '@sveltejs/kit': 1.0.0-next.529_svelte@3.52.0+vite@3.2.2
+  '@sveltejs/kit': 1.0.0-next.531_svelte@3.52.0+vite@3.2.2
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0_eslint@8.26.0
   eslint-plugin-svelte3: 4.0.0_l6ppk7eerpslmlsqymzic46t24
@@ -56,7 +56,7 @@ devDependencies:
   svelte: 3.52.0
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 4.10.7_sass@1.55.0+svelte@3.52.0
-  unplugin-icons: 0.14.12
+  unplugin-icons: 0.14.13
   vite: 3.2.2_sass@1.55.0
 
 packages:
@@ -70,6 +70,10 @@ packages:
 
   /@antfu/utils/0.5.2:
     resolution: {integrity: sha512-CQkeV+oJxUazwjlHD0/3ZD08QWKuGQkhnrKo3e6ly5pd48VUpXbb77q0xMU4+vc2CkJnDS02Eq/M9ugyX20XZA==}
+    dev: true
+
+  /@antfu/utils/0.6.2:
+    resolution: {integrity: sha512-Qdwda+qE1KOKXuM8Gnn09zIJSA293J5putdHBx4J9sdbHzqp5QY4OmH77KgwJoi0PuY+kbddkVVdkSoZ9ruiug==}
     dev: true
 
   /@cloudflare/workers-types/3.18.0:
@@ -251,8 +255,8 @@ packages:
     resolution: {integrity: sha512-pYY9/FhJAIWB3BXnLoKXj5yMZjQjtD9ZsW8UOqKE51H5sbCNHu+wdBlh2CkW20ww4yhfYrlvLWioxij6DPRO9w==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.529_svelte@3.52.0+vite@3.2.2:
-    resolution: {integrity: sha512-wM9Y38m8GVNT2YDQo41XNNa55OwTiGE+4fEuuhQnQY4nOSihXGllPsdIulnVsrxcSw9jKLkzwJdFr+i2y2y+OQ==}
+  /@sveltejs/kit/1.0.0-next.531_svelte@3.52.0+vite@3.2.2:
+    resolution: {integrity: sha512-8uBJF5BweIFoyw+Kqv0jsDSfndNw2mTF222qi8rDuptOy7gjoWXYFy2F0kd8orNeZUnjFrHE+g/qDNHq7zzEJg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -2383,8 +2387,8 @@ packages:
       unist-util-visit-parents: 5.1.0
     dev: true
 
-  /unplugin-icons/0.14.12:
-    resolution: {integrity: sha512-FdkjDnUnc8/75OT8Ywwm8iDyG6kO8w1uHfFbnO2Jh7JhpE0odKhCqaAOmEE/UlvYDYSm5D4X1DKdWMwpAxj07Q==}
+  /unplugin-icons/0.14.13:
+    resolution: {integrity: sha512-ZZCw9qZg/zNJeHWicaFYMfsfzMAXOHHnZt5tRxslhPE++/THvg5xGu5AsIRmMCtyNBCpC1Ly1MTb8CZmlqaQTA==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
@@ -2401,18 +2405,18 @@ packages:
         optional: true
     dependencies:
       '@antfu/install-pkg': 0.1.1
-      '@antfu/utils': 0.5.2
+      '@antfu/utils': 0.6.2
       '@iconify/utils': 2.0.1
       debug: 4.3.4
       kolorist: 1.6.0
       local-pkg: 0.4.2
-      unplugin: 0.9.6
+      unplugin: 0.10.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /unplugin/0.9.6:
-    resolution: {integrity: sha512-YYLtfoNiie/lxswy1GOsKXgnLJTE27la/PeCGznSItk+8METYZErO+zzV9KQ/hXhPwzIJsfJ4s0m1Rl7ZCWZ4Q==}
+  /unplugin/0.10.2:
+    resolution: {integrity: sha512-6rk7GUa4ICYjae5PrAllvcDeuT8pA9+j5J5EkxbMFaV+SalHhxZ7X2dohMzu6C3XzsMT+6jwR/+pwPNR3uK9MA==}
     dependencies:
       acorn: 8.8.0
       chokidar: 3.5.3
