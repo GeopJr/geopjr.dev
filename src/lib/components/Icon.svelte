@@ -77,7 +77,6 @@
 	import faMastodon from '~icons/fa-brands/mastodon';
 	import faSteam from '~icons/fa-brands/steam';
 	import faTelegram from '~icons/fa-brands/telegram';
-	import faTwitter from '~icons/fa-brands/twitter';
 	import siMatrix from '~icons/simple-icons/matrix';
 	import siCodeberg from '~icons/simple-icons/codeberg';
 
@@ -193,7 +192,6 @@
 		mastodon: faMastodon,
 		steam: faSteam,
 		telegram: faTelegram,
-		twitter: faTwitter,
 		email: faEmail,
 		matrixorg: siMatrix,
 
