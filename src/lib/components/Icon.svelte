@@ -45,7 +45,6 @@
 	import siVuetify from '~icons/simple-icons/vuetify';
 	import siExpress from '~icons/simple-icons/express';
 	import siMaterialDesign from '~icons/simple-icons/materialdesign';
-	import siWindi from '~icons/simple-icons/windicss';
 	import faPhoenix from '~icons/fa-brands/phoenix-framework';
 	import faA11y from '~icons/fa-solid/universal-access';
 	import faSeedling from '~icons/fa-solid/seedling';
@@ -125,7 +124,6 @@
 		firefox: faFirefoxBrowser,
 		chromium: faChrome,
 		book: faBook,
-		windi: siWindi,
 		seedling: faSeedling,
 		docker: faDocker,
 

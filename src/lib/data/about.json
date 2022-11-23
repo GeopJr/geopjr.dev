@@ -65,10 +65,6 @@
 			"Vuejs": {
 				"name": "Vue",
 				"website": "https://vuejs.org/"
-			},
-			"Windi": {
-				"name": "Windi CSS",
-				"website": "https://windicss.org/"
 			}
 		},
 		"Web Backend": {
