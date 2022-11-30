@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"postbuild": "npx svelte-sitemap --domain https://geopjr.dev/ --attribution=false -i 404.html -i '**/blog/tag/**'",		  
+		"postbuild": "npx svelte-sitemap --domain https://geopjr.dev/ --attribution=false -i 404.html -i '**/blog/tag/**'",
 		"preview": "vite preview",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. ."
@@ -25,7 +25,6 @@
 		"mdsvex": "0.10.6",
 		"prettier": "2.8.0",
 		"prettier-plugin-svelte": "2.8.1",
-		"rehype-accessible-emojis": "0.3.2",
 		"rehype-external-links": "2.0.1",
 		"rehype-urls": "1.1.1",
 		"remark-oembed": "1.2.2",

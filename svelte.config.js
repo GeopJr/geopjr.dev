@@ -11,7 +11,6 @@ const adapterOptions = staticRender ? { fallback: "404.html" } : {}
 import { mdsvex } from 'mdsvex';
 import remarkOembed from 'remark-oembed';
 import rehypeExternalLinks from 'rehype-external-links'
-import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 import rehypeUrls from "rehype-urls"
 
 const blogExtensions = ['.md']
@@ -41,7 +40,6 @@ const config = {
 			remarkPlugins: [[remarkOembed, { syncWidget: true }]],
 			rehypePlugins: [
 				[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
-				rehypeAccessibleEmojis,
 				[rehypeUrls, rehypeUrlRemoveBase]
 			],
 			layout: {

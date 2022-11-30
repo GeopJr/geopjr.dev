@@ -19,7 +19,6 @@ specifiers:
   mdsvex: 0.10.6
   prettier: 2.8.0
   prettier-plugin-svelte: 2.8.1
-  rehype-accessible-emojis: 0.3.2
   rehype-external-links: 2.0.1
   rehype-urls: 1.1.1
   remark-oembed: 1.2.2
@@ -40,14 +39,13 @@ devDependencies:
   '@iconify/svelte': 3.0.1_svelte@3.53.1
   '@sveltejs/adapter-cloudflare': 1.0.0-next.40
   '@sveltejs/adapter-static': 1.0.0-next.48
-  '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
+  '@sveltejs/kit': 1.0.0-next.570_svelte@3.53.1+vite@3.2.4
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
   eslint-plugin-svelte3: 4.0.0_xgu65rlhscpnxffotiaicv6m5i
   mdsvex: 0.10.6_svelte@3.53.1
   prettier: 2.8.0
   prettier-plugin-svelte: 2.8.1_3ndnxlh52lolrqe4kgjgbxb3xa
-  rehype-accessible-emojis: 0.3.2
   rehype-external-links: 2.0.1
   rehype-urls: 1.1.1
   remark-oembed: 1.2.2
@@ -233,8 +231,8 @@ packages:
     resolution: {integrity: sha512-Z5Z+QZOav6D0KDeU3ReksGERJg/sX1k5OKWWXyQ11OwGErEEwSXHYRUyjaBmZEPeGzpVVGwwMUK8YWJlG/MKeA==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-4Q74HPLZb9Rr60n7EJANXH2Ng3d7wwrz67TuXxVfYuxARigWO9YzjcLHxG2IVMwRZIeT+LlwOKkg9vYYdBiezQ==}
+  /@sveltejs/kit/1.0.0-next.570_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-7CUoYidoWlKdTGxL/5RsPPkgGTb36TwFBnhSZmspHFeiIST5qQEXyzqicFk8+4M5qQhxvOZ0NuP8uy7Pc+xf/Q==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -613,10 +611,6 @@ packages:
     dependencies:
       no-case: 3.0.4
       tslib: 2.4.0
-    dev: true
-
-  /emoji-regex/8.0.0:
-    resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
     dev: true
 
   /end-of-stream/1.4.4:
@@ -1057,10 +1051,6 @@ packages:
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
-    dev: true
-
-  /gemoji/4.2.1:
-    resolution: {integrity: sha512-V9lUpRSn+KQGavZx8Pk+6mxG3kaz21ae2kTCXuT36KaRPNgYU8eHtj/RcUCNFVvmwppsYYz3nnNS9lmcP5kTsg==}
     dev: true
 
   /get-stream/5.2.0:
@@ -1716,15 +1706,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /rehype-accessible-emojis/0.3.2:
-    resolution: {integrity: sha512-kChZo+EZsuFQYHUPu6kOZFjDrG7UtQdGxkrCvHBVo9ariKPL6S68QdPVxLxwcAtZSRZIXZhDuTJHgIM8KW24Qw==}
-    dependencies:
-      emoji-regex: 8.0.0
-      gemoji: 4.2.1
-      hast-util-is-element: 1.1.0
-      unist-util-flatmap: 1.0.0
-    dev: true
-
   /rehype-external-links/2.0.1:
     resolution: {integrity: sha512-u2dNypma+ps12SJWlS23zvbqwNx0Hl24t0YHXSM/6FCZj/pqWETCO3WyyrvALv4JYvRtuPjhiv2Lpen15ESqbA==}
     dependencies:
@@ -2084,10 +2065,6 @@ packages:
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 5.3.4
-    dev: true
-
-  /unist-util-flatmap/1.0.0:
-    resolution: {integrity: sha512-IG32jcKJlhARCYT2LsYPJWdoXYkzz3ESAdl1aa2hn9Auh+cgUmU6wgkII4yCc/1GgeWibRdELdCZh/p3QKQ1dQ==}
     dev: true
 
   /unist-util-is/3.0.0:
