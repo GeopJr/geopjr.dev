@@ -103,6 +103,17 @@ $header-height-mobile: calc($header-height + 4rem);
     :global(img) {
         max-width: 100%;
         max-height: 100%;
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    :global(.remark-oembed-you-tube > iframe) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 400px;
+        min-height: 226px;
     }
 
     :global(h1),
@@ -138,6 +149,7 @@ $header-height-mobile: calc($header-height + 4rem);
         overflow-x: auto;
         background-color: var(--sidebar-primary-color);
         border-radius: 0.5rem;
+
         > :global(code) {
             display: inline-block;
             margin: 2rem;
