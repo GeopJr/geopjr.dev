@@ -69,6 +69,8 @@
 	import mdiIncognito from '~icons/mdi/incognito';
 	import faAward from '~icons/fa-solid/award';
 	import faComment from '~icons/fa-solid/comment';
+	import faBug from '~icons/fa-solid/bug';
+	import faShieldAlt from '~icons/fa-solid/shield-alt';
 
 	// Contact
 	import faEmail from '~icons/fa-solid/at';
@@ -186,6 +188,8 @@
 		hackathon: faAward,
 		ecology: faSeedling,
 		opinion: faComment,
+		bug: faBug,
+		security: faShieldAlt,
 
 		mastodon: faMastodon,
 		steam: faSteam,
