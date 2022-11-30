@@ -140,6 +140,7 @@
 	<div
 		class="closeArea"
 		on:click={() => (hideMenu = true)}
+		on:keydown={(e) => {if (e?.key === 'Escape') hideMenu = true}}
 		tabIndex="-1"
 		transition:fade={{ duration: 200 }}
 	/>

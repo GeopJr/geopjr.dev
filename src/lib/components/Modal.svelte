@@ -68,7 +68,7 @@
 			</div>
 			<span class="response">{response}</span>
 		</div>
-		<div class="modalBg" on:click={() => (visible = false)} transition:fade={{ duration: 200 }} />
+		<div class="modalBg" on:keydown={(e) => handleKeyEvent(e)}  on:click={() => (visible = false)} transition:fade={{ duration: 200 }} />
 	</div>
 {/if}
 

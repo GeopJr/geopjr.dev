@@ -151,7 +151,7 @@
 
 {#if enabled === patterns[0]}
 	<div class="hell">
-		<div class="shade tremble text">Baphomet was here</div>
+		<div class="shade tremble text">UwU</div>
 		<Icon classes="egg-hell-icon" size="150vh" iconName="pentagram" />
 	</div>
 {:else if enabled === patterns[1]}
