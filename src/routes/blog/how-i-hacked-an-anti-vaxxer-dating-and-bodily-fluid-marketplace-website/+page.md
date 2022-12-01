@@ -157,7 +157,7 @@ I didn't feel comfortable doing so, mostly as 1:1 would mean they could threaten
 
 We are not done yet however. To publish the article, the website had to be fixed (ok maybe not "had to" but I did ask to wait so no user data was vulnerable).
 
-Unjected went down for 1-2 days. Nope. Still not fixed. Many of the issues I told them about - one of which could be solved by just setting `DEBUG` to `False`.
+Unjected went down for 1-2 days. Nope. Many of the issues I told them about were still not fixed - one of which could be solved by just setting `DEBUG` to `False`.
 
 Then the website went down again on Friday. There was now a choice that had to be made, either publish the article on Friday *but* with the chance that Unjected would still not have fixed the issues next time it went up **OR** wait until Monday and see. Ultimately, this wasn't up to me to decide but I did give my opinion of waiting until we could confirm that it got fixed instead of putting user data at risk.
 
