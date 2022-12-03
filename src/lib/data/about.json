@@ -88,10 +88,6 @@
 				"name": "Phoenix",
 				"website": "https://www.phoenixframework.org/"
 			},
-			"ROR": {
-				"name": "Ruby on Rails",
-				"website": "https://rubyonrails.org/"
-			},
 			"Svelte": {
 				"name": "SvelteKit",
 				"website": "https://kit.svelte.dev/"

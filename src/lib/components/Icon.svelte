@@ -39,7 +39,6 @@
 	import siLess from '~icons/simple-icons/less';
 	import siNode from '~icons/simple-icons/nodejs';
 	import mdiGNOME from '~icons/mdi/gnome';
-	import mdiROR from '~icons/mdi/language-ruby-on-rails';
 	import siQt from '~icons/simple-icons/qt';
 	import siNuxt from '~icons/simple-icons/nuxt-dot-js';
 	import siVuetify from '~icons/simple-icons/vuetify';
@@ -112,7 +111,6 @@
 		viteplugindart: cVitePluginDart,
 		libadwaitacr: cLibadwaitacr,
 		shipwreck: cShipwreck,
-		ror: mdiROR,
 		phoenix: faPhoenix,
 		pentagram: mdiPentagram,
 		wavinghand: twWave,
