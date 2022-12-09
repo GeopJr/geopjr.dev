@@ -29,7 +29,7 @@
 		"rehype-urls": "1.1.1",
 		"remark-oembed": "1.2.2",
 		"ress": "5.0.2",
-		"sass": "1.56.1",
+		"sass": "1.56.2",
 		"svelte": "3.54.0",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "4.10.7",
