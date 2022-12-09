@@ -24,7 +24,7 @@
 		"eslint-plugin-svelte3": "4.0.0",
 		"mdsvex": "0.10.6",
 		"prettier": "2.8.1",
-		"prettier-plugin-svelte": "2.8.1",
+		"prettier-plugin-svelte": "2.9.0",
 		"rehype-external-links": "2.0.1",
 		"rehype-urls": "1.1.1",
 		"remark-oembed": "1.2.2",
