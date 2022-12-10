@@ -32,7 +32,7 @@
 		"sass": "1.56.2",
 		"svelte": "3.54.0",
 		"svelte-copy-to-clipboard": "0.2.5",
-		"svelte-preprocess": "4.10.7",
+		"svelte-preprocess": "5.0.0",
 		"unplugin-icons": "0.14.14",
 		"vite": "4.0.0"
 	},
