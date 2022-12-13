@@ -10,7 +10,7 @@ specifiers:
   '@iconify-json/simple-icons': 1.1.39
   '@iconify-json/twemoji': 1.1.7
   '@iconify/svelte': 3.0.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.42
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.43
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': next
   eslint: 8.29.0
@@ -37,9 +37,9 @@ devDependencies:
   '@iconify-json/simple-icons': 1.1.39
   '@iconify-json/twemoji': 1.1.7
   '@iconify/svelte': 3.0.1_svelte@3.55.0
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.42
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.43
   '@sveltejs/adapter-static': 1.0.0-next.49
-  '@sveltejs/kit': 1.0.0-next.585_svelte@3.55.0+vite@4.0.1
+  '@sveltejs/kit': 1.0.0-next.586_svelte@3.55.0+vite@4.0.1
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
   eslint-plugin-svelte3: 4.0.0_ffnabc34fed75fjymbd45uofx4
@@ -403,8 +403,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.42:
-    resolution: {integrity: sha512-EKmLkFhdXAZgGP4GdhGJFQwOy/im1htDYQOu7TH8tioWOA3u14O0OgcRe/r6p3Gk6TNEPSE0phPj3u0T8nnVnQ==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.43:
+    resolution: {integrity: sha512-TLVtPvcz7hvjp0BrfJm2wv0o3XC1K3iqI1FYu9ryP+l4bjRCNKoA4359nPHzK+IOIZP381fJQA+AfvS+AjBNNw==}
     dependencies:
       '@cloudflare/workers-types': 4.20221111.1
       esbuild: 0.16.3
@@ -415,8 +415,8 @@ packages:
     resolution: {integrity: sha512-tPMnqzFpFDWbeRsSkTUUIvjSHv66uEilQvk9shupsVRDycBb7ZACEnfA/T1HyEZKaMZYfFafyKb2dCTDGks0nA==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.585_svelte@3.55.0+vite@4.0.1:
-    resolution: {integrity: sha512-Ycvs5j3g+bn+Jqd7X3k/mUEyFI9yEfUOFgFD3uG4dpNokL3+UxkQ9GE+07lC4gDsltfSKcjVzEncYDItiwiUcA==}
+  /@sveltejs/kit/1.0.0-next.586_svelte@3.55.0+vite@4.0.1:
+    resolution: {integrity: sha512-lTYWy4voh/r4jz8qnurIATyrH2ZgHPUswYQ9KauyASSjQGYeB1TPDgwcafM/LtgMxpcvFgWsx2KeflykSHXKxg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
