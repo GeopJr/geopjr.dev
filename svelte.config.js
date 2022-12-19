@@ -8,8 +8,7 @@ const adapter = staticRender ? adapterStatic : adapterCF;
 const adapterOptions = staticRender ? { fallback: "404.html" } : {}
 // const prod = process.env.NODE_ENV === "production";
 
-import { mdsvex } from 'mdsvex';
-import remarkOembed from 'remark-oembed';
+import { mdsvex } from 'mdsvex'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeUrls from "rehype-urls"
 
@@ -37,7 +36,6 @@ const config = {
 		}),
 		mdsvex({
 			extensions: blogExtensions,
-			remarkPlugins: [[remarkOembed, { syncWidget: true }]],
 			rehypePlugins: [
 				[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
 				[rehypeUrls, rehypeUrlRemoveBase]

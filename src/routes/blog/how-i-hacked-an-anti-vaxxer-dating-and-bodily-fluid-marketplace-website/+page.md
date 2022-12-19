@@ -173,7 +173,11 @@ I hope at least one person there decided to run away from this conspiracy after 
 
 The article (well not the original / the DailyDot one) ended up on The Tonight Show Starring Jimmy Fallon:
 
-https://www.youtube.com/watch?t=320&v=NcMMBAiNjz8
+<script>
+    import { YouTube } from 'sveltekit-embed'
+</script>
+
+<YouTube youTubeId="NcMMBAiNjz8" skipTo={{ h:0,m:0,s: 320 }} />
 
 plus I got a new bio:
 

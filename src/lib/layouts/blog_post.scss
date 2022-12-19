@@ -108,12 +108,8 @@ $header-height-mobile: calc($header-height + 4rem);
         margin-right: auto !important;
     }
 
-    :global(.remark-oembed-you-tube > iframe) {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        min-width: 400px;
-        min-height: 226px;
+    :global(.youtube-sveltekit-embed) {
+        border-radius: 0.5rem;
     }
 
     :global(h1),
@@ -126,6 +122,19 @@ $header-height-mobile: calc($header-height + 4rem);
     :global(p),
     :global(img) {
         margin: 1rem 0rem;
+    }
+
+    :global(h1),
+    :global(h2),
+    :global(h3),
+    :global(h4),
+    :global(h5),
+    :global(h6) {
+        margin-top: 2em;
+    }
+
+    :global(p) {
+        line-height: 1.75;
     }
 
     :global(ul > *),
@@ -142,6 +151,10 @@ $header-height-mobile: calc($header-height + 4rem);
 
     :global(img) {
         pointer-events: all;
+    }
+
+    :global(p > img) {
+        border-radius: 0.5rem;
     }
 
     :global(pre) {
