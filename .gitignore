@@ -9,3 +9,4 @@ sitemap.xml
 .env
 .env.*
 !.env.example
+static/icons/
