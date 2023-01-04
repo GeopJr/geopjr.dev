@@ -28,7 +28,7 @@ specifiers:
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 5.0.0
   sveltekit-embed: ^0.0.10
-  unplugin-icons: 0.14.15
+  unplugin-icons: 0.15.0
   vite: 4.0.4
 
 devDependencies:
@@ -56,7 +56,7 @@ devDependencies:
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 5.0.0_sass@1.57.1+svelte@3.55.0
   sveltekit-embed: 0.0.10
-  unplugin-icons: 0.14.15
+  unplugin-icons: 0.15.0
   vite: 4.0.4_sass@1.57.1
 
 packages:
@@ -2157,8 +2157,8 @@ packages:
       unist-util-visit-parents: 5.1.0
     dev: true
 
-  /unplugin-icons/0.14.15:
-    resolution: {integrity: sha512-J6YBA+fUzVM2IZPXCK3Pnk36jYVwQ6lkjRgOnZaXNIxpMDsmwDqrE1AGJ0zUbfuEoOa90OBGc0OPfN1r+qlSIQ==}
+  /unplugin-icons/0.15.0:
+    resolution: {integrity: sha512-/BGtBL8y/2wjey4GLyb0w90mhc9d7XKlewWGMxBPROHS7mR84AV1Y0zDapYK0Q/cc/+u4WUcloreev5cABDa5w==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
