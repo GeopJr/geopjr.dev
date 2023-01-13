@@ -27,7 +27,7 @@ specifiers:
   svelte: 3.55.1
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 5.0.0
-  sveltekit-embed: ^0.0.10
+  sveltekit-embed: ^0.0.11
   unplugin-icons: 0.15.1
   vite: 4.0.4
 
@@ -55,7 +55,7 @@ devDependencies:
   svelte: 3.55.1
   svelte-copy-to-clipboard: 0.2.5
   svelte-preprocess: 5.0.0_sass@1.57.1+svelte@3.55.1
-  sveltekit-embed: 0.0.10
+  sveltekit-embed: 0.0.11
   unplugin-icons: 0.15.1
   vite: 4.0.4_sass@1.57.1
 
@@ -2031,8 +2031,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /sveltekit-embed/0.0.10:
-    resolution: {integrity: sha512-DQa5JYg44bID+cJlk9pr+05PkTj1ownSXo+1sprVYkvet0Jvc8+0F8wb3RCAo0KzzM6REUFUzuKhDZQKoTQYHA==}
+  /sveltekit-embed/0.0.11:
+    resolution: {integrity: sha512-gx2s06ZJFrZ2JTOpC9gVewZy9+Q5b/0yzCwucz9HlIoAzbotpV9HCyP1rldSdi0ioliKZC1xVBxKmVpl0cbaDQ==}
     dev: true
 
   /svgo/2.8.0:
