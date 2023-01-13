@@ -33,7 +33,7 @@
 		"svelte": "3.55.1",
 		"svelte-copy-to-clipboard": "0.2.5",
 		"svelte-preprocess": "5.0.0",
-		"sveltekit-embed": "^0.0.10",
+		"sveltekit-embed": "^0.0.11",
 		"unplugin-icons": "0.15.1",
 		"vite": "4.0.4"
 	},
