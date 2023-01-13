@@ -18,7 +18,7 @@
 		"@iconify/svelte": "3.0.1",
 		"@iconify/tools": "^2.1.2",
 		"@sveltejs/adapter-cloudflare": "1.0.0",
-		"@sveltejs/adapter-static": "1.0.1",
+		"@sveltejs/adapter-static": "1.0.2",
 		"@sveltejs/kit": "next",
 		"eslint": "8.31.0",
 		"eslint-config-prettier": "8.6.0",
