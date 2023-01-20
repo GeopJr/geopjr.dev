@@ -11,7 +11,7 @@ specifiers:
   '@iconify-json/twemoji': 1.1.10
   '@iconify/svelte': 3.0.1
   '@iconify/tools': ^2.1.2
-  '@sveltejs/adapter-cloudflare': 1.0.4
+  '@sveltejs/adapter-cloudflare': 1.1.0
   '@sveltejs/adapter-static': 1.0.5
   '@sveltejs/kit': next
   eslint: 8.32.0
@@ -39,7 +39,7 @@ devDependencies:
   '@iconify-json/twemoji': 1.1.10
   '@iconify/svelte': 3.0.1_svelte@3.55.1
   '@iconify/tools': 2.1.2
-  '@sveltejs/adapter-cloudflare': 1.0.4_l5ueyfihz3gpzzvvyo2ean5u3e
+  '@sveltejs/adapter-cloudflare': 1.1.0_l5ueyfihz3gpzzvvyo2ean5u3e
   '@sveltejs/adapter-static': 1.0.5_l5ueyfihz3gpzzvvyo2ean5u3e
   '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.1+vite@4.0.4
   eslint: 8.32.0
@@ -435,8 +435,8 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.4_l5ueyfihz3gpzzvvyo2ean5u3e:
-    resolution: {integrity: sha512-fLZko2/6mq6ZZXhjfi5e7PFPR4IBSQ0UB5P9yt1ImczATFIH4mxqiXmdHpsJhEDDYOBqoEutgFYQdnndK0F5kQ==}
+  /@sveltejs/adapter-cloudflare/1.1.0_l5ueyfihz3gpzzvvyo2ean5u3e:
+    resolution: {integrity: sha512-OkQy2WBu11xLn1BAbPYOmfzw69OFgdOIQQSvWmK52Zeg45sjsa7gqcQpkjiXs3OnfhfSweKEnxVHT6+noao1+A==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
