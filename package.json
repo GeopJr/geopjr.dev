@@ -20,7 +20,7 @@
 		"@sveltejs/adapter-cloudflare": "2.0.0",
 		"@sveltejs/adapter-static": "1.0.5",
 		"@sveltejs/kit": "next",
-		"eslint": "8.32.0",
+		"eslint": "8.33.0",
 		"eslint-config-prettier": "8.6.0",
 		"eslint-plugin-svelte3": "4.0.0",
 		"mdsvex": "0.10.6",
