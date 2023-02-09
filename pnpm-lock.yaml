@@ -12,7 +12,7 @@ specifiers:
   '@iconify/svelte': 3.1.0
   '@iconify/tools': ^2.1.2
   '@sveltejs/adapter-cloudflare': 2.0.1
-  '@sveltejs/adapter-static': 1.0.5
+  '@sveltejs/adapter-static': 2.0.1
   '@sveltejs/kit': next
   eslint: 8.33.0
   eslint-config-prettier: 8.6.0
@@ -40,7 +40,7 @@ devDependencies:
   '@iconify/svelte': 3.1.0_svelte@3.55.1
   '@iconify/tools': 2.1.2
   '@sveltejs/adapter-cloudflare': 2.0.1_l5ueyfihz3gpzzvvyo2ean5u3e
-  '@sveltejs/adapter-static': 1.0.5_l5ueyfihz3gpzzvvyo2ean5u3e
+  '@sveltejs/adapter-static': 2.0.1_l5ueyfihz3gpzzvvyo2ean5u3e
   '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.1+vite@4.1.1
   eslint: 8.33.0
   eslint-config-prettier: 8.6.0_eslint@8.33.0
@@ -644,10 +644,10 @@ packages:
       worktop: 0.8.0-next.14
     dev: true
 
-  /@sveltejs/adapter-static/1.0.5_l5ueyfihz3gpzzvvyo2ean5u3e:
-    resolution: {integrity: sha512-W5jbgvy9sbYEHs27NQOSFEun+zQwdcL4kpk5qc2kSHl8cKsP5wfXuWDTDRmD1Co40aFcesi5Az5ZzdnPI8KCVg==}
+  /@sveltejs/adapter-static/2.0.1_l5ueyfihz3gpzzvvyo2ean5u3e:
+    resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0
+      '@sveltejs/kit': ^1.5.0
     dependencies:
       '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.1+vite@4.1.1
     dev: true
