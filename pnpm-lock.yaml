@@ -4,7 +4,7 @@ overrides:
   typescript: npm:-@0
 
 specifiers:
-  '@iconify-json/fa-brands': 1.1.3
+  '@iconify-json/fa-brands': 1.1.4
   '@iconify-json/fa-solid': 1.1.3
   '@iconify-json/mdi': 1.1.47
   '@iconify-json/simple-icons': 1.1.42
@@ -32,7 +32,7 @@ specifiers:
   vite: 4.1.1
 
 devDependencies:
-  '@iconify-json/fa-brands': 1.1.3
+  '@iconify-json/fa-brands': 1.1.4
   '@iconify-json/fa-solid': 1.1.3
   '@iconify-json/mdi': 1.1.47
   '@iconify-json/simple-icons': 1.1.42
@@ -513,8 +513,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/fa-brands/1.1.3:
-    resolution: {integrity: sha512-0WH5+JeOk43dfU2GzjpmV/izgt5wxyIPJkZw4T+UiuN5mT/v7xspFmXW68saRvfHa9IoQhFv3oHhbj4nUX6c2Q==}
+  /@iconify-json/fa-brands/1.1.4:
+    resolution: {integrity: sha512-JT9BgOFT17qgwctdjGbIKENcW2jEOzo22/SPTAT2T4ygQPtG4niBFnjkDZNcqk9JHSyc6sYvgb9NFKoJ8eGkHQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
