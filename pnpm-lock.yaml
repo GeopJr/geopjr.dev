@@ -6,7 +6,7 @@ overrides:
 specifiers:
   '@iconify-json/fa-brands': 1.1.4
   '@iconify-json/fa-solid': 1.1.4
-  '@iconify-json/mdi': 1.1.47
+  '@iconify-json/mdi': 1.1.50
   '@iconify-json/simple-icons': 1.1.44
   '@iconify-json/twemoji': 1.1.11
   '@iconify/svelte': 3.1.0
@@ -34,7 +34,7 @@ specifiers:
 devDependencies:
   '@iconify-json/fa-brands': 1.1.4
   '@iconify-json/fa-solid': 1.1.4
-  '@iconify-json/mdi': 1.1.47
+  '@iconify-json/mdi': 1.1.50
   '@iconify-json/simple-icons': 1.1.44
   '@iconify-json/twemoji': 1.1.11
   '@iconify/svelte': 3.1.0_svelte@3.55.1
@@ -327,8 +327,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/mdi/1.1.47:
-    resolution: {integrity: sha512-5E5mazdQaMNl3gmLL7whteh61weJBRfW2R9Rq0/pgAe9B0j22mViyADm/ooHZx07Vkc0ZqnkgUrpT6OsS9Qhzg==}
+  /@iconify-json/mdi/1.1.50:
+    resolution: {integrity: sha512-SgbT5w5eHCdOG74ZWPz7HlTGk6VsifIJhNi6lAsxj/5Nlqt6Cz4LlQmSa9eecU9p075Jub2aAx/o7YI+GCahRQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
