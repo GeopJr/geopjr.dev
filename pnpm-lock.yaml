@@ -26,7 +26,7 @@ specifiers:
   sass: 1.58.2
   svelte: 3.55.1
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 5.0.1
+  svelte-preprocess: 5.0.3
   sveltekit-embed: ^0.0.11
   unplugin-icons: 0.15.3
   vite: 4.1.2
@@ -54,7 +54,7 @@ devDependencies:
   sass: 1.58.2
   svelte: 3.55.1
   svelte-copy-to-clipboard: 0.2.5
-  svelte-preprocess: 5.0.1_sass@1.58.2+svelte@3.55.1
+  svelte-preprocess: 5.0.3_sass@1.58.2+svelte@3.55.1
   sveltekit-embed: 0.0.11
   unplugin-icons: 0.15.3
   vite: 4.1.2_sass@1.58.2
@@ -535,12 +535,6 @@ packages:
 
   /@types/pug/2.0.6:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
-    dev: true
-
-  /@types/sass/1.43.1:
-    resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
-    dependencies:
-      '@types/node': 17.0.6
     dev: true
 
   /@types/svgo/2.6.4:
@@ -1978,8 +1972,8 @@ packages:
       svelte: 3.55.1
     dev: true
 
-  /svelte-preprocess/5.0.1_sass@1.58.2+svelte@3.55.1:
-    resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
+  /svelte-preprocess/5.0.3_sass@1.58.2+svelte@3.55.1:
+    resolution: {integrity: sha512-GrHF1rusdJVbOZOwgPWtpqmaexkydznKzy5qIC2FabgpFyKN57bjMUUUqPRfbBXK5igiEWn1uO/DXsa2vJ5VHA==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:
@@ -1993,7 +1987,7 @@ packages:
       stylus: ^0.55.0
       sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
       svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0 || 0
+      typescript: '>=3.9.5 || ^4.0.0 || ^5.0.0 || 0'
     peerDependenciesMeta:
       '@babel/core':
         optional: true
@@ -2017,7 +2011,6 @@ packages:
         optional: true
     dependencies:
       '@types/pug': 2.0.6
-      '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.27.0
       sass: 1.58.2
