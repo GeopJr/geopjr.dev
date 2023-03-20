@@ -35,7 +35,7 @@
 		"svelte-preprocess": "5.0.1",
 		"sveltekit-embed": "^0.0.11",
 		"unplugin-icons": "0.15.3",
-		"vite": "4.1.2"
+		"vite": "4.2.1"
 	},
 	"overrides": {
 		"typescript": "npm:-@0"
