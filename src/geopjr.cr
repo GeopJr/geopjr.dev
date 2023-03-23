@@ -147,6 +147,9 @@ module GeopJr
   # sitemap.xml
   File.write(PATHS[:out] / "sitemap.xml", SitemapXML.new.to_s)
 
+  # rss.xml
+  File.write(PATHS[:out] / "rss.xml", RSSXML.new.to_s)
+
   # Delete underscore files
   FileUtils.rm_rf(Dir.glob(PATHS[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
 end
