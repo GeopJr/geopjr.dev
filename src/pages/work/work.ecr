@@ -1,0 +1,51 @@
+<header class="card banner">
+	<span class="card-title">You can find most of my FOSS projects on my <a href="">GitHub Profile</a>.</span>
+</header>
+<main class="work-view">
+    <%- @works.each do |work| -%>
+        <article class="card">
+            <header class="card-title logo">
+                <section class="info">
+                    <header>
+                        <strong class="text--block accent--block"><%= work.name %></strong>
+                    </header>
+                    <div class="card-badges">
+                        <%- work.techs.each do |tech| -%>
+                            <% tech_name = DICT.fetch(tech.downcase, tech.capitalize) %>
+					        <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
+                                <use xlink:href="/assets/icons/<%= tech %>.svg#<%= tech %>"></use>
+                            </svg>
+                        <%- end -%>
+                    </div>
+                </section>
+                <%- if !work.icon.nil? -%>
+                    <svg style="font-size: 80px;" height="1.2em" width="1.2em" class="sticker" aria-label="<%= work.name %> logo">
+                        <use xlink:href="/assets/icons/<%= work.icon %>.svg#<%= work.icon %>"></use>
+                    </svg>
+                <%- elsif !(work_image = work.image).nil? -%>
+                    <% work_image_url = work_image.includes?('/') ? work_image : "/assets/icons/#{work_image}.svg" %>
+                    <img draggable="false" style="width:100%;height:100%" src="<%= work_image_url %>" class="sticker" aria-label="<%= work.name %> logo" />
+                <%- end -%>
+            </header>
+            <p class="card-body">
+                 <%= work.desc %>
+            </p>
+            <footer>
+                <%- work.links.each do |link| -%>
+        			<a
+				        class="card-action"
+				        title="<%= link.tooltip %>"
+				        href="<%= link.url %>"
+				        target="_blank"
+				        rel="noopener noreferrer"
+				        aria-label="<%= link.tooltip %>"
+			        >
+				        <svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
+                            <use xlink:href="/assets/icons/<%= link.icon %>.svg#<%= link.icon %>"></use>
+                        </svg>
+			        </a>
+                <%- end -%>
+            </footer>
+        </article>
+    <%- end -%>
+</main>

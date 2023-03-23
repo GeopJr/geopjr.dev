@@ -1,0 +1,55 @@
+.credit-card-view {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr);
+
+    // grid-template-rows: 1fr 1fr 1fr; // Make all heights equal
+    @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    >article>.credit-card {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--brand-body);
+        align-items: flex-end;
+        gap: 6rem;
+        border-radius: .75rem;
+        transition-duration: 200ms;
+        margin: 1rem;
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+            transform: scale(1.05);
+        }
+
+        &:hover,
+        &:active {
+            outline: none;
+            box-shadow: var(--focus-outline);
+
+        }
+
+        >header {
+            align-self: flex-start;
+            background-color: var(--brand-head);
+            padding: 1rem;
+            border-top-left-radius: .75rem;
+            border-top-right-radius: .75rem;
+            width: 100%;
+        }
+
+        >footer {
+            padding: 1rem;
+            font-variation-settings: "wght" 900, "slnt" 0;
+            font-weight: 900;
+            font-size: x-large;
+        }
+    }
+}

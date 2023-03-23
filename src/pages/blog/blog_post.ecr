@@ -1,0 +1,30 @@
+<main>
+    <article class="blog-post">
+        <header>
+            <h1><%= @post.title %></h1>
+            <%- unless @post.subtitle.nil? -%>
+                <h2 class="subtitle"><%= @post.subtitle %></h2>
+            <%- end -%>
+            <div class="blog-tags">
+                <%- @post.tags.each do |tag| -%>
+                    <% svg_icon = ICON_NAMES.fetch(tag, tag) %>
+                    <% tech_name = DICT.fetch(tag.downcase, tag.capitalize) %>
+                    <svg height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
+                        <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
+                    </svg>
+                <%- end -%>
+            </div>
+            <footer>
+                <% date_s = @post.date.to_s("%Y-%m-%d") %>
+                <span>Posted on: <time datetime="<%= date_s %>"><%= date_s %></time></span>
+                <%- unless (date = @post.updated).nil? -%>
+                    <% date_s = date.to_s("%Y-%m-%d") %>
+                    <span>Updated on: <time datetime="<%= date_s %>"><%= date_s %></time></span>
+                <%- end -%>
+            </footer>
+        </header>
+        <div>
+            <%= @html %>
+        </div>
+    </article>
+</main>

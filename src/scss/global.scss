@@ -1,0 +1,188 @@
+@import './_reset.scss';
+@import './_reduced_motion.scss';
+@import './_navbar.scss';
+@import './_footer.scss';
+
+// @import './wave.scss';
+// @import './about.scss';
+// @import './card_grid.scss';
+// @import './card.scss';
+// @import './blog_post.scss';
+
+:root {
+    --geopjr-yellow: #f0db78;
+    --geopjr-red: #a56262;
+    --geopjr-purple: #7f77bc;
+    --geopjr-dark: #262329;
+}
+
+// :root {
+//     color-scheme: dark;
+
+//     --accent: var(--geopjr-yellow);
+//     --accent-text: var(--geopjr-dark);
+//     --tech-icon-color: var(--geopjr-red);
+
+//     --card-background: var(--geopjr-dark);
+//     --navbar-background:var(--geopjr-dark);
+
+//     --navbar-item-background: var(--geopjr-red);
+//     --navbar-item-color: var(--text-color);
+
+//     --navbar-item-background-hover: var(--geopjr-purple);
+//     --card-action-background-hover: var(--geopjr-purple);
+//     --card-action-color-hover: var(--geopjr-yellow);
+
+//     --focus-outline-color: #ffffff;
+//     --focus-outline-color-inner: var(--geopjr-dark);
+
+//     --background-color: #1a181b;
+//     --text-color: white;
+
+//     --focus-outline: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--focus-outline-color);
+// }
+
+:root {
+    color-scheme: dark;
+
+    --accent: #dbc766;
+    --accent-text: black;
+    --tech-icon-color: #dbc766;
+
+    --card-background:  #27241b;
+    --navbar-background: #27241b;
+
+    --navbar-item-background: #4e7c5d;
+    --navbar-item-color: var(--text-color);
+
+    --navbar-item-background-hover: #7d6c9b;
+    --card-action-background-hover: #7d6c9b;
+    --card-action-color-hover: var(--text-color);
+
+    --focus-outline-color: #ffffff;
+    --focus-outline-color-inner: var(--background-color);
+
+    --background-color: #1d1b17;
+    --text-color: white;
+
+    --focus-outline: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--focus-outline-color);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+
+        --accent: #706738;
+        --accent-text: white;
+        --tech-icon-color: #464023;
+
+        --card-background: #f9f1cc;
+        --navbar-background:#f9f1cc;
+
+        --navbar-item-background: #cbead3;
+        --navbar-item-color: var(--text-color);
+
+        --navbar-item-background-hover: #cbaff9;
+        --card-action-background-hover: #cbaff9;
+        --card-action-color-hover: var(--text-color);
+
+        --focus-outline-color: #201c08;
+        --focus-outline-color-inner: var(--background-color);
+
+        --background-color: #fdfcf2;
+        --text-color: #201c08;
+    }
+}
+
+@font-face {
+    font-family: "Cantarell var";
+    src: url("/assets/fonts/Cantarell-VF.woff2") format("woff2 supports variations"), url("/assets/fonts/Cantarell-VF.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: "Regular";
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    // transition-duration: 200ms;
+    font-family: 'Cantarell var', 'Cantarell', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Noto Sans',
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+b,
+strong {
+    font-weight: 700;
+    font-variation-settings: "wght" 700, "slnt" 0;
+}
+
+body {
+    // height: 100%;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+
+    >main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0 2rem;
+        max-width: calc(100vw - 2rem);
+        width: 80rem;
+        flex-grow: 1;
+        // min-width: 15rem;
+    }
+}
+
+img {
+    pointer-events: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+*:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-outline);
+}
+
+.accent {
+    color: var(--accent);
+
+    &--block {
+        color: var(--accent-text);
+        background-color: var(--accent);
+        border-radius: 0.5rem;
+        padding: 0 0.3rem;
+        line-height: 1.5;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+}
+
+.text--block {
+    &.accent--block {
+        color: var(--accent-text);
+        background-color: var(--accent);
+    }
+
+    border-radius: .5rem;
+    padding: 0 .3rem;
+    line-height: 1.5;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}

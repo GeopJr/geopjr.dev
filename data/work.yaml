@@ -1,0 +1,287 @@
+- name: SveltePress
+  desc: 'Documentation for humans.'
+  image: sveltepress
+  techs:
+    - svelte
+    - gnome
+    - qt
+    - flutter
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/SveltePress
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://sveltepress.geopjr.dev/
+      tooltip: Website
+- name: Collision
+  desc: Verify hashes for your files.
+  image: collision
+  techs:
+    - crystal
+    - gnome
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/Collision
+      tooltip: GitHub Repo
+    - icon: flathub
+      url: https://flathub.org/apps/details/dev.geopjr.Collision
+      tooltip: Flathub
+    - icon: externallinkalt
+      url: https://collision.geopjr.dev/
+      tooltip: Website
+- name: BeardBin
+  desc: A Zero-Knowledge Encrypted Text/Code sharing project.
+  image: beardbin
+  techs:
+    - crystal
+    - vue
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/BeardBin
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://milking.men/
+      tooltip: Website
+- name: Crycord
+  desc: A Discord Client modification with plugins. Uses BeautifulDiscord's CSS injector.
+  image: crycord
+  techs:
+    - crystal
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/Crycord
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://crycord.geopjr.dev/
+      tooltip: Website
+- name: CO2
+  desc: A GitHub action that notifies you about your website's carbon emissions.
+  icon: seedling
+  techs:
+    - nodejs
+    - docker
+  links:
+    - icon: github
+      url: https://github.com/marketplace/actions/co2-ci
+      tooltip: GitHub Marketplace
+- name: SHRP Theme Builder
+  desc: A theme builder for the SHRP android recovery project.
+  image: shrp
+  techs:
+    - vue
+    - nuxt
+  links:
+    - icon: github
+      url: https://github.com/SHRP/shrp-theme-builder-web
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://shrp.github.io/shrp-theme-builder-web/
+      tooltip: Website
+- name: sabo-tabby
+  desc: Extremely Fast Static File Server.
+  image: sabotabby
+  techs:
+    - crystal
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/sabo-tabby
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://sabo-tabby.queer.software
+      tooltip: Website
+- name: create-crystal-app
+  desc: An unopinionated user-friendly crystal init alternative.
+  image: https://i.imgur.com/85DnHA7.png
+  techs:
+    - crystal
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/create-crystal-app
+      tooltip: GitHub Repo
+- name: Argyle
+  desc: An offline collection of online tools.
+  image: argyle
+  techs:
+    - vue
+    - nuxt
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/argyle
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://argyle.geopjr.dev/
+      tooltip: Website
+- name: vite-plugin-dart
+  desc: Import .dart files effortlessly.
+  image: viteplugindart
+  techs:
+    - vite
+    - dart
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/vite-plugin-dart
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://vite-plugin-dart.vercel.app
+      tooltip: Website
+- name: libadwaita.cr
+  desc: libadwaita bindings for Crystal.
+  image: libadwaitacr
+  techs:
+    - crystal
+    - gnome
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/libadwaita.cr
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://libadwaita.geopjr.dev/
+      tooltip: Website
+    - icon: book
+      url: https://libadwaita.geopjr.dev/docs/
+      tooltip: Docs
+- name: Shipwreck
+  desc: Automatically create Crystal JSON mappings from input.
+  image: shipwreck
+  techs:
+    - svelte
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/Shipwreck
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://shipwreck.geopjr.dev/
+      tooltip: Website
+- name: pixelfed-js
+  desc: A js wrapper for the Pixelfed API following the PHP one.
+  image: pixelfedjs
+  techs:
+    - nodejs
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/pixelfed-js
+      tooltip: GitHub Repo
+    - icon: book
+      url: https://geopjr.github.io/pixelfed-js/
+      tooltip: Docs
+    - icon: npm
+      url: https://www.npmjs.com/package/pixelfed
+      tooltip: NPM
+- name: asar-cr
+  desc: A crystal library to read from, pack into and extract from .asar archives.
+  icon: electron
+  techs:
+    - crystal
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/asar-cr
+      tooltip: GitHub Repo
+- name: Granz
+  desc: A Discord bot/framework(?) for Crystal.
+  image: https://i.imgur.com/vYD4xJMs.jpg
+  techs:
+    - crystal
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/Granz-cr
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://granz.geopjr.dev/
+      tooltip: Website
+- name: Soft & Wet
+  desc: A Discord Bot that uses advanced image manipulation to create new images from templates in under a second.
+  image: https://i.imgur.com/3tStuJqs.png
+  techs:
+    - nodejs
+  links:
+    - icon: github
+      url: https://github.com/Soft-Wet-Bot
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://soft-wet.damon.sh/
+      tooltip: Website
+- name: DNOME
+  desc: Adwaita-inspired Discord Theme.
+  image: dnome
+  techs:
+    - less
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/DNOME
+      tooltip: GitHub Repo
+- name: Exorcism
+  desc: Corrupt your mp4 videos.
+  image: exorcism
+  techs:
+    - nodejs
+    - qt
+    - svelte
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/exorcism
+      tooltip: GitHub Repo
+- name: PronounBird
+  desc: Automatically add people's pronouns next to their name while browsing Twitter.
+  image: pronounbird
+  techs:
+    - javascript
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/PronounBird
+      tooltip: GitHub Repo
+    - icon: firefoxbrowser
+      url: https://addons.mozilla.org/en-US/firefox/addon/pronounbird-for-twitter/
+      tooltip: Firefox Addons
+    - icon: chrome
+      url: https://chrome.google.com/webstore/detail/pronounbird-for-twitter/pfmmodpkbmpchmhglidbncgoanclbkgj
+      tooltip: Chromium Addons
+- name: MarketVSX
+  desc: A browser extension that creates a bridge between vscode marketplace and open-vsx.
+  image: marketvsx
+  techs:
+    - javascript
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/MarketVSX
+      tooltip: GitHub Repo
+    - icon: firefoxbrowser
+      url: https://addons.mozilla.org/en-US/firefox/addon/marketvsx/
+      tooltip: Firefox Addons
+    - icon: chrome
+      url: https://chrome.google.com/webstore/detail/marketvsx/fcoiikfhfempfajefakhkjlkmloihmlp
+      tooltip: Chromium Addons
+- name: action-accessibility
+  desc: A GitHub action that creates alternative accessibility options on issues and PRs.
+  icon: a11y
+  techs:
+    - nodejs
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/action-accessibility
+      tooltip: GitHub Repo
+- name: discord-tanki
+  desc: Discord Rich Presence for Tanki Online.
+  image: discord_tanki
+  techs:
+    - electron
+    - express
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/discord-tanki
+      tooltip: GitHub Repo
+- name: SvelteGlass
+  desc: Analyze Svelte Apps.
+  image: svelteglass
+  techs:
+    - vue
+    - javascript
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/SvelteGlass
+      tooltip: GitHub Repo
+    - icon: firefoxbrowser
+      url: https://addons.mozilla.org/en-US/firefox/addon/svelteglass/
+      tooltip: Firefox Addons
+    - icon: chrome
+      url: https://chrome.google.com/webstore/detail/svelteglass/ldclibeepjpbdibeblhodoemjnbpkcfc
+      tooltip: Chromium Addons

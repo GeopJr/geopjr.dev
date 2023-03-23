@@ -1,0 +1,69 @@
+crystal:
+  background: "#000000"
+  text: "#ffffff"
+dart:
+  background: "#40c4ff"
+  text: "#ffffff"
+elixir:
+  background: "#674773"
+  text: "#ffffff"
+php:
+  background: "#8892be"
+  text: "#ffffff"
+ruby:
+  background: "#cc342d"
+  text: "#ffffff"
+javascript:
+  background: "#f7df1e"
+  text: "#000000"
+less:
+  background: "#1d365d"
+  text: "#ffffff"
+sass:
+  background: "#cc6699"
+  text: "#ffffff"
+svelte:
+  background: "#ff3e00"
+  text: "#ffffff"
+vue:
+  background: "#42b883"
+  text: "#ffffff"
+express:
+  background: "#3b4854"
+  text: "#ffffff"
+nodejs:
+  background: "#6cc24a"
+  text: "#ffffff"
+nuxt:
+  background: "#00dc82"
+  text: "#ffffff"
+phoenix:
+  background: "#f05423"
+  text: "#ffffff"
+electron:
+  background: "#9feaf9"
+  text: "#000000"
+flutter:
+  background: "#45d1fd"
+  text: "#ffffff"
+gnome:
+  background: "#4a86cf"
+  text: "#ffffff"
+gtk:
+  background: "#4a86cf"
+  text: "#ffffff"
+qt:
+  background: "#41cd52"
+  text: "#ffffff"
+capacitor:
+  background: "#53b9ff"
+  text: "#ffffff"
+nativescript:
+  background: "#65adf1"
+  text: "#ffffff"
+css3:
+  background: "#2965f1"
+  text: "#ffffff"
+android:
+  background: "#3ddc84"
+  text: "#ffffff"

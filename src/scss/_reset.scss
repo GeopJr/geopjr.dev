@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+}
+
+html,
+body,
+p,
+hr,
+blockquote,
+figure,
+pre,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img,
+video {
+    height: auto;
+    max-width: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+br {
+    line-height: 175%;
+}

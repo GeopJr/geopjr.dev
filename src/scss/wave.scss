@@ -1,0 +1,31 @@
+.wave {
+    animation: wave 2s ease-in-out 0s infinite;
+    transform-origin: 70% 70%;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+@keyframes wave {
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    10%,
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    0%,
+    65%,
+    100% {
+        transform: rotate(0deg);
+    }
+}

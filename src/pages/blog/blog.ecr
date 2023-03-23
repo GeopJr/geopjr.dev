@@ -1,0 +1,60 @@
+<main class="blog-container">
+    <div class="blog-view">
+    <%- @posts.each do |blog_post| -%>
+        <article class="final card">
+            <header class="card-title">
+                <section class="info">
+                    <header>
+                        <strong class="text--block accent--block"><%= blog_post[:post].title %></strong>
+                    </header>
+                    <div class="card-badges">
+                        <%- blog_post[:post].tags.each do |tag| -%>
+                            <% svg_icon = ICON_NAMES.fetch(tag, tag) %>
+                            <% tech_name = DICT.fetch(tag.downcase, tag.capitalize) %>
+	    				    <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
+                                <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
+                            </svg>
+                        <%- end -%>
+                    </div>
+                </section>
+            </header>
+            <%- if blog_post[:post].subtitle -%>
+                <p class="card-body">
+                     <%= blog_post[:post].subtitle %>
+                </p>
+            <%- end -%>
+            <footer>
+            	<a
+	    			class="card-action"
+                    draggable="false"
+	    			title="Read More"
+	    			href="/<%= BLOG_PATH %>/<%= blog_post[:filename] %><%= EXT %>"
+	    			aria-label="Read More"
+	    		>
+	    			<svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
+                        <use xlink:href="/assets/icons/eye.svg#eye"></use>
+                    </svg>
+	    		</a>
+                <% date_s = blog_post[:post].date.to_s("%Y-%m-%d") %>
+                <%- unless (date = blog_post[:post].updated).nil? -%>
+                    <% date_s = date.to_s("%Y-%m-%d") %>
+                <%- end -%>
+                <span class="date"><time datetime="<%= date_s %>"><%= date_s %></time></span>
+            </footer>
+        </article>
+    <%- end -%>
+    </div>
+    <%- if @max_pages > 1 -%>
+        <nav>
+            <%- (1..@max_pages).each do |page_number| -%>
+                <%- if page_number == 1 && @page != 1 -%>
+                    <a draggable="false" aria-label="Previous" title="Previous" href="/<%= BLOG_PATH %>/<%= @page - 1 %><%= EXT %>">&lt;</a>
+                <%- end -%>
+                <a draggable="false" <%= page_number == @page ? "class=\"active\"" : "" %> href="/<%= BLOG_PATH %>/<%= page_number %><%= EXT %>"><%= page_number %></a>
+                <%- if page_number == @max_pages && @page != @max_pages -%>
+                    <a draggable="false" aria-label="Next" title="Next" href="/<%= BLOG_PATH %>/<%= @page + 1 %><%= EXT %>">&gt;</a>
+                <%- end -%>
+            <%- end -%>
+        </nav>
+    <%- end -%>
+</main>

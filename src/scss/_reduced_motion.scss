@@ -1,0 +1,27 @@
+// Don't have any transitions if user prefers reduced motion
+@media (prefers-reduced-motion) {
+    * {
+
+        &:focus,
+        &:focus-visible,
+        &:hover {
+            transition-duration: 0ms !important;
+            animation: none !important;
+
+            &:before,
+            &:after {
+                transition-duration: 0ms !important;
+                animation: none !important;
+            }
+        }
+
+        transition-duration: 0ms !important;
+        animation: none !important;
+
+        &:before,
+        &:after {
+            transition-duration: 0ms !important;
+            animation: none !important;
+        }
+    }
+}

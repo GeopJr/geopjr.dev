@@ -1,0 +1,31 @@
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    > nav {
+        border-radius: .75rem;
+        background-color: var(--card-background);
+        padding: .5rem;
+    
+        > a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 0.5rem;
+            color: var(--text-color);
+            transition-duration: 200ms;
+    
+            &.active {
+                background-color: var(--accent);
+                color: var(--accent-text);
+                font-variation-settings: "wght" 700, "slnt" 0;
+                font-weight: 700;
+            }
+
+            &:hover {
+                background-color: var(--card-action-background-hover);
+            }
+        }
+    }
+}

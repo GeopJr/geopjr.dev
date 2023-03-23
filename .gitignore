@@ -1,0 +1,16 @@
+/docs/
+/lib/
+/bin/
+/.shards/
+*.dwarf
+minify-html
+pnpm-lock.yaml
+node_modules/
+dist/
+dart-sass/
+sass.tar.gz
+sass
+minify-js
+/minify_temp/
+minify
+minify_linux_amd64.tar.gz*
