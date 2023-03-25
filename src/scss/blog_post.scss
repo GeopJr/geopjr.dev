@@ -5,6 +5,13 @@
     // gap: 4rem;
     width: 100%;
 
+    a {
+        color: var(--accent);
+        text-decoration: wavy var(--accent) underline;
+        font-variation-settings: "wght" 700, "slnt" 0;
+        font-weight: 700;
+    }
+
     >header {
         padding: 2rem;
         margin: 0 1rem;

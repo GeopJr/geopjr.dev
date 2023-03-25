@@ -1,14 +1,23 @@
+$green: #00ff00;
+
 body>footer {
     background-color: var(--card-background);
     padding: 2rem;
     border-top-left-radius: 2rem;
     // border-top-right-radius: 2rem;
-    border: 0.25rem solid transparent;
-    border-bottom: none;
-    border-right: none;
+    // border: 0.25rem solid transparent;
+    // border-bottom: none;
+    // border-right: none;
     // transition-duration: 200ms;
-    max-width: 70vw;
+    max-width: 90vw;
     align-self: flex-end;
+
+    a {
+        color: $green !important;
+        text-decoration: wavy $green underline !important;
+        font-variation-settings: "wght" 700, "slnt" 0;
+        font-weight: 700;
+    }
 
     >article {
         display: flex;
@@ -22,17 +31,6 @@ body>footer {
 
     transition-duration: 200ms;
 
-    &::after {
-        content: "";
-
-        z-index: 49;
-        right: 0;
-        top: -0.25rem;
-        height: .25rem;
-        width: 50px;
-        background-color: var(--card-background);
-        position: absolute;
-    }
 
     &::before {
         transition-duration: 200ms;
@@ -42,21 +40,31 @@ body>footer {
         position: absolute;
         background-color: transparent;
         right: 0;
-        top: -50px;
+        top: -49px;
         height: 50px;
         width: 50px;
         border-bottom-right-radius: 2rem;
         box-shadow: 25px 0px 0 0 var(--card-background);
-        border-bottom: 0.25rem solid var(--card-background);
     }
 
     &:hover {
-        border: 0.25rem solid #00ff00;
-        border-bottom: none;
-        border-right: none;
+        background-color: mix($card-background-dark, $green, 80%);
+
+        // border: 0.25rem solid #00ff00;
+        // border-bottom: none;
+        // border-right: none;
 
         &::before {
-            border-bottom-color: #00ff00;
+            // border-bottom-color: #00ff00;
+            box-shadow: 25px 0px 0 0 mix($card-background-dark, $green, 80%);
+
+            @media (prefers-color-scheme: light) {
+                box-shadow: 25px 0px 0 0 mix($card-background-light, $green, 80%);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            background-color: mix($card-background-light, $green, 80%);
         }
     }
 }

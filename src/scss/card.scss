@@ -2,6 +2,7 @@
     border: 0.25rem solid transparent;
     transition-duration: 200ms;
     height: 100%;
+    line-height: 1.5;
 
     a {
         color: var(--accent);
@@ -16,7 +17,8 @@
             transition-duration: 200ms;
         }
 
-        border-color: var(--accent);
+        // border-color: var(--accent);
+        background-color: var(--card-background-hover);
         transition-duration: 200ms;
 
         >.card-title {
@@ -114,8 +116,8 @@
         }
 
         >.card-action {
-            color: var(--accent-text);
-            background-color: var(--accent);
+            color: var(--text-color);
+            background-color: var(--card-action-background);
             border-radius: 0.5rem;
             padding: 0.5rem 0.5rem;
             line-height: 0;

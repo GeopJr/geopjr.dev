@@ -1,3 +1,6 @@
+$card-background-dark: #27241b;
+$card-background-light: #f9f1cc;
+
 @import './_reset.scss';
 @import './_reduced_motion.scss';
 @import './_navbar.scss';
@@ -49,11 +52,13 @@
     --accent-text: black;
     --tech-icon-color: #dbc766;
 
-    --card-background:  #27241b;
-    --navbar-background: #27241b;
+    --card-background: #{$card-background-dark};
+    --card-background-hover: #{lighten($card-background-dark, 10%)};
+    --navbar-background: #{$card-background-dark};
 
     --navbar-item-background: #4e7c5d;
     --navbar-item-color: var(--text-color);
+    --card-action-background: #4e7c5d;
 
     --navbar-item-background-hover: #7d6c9b;
     --card-action-background-hover: #7d6c9b;
@@ -76,11 +81,13 @@
         --accent-text: white;
         --tech-icon-color: #464023;
 
-        --card-background: #f9f1cc;
-        --navbar-background:#f9f1cc;
+        --card-background: #{$card-background-light};
+        --card-background-hover: #{darken($card-background-light, 5%)};
+        --navbar-background: #{$card-background-light};
 
         --navbar-item-background: #cbead3;
         --navbar-item-color: var(--text-color);
+        --card-action-background: #cbead3;
 
         --navbar-item-background-hover: #cbaff9;
         --card-action-background-hover: #cbaff9;
@@ -96,12 +103,21 @@
 
 @font-face {
     font-family: "Cantarell var";
-    src: url("/assets/fonts/Cantarell-VF.woff2") format("woff2 supports variations"), url("/assets/fonts/Cantarell-VF.woff2") format("woff2-variations");
+    src: url("/assets/fonts/Cantarell-VF.woff2") format("woff2"), url("/assets/fonts/Cantarell-VF.woff2") format("woff2 supports variations"), url("/assets/fonts/Cantarell-VF.woff2") format("woff2-variations");
     font-weight: 100 900;
     font-display: swap;
     font-style: normal;
     font-named-instance: "Regular";
 }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
 
 html {
     width: 100vw;
@@ -125,7 +141,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     min-height: 100vh;
 
     >main {
@@ -135,7 +151,7 @@ body {
         flex-direction: column;
         gap: 2rem;
         margin: 0 2rem;
-        max-width: calc(100vw - 2rem);
+        max-width: calc(100vw - 3rem);
         width: 80rem;
         flex-grow: 1;
         // min-width: 15rem;
