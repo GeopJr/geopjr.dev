@@ -3,7 +3,7 @@
   image: sveltepress
   techs:
     - svelte
-    - gnome
+    - gtk
     - qt
     - flutter
   links:
@@ -18,7 +18,7 @@
   image: collision
   techs:
     - crystal
-    - gnome
+    - gtk
   links:
     - icon: github
       url: https://github.com/GeopJr/Collision
@@ -129,7 +129,7 @@
   image: libadwaitacr
   techs:
     - crystal
-    - gnome
+    - gtk
   links:
     - icon: github
       url: https://github.com/GeopJr/libadwaita.cr
