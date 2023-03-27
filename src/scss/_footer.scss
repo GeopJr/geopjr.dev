@@ -1,4 +1,5 @@
-$green: #00ff00;
+$green-dark: #00ff00;
+$green-light: #1B8553;
 
 body>footer {
     background-color: var(--card-background);
@@ -13,16 +14,29 @@ body>footer {
     align-self: flex-end;
 
     a {
-        color: $green !important;
-        text-decoration: wavy $green underline !important;
+        color: $green-dark !important;
+        text-decoration: wavy $green-dark underline !important;
         font-variation-settings: "wght" 700, "slnt" 0;
         font-weight: 700;
+
+        @media (prefers-color-scheme: light) {
+            color: $green-light !important;
+            text-decoration: wavy $green-light underline !important;
+        }
     }
 
     >article {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        >header>svg {
+            color: $green-dark;
+
+            @media (prefers-color-scheme: light) {
+                color: $green-light;
+            }
+        }
     }
 
     // margin-bottom: -4rem;
@@ -48,7 +62,7 @@ body>footer {
     }
 
     &:hover {
-        background-color: mix($card-background-dark, $green, 80%);
+        background-color: mix($card-background-dark, $green-dark, 80%);
 
         // border: 0.25rem solid #00ff00;
         // border-bottom: none;
@@ -56,15 +70,15 @@ body>footer {
 
         &::before {
             // border-bottom-color: #00ff00;
-            box-shadow: 25px 0px 0 0 mix($card-background-dark, $green, 80%);
+            box-shadow: 25px 0px 0 0 mix($card-background-dark, $green-dark, 80%);
 
             @media (prefers-color-scheme: light) {
-                box-shadow: 25px 0px 0 0 mix($card-background-light, $green, 80%);
+                box-shadow: 25px 0px 0 0 mix($card-background-light, $green-dark, 80%);
             }
         }
 
         @media (prefers-color-scheme: light) {
-            background-color: mix($card-background-light, $green, 80%);
+            background-color: mix($card-background-light, $green-dark, 80%);
         }
     }
 }
