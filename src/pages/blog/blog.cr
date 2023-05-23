@@ -3,10 +3,10 @@ module GeopJr
     getter pages : Array(Page::Blog) = [] of Page::Blog
 
     def initialize(@posts : Array(BlogPostEntry))
-      max_pages = @posts.size.tdiv(MAX_POSTS_PAGE + 1) + 1
+      max_pages = @posts.size.tdiv(GeopJr::CONFIG.max_posts_per_page + 1) + 1
       page = 1
 
-      @posts.sort { |a, b| b[:post].date.to_unix <=> a[:post].date.to_unix }.each_slice(MAX_POSTS_PAGE) do |blog_page_entries|
+      @posts.sort { |a, b| b[:post].date.to_unix <=> a[:post].date.to_unix }.each_slice(GeopJr::CONFIG.max_posts_per_page) do |blog_page_entries|
         @pages << Page::Blog.new(blog_page_entries, page, max_pages)
         page = page + 1
       end

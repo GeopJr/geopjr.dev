@@ -9,8 +9,8 @@
                     </header>
                     <div class="card-badges">
                         <%- blog_post[:post].tags.each do |tag| -%>
-                            <% svg_icon = ICON_NAMES.fetch(tag, tag) %>
-                            <% tech_name = DICT.fetch(tag.downcase, tag.capitalize) %>
+                            <% svg_icon = GeopJr::CONFIG.data[:icons].fetch(tag, tag) %>
+                            <% tech_name = GeopJr::CONFIG.data[:dict].fetch(tag.downcase, tag.capitalize) %>
 	    				    <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
                                 <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
                             </svg>
@@ -28,7 +28,7 @@
 	    			class="card-action"
                     draggable="false"
 	    			title="Read More"
-	    			href="/<%= BLOG_PATH %>/<%= blog_post[:filename] %><%= EXT %>"
+	    			href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= blog_post[:filename] %><%= GeopJr::CONFIG.ext %>"
 	    			aria-label="Read More"
 	    		>
 	    			<svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
@@ -48,11 +48,11 @@
         <nav>
             <%- (1..@max_pages).each do |page_number| -%>
                 <%- if page_number == 1 && @page != 1 -%>
-                    <a draggable="false" aria-label="Previous" title="Previous" href="/<%= BLOG_PATH %>/<%= @page - 1 %><%= EXT %>">&lt;</a>
+                    <a draggable="false" aria-label="Previous" title="Previous" href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= @page - 1 %><%= GeopJr::CONFIG.ext %>">&lt;</a>
                 <%- end -%>
-                <a draggable="false" <%= page_number == @page ? "class=\"active\"" : "" %> href="/<%= BLOG_PATH %>/<%= page_number %><%= EXT %>"><%= page_number %></a>
+                <a draggable="false" <%= page_number == @page ? "class=\"active\"" : "" %> href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= page_number %><%= GeopJr::CONFIG.ext %>"><%= page_number %></a>
                 <%- if page_number == @max_pages && @page != @max_pages -%>
-                    <a draggable="false" aria-label="Next" title="Next" href="/<%= BLOG_PATH %>/<%= @page + 1 %><%= EXT %>">&gt;</a>
+                    <a draggable="false" aria-label="Next" title="Next" href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= @page + 1 %><%= GeopJr::CONFIG.ext %>">&gt;</a>
                 <%- end -%>
             <%- end -%>
         </nav>

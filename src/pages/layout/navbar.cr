@@ -1,5 +1,5 @@
 module GeopJr
-  alias Route = Hash(String, {title: String, page: String, file: String, description: String, style: Array(String), script: Array(String)})
+  alias Route = Hash(String, {title: String, page: String, file: String, description: String, style: Array(String), script: Array(String)?})
 
   class Layout::Navbar
     def initialize(@active_link : String, @routes : Route = ROUTES)

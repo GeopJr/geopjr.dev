@@ -1,6 +1,4 @@
 module GeopJr
-  alias TagsObj = {title: String, description: String, url: String, style: Array(String), script: Array(String)}
-
   Styles = {
     about:     ["about", "wave", "card"],
     blog_post: ["blog_post"],
@@ -15,10 +13,10 @@ module GeopJr
     property title : String
     property description : String
     property url : String
-    property css : Array(String)
-    property js : Array(String)
+    property css : Array(String)?
+    property js : Array(String)?
 
-    def initialize(title : String, description : String, url : String, style : Array(String) = [] of String, script : Array(String) = [] of String)
+    def initialize(title : String, description : String, url : String, style : Array(String)? = nil, script : Array(String)? = nil)
       @title = HTML.escape(title)
       @description = HTML.escape(description)
       @url = HTML.escape(url)

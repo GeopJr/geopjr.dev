@@ -6,15 +6,15 @@ module GeopJr
       @entries = [] of {url: String, date: String?}
 
       routes.each_value do |v|
-        filename = v[:file] == "index" ? nil : "#{v[:file]}#{EXT}"
-        @entries << {url: "#{URL}/#{filename}", date: nil}
+        filename = v[:file] == "index" ? nil : "#{v[:file]}#{GeopJr::CONFIG.ext}"
+        @entries << {url: "#{GeopJr::CONFIG.url}/#{filename}", date: nil}
       end
 
       blog_posts.each do |v|
         date = v[:post].updated
         date = v[:post].date if date.nil?
 
-        @entries << {url: "#{URL}/#{BLOG_PATH}/#{v[:filename]}#{EXT}", date: date.to_s("%Y-%m-%d")}
+        @entries << {url: "#{GeopJr::CONFIG.url}/#{GeopJr::CONFIG.blog_out_path}/#{v[:filename]}#{GeopJr::CONFIG.ext}", date: date.to_s("%Y-%m-%d")}
       end
     end
 

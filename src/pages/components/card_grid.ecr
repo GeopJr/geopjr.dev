@@ -1,26 +1,26 @@
 <main class="credit-card-view">
-        <%- @cards.each do |platform, account| -%>
-                <% brand = BRANDS[platform.downcase] %>
-                <% platform_title = DICT.fetch(platform.downcase, platform) %>
-                <article>
-                        <a 
-                                href="<%= account %>"
-                                draggable="false"
-                                aria-label="<%= @title_prefix %> <%= platform_title %>"
-                                title="<%= @title_prefix %> <%= platform_title %>"
-                                class="credit-card"
-                                target="_blank"
-                                style="--brand-head:<%= GeopJr::Utils.darken(brand[:background].to_s, 0.15) %>;--brand-body:<%= brand[:background].to_s %>;color:<%= brand[:text].to_s %>;"
-                        >
-                                <header>
-                                        <svg height="2.4em" width="2.4em" aria-hidden="true">
-                                                <use xlink:href="/assets/icons/<%= platform %>.svg#<%= platform %>"></use>
-                                        </svg>
-                                </header>
-                                <footer aria-hidden="true">
-                                        <%= platform_title %>
-                                </footer>
-                        </a>
-                </article>
-        <%- end -%>
+  <%- @cards.each do |platform, account| -%>
+    <% brand = GeopJr::CONFIG.data[:brands][platform.downcase] %>
+    <% platform_title = GeopJr::CONFIG.data[:dict].fetch(platform.downcase, platform) %>
+    <article>
+      <a 
+        href="<%= account %>"
+        draggable="false"
+        aria-label="<%= @title_prefix %> <%= platform_title %>"
+        title="<%= @title_prefix %> <%= platform_title %>"
+        class="credit-card"
+        target="_blank"
+        style="--brand-head:<%= GeopJr::Utils.darken(brand[:background].to_s, 0.15) %>;--brand-body:<%= brand[:background].to_s %>;color:<%= brand[:text].to_s %>;"
+      >
+        <header>
+          <svg height="2.4em" width="2.4em" aria-hidden="true">
+            <use xlink:href="/assets/icons/<%= platform %>.svg#<%= platform %>"></use>
+          </svg>
+        </header>
+        <footer aria-hidden="true">
+          <%= platform_title %>
+        </footer>
+      </a>
+    </article>
+  <%- end -%>
 </main>

@@ -1,10 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>GeopJr's Blog</title> 
-        <link><%= URL %></link>
+        <link><%= GeopJr::CONFIG.url %></link>
         <description><%= HTML.escape(ROUTES["blog"][:description]) %></description>
         <language>en-us</language>
-        <atom:link href="<%= URL %>/rss.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="<%= GeopJr::CONFIG.url %>/rss.xml" rel="self" type="application/rss+xml" />
         <%- @entries.each do |v| -%>
             <item>
                 <title><%= v[:title] %></title>

@@ -11,7 +11,7 @@
                     </header>
                     <div class="card-badges">
                         <%- work.techs.each do |tech| -%>
-                            <% tech_name = DICT.fetch(tech.downcase, tech.capitalize) %>
+                            <% tech_name = GeopJr::CONFIG.data[:dict].fetch(tech.downcase, tech.capitalize) %>
 					        <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
                                 <use xlink:href="/assets/icons/<%= tech %>.svg#<%= tech %>"></use>
                             </svg>

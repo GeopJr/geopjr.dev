@@ -8,7 +8,7 @@
 <main>
 	<div class="topics">
 		<article>
-			<a draggable="false" class="card" href="/work<%= EXT %>">
+			<a draggable="false" class="card" href="/work<%= GeopJr::CONFIG.ext %>">
 				<header class="card-title">Check out my work.</header>
 				<div class="arrow">
 					<svg height="1.2em" width="1.2em" aria-hidden="true">
@@ -18,7 +18,7 @@
 			</a>
 		</article>
 		<article>
-			<a draggable="false" class="card" href="/<%= BLOG_PATH %><%= EXT %>">
+			<a draggable="false" class="card" href="/<%= GeopJr::CONFIG.blog_out_path %><%= GeopJr::CONFIG.ext %>">
 				<header class="card-title">Read my blog.</header>
 				<div class="arrow">
 					<svg height="1.2em" width="1.2em" aria-hidden="true">
@@ -28,7 +28,7 @@
 			</a>
 		</article>
 		<article>
-			<a draggable="false" class="card" href="/contact<%= EXT %>">
+			<a draggable="false" class="card" href="/contact<%= GeopJr::CONFIG.ext %>">
 				<header class="card-title">Get in touch.</header>
 				<div class="arrow">
 					<svg height="1.2em" width="1.2em" aria-hidden="true">
@@ -52,7 +52,7 @@
 				<strong class="text--block accent--block">What I do</strong>
 			</header>
 			<p class="card-body">
-				<%= @whatido.sub("{arg1}", "<a href=\"/work#{EXT}\">Work</a>") %>
+				<%= @whatido.sub("{arg1}", "<a href=\"/work#{GeopJr::CONFIG.ext}\">Work</a>") %>
 			</p>
 		</article>
 		<article class="card">
@@ -65,8 +65,8 @@
 					<p><strong class="text--block accent--block"><%= category %></strong></p>
 					<div class="techs">
                 		<%- v.each do |tech, website| -%>
-							<% tech_name = DICT.fetch(tech.downcase, tech) %>
-							<% color = COLORS[tech.downcase] %>
+							<% tech_name = GeopJr::CONFIG.data[:dict].fetch(tech.downcase, tech) %>
+							<% color = GeopJr::CONFIG.data[:colors][tech.downcase] %>
 							<a
 								href="<%= website %>"
 								draggable="false"
