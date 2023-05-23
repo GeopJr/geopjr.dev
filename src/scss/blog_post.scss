@@ -1,3 +1,13 @@
+// Since we conditionally inject css, this
+// will only apply when the page is a blog
+// post; so there's no need for :has or
+// other hacks
+@media only screen and (max-width: 500px) {
+    body>main {
+        max-width: 100%;
+    }
+}
+
 .blog-post {
     display: flex;
     flex-direction: column;
