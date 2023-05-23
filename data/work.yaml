@@ -1,3 +1,19 @@
+- name: Tuba
+  desc: Browse the Fediverse
+  image: tuba
+  techs:
+    - gtk
+    - vala
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/Tuba
+      tooltip: GitHub Repo
+    - icon: flathub
+      url: https://flathub.org/apps/details/dev.geopjr.Tuba
+      tooltip: Flathub
+    - icon: externallinkalt
+      url: https://tuba.geopjr.dev/
+      tooltip: Website
 - name: SveltePress
   desc: 'Documentation for humans.'
   image: sveltepress
