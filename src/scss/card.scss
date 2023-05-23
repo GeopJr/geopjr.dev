@@ -87,6 +87,8 @@
 
         >.info {
             word-break: break-word;
+            // webkit
+            width: 100%;
 
             >.card-badges {
                 margin: 1rem 0 0 0;
