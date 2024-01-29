@@ -1,0 +1,65 @@
+images:
+  - filename: yumenikki.gif
+    alt: Yume Nikki sitting on a desk with a spotlight moving around them
+    pixelated: true
+  - filename: omori_picnic.webp
+    alt: OMORI and friends in HEADSPACE sitting on a picnic doing little animations
+    pixelated: true
+  - filename: dogs.webp
+    alt: My two beautiful dogs in a field of yellow flowers
+  - filename: dorianff.webp
+    alt: Dorian Electra's Fanfare album cover
+  - filename: undertale.webp
+    alt: Despite everything, it's still you
+    pixelated: true
+  - filename: stardew.gif
+    alt: 11 junimos dancing
+    pixelated: true
+  - filename: hollowknight.webp
+    alt: Sheo painting the Nailsmith
+  - filename: cookiecat.webp
+    alt: Cookie Cat
+badges:
+  - filename: gnome.gif
+    alt: GNOME
+    link: https://gnome.org/
+  - filename: gay.png
+    alt: Gay
+  - filename: agender.png
+    alt: Agender
+  - filename: blank.gif
+    alt: "Blank badge"
+    link: https://www.torproject.org/
+  - filename: begonegpt.webp
+    alt: DON'T FEED THE AI!
+  - filename: discord.gif
+    alt: Discord? NO WAY!
+    link: https://matrix.org/
+  - filename: square.jpg
+    alt: I HATE SQUARESPACE
+    link: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started
+  - filename: firefox.gif
+    alt: tested on Firefox
+    link: https://firefox.com/
+  - filename: gnome_web.gif
+    alt: GNOME Web
+    link: https://apps.gnome.org/Epiphany/
+  - filename: ia.jpg
+    alt: INTERNET ARCHIVE
+    link: https://archive.org/
+  - filename: ublock.png
+    alt: uBlock Origin Now!
+    link: https://github.com/gorhill/uBlock
+  - filename: tranarchy.gif
+    alt: tranArchy
+    link: https://queer.software/
+  - filename: anarchy.gif
+    alt: ANARCHY Now!
+  - filename: masto.gif
+    alt: LEAVE TWITTER, JOIN MASTODON
+    link: https://joinmastodon.org/servers
+  - filename: sky.jpg
+    alt: A sunny sky with clouds
+  - filename: stardew_valley.gif
+    alt: Stardew Valley
+    link: https://www.stardewvalley.net/

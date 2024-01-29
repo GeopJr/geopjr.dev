@@ -126,11 +126,12 @@ body>nav {
     }
 
     >div {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 1rem;
         overflow-x: auto;
         display: none;
-        z-index: 50;
+        z-index: 55;
 
         width: calc(100% - 4rem);
         height: calc(100% - 8rem);
@@ -141,9 +142,11 @@ body>nav {
         border-radius: 2rem;
         padding: 2rem;
         overflow-y: auto;
+        box-shadow: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--accent);
 
         >a {
             font-size: 1.5rem;
+            flex: 1 1 160px;
 
             &.text--block {
                 font-variation-settings: "wght" 700, "slnt" 0;
@@ -176,26 +179,11 @@ body>nav {
                 font-variation-settings: "wght" 700, "slnt" 0;
                 font-weight: 700;
             }
-
-            &:first-child {
-                &.text--block {
-                    border-top-right-radius: 1rem;
-                    border-top-left-radius: 1rem;
-
-                }
-            }
-
-            &:last-child {
-                &.text--block {
-                    border-bottom-right-radius: 1rem;
-                    border-bottom-left-radius: 1rem;
-
-                }
-            }
         }
 
         @media only screen and (min-width: 768px) {
             display: flex;
+            flex-wrap: nowrap;
             overflow-y: hidden;
             width: auto;
             height: auto;
@@ -206,20 +194,12 @@ body>nav {
             padding: 1rem;
             border-radius: 0;
             background-color: transparent;
+            box-shadow: none;
 
             >a {
-                &:first-child {
-                    &.text--block {
-                        border-top-right-radius: 0.5rem !important;
-                        border-top-left-radius: 0.5rem !important;
-
-                    }
-                }
-
                 &:last-child {
                     &.text--block {
                         border-bottom-right-radius: 1rem !important;
-                        border-bottom-left-radius: 0.5rem !important;
                     }
                 }
 

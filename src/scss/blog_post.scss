@@ -8,6 +8,10 @@
     }
 }
 
+body>main {
+    width: 60rem;
+}
+
 .blog-post {
     display: flex;
     flex-direction: column;
@@ -27,6 +31,16 @@
         margin: 0 1rem;
         text-align: center;
         gap: 1rem;
+
+        >h1 {
+            font-size: xxx-large;
+        }
+
+        @media only screen and (max-width: 700px) {
+            >h1 {
+                font-size: xx-large;
+            }
+        }
 
         >.subtitle {
             margin: 1rem 0;
@@ -98,9 +112,8 @@
 
 
     >div {
-        font-size: large;
+        font-size: x-large;
         margin: 2rem;
-
 
         img {
             max-width: 100%;
@@ -108,6 +121,11 @@
             display: block;
             margin-left: auto !important;
             margin-right: auto !important;
+
+            &.emote {
+                width: 256px;
+                filter: drop-shadow(0 0 .2rem var(--accent));
+            }
         }
 
         // :global(.youtube-sveltekit-embed) {
@@ -138,12 +156,16 @@
         }
 
         p {
-            line-height: 1.75;
+            line-height: 1.5;
         }
 
         ul>*,
         ol>* {
             margin: .5rem 0rem;
+        }
+
+        ul {
+            list-style: inside;
         }
 
         :not(pre)>code {
@@ -153,23 +175,33 @@
             padding: 0rem .3rem;
         }
 
+        figure {
+            text-align: center;
+            font-style: italic;
+            font-size: smaller;
+            margin: 0.5em;
+            padding: 0.5em;
+        }
+
         img {
             pointer-events: all;
         }
 
-        p>img,
-        .youtube>img {
+        figure img:not(.emote),
+        p img:not(.emote),
+        .youtube img {
             border-radius: 0.75rem;
         }
 
-        .youtube>img {
-            transition-duration: 200ms;
+        .youtube {
+            img {
+                transition-duration: 200ms;
+            }
 
-            &:hover {
+            &:hover img {
                 transform: scale(1.2);
                 outline: none;
                 box-shadow: var(--focus-outline);
-
             }
         }
 

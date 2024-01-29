@@ -7,6 +7,7 @@ tags:
     - nuxt
     - hackathon
     - encryption
+hidden: true
 ---
 
 This was my submission for the [DEV.to DigitalOcean Hackathon](https://dev.to/devteam/announcing-the-digitalocean-app-platform-hackathon-on-dev-2i1k).

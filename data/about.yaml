@@ -1,4 +1,4 @@
-about: "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">CS Student</strong> @ <strong class=\"accent\">NKUA</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{arg1}</strong> years, mostly as a <strong class=\"accent\">freelance full-stack web dev</strong> & <strong class=\"accent\">sysadmin</strong>! 🌐"
+about: "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">CS Student</strong> @ <strong class=\"accent\">NKUA</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{{GEOPJR_2017}}</strong> years, mostly as a <strong class=\"accent\">freelance full-stack web dev</strong> & <strong class=\"accent\">sysadmin</strong>! 🌐"
 interests:
   - Accessibility
   - Ethical Tech
@@ -15,29 +15,30 @@ interests:
   - User Experience
   - Compilers
   - Operating Systems
-whatido: Ever since I can remember myself, I've always been fascinated with technology and eventually grew up on the internet.<br />Over the years, I started contributing a lot to open source projects as well as create my own, from custom Android ROMs & iOS jailbreak tweaks to fully client-side E2E encrypted text bins (see {arg1}).<br />Moving forward I consciously choose to use the (limited) power I hold to ethically improve the lives of the people around me, fight climate change, protect activists and human rights and create accessible tech for everyone.
+whatido: Ever since I can remember myself, I've always been fascinated with technology and eventually grew up on the internet.<br />Over the years, I started contributing a lot to open source projects as well as create my own, from custom Android ROMs & iOS jailbreak tweaks to fully client-side E2E encrypted text bins (see {{{GEOPJR_WORK}}}).<br />Moving forward I consciously choose to use the (limited) power I hold to ethically improve the lives of the people around me, fight climate change, protect activists and human rights and create accessible software for everyone.
 stack:
   Languages:
     Crystal: https://crystal-lang.org/
+    Ruby: https://www.ruby-lang.org/
+    Javascript: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+    Vala: https://vala.dev/
     Dart: https://dart.dev/
     Elixir: https://elixir-lang.org/
-    Javascript: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
     PHP: https://www.php.net/
-    Ruby: https://www.ruby-lang.org/
   Web:
-    Less: https://lesscss.org/
-    Sass: https://sass-lang.com/
     Svelte: https://svelte.dev/
     Vue: https://vuejs.org/
+    Sass: https://sass-lang.com/
+    Less: https://lesscss.org/
     Crystal: https://crystal-lang.org/
     Express: https://expressjs.com/
     NodeJS: https://nodejs.org/
     Nuxt: https://nuxtjs.org/
-    Phoenix: https://www.phoenixframework.org/
+    # Phoenix: https://www.phoenixframework.org/
   Desktop:
+    GTK: https://www.gtk.org/
     Electron: https://www.electronjs.org/
     Flutter: https://flutter.dev/
-    GTK: https://www.gtk.org/
     Qt: https://www.qt.io/
   Mobile:
     Capacitor: https://capacitorjs.com/

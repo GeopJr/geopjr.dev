@@ -10,9 +10,8 @@ module GeopJr
         @entries << {url: "#{GeopJr::CONFIG.url}/#{filename}", date: nil}
       end
 
-      blog_posts.each do |v|
-        date = v[:post].updated
-        date = v[:post].date if date.nil?
+      blog_posts.reject { |i| i[:hidden] }.each do |v|
+        date = v[:post].updated || v[:post].date
 
         @entries << {url: "#{GeopJr::CONFIG.url}/#{GeopJr::CONFIG.blog_out_path}/#{v[:filename]}#{GeopJr::CONFIG.ext}", date: date.to_s("%Y-%m-%d")}
       end

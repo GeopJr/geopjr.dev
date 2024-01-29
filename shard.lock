@@ -4,6 +4,10 @@ shards:
     git: https://github.com/watzon/cor.git
     version: 0.1.0+git.commit.9c9e51ac6168f3bd4fdc51d679b65de09ef76cac
 
+  crustache:
+    git: https://github.com/makenowjust/crustache.git
+    version: 2.4.4
+
   markd:
     git: https://github.com/icyleaf/markd.git
     version: 0.5.0

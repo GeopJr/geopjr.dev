@@ -1,0 +1,28 @@
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+::view-transition-old(main) {
+    animation: scaleUp 0.3s reverse;
+}
+
+::view-transition-new(main) {
+    animation: scaleUp 0.3s;
+}
+
+@media (prefers-reduced-motion) {
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}

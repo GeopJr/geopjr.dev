@@ -29,7 +29,7 @@ Why did I even visit Unjected? Honestly, who wouldn't click a post with a title 
 
 🥱 All I got was an unfinished generic landing page:
 
-![Screenshot of a section of the landing page of unjected. 'Remember craigslist? So do we <emoji of person smiling while blushing>' in big bold text, 'Create listings for whatever subject you want. Find restaurants, housing, services and even things for sale!.' in normal sized non-bold text. Underneath it there's a row of cards. All cards are the exact same one. The card shows a masc person with a beard and glasses. At the top right there's a badge with the text '31 km' on the right of a 'pin' icon. Below the person there's the text 'Célestin,' in black colored bold text and below it the text 'Los Angeles, USA' in grey colored normal text.](https://i.imgur.com/0EwoQRb.png)
+![Screenshot of a section of the landing page of unjected. 'Remember craigslist? So do we <emoji of person smiling while blushing>' in big bold text, 'Create listings for whatever subject you want. Find restaurants, housing, services and even things for sale!.' in normal sized non-bold text. Underneath it there's a row of cards. All cards are the exact same one. The card shows a masc person with a beard and glasses. At the top right there's a badge with the text '31 km' on the right of a 'pin' icon. Below the person there's the text 'Célestin,' in black colored bold text and below it the text 'Los Angeles, USA' in grey colored normal text.]({{GEOPJR_BLOG_ASSETS}}/1.webp)
 
 Welp, that's all folks, time to close this tab. Oops, almost forgot to check out robots.txt for anything interesting. Uh oh...
 
@@ -54,7 +54,7 @@ DEBUG = True
 
 With that out of the way, this is what I was greeted with:
 
-![A basic django default debug page on 404 with the following content: ' Page not found (404) Request Method: 	GET Request URL: 	http://127.0.0.1:8000/robots.txt Using the URLconf defined in mysite.urls, Django tried these URL patterns, in this order:     admin/ The current path, robots.txt, didn’t match any of these. You’re seeing this error because you have DEBUG = True in your Django settings file. Change that to False, and Django will display a standard 404 page.'](https://i.imgur.com/fe6QEE6.png)
+![A basic django default debug page on 404 with the following content: ' Page not found (404) Request Method: 	GET Request URL: 	http://127.0.0.1:8000/robots.txt Using the URLconf defined in mysite.urls, Django tried these URL patterns, in this order:     admin/ The current path, robots.txt, didn’t match any of these. You’re seeing this error because you have DEBUG = True in your Django settings file. Change that to False, and Django will display a standard 404 page.']({{GEOPJR_BLOG_ASSETS}}/2.webp)
 
 > Imagine a list of many routes (read the DISCLAIMER) 
 
@@ -76,7 +76,7 @@ The admin endpoint (or whatever it was called), led to the admin dashboard where
 - Static pages (FaQ, About us...)
 - Everything.
 
-![Screenshot of the dashboard. There's a sidebar on the left with the following items: Dashboard, Users, Contact Us, Transactions, Management, Manage, Help Center, Feeds, Listing, Blood Bank, Fertility. The Feeds item is selected which has two sub items: Posts (selected), Reported Post. Each sidebar item has a related icon on its left. At the top of the sidebar theres the unjected logo and on its left the word 'Unjected'. On the main panel theres a table with the title of 'Posts' and header items: ID, CONTENTS, CREATED ON, ACTIONS. All the table bodies are censored except for one with the content of 'Server seems slow here. Each row of the action column has 2 buttons: a green one with an eye icon and a red one with a trash car icon.'](https://i.imgur.com/oxhCmYz.png)
+![Screenshot of the dashboard. There's a sidebar on the left with the following items: Dashboard, Users, Contact Us, Transactions, Management, Manage, Help Center, Feeds, Listing, Blood Bank, Fertility. The Feeds item is selected which has two sub items: Posts (selected), Reported Post. Each sidebar item has a related icon on its left. At the top of the sidebar theres the unjected logo and on its left the word 'Unjected'. On the main panel theres a table with the title of 'Posts' and header items: ID, CONTENTS, CREATED ON, ACTIONS. All the table bodies are censored except for one with the content of 'Server seems slow here. Each row of the action column has 2 buttons: a green one with an eye icon and a red one with a trash car icon.']({{GEOPJR_BLOG_ASSETS}}/3.webp)
 
 ## Sin #3
 
@@ -95,7 +95,7 @@ Both types of pages followed a similar pagination format: either `/{page_num}` o
 
 Since some of the pages were actually checking for an account (but not an admin account, just an account in general), I had to use the cookies with the Ol' Reliable cURL (in fish):
 
-![Spongebob Squarepants meme. Spongebob holds a case which has a label on one side with the text 'OL' RELIABLE'. On the panel below it, the case is open revealing the cURL logo inside of it. There are sparkles and shiny rays around it.](https://i.imgur.com/SYAjJw6.png)
+![Spongebob Squarepants meme. Spongebob holds a case which has a label on one side with the text 'OL' RELIABLE'. On the panel below it, the case is open revealing the cURL logo inside of it. There are sparkles and shiny rays around it.]({{GEOPJR_BLOG_ASSETS}}/4.webp)
 
 ```sh
 for i in (seq $last_page_num); curl --imagine-flags https://unjected.com/.../$i; end
@@ -173,8 +173,8 @@ I hope at least one person there decided to run away from this conspiracy after 
 
 The article (well not the original / the DailyDot one) ended up on The Tonight Show Starring Jimmy Fallon:
 
-<youtube id="NcMMBAiNjz8" time="320s" />
+#youtube {"id":"NcMMBAiNjz8","time":"320s","title":"Biden Pledges to Plant 1 Billion Trees, Trump Returns to D.C. | The Tonight Show"}
 
 plus I got a new bio:
 
-![Tweet from user SIGINT / @CL0WNWARS. Content: *and shitbag leftist hackers targeted it and mikael is here to write about it for us (ideas for sub headline) 6:10 PM · Jul 25, 2022](https://i.imgur.com/IakWJ2z.png)
+![Tweet from user SIGINT / @CL0WNWARS. Content: *and shitbag leftist hackers targeted it and mikael is here to write about it for us (ideas for sub headline) 6:10 PM · Jul 25, 2022]({{GEOPJR_BLOG_ASSETS}}/5.webp)

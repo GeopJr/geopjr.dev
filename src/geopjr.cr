@@ -3,6 +3,8 @@ require "ecr"
 require "yaml"
 require "cor"
 require "markd"
+require "crustache"
+require "csv"
 require "file_utils"
 
 require "./**"
@@ -14,13 +16,14 @@ class GeopJr::Config
   getter html_ext : Bool = false
   getter max_posts_per_page : Int32 = 9
 
+  getter distro_name : String? = nil
   getter ext : String
   getter time_now : Time = Time.utc
   getter paths = {
     out:    Path["dist"],
     static: Path["static"],
-    assets: Path["dist"] / "assets",
-    icons:  Path["static"] / "_icons",
+    assets: Path["dist", "assets"],
+    icons:  Path["static", "_icons"],
   }
   getter data = {
     dict:    Hash(String, String).from_yaml({{read_file("./data/dict.yaml")}}),
@@ -31,10 +34,25 @@ class GeopJr::Config
     icons:   Hash(String, String).from_yaml({{read_file("./data/icon_names.yaml")}}),
     about:   About.from_yaml({{read_file("./data/about.yaml")}}),
     works:   Array(Work).from_yaml({{read_file("./data/work.yaml")}}),
+    footer:  Footer.from_yaml({{read_file("./data/footer.yaml")}}),
   }
+  getter emotes : Hash(String, String) = Hash(String, String).new
 
   def initialize
     @ext = @html_ext ? ".html" : ""
+
+    if !(os_info = {{read_file?(env("GEOPJR_OS_RELEASE") || "/etc/os-release")}}).nil?
+      csv_hash = CSV.parse(os_info, '=').to_h
+      @distro_name = csv_hash.fetch("PRETTY_NAME", csv_hash["NAME"]?)
+    end
+
+    emotes_dir = Path["static", "assets", "images", "emotes"]
+    if Dir.exists?(emotes_dir)
+      emotes_parent = Path["/"].join(emotes_dir.parts.skip(1))
+      Dir.children(emotes_dir).each do |emote|
+        emotes["GEOPJR_EMOTES_#{Path[emote].stem.upcase}"] = (emotes_parent / emote).to_s
+      end
+    end
   end
 end
 
@@ -43,16 +61,13 @@ module GeopJr
   GeopJr::Utils.prepare_output_dir
   BLOG_POSTS = Blog.new(Path["blog"]).generate_blog_posts
 
-  navbar = Layout::Navbar.new("blog").to_s
-  footer_icon = FooterIcon.new
-
   # 404.html
   File.write(
     GeopJr::CONFIG.paths[:out] / "404.html",
     Layout::Page.new(
       Page::NotFound.new.to_s,
-      navbar,
-      Layout::Footer.new(footer_icon.next_icon).to_s,
+      Layout::Navbar.new("home").to_s,
+      Layout::Footer.new.to_s,
       GeopJr::Tags.new(
         "Error - GeopJr",
         "404 Not Found",
@@ -63,19 +78,23 @@ module GeopJr
     ).to_s
   )
 
+  blog_navbar = Layout::Navbar.new("blog").to_s
+  blog_post_footer_icon = FooterIcon.new
+  blog_post_footer_image = FooterImage.new
   # All blog posts
   BLOG_POSTS.each do |v|
     File.write(
       GeopJr::CONFIG.paths[:out] / "blog" / "#{v[:filename]}.html",
       Layout::Page.new(
         Page::Blog::Post.new(v[:post], v[:html]).to_s,
-        navbar,
-        Layout::Footer.new(footer_icon.next_icon).to_s,
+        blog_navbar,
+        Layout::Footer.new(blog_post_footer_icon.next_icon, blog_post_footer_image.next_image).to_s,
         GeopJr::Tags.new(
           "#{v[:post].title} - GeopJr",
           "#{v[:post].subtitle.nil? ? nil : "#{v[:post].subtitle} - "}#{v[:content][0..100]}...",
           "#{GeopJr::CONFIG.url}/blog/#{v[:filename]}",
-          Styles[:blog_post]
+          Styles[:blog_post],
+          cover: v[:post].cover.nil? ? nil : {v[:post].cover.not_nil!, v[:post].cover_alt}
         )
       ).to_s
     )
@@ -83,14 +102,13 @@ module GeopJr
 
   # Blog pagination
   BLOG_POST_PAGINATION = BlogPagination.new(BLOG_POSTS).pages
-
   BLOG_POST_PAGINATION.each_with_index do |blog_page, page|
     File.write(
       GeopJr::CONFIG.paths[:out] / "blog" / "#{page + 1}.html",
       Layout::Page.new(
         blog_page.to_s,
-        navbar,
-        Layout::Footer.new(footer_icon.next_icon).to_s,
+        blog_navbar,
+        Layout::Footer.new.to_s,
         GeopJr::Tags.new(
           "Blog - Page #{page + 1} - GeopJr",
           "Blog posts about programming, tech, ethics, climate, politics & more",
@@ -146,16 +164,12 @@ module GeopJr
   }
 
   ROUTES.each do |k, v|
-    navbar = Layout::Navbar.new(k).to_s
-
     File.write(
       GeopJr::CONFIG.paths[:out] / "#{v[:file]}.html",
       Layout::Page.new(
         v[:page],
-        navbar,
-        Layout::Footer.new(
-          footer_icon.next_icon
-        ).to_s,
+        Layout::Navbar.new(k).to_s,
+        Layout::Footer.new.to_s,
         GeopJr::Tags.new(
           "#{v[:file] == "index" ? nil : "#{v[:title]} - "}GeopJr",
           v[:description],

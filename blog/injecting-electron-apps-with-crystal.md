@@ -4,6 +4,7 @@ date: 2020-10-13
 tags:
     - crystal
     - electron
+hidden: true
 ---
 
 The need for (FOSS) desktop apps is getting larger each year for all platforms. There are many tools that allow you to build apps, but only a few have multi-platform support. One of the most popular ones is Electron, a framework maintained by GitHub which allows developers to write apps using web technologies. While Electron has many disadvantages (mainly performance and theme wise), it also holds the app's source in a simple archive, asar. This allows us to view and edit it's source (even though it's probably against their TOS).

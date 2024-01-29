@@ -5,6 +5,7 @@ $card-background-light: #f9f1cc;
 @import './_reduced_motion.scss';
 @import './_navbar.scss';
 @import './_footer.scss';
+@import './_view_transition.scss';
 
 // @import './wave.scss';
 // @import './about.scss';
@@ -96,7 +97,7 @@ $card-background-light: #f9f1cc;
         --focus-outline-color: #201c08;
         --focus-outline-color-inner: var(--background-color);
 
-        --background-color: #fdfcf2;
+        --background-color: #fcfbe8;
         --text-color: #201c08;
     }
 }
@@ -117,7 +118,7 @@ $card-background-light: #f9f1cc;
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
+}
 
 html {
     width: 100vw;
@@ -126,6 +127,7 @@ html {
     // transition-duration: 200ms;
     font-family: 'Cantarell var', 'Cantarell', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Noto Sans',
         sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    scrollbar-color: var(--accent) var(--background-color);
 }
 
 b,
@@ -145,6 +147,7 @@ body {
     min-height: 100vh;
 
     >main {
+        view-transition-name: main;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -201,4 +204,13 @@ a:active {
     line-height: 1.5;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--accent-text);
 }

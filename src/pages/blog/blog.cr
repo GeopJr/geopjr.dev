@@ -3,6 +3,7 @@ module GeopJr
     getter pages : Array(Page::Blog) = [] of Page::Blog
 
     def initialize(@posts : Array(BlogPostEntry))
+      @posts = @posts.reject { |i| i[:hidden] }
       max_pages = @posts.size.tdiv(GeopJr::CONFIG.max_posts_per_page + 1) + 1
       page = 1
 

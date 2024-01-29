@@ -15,13 +15,28 @@ module GeopJr
     property url : String
     property css : Array(String)?
     property js : Array(String)?
+    property cover : CoverImage
 
-    def initialize(title : String, description : String, url : String, style : Array(String)? = nil, script : Array(String)? = nil)
+    alias CoverImage = Tuple(String, String)
+
+    def initialize(title : String, description : String, url : String, style : Array(String)? = nil, script : Array(String)? = nil, cover : CoverImage? = nil)
       @title = HTML.escape(title)
       @description = HTML.escape(description)
       @url = HTML.escape(url)
       @css = style
       @js = script
+
+      if cover.nil?
+        @cover = {
+          "#{GeopJr::CONFIG.url}/assets/favicons/avi.webp",
+          "My avatar, a yellow Novakid from the game Starbound",
+        }
+      else
+        @cover = {
+          "#{GeopJr::CONFIG.url}/#{cover[0]}",
+          "#{cover[1]}",
+        }
+      end
     end
 
     def standard
@@ -35,9 +50,11 @@ module GeopJr
 
     def og
       <<-HTML
-          <meta name="og:title" content="#{@title}">
-          <meta name="og:description" content="#{@description}">
-          <meta name="og:url" content="#{@url}">
+          <meta property="og:title" content="#{@title}">
+          <meta property="og:description" content="#{@description}">
+          <meta property="og:url" content="#{@url}">
+          <meta property="og:image" content="#{@cover[0]}">
+          <meta property="og:image:alt" content="#{@cover[1]}">
           HTML
     end
   end

@@ -4,7 +4,7 @@ all: get_minify build_geopjr get_sass sass minify
 
 get_minify:
 ifeq (,$(wildcard ./minify))
-	wget https://github.com/tdewolff/minify/releases/download/v2.12.5/minify_linux_amd64.tar.gz
+	wget https://github.com/tdewolff/minify/releases/download/v2.20.16/minify_linux_amd64.tar.gz
 	mkdir minify_temp
 	tar -xvf minify_linux_amd64.tar.gz -C minify_temp
 	mv ./minify_temp/minify .
@@ -13,7 +13,7 @@ endif
 
 
 minify:
-	./minify -r -o . ./dist/
+	./minify -r -o ./dist/ ./dist/
 
 build_geopjr:
 	shards build

@@ -6,6 +6,7 @@ tags:
     - crystal
     - privacy
     - encryption
+hidden: true
 ---
 
 Ever wanted to share some long text with your friends, or maybe some code that might include a token or two? Usually, you will probably consider using a free text bin like pastebin or hastebin, but neither of them is encrypted. However they offer great and accessible UIs as well as code highlighting.

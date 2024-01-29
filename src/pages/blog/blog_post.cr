@@ -9,6 +9,9 @@ module GeopJr
     property updated : Time?
     property tags : Array(String)
     property skip : Bool?
+    property hidden : Bool = false
+    property cover : String? = nil
+    property cover_alt : String = ""
   end
 
   class Page::Blog::Post

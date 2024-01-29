@@ -4,6 +4,7 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr);
 
     >article {
         height: 100%;

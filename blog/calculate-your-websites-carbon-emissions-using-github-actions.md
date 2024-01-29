@@ -7,6 +7,7 @@ tags:
     - javascript
     - docker
     - hackathon
+hidden: true
 ---
 
 This was my submission for the [DEV.to GitHub Actions 2 Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn).
@@ -68,4 +69,4 @@ Take action: [Switch to a green host](https://www.wholegraindigital.com/blog/cho
 
 ### Screenshot
 
-![pull request comment/review with the result of CO2](https://i.imgur.com/HiI2yCv.png)
+![pull request comment/review with the result of CO2](/assets/images/blog/calculate-your-websites-carbon-emissions-using-github-actions/screenshot.webp)

@@ -12,6 +12,7 @@
                             <% svg_icon = GeopJr::CONFIG.data[:icons].fetch(tag, tag) %>
                             <% tech_name = GeopJr::CONFIG.data[:dict].fetch(tag.downcase, tag.capitalize) %>
 	    				    <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
+                                <title><%= tech_name %></title>
                                 <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
                             </svg>
                         <%- end -%>

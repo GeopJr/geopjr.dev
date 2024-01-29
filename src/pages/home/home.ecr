@@ -44,7 +44,7 @@
 				<strong class="text--block accent--block">About Me</strong>
 			</header>
 			<p class="card-body">
-				<%= @about.sub("{arg1}", Time.local(Time::Location.load("Europe/Athens")).year - 2017) %>
+				<%= @about %>
 			</p>
 		</article>
 		<article class="card">
@@ -52,14 +52,13 @@
 				<strong class="text--block accent--block">What I do</strong>
 			</header>
 			<p class="card-body">
-				<%= @whatido.sub("{arg1}", "<a href=\"/work#{GeopJr::CONFIG.ext}\">Work</a>") %>
+				<%= @whatido %>
 			</p>
 		</article>
 		<article class="card">
 			<header class="card-title">
 				<strong class="text--block accent--block">My Stack</strong>
 			</header>
-			<p class="card-subtitle">(Includes only those I really enjoy working with)</p>
 			<div class="card-body">
         		<%- @stack.each do |category, v| -%>
 					<p><strong class="text--block accent--block"><%= category %></strong></p>

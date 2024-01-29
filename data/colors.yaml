@@ -67,3 +67,6 @@ css3:
 android:
   background: "#3ddc84"
   text: "#ffffff"
+vala:
+  background: "#a56de2"
+  text: "#ffffff"

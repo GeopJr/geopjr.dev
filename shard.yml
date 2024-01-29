@@ -13,6 +13,8 @@ dependencies:
     github: watzon/cor
   markd:
     github: icyleaf/markd
+  crustache:
+    github: MakeNowJust/crustache
 
 crystal: 1.7.3
 

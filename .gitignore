@@ -14,3 +14,5 @@ minify-js
 /minify_temp/
 minify
 minify_linux_amd64.tar.gz*
+/os-release
+/repositories

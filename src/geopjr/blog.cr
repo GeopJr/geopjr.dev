@@ -1,8 +1,33 @@
 module GeopJr
-  alias BlogPostEntry = {filename: String, post: BlogPost, html: String, content: String}
+  alias BlogPostEntry = {filename: String, post: BlogPost, html: String, content: String, hidden: Bool}
 
   class Blog
+    class Youtube
+      include JSON::Serializable
+
+      property id : String
+      property time : String?
+      property title : String?
+    end
+
     def initialize(@blog_path : Path)
+    end
+
+    private def figure(title : String?, content : String)
+      return content if title.nil?
+
+      <<-HTML
+      <figure>
+        #{content}
+        <figcaption>#{title}</figcaption>
+      </figure>    
+      HTML
+    end
+
+    private def image(url : String, alt : String = "")
+      <<-HTML
+        <img alt="#{alt}" src="#{url}" />
+      HTML
     end
 
     private def remove_tags(content : String) : String
@@ -21,8 +46,13 @@ module GeopJr
     # an anchor with its thumbnail
     private def youtube(content : String) : String
       res = content
-      res.scan(/<youtube id="([a-zA-Z0-9]+)" ?(time="([a-zA-Z0-9]+)")? ?\/>/) do |m|
-        tag = "<a title=\"Watch on YouTube\" class=\"youtube\" href=\"https://www.youtube.com/watch?v=#{m[1]}#{m.size == 4 ? "&t=#{m[-1]}" : nil}\"><img aria-hidden=\"true\" src=\"https://img.youtube.com/vi/#{m[1]}/mqdefault.jpg\" /></a>"
+      res.scan(/^#youtube +(\{.+\})$/mi) do |m|
+        youtube_obj = Youtube.from_json(m[-1])
+        tag = <<-HTML
+          <a title="Watch on YouTube" class="youtube" href="https://www.youtube.com/watch?v=#{youtube_obj.id}#{youtube_obj.time.nil? ? nil : "&t=#{youtube_obj.time}"}">
+            #{figure(youtube_obj.title, image("https://img.youtube.com/vi/#{youtube_obj.id}/mqdefault.jpg"))}
+          </a>
+        HTML
         res = res.sub(m[0], tag)
       end
       res
@@ -35,19 +65,25 @@ module GeopJr
 
         post_path = @blog_path / post
         post_source = File.read(post_path)
+        file_domain = post_path.basename(".md")
 
         fm = frontmatter(post_source)
         next if fm[0].skip == true
         post_source = post_source.sub(fm[1], "")
 
         post_source = youtube(post_source)
-        html = Markd.to_html(post_source)
+        template = Crustache.parse post_source
+        processed_source = Crustache.render template, {
+          "GEOPJR_BLOG_ASSETS" => "/assets/images/blog/#{file_domain}",
+        }.merge(GeopJr::CONFIG.emotes)
 
+        html = Markd.to_html(processed_source)
         res << {
-          filename: post_path.basename(".md"),
+          filename: file_domain,
           post:     fm[0],
           html:     html,
           content:  remove_tags(html),
+          hidden:   fm[0].hidden,
         }
       end
 

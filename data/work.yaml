@@ -107,7 +107,7 @@
       tooltip: Website
 - name: create-crystal-app
   desc: An unopinionated user-friendly crystal init alternative.
-  image: https://i.imgur.com/85DnHA7.png
+  image: /assets/images/work/cca.webp
   techs:
     - crystal
   links:
@@ -194,7 +194,7 @@
       tooltip: GitHub Repo
 - name: Granz
   desc: A Discord bot/framework(?) for Crystal.
-  image: https://i.imgur.com/vYD4xJMs.jpg
+  image: /assets/images/work/granz.webp
   techs:
     - crystal
   links:
@@ -206,7 +206,7 @@
       tooltip: Website
 - name: Soft & Wet
   desc: A Discord Bot that uses advanced image manipulation to create new images from templates in under a second.
-  image: https://i.imgur.com/3tStuJqs.png
+  image: /assets/images/work/snw.webp
   techs:
     - nodejs
   links:
