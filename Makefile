@@ -31,3 +31,6 @@ sass:
 
 clean:
 	rm -rf ./minify ./dart-sass/ ./sass.tar.gz ./minify_temp ./minify_linux_amd64.tar.gz
+
+zip:
+	cd dist && zip -r9q ../dist.zip . && cd ..

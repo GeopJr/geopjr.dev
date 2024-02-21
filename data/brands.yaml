@@ -55,3 +55,6 @@ paypal:
 paypal:
   background: "#003087"
   text: "#ffffff"
+signal:
+  background: "#3a76f0"
+  text: "#ffffff"
