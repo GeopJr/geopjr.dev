@@ -9,7 +9,7 @@
                 <%- @post.tags.each do |tag| -%>
                     <% svg_icon = GeopJr::CONFIG.data[:icons].fetch(tag, tag) %>
                     <% tech_name = GeopJr::CONFIG.data[:dict].fetch(tag.downcase, tag.capitalize) %>
-                    <svg height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %> logo">
+                    <svg height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
                         <title><%= tech_name %></title>
                         <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
                     </svg>
