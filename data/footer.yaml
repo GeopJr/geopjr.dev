@@ -50,8 +50,8 @@ badges:
   - filename: ublock.png
     alt: uBlock Origin Now!
     link: https://github.com/gorhill/uBlock
-  - filename: tranarchy.gif
-    alt: tranArchy
+  - filename: qs.gif
+    alt: "{queer.software}"
     link: https://queer.software/
   - filename: anarchy.gif
     alt: ANARCHY Now!
