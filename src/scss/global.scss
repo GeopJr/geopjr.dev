@@ -197,6 +197,11 @@ a:active {
     &.accent--block {
         color: var(--accent-text);
         background-color: var(--accent);
+
+        &::selection {
+            background-color: var(--accent-text);
+            color: var(--accent);
+        }
     }
 
     border-radius: .5rem;
