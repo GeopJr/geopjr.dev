@@ -45,6 +45,38 @@
     - icon: externallinkalt
       url: https://collision.geopjr.dev/
       tooltip: Website
+- name: Archives
+  desc: Create and view web archives.
+  image: archives
+  techs:
+    - gtk
+    - vala
+  links:
+    - icon: gnome
+      url: https://gitlab.gnome.org/GeopJr/Archives
+      tooltip: Git Repo
+    - icon: flathub
+      url: https://flathub.org/apps/details/dev.geopjr.Archives
+      tooltip: Flathub
+    - icon: externallinkalt
+      url: https://archives.geopjr.dev/
+      tooltip: Website
+- name: Calligraphy
+  desc: Turn text into ASCII banners.
+  image: calligraphy
+  techs:
+    - gtk
+    - python
+  links:
+    - icon: gnome
+      url: https://gitlab.gnome.org/GeopJr/Calligraphy
+      tooltip: Git Repo
+    - icon: flathub
+      url: https://flathub.org/apps/details/dev.geopjr.Calligraphy
+      tooltip: Flathub
+    - icon: externallinkalt
+      url: https://calligraphy.geopjr.dev/
+      tooltip: Website
 - name: BeardBin
   desc: A Zero-Knowledge Encrypted Text/Code sharing project.
   image: beardbin
