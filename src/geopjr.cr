@@ -10,9 +10,38 @@ require "file_utils"
 require "./**"
 
 class GeopJr::Config
-  getter version : String = "0.2.0"
+  class Data
+    macro load_or_embed(path)
+      File.exists?({{path}}) ? File.open({{path}}) : {{read_file(path)}}
+    end
+
+    getter dict : Hash(String, String)
+    getter colors : Hash(String, {background: String, text: String})
+    getter brands : Hash(String, {background: String, text: String})
+    getter contact : Hash(String, String)
+    getter donate : Hash(String, String)
+    getter icons : Hash(String, String)
+    getter about : About
+    getter works : Array(Work)
+    getter footer : Footer
+
+    def initialize
+      @dict = Hash(String, String).from_yaml(load_or_embed("./data/dict.yaml"))
+      @colors = Hash(String, {background: String, text: String}).from_yaml(load_or_embed("./data/colors.yaml"))
+      @brands = Hash(String, {background: String, text: String}).from_yaml(load_or_embed("./data/brands.yaml"))
+      @contact = Hash(String, String).from_yaml(load_or_embed("./data/contact.yaml"))
+      @donate = Hash(String, String).from_yaml(load_or_embed("./data/donate.yaml"))
+      @icons = Hash(String, String).from_yaml(load_or_embed("./data/icon_names.yaml"))
+      @about = About.from_yaml(load_or_embed("./data/about.yaml"))
+      @works = Array(Work).from_yaml(load_or_embed("./data/work.yaml"))
+      @footer = Footer.from_yaml(load_or_embed("./data/footer.yaml"))
+    end
+  end
+
+  getter version : String = "0.3.0"
   getter blog_out_path : String = "blog"
   getter url : String = "https://geopjr.dev"
+  getter title : String = "GeopJr"
   getter html_ext : Bool = false
   getter max_posts_per_page : Int32 = 9
 
@@ -25,17 +54,7 @@ class GeopJr::Config
     assets: Path["dist", "assets"],
     icons:  Path["static", "_icons"],
   }
-  getter data = {
-    dict:    Hash(String, String).from_yaml({{read_file("./data/dict.yaml")}}),
-    colors:  Hash(String, {background: String, text: String}).from_yaml({{read_file("./data/colors.yaml")}}),
-    brands:  Hash(String, {background: String, text: String}).from_yaml({{read_file("./data/brands.yaml")}}),
-    contact: Hash(String, String).from_yaml({{read_file("./data/contact.yaml")}}),
-    donate:  Hash(String, String).from_yaml({{read_file("./data/donate.yaml")}}),
-    icons:   Hash(String, String).from_yaml({{read_file("./data/icon_names.yaml")}}),
-    about:   About.from_yaml({{read_file("./data/about.yaml")}}),
-    works:   Array(Work).from_yaml({{read_file("./data/work.yaml")}}),
-    footer:  Footer.from_yaml({{read_file("./data/footer.yaml")}}),
-  }
+  getter data = Data.new
   getter emotes : Hash(String, String) = Hash(String, String).new
 
   def initialize
@@ -61,124 +80,23 @@ module GeopJr
   GeopJr::Utils.prepare_output_dir
   BLOG_POSTS = Blog.new(Path["blog"]).generate_blog_posts
 
-  # 404.html
-  File.write(
-    GeopJr::CONFIG.paths[:out] / "404.html",
-    Layout::Page.new(
-      Page::NotFound.new.to_s,
-      Layout::Navbar.new("home").to_s,
-      Layout::Footer.new.to_s,
-      GeopJr::Tags.new(
-        "Error - GeopJr",
-        "404 Not Found",
-        "#{GeopJr::CONFIG.url}/404.html",
-        Styles[:error],
-        ["error"],
-      )
-    ).to_s
-  )
+  Page::NotFound.new.write # 404.html
+  Blog.write_blog_posts    # Blog Posts
 
-  blog_navbar = Layout::Navbar.new("blog").to_s
-  blog_post_footer_icon = FooterIcon.new
-  blog_post_footer_image = FooterImage.new
-  # All blog posts
-  BLOG_POSTS.each do |v|
-    File.write(
-      GeopJr::CONFIG.paths[:out] / "blog" / "#{v[:filename]}.html",
-      Layout::Page.new(
-        Page::Blog::Post.new(v[:post], v[:html]).to_s,
-        blog_navbar,
-        Layout::Footer.new(blog_post_footer_icon.next_icon, blog_post_footer_image.next_image).to_s,
-        GeopJr::Tags.new(
-          "#{v[:post].title} - GeopJr",
-          "#{v[:post].subtitle.nil? ? nil : "#{v[:post].subtitle} - "}#{v[:content][0..100]}...",
-          "#{GeopJr::CONFIG.url}/blog/#{v[:filename]}",
-          Styles[:blog_post],
-          cover: v[:post].cover.nil? ? nil : {v[:post].cover.not_nil!, v[:post].cover_alt}
-        )
-      ).to_s
-    )
-  end
-
-  # Blog pagination
-  BLOG_POST_PAGINATION = BlogPagination.new(BLOG_POSTS).pages
-  BLOG_POST_PAGINATION.each_with_index do |blog_page, page|
-    File.write(
-      GeopJr::CONFIG.paths[:out] / "blog" / "#{page + 1}.html",
-      Layout::Page.new(
-        blog_page.to_s,
-        blog_navbar,
-        Layout::Footer.new.to_s,
-        GeopJr::Tags.new(
-          "Blog - Page #{page + 1} - GeopJr",
-          "Blog posts about programming, tech, ethics, climate, politics & more",
-          "#{GeopJr::CONFIG.url}/blog/#{page + 1}",
-          Styles[:blog]
-        )
-      ).to_s
-    )
-  end
+  BLOG_PAGES = BlogPagination.new(BLOG_POSTS)
+  BLOG_PAGES.write
 
   # Routes
   ROUTES = {
-    "home" => {
-      title:       "Home",
-      page:        Page::Home.new(GeopJr::CONFIG.data[:about].about, GeopJr::CONFIG.data[:about].interests, GeopJr::CONFIG.data[:about].whatido, GeopJr::CONFIG.data[:about].stack).to_s,
-      file:        "index",
-      description: "Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more",
-      style:       Styles[:about],
-      script:      ["egg_basket"],
-    },
-    "work" => {
-      title:       "Work",
-      page:        Page::Work.new(GeopJr::CONFIG.data[:works]).to_s,
-      file:        "work",
-      description: "Notable & interesting projects I authored",
-      style:       Styles[:work],
-      script:      nil,
-    },
-    "blog" => {
-      title:       "Blog",
-      page:        BLOG_POST_PAGINATION[0].to_s,
-      file:        "blog",
-      description: "Blog posts about programming, tech, ethics, climate, politics & more",
-      style:       Styles[:blog],
-      script:      nil,
-    },
-    "donate" => {
-      title:       "Donate",
-      page:        Page::CardGrid.new(GeopJr::CONFIG.data[:donate], "Donate using").to_s,
-      file:        "donate",
-      description: "Help me continue doing what I love",
-      style:       Styles[:donate],
-      script:      nil,
-    },
-    "contact" => {
-      title:       "Contact",
-      page:        Page::CardGrid.new(GeopJr::CONFIG.data[:contact], "Contact me on").to_s,
-      file:        "contact",
-      description: "Where to contact me",
-      style:       Styles[:contact],
-      script:      nil,
-    },
+    Page::Home.new,
+    Page::Work.new,
+    BLOG_PAGES.main,
+    Page::Donate.new,
+    Page::Contact.new,
   }
 
-  ROUTES.each do |k, v|
-    File.write(
-      GeopJr::CONFIG.paths[:out] / "#{v[:file]}.html",
-      Layout::Page.new(
-        v[:page],
-        Layout::Navbar.new(k).to_s,
-        Layout::Footer.new.to_s,
-        GeopJr::Tags.new(
-          "#{v[:file] == "index" ? nil : "#{v[:title]} - "}GeopJr",
-          v[:description],
-          "#{GeopJr::CONFIG.url}/#{v[:file] == "index" ? nil : v[:file]}",
-          v[:style],
-          v[:script],
-        )
-      ).to_s
-    )
+  ROUTES.each do |route|
+    route.write
   end
 
   # Icons to sprites

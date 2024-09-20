@@ -1,6 +1,6 @@
 module GeopJr
   @[YAML::Serializable::Options(emit_nulls: true)]
-  class BlogPost
+  class BlogPostFrontmatter
     include YAML::Serializable
 
     property title : String
@@ -15,7 +15,7 @@ module GeopJr
   end
 
   class Page::Blog::Post
-    def initialize(@post : BlogPost, @html : String)
+    def initialize(@post : BlogPostFrontmatter, @html : String)
     end
 
     ECR.def_to_s "#{__DIR__}/blog_post.ecr"

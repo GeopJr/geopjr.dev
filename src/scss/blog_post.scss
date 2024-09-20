@@ -18,6 +18,8 @@ body>main {
     min-height: 100vh;
     // gap: 4rem;
     width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
     a {
         color: var(--accent);
@@ -216,11 +218,28 @@ body>main {
             }
         }
 
+        .info-box,
         blockquote {
-            font-style: italic;
             background-color: var(--card-background);
             padding: .1rem 1rem;
             border-radius: 0.75rem;
+        }
+
+        blockquote {
+            font-style: italic;
+        }
+
+        .info-box {
+            margin: 2rem 0rem;
+
+            >p {
+                font-size: smaller;
+
+                &.title {
+                    margin-bottom: .5rem;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

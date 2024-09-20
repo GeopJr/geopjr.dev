@@ -5,12 +5,12 @@
             <header class="card-title">
                 <section class="info">
                     <header>
-                        <strong class="text--block accent--block"><%= blog_post[:post].title %></strong>
+                        <strong class="text--block accent--block"><%= blog_post.fm.title %></strong>
                     </header>
                     <div class="card-badges">
-                        <%- blog_post[:post].tags.each do |tag| -%>
-                            <% svg_icon = GeopJr::CONFIG.data[:icons].fetch(tag, tag) %>
-                            <% tech_name = GeopJr::CONFIG.data[:dict].fetch(tag.downcase, tag.capitalize) %>
+                        <%- blog_post.fm.tags.each do |tag| -%>
+                            <% svg_icon = GeopJr::CONFIG.data.icons.fetch(tag, tag) %>
+                            <% tech_name = GeopJr::CONFIG.data.dict.fetch(tag.downcase, tag.capitalize) %>
 	    				    <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
                                 <title><%= tech_name %></title>
                                 <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
@@ -19,9 +19,9 @@
                     </div>
                 </section>
             </header>
-            <%- if blog_post[:post].subtitle -%>
+            <%- if blog_post.fm.subtitle -%>
                 <p class="card-body">
-                     <%= blog_post[:post].subtitle %>
+                     <%= blog_post.fm.subtitle %>
                 </p>
             <%- end -%>
             <footer>
@@ -29,15 +29,15 @@
 	    			class="card-action"
                     draggable="false"
 	    			title="Read More"
-	    			href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= blog_post[:filename] %><%= GeopJr::CONFIG.ext %>"
+	    			href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= blog_post.filename %><%= GeopJr::CONFIG.ext %>"
 	    			aria-label="Read More"
 	    		>
 	    			<svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
                         <use xlink:href="/assets/icons/eye.svg#eye"></use>
                     </svg>
 	    		</a>
-                <% date_s = blog_post[:post].date.to_s("%Y-%m-%d") %>
-                <%- unless (date = blog_post[:post].updated).nil? -%>
+                <% date_s = blog_post.fm.date.to_s("%Y-%m-%d") %>
+                <%- unless (date = blog_post.fm.updated).nil? -%>
                     <% date_s = date.to_s("%Y-%m-%d") %>
                 <%- end -%>
                 <span class="date"><time datetime="<%= date_s %>"><%= date_s %></time></span>

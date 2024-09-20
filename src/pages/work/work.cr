@@ -19,8 +19,25 @@ module GeopJr
     property tooltip : String
   end
 
-  class Page::Work
-    def initialize(@works : Array(GeopJr::Work))
+  class Page::Work < Page::Base
+    def initialize(@works : Array(GeopJr::Work) = GeopJr::CONFIG.data.works)
+      super()
+    end
+
+    def id : Symbol
+      :work
+    end
+
+    def description : String
+      "Notable & interesting projects I authored"
+    end
+
+    def tags : GeopJr::Tags
+      @tags
+    end
+
+    protected def content : String
+      self.to_s
     end
 
     ECR.def_to_s "#{__DIR__}/work.ecr"

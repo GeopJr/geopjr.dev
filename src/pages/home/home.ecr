@@ -44,7 +44,7 @@
 				<strong class="text--block accent--block">About Me</strong>
 			</header>
 			<p class="card-body">
-				<%= @about %>
+				<%= @about.about %>
 			</p>
 		</article>
 		<article class="card">
@@ -52,7 +52,7 @@
 				<strong class="text--block accent--block">What I do</strong>
 			</header>
 			<p class="card-body">
-				<%= @whatido %>
+				<%= @about.whatido %>
 			</p>
 		</article>
 		<article class="card">
@@ -60,12 +60,12 @@
 				<strong class="text--block accent--block">My Stack</strong>
 			</header>
 			<div class="card-body">
-        		<%- @stack.each do |category, v| -%>
+        		<%- @about.stack.each do |category, v| -%>
 					<p><strong class="text--block accent--block"><%= category %></strong></p>
 					<div class="techs">
                 		<%- v.each do |tech, website| -%>
-							<% tech_name = GeopJr::CONFIG.data[:dict].fetch(tech.downcase, tech) %>
-							<% color = GeopJr::CONFIG.data[:colors][tech.downcase] %>
+							<% tech_name = GeopJr::CONFIG.data.dict.fetch(tech.downcase, tech) %>
+							<% color = GeopJr::CONFIG.data.colors[tech.downcase] %>
 							<a
 								href="<%= website %>"
 								draggable="false"

@@ -2,7 +2,7 @@
     <channel>
         <title>GeopJr's Blog</title> 
         <link><%= GeopJr::CONFIG.url %></link>
-        <description><%= HTML.escape(ROUTES["blog"][:description]) %></description>
+        <description><%= HTML.escape(BLOG_DESCRIPTION) %></description>
         <language>en-us</language>
         <atom:link href="<%= GeopJr::CONFIG.url %>/rss.xml" rel="self" type="application/rss+xml" />
         <%- @entries.each do |v| -%>

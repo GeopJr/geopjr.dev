@@ -1,7 +1,5 @@
 module GeopJr
-  alias BlogPostEntry = {filename: String, post: BlogPost, html: String, content: String, hidden: Bool}
-
-  class Blog
+  class BlogPostEntry
     class Youtube
       include JSON::Serializable
 
@@ -10,7 +8,13 @@ module GeopJr
       property title : String?
     end
 
-    def initialize(@blog_path : Path)
+    getter filename : String
+    getter fm : BlogPostFrontmatter
+
+    @io_pos_content : Int32 | Int64
+
+    def initialize(@filename : String, @fm : BlogPostFrontmatter, @io : IO)
+      @io_pos_content = @io.pos
     end
 
     private def figure(title : String?, content : String)
@@ -20,7 +24,7 @@ module GeopJr
       <figure>
         #{content}
         <figcaption>#{title}</figcaption>
-      </figure>    
+      </figure>
       HTML
     end
 
@@ -30,16 +34,8 @@ module GeopJr
       HTML
     end
 
-    private def remove_tags(content : String) : String
+    def self.remove_tags(content : String) : String
       content.gsub(/<[^>]*>/, "").gsub("\n", " ").gsub("  ", " ")
-    end
-
-    # Splits a blog post with frontmatter
-    # into BlogPost and frontmatter unparsed
-    private def frontmatter(content : String) : {BlogPost, String}
-      fm = content.match(/^---\n(.+)---\n/m).not_nil![0]
-      fm_parsed = BlogPost.from_yaml(fm)
-      {fm_parsed, fm}
     end
 
     # Turns <youtube> custom elements into
@@ -58,36 +54,86 @@ module GeopJr
       res
     end
 
+    private def note(content : String) : String
+      res = content
+      res.scan(/(^|\n)::: ?(?<title>.+)\n(?<content>(.|\n)+)\n:::(\n|$)/i) do |m|
+        tag = <<-HTML
+          <article class="info-box">
+            <p class="title">#{m["title"]}</p>
+            <p class="content">#{m["content"]}</p>
+          </article>
+        HTML
+        res = res.sub(m[0], tag)
+      end
+      res
+    end
+
+    def to_html
+      @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
+
+      post_source = @io.gets_to_end
+      post_source = note(youtube(post_source))
+      template = Crustache.parse post_source
+      processed_source = Crustache.render template, {
+        "GEOPJR_BLOG_ASSETS" => "/assets/images/blog/#{@filename}",
+      }.merge(GeopJr::CONFIG.emotes)
+
+      Markd.to_html(processed_source)
+    end
+  end
+
+  class Blog
+    def initialize(@blog_path : Path)
+    end
+
+    # Splits a blog post with frontmatter
+    # into BlogPostFrontmatter and frontmatter unparsed
+    private def frontmatter(io : IO) : BlogPostFrontmatter
+      fm = IO::Delimited.new(io, "\n---").gets_to_end
+      BlogPostFrontmatter.from_yaml(fm)
+    end
+
     def generate_blog_posts : Array(BlogPostEntry)
       res = [] of BlogPostEntry
       Dir.each_child(@blog_path) do |post|
         next if post.starts_with?("_")
 
         post_path = @blog_path / post
-        post_source = File.read(post_path)
+        post_source = File.open(post_path)
         file_domain = post_path.basename(".md")
 
         fm = frontmatter(post_source)
-        next if fm[0].skip == true
-        post_source = post_source.sub(fm[1], "")
+        next if fm.skip == true
 
-        post_source = youtube(post_source)
-        template = Crustache.parse post_source
-        processed_source = Crustache.render template, {
-          "GEOPJR_BLOG_ASSETS" => "/assets/images/blog/#{file_domain}",
-        }.merge(GeopJr::CONFIG.emotes)
-
-        html = Markd.to_html(processed_source)
-        res << {
-          filename: file_domain,
-          post:     fm[0],
-          html:     html,
-          content:  remove_tags(html),
-          hidden:   fm[0].hidden,
-        }
+        res << BlogPostEntry.new(file_domain, fm, post_source)
       end
 
       res
+    end
+
+    def self.write_blog_posts
+      blog_navbar = Layout::Navbar.new("blog").to_s
+      blog_post_footer_icon = FooterIcon.new
+      blog_post_footer_image = FooterImage.new
+
+      BLOG_POSTS.each do |v|
+        html = v.to_html
+        File.write(
+          GeopJr::CONFIG.paths[:out] / "blog" / "#{v.filename}.html",
+          Layout::Page.new(
+            Page::Blog::Post.new(v.fm, html).to_s,
+            blog_navbar,
+            Layout::Footer.new(blog_post_footer_icon.next_icon, blog_post_footer_image.next_image).to_s,
+            GeopJr::Tags.new(
+              v.fm.title,
+              "#{v.fm.subtitle.nil? ? nil : "#{v.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",
+              "blog/#{v.filename}",
+              Styles[:blog_post],
+              cover: v.fm.cover.nil? ? nil : {v.fm.cover.not_nil!, v.fm.cover_alt}
+            )
+          ).to_s
+        )
+      end
     end
   end
 end

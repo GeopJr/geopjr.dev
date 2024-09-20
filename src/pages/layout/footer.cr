@@ -23,7 +23,7 @@ module GeopJr
   end
 
   class FooterImage
-    @images : Array(FooterImageYAML) = CONFIG.data.[:footer].images.shuffle
+    @images : Array(FooterImageYAML) = CONFIG.data.footer.images.shuffle
 
     def initialize
       @index = -1
@@ -65,7 +65,7 @@ module GeopJr
     @badges : Array(FooterBadgeYAML)
 
     def initialize(@green_icon : String = FOOTER_ICON.next_icon, @random_image : FooterImageYAML = FOOTER_IMAGE.next_image)
-      @badges = CONFIG.data.[:footer].badges.shuffle
+      @badges = CONFIG.data.footer.badges.shuffle
     end
 
     ECR.def_to_s "#{__DIR__}/footer.ecr"

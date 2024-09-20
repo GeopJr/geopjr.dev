@@ -8,11 +8,44 @@ module GeopJr
     property stack : Hash(String, Hash(String, String))
   end
 
-  class Page::Home
-    def initialize(@about : String, @interests : Array(String), @whatido : String, @stack : Hash(String, Hash(String, String)))
+  class Page::Home < Page::Base
+    def initialize(@about : About = GeopJr::CONFIG.data.about)
+      @tags = GeopJr::Tags.new(
+        nil,
+        description,
+        nil,
+        Styles[:about],
+        ["egg_basket"],
+      )
     end
 
-    # ECR.def_to_s
+    def id : Symbol
+      :home
+    end
+
+    def description : String
+      "Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more"
+    end
+
+    def tags : GeopJr::Tags
+      @tags
+    end
+
+    protected def content : String
+      self.to_s
+    end
+
+    def write
+      File.write(
+        GeopJr::CONFIG.paths[:out] / "index.html",
+        Layout::Page.new(
+          content,
+          Layout::Navbar.new(id).to_s,
+          Layout::Footer.new.to_s,
+          @tags
+        ).to_s
+      )
+    end
 
     def to_s(io)
       source = ECR.render "#{__DIR__}/home.ecr"

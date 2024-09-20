@@ -1,7 +1,7 @@
 <main class="credit-card-view">
   <%- @cards.each do |platform, account| -%>
-    <% brand = GeopJr::CONFIG.data[:brands][platform.downcase] %>
-    <% platform_title = GeopJr::CONFIG.data[:dict].fetch(platform.downcase, platform) %>
+    <% brand = GeopJr::CONFIG.data.brands[platform.downcase] %>
+    <% platform_title = GeopJr::CONFIG.data.dict.fetch(platform.downcase, platform) %>
     <article>
       <a 
         href="<%= account %>"

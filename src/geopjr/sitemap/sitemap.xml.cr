@@ -5,15 +5,14 @@ module GeopJr
     def initialize(routes = ROUTES, blog_posts = BLOG_POSTS)
       @entries = [] of {url: String, date: String?}
 
-      routes.each_value do |v|
-        filename = v[:file] == "index" ? nil : "#{v[:file]}#{GeopJr::CONFIG.ext}"
-        @entries << {url: "#{GeopJr::CONFIG.url}/#{filename}", date: nil}
+      routes.each do |v|
+        @entries << {url: v.tags.url_full, date: nil}
       end
 
-      blog_posts.reject { |i| i[:hidden] }.each do |v|
-        date = v[:post].updated || v[:post].date
+      blog_posts.reject { |i| i.fm.hidden }.each do |v|
+        date = v.fm.updated || v.fm.date
 
-        @entries << {url: "#{GeopJr::CONFIG.url}/#{GeopJr::CONFIG.blog_out_path}/#{v[:filename]}#{GeopJr::CONFIG.ext}", date: date.to_s("%Y-%m-%d")}
+        @entries << {url: "#{GeopJr::CONFIG.url}/#{GeopJr::CONFIG.blog_out_path}/#{v.filename}#{GeopJr::CONFIG.ext}", date: date.to_s("%Y-%m-%d")}
       end
     end
 

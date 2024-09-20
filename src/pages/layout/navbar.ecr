@@ -15,14 +15,14 @@
 		</svg>
 	</label>
 	<div>
-		<%- @routes.each_with_index do |route, i| -%>
+		<%- ROUTES.each_with_index do |route, i| -%>
 			<%- next if i == 0 -%>
 			<a
 				draggable="false"
-				href="/<%= route[0] %><%= GeopJr::CONFIG.ext %>" aria-label="<%= route[1][:title] %>"
-				class="text--block <%= @active_link == route[0] ? " active" : nil %>"
+				href="/<%= route.tags.url %>" aria-label="<%= route.title %>"
+				class="text--block <%= @active_link == route.id.to_s ? " active" : nil %>"
 			>
-				<%= route[1][:title] %>
+				<%= route.title %>
 			</a>
 		<%- end -%>
 	</div>
