@@ -135,7 +135,7 @@
       url: https://github.com/GeopJr/sabo-tabby
       tooltip: GitHub Repo
     - icon: externallinkalt
-      url: https://sabo-tabby.queer.software
+      url: https://sabo-tabby.geopjr.dev
       tooltip: Website
 - name: create-crystal-app
   desc: An unopinionated user-friendly crystal init alternative.

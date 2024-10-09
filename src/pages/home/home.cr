@@ -24,7 +24,7 @@ module GeopJr
     end
 
     def description : String
-      "Personal Portfolio - CS @ NKUA - Ethical Tech - Blogs about programming, tech, ethics, climate & more"
+      "Personal Portfolio - CS - Ethical Tech - Blogs about programming, tech, ethics, climate & more"
     end
 
     def tags : GeopJr::Tags
