@@ -1,6 +1,7 @@
 $card-background-dark: #27241b;
 $card-background-light: #f9f1cc;
 
+@use 'sass:color';
 @import './_reset.scss';
 @import './_reduced_motion.scss';
 @import './_navbar.scss';
@@ -54,7 +55,7 @@ $card-background-light: #f9f1cc;
     --tech-icon-color: #dbc766;
 
     --card-background: #{$card-background-dark};
-    --card-background-hover: #{lighten($card-background-dark, 10%)};
+    --card-background-hover: #{color.scale($card-background-dark, $lightness: 10%)};
     --navbar-background: #{$card-background-dark};
 
     --navbar-item-background: #4e7c5d;
@@ -83,7 +84,7 @@ $card-background-light: #f9f1cc;
         --tech-icon-color: #464023;
 
         --card-background: #{$card-background-light};
-        --card-background-hover: #{darken($card-background-light, 5%)};
+        --card-background-hover: #{color.scale($card-background-light, $lightness: -5%)};
         --navbar-background: #{$card-background-light};
 
         --navbar-item-background: #cbead3;

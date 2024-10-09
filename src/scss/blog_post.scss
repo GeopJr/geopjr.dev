@@ -33,6 +33,20 @@ body>main {
         margin: 0 1rem;
         text-align: center;
         gap: 1rem;
+        min-height: 25vh;
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        // width: 100%;
+        // position: absolute;
+        background-color: var(--card-background);
+        // padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom-right-radius: 2rem;
+        position: relative;
+        // margin-bottom: 4rem;
 
         >h1 {
             font-size: xxx-large;
@@ -67,21 +81,6 @@ body>main {
                 text-align: center;
             }
         }
-
-        min-height: 25vh;
-        border-top-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        // width: 100%;
-        // position: absolute;
-        background-color: var(--card-background);
-        // padding-top: 4rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        border-bottom-right-radius: 2rem;
-        position: relative;
-        // margin-bottom: 4rem;
 
         &::before {
             content: "";

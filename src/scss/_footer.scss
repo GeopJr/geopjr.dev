@@ -12,6 +12,10 @@ body>footer {
     // transition-duration: 200ms;
     max-width: 90vw;
     align-self: flex-end;
+    // margin-bottom: -4rem;
+    position: relative;
+    z-index: 50;
+    transition-duration: 200ms;
 
     .cc {
         height: 22px !important;
@@ -85,13 +89,6 @@ body>footer {
         }
 
     }
-
-    // margin-bottom: -4rem;
-    position: relative;
-    z-index: 50;
-
-    transition-duration: 200ms;
-
 
     &::before {
         transition-duration: 200ms;

@@ -72,13 +72,12 @@
         flex-direction: row;
 
         &.logo {
+            flex-direction: column-reverse;
 
             @media only screen and (min-width: 1400px),
             only screen and (min-width: 511px) and (max-width: 767px) {
                 flex-direction: row;
             }
-
-            flex-direction: column-reverse;
         }
 
         >svg {
@@ -137,11 +136,10 @@
 .sticker {
     min-width: 100px;
     margin: 0 0 1rem 0;
+    filter: drop-shadow(0 0 0.2rem var(--accent));
 
     @media only screen and (min-width: 1400px),
     only screen and (min-width: 511px) and (max-width: 767px) {
         margin: 0 0 0 1rem;
     }
-
-    filter: drop-shadow(0 0 0.2rem var(--accent));
 }
