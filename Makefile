@@ -1,5 +1,7 @@
 .PHONY: all get_minify build_geopjr run_geopjr get_sass sass minify clean
 
+release ?=
+
 all: get_minify build_geopjr get_sass sass minify
 
 get_minify:
@@ -16,7 +18,7 @@ minify:
 	./minify -r -o ./dist/ ./dist/
 
 build_geopjr:
-	shards build
+	shards build $(if $(release),--release,)
 	./bin/geopjr
 
 run_geopjr:
