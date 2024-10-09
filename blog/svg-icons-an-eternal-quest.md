@@ -84,7 +84,7 @@ At the time, you could disable hydration(? sorry I can't remember the exact term
 
 # The Ultimate Solution
 
-Welp, only left to do is scratch my own itch and write an SSG... again. In Crystal of course!
+Welp, only thing left to do is scratch my own itch and write an SSG... again. In Crystal of course!
 
 When discussing the approaches, one of them has disadvantages that we can actually overcome, the SVG sprites. The main one being that you need to download the whole sprite for a singe icons. The solution was quite straight-forward:
 
