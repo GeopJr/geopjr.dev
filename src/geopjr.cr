@@ -6,6 +6,7 @@ require "markd"
 require "crustache"
 require "csv"
 require "file_utils"
+require "uri"
 
 require "./**"
 
@@ -69,7 +70,7 @@ class GeopJr::Config
     if Dir.exists?(emotes_dir)
       emotes_parent = Path["/"].join(emotes_dir.parts.skip(1))
       Dir.children(emotes_dir).each do |emote|
-        emotes["GEOPJR_EMOTES_#{Path[emote].stem.upcase}"] = (emotes_parent / emote).to_s
+        emotes["GEOPJR_EMOTES_#{Path[emote].stem.upcase}"] = (emotes_parent / URI.encode_path(emote)).to_s
       end
     end
   end
