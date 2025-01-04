@@ -27,7 +27,7 @@ There are at least three parts on reducing your website's carbon emissions: Host
 
 On the action side of things, the action uses lighthouse to get the amount of transferred data which then passes through some calculations to get the amount of CO2 it produces per visit. The Green Web Foundation's API is also used (if set to true) to determine whether the host is using renewable energy. Lastly, some additional calculations are being done to generate some fun facts about it before logging it in the action output & create comments on the commit or PR that caused it to run. This all happens inside a docker container for two reasons: 1) GitHub uses at max node12 (Current LTS is 16) plus dependencies are being bundled in the repo (which increases its size and makes development difficult). 2) lighthouse requires a browser to run which is far easier and less time consuming to just install in the docker image.
 
-### My Workflow
+# My Workflow
 ```yaml
 name: Calculate CO2 🌱
 on: [push, pull_request]
@@ -43,17 +43,17 @@ jobs:
           renewable: true
 ```
 
-### Submission Category: 
+# Submission Category: 
 
 Maintainer Must-Haves
 
 > Reasoning: Reducing your website's carbon emissions is just as important as running tests. Accepting a PR or commiting code that increases them by eg. 20% is irresponsible and should be prevented as soon as possible.
 
-### Yaml File or Link to Code
+# Yaml File or Link to Code
 
 https://github.com/GeopJr/CO2
 
-### Additional Resources / Info
+# Additional Resources / Info
 
 [Marketplace](https://github.com/marketplace/actions/co2-ci)
 
@@ -67,6 +67,6 @@ The renewable energy check is being done by [The Green Web Foundation](https://w
 
 Take action: [Switch to a green host](https://www.wholegraindigital.com/blog/choose-a-green-web-host/) | [Make your website more efficient](https://www.wholegraindigital.com/blog/website-energy-efficiency/) | [Plant trees to reduce your carbon impact](https://treesforlife.org.uk/support/for-businesses/carbon-offsetting/)
 
-### Screenshot
+# Screenshot
 
 ![pull request comment/review with the result of CO2](/assets/images/blog/calculate-your-websites-carbon-emissions-using-github-actions/screenshot.webp)

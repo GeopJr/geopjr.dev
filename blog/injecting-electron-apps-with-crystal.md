@@ -47,7 +47,7 @@ From the above example we can see that folders must have a `files` key, symlinks
 
 `size` is the size of the file, while `offset` is the offset of the archive. (eg. The next file should have an offset of 32). Offset is `UINT64` but can also be represented as a String.
 
-### The problem
+## The problem
 
 Since my language of choice is Crystal, I have to declare the type of each key and value which is impossible since the input is unknown. Crystal has many shards, one of which is Petoem's asar 
 
@@ -59,7 +59,7 @@ https://github.com/GeopJr/asar-cr
 
 Ok, back to asar.
 
-### Packing
+## Packing
 
 Now that we have created our header (by looping through all the files and adding them to the hash based on what they are, while also reading their size and adding to an offset for the next one) and combined all file contents into a long string or IO, it's time to build our archive.
 
@@ -71,7 +71,7 @@ This gets calculated here: https://github.com/GeopJr/asar-cr/blob/master/src/asa
 
 To create the archive I create a new IO where I push the above header, the header we created previously and last but not least, the file contents. Then I write this IO into a file.
 
-### Unpacking
+## Unpacking
 
 Unpacking is basically the above in reverse. We read the header and create each file depending on its type (directory, symlink or file).
 

@@ -1,5 +1,12 @@
 module GeopJr
   class BlogPostEntry
+    class BlogRenderer < Markd::HTMLRenderer
+      HEADINGS.map_with_index!(2) do |h, i|
+        h = "h#{i}"
+      end
+      HEADINGS[-1] = HEADINGS[-2]
+    end
+
     class Youtube
       include JSON::Serializable
 
@@ -68,7 +75,7 @@ module GeopJr
       res
     end
 
-    def to_html
+    def to_html : String
       @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
 
       post_source = @io.gets_to_end
@@ -76,9 +83,12 @@ module GeopJr
       template = Crustache.parse post_source
       processed_source = Crustache.render template, {
         "GEOPJR_BLOG_ASSETS" => "/assets/images/blog/#{@filename}",
+        "GEOPJR_EXT"         => GeopJr::CONFIG.ext,
       }.merge(GeopJr::CONFIG.emotes)
+      return "" if processed_source.empty?
 
-      Markd.to_html(processed_source)
+      options = Markd::Options.new
+      BlogRenderer.new(options).render(Markd::Parser.parse(processed_source, options))
     end
   end
 
