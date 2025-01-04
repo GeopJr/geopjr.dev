@@ -16,7 +16,7 @@
     >article>.credit-card {
         display: flex;
         flex-direction: column;
-        background-color: var(--brand-body);
+        background: var(--brand-body);
         align-items: flex-end;
         gap: 6rem;
         border-radius: .75rem;
