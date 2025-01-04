@@ -65,10 +65,12 @@ module GeopJr
       res = content
       res.scan(/(^|\n)::: ?(?<title>.+)\n(?<content>(.|\n)+)\n:::(\n|$)/i) do |m|
         tag = <<-HTML
+
           <article class="info-box">
             <p class="title">#{m["title"]}</p>
             <p class="content">#{m["content"]}</p>
           </article>
+
         HTML
         res = res.sub(m[0], tag)
       end
