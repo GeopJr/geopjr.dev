@@ -9,6 +9,10 @@ images:
     alt: My two beautiful dogs in a field of yellow flowers
   - filename: dorianff.webp
     alt: Dorian Electra's Fanfare album cover
+  - filename: britpop.png
+    alt: A. G. Cook's Britpop album cover
+  - filename: pm2.png
+    alt: bo en's Pale Machine 2 album cover
   - filename: undertale.webp
     alt: Despite everything, it's still you
     pixelated: true
@@ -17,8 +21,8 @@ images:
     pixelated: true
   - filename: hollowknight.webp
     alt: Sheo painting the Nailsmith
-  - filename: cookiecat.webp
-    alt: Cookie Cat
+  # - filename: cookiecat.webp
+  #   alt: Cookie Cat
 badges:
   - filename: gnome.gif
     alt: GNOME

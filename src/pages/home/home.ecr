@@ -46,14 +46,11 @@
 			<p class="card-body">
 				<%= @about.about %>
 			</p>
-		</article>
-		<article class="card">
-			<header class="card-title">
-				<strong class="text--block accent--block">What I do</strong>
-			</header>
-			<p class="card-body">
-				<%= @about.whatido %>
-			</p>
+        	<%- @about.whatido.each do |p| -%>
+				<p class="card-body">
+					<%= p %>
+				</p>
+            <%- end -%>
 		</article>
 		<article class="card">
 			<header class="card-title">

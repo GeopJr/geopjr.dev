@@ -4,7 +4,7 @@ module GeopJr
 
     property about : String
     property interests : Array(String)
-    property whatido : String
+    property whatido : Array(String)
     property stack : Hash(String, Hash(String, String))
   end
 
