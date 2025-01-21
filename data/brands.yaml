@@ -55,6 +55,6 @@ paypal:
 signal:
   background: "#3b45fd"
   text: "#ffffff"
-instagram:
-  background: "linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)"
+xiaohongshu:
+  background: "#ff2e4d"
   text: "#ffffff"
