@@ -1,7 +1,7 @@
 module GeopJr
   Styles = {
     about:     ["about", "wave", "card"],
-    blog_post: ["blog_post"],
+    blog_post: ["blog_post", "syntax_highlighting"],
     blog:      ["card_view", "blog", "card"],
     donate:    ["credit_card_view"],
     contact:   ["credit_card_view"],

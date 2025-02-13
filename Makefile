@@ -18,7 +18,7 @@ minify:
 	./minify -r -o ./dist/ ./dist/
 
 build_geopjr:
-	shards build $(if $(release),--release,)
+	TT_THEMES=gruvbox,gruvbox-light SIXTEEN_THEMES=default-dark shards build -Dnothemes $(if $(release),--release,)
 	./bin/geopjr
 
 run_geopjr:

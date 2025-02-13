@@ -77,6 +77,12 @@ module GeopJr
       res
     end
 
+    @@markd_options = Markd::Options.new
+    @@markd_formatter = Tartrazine::Html.new(
+      theme: Tartrazine.theme("gruvbox"),
+      line_numbers: true,
+      standalone: false,
+    )
     def to_html : String
       @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
 
@@ -89,8 +95,7 @@ module GeopJr
       }.merge(GeopJr::CONFIG.emotes)
       return "" if processed_source.empty?
 
-      options = Markd::Options.new
-      BlogRenderer.new(options).render(Markd::Parser.parse(processed_source, options))
+      BlogRenderer.new(@@markd_options).render(Markd::Parser.parse(processed_source, @@markd_options), @@markd_formatter)
     end
   end
 

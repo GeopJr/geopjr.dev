@@ -13,8 +13,12 @@ dependencies:
     github: watzon/cor
   markd:
     github: icyleaf/markd
+    commit: 588b172e9194efa591901f910afa9f3718130384
   crustache:
     github: MakeNowJust/crustache
+  tartrazine:
+    github: ralsina/tartrazine
+    version: ~> 0.12.0
 
 crystal: 1.7.3
 

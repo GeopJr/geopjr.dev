@@ -82,7 +82,7 @@ For this example I will use Discord. Keep in mind that Discord specifically clai
 Discord's core.asar on Linux is located at `~/.config/discord(ptb/canary)/modules/discord_desktop_core/core.asar`
 
 Using my shard (mentioned above), all we need to do is
-```cr
+```crystal
 require "asar-cr"
 
 asar = Asar::Extract.new "~/.config/discord/modules/discord_desktop_core/core.asar"
@@ -95,7 +95,7 @@ After we are done, it's time to pack it.
 
 ! Remember to take backups of core.asar just in case something goes wrong !
 
-```cr
+```crystal
 require "asar-cr"
 
 asar = Asar::Pack.new "~/.config/discord/modules/discord_desktop_core/core_unpacked"

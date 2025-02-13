@@ -1,5 +1,13 @@
 version: 2.0
 shards:
+  baked_file_system:
+    git: https://github.com/ralsina/baked_file_system.git
+    version: 0.10.0+git.commit.beb373124c7a235cfb9cd94e36849d8168eaa04b
+
+  base58:
+    git: https://github.com/crystal-china/base58.cr.git
+    version: 0.1.0+git.commit.2b0564a975171f4507c33251e0c0ab7990459e23
+
   cor:
     git: https://github.com/watzon/cor.git
     version: 0.1.0+git.commit.9c9e51ac6168f3bd4fdc51d679b65de09ef76cac
@@ -8,7 +16,35 @@ shards:
     git: https://github.com/makenowjust/crustache.git
     version: 2.4.4
 
+  docopt:
+    git: https://github.com/chenkovsky/docopt.cr.git
+    version: 0.2.0+git.commit.620fce4f334ff15d7321e5ecb6665ad258fe9297
+
   markd:
     git: https://github.com/icyleaf/markd.git
+    version: 0.5.0+git.commit.588b172e9194efa591901f910afa9f3718130384
+
+  pcf-parser:
+    git: https://github.com/l3kn/pcf-parser.git
+    version: 0.1.1
+
+  sixteen:
+    git: https://github.com/ralsina/sixteen.git
     version: 0.5.0
+
+  stumpy_core:
+    git: https://github.com/stumpycr/stumpy_core.git
+    version: 1.9.1
+
+  stumpy_png:
+    git: https://github.com/stumpycr/stumpy_png.git
+    version: 5.0.1
+
+  stumpy_utils:
+    git: https://github.com/stumpycr/stumpy_utils.git
+    version: 0.5.1
+
+  tartrazine:
+    git: https://github.com/ralsina/tartrazine.git
+    version: 0.12.0
 
