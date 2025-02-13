@@ -77,6 +77,9 @@ class GeopJr::Config
   end
 end
 
+should_serve = ARGV[0]? == "serve"
+GeopJr::Server.serve if should_serve && Dir.exists?(GeopJr::CONFIG.paths[:out])
+
 module GeopJr
   CONFIG     = GeopJr::Config.new
   GeopJr::Utils.prepare_output_dir
@@ -119,3 +122,5 @@ module GeopJr
   # Delete underscore files
   FileUtils.rm_rf(Dir.glob(GeopJr::CONFIG.paths[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
 end
+
+GeopJr::Server.serve if should_serve

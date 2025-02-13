@@ -24,6 +24,9 @@ build_geopjr:
 run_geopjr:
 	./bin/geopjr
 
+serve:
+	./bin/geopjr serve
+
 get_sass:
 ifeq (,$(wildcard ./dart-sass/sass))
 	wget https://github.com/sass/dart-sass/releases/download/1.79.1/dart-sass-1.79.1-linux-x64.tar.gz -O sass.tar.gz
