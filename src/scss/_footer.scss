@@ -124,4 +124,10 @@ body>footer {
             background-color: mix($card-background-light, $green-dark, 80%);
         }
     }
+
+    .more {
+        font-variation-settings: "wght" 700, "slnt" 0;
+        font-weight: 700;
+        color: var(--accent);
+    }
 }
