@@ -1,4 +1,4 @@
-$card-background-dark: #27241b;
+$card-background-dark: #3a341a;
 $card-background-light: #f9f1cc;
 
 @use 'sass:color';
@@ -69,7 +69,7 @@ $card-background-light: #f9f1cc;
     --focus-outline-color: #ffffff;
     --focus-outline-color-inner: var(--background-color);
 
-    --background-color: #1d1b17;
+    --background-color: #252215;
     --text-color: white;
 
     --focus-outline: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--focus-outline-color);
