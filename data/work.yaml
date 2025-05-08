@@ -14,20 +14,21 @@
     - icon: externallinkalt
       url: https://tuba.geopjr.dev/
       tooltip: Website
-- name: SveltePress
-  desc: 'Documentation for humans.'
-  image: sveltepress
+- name: Archives
+  desc: Create and view web archives.
+  image: archives
   techs:
-    - svelte
     - gtk
-    - qt
-    - flutter
+    - vala
   links:
-    - icon: github
-      url: https://github.com/GeopJr/SveltePress
-      tooltip: GitHub Repo
+    - icon: gnome
+      url: https://gitlab.gnome.org/GeopJr/Archives
+      tooltip: Git Repo
+    - icon: flathub
+      url: https://flathub.org/apps/details/dev.geopjr.Archives
+      tooltip: Flathub
     - icon: externallinkalt
-      url: https://sveltepress.geopjr.dev/
+      url: https://archives.geopjr.dev/
       tooltip: Website
 - name: Collision
   desc: Verify hashes for your files.
@@ -45,21 +46,37 @@
     - icon: externallinkalt
       url: https://collision.geopjr.dev/
       tooltip: Website
-- name: Archives
-  desc: Create and view web archives.
-  image: archives
+- name: SveltePress
+  desc: 'Documentation for humans.'
+  image: sveltepress
+  archived: true
+  techs:
+    - svelte
+    - gtk
+    - qt
+    - flutter
+  links:
+    - icon: github
+      url: https://github.com/GeopJr/SveltePress
+      tooltip: GitHub Repo
+    - icon: externallinkalt
+      url: https://sveltepress.geopjr.dev/
+      tooltip: Website
+- name: Turntable
+  desc: Scrobble your music.
+  image: turntable
   techs:
     - gtk
     - vala
   links:
-    - icon: gnome
-      url: https://gitlab.gnome.org/GeopJr/Archives
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Turntable
       tooltip: Git Repo
     - icon: flathub
-      url: https://flathub.org/apps/details/dev.geopjr.Archives
+      url: https://flathub.org/apps/details/dev.geopjr.Turntable
       tooltip: Flathub
     - icon: externallinkalt
-      url: https://archives.geopjr.dev/
+      url: https://turntable.geopjr.dev/
       tooltip: Website
 - name: Calligraphy
   desc: Turn text into ASCII banners.
@@ -227,6 +244,7 @@
 - name: Granz
   desc: A Discord bot/framework(?) for Crystal.
   image: /assets/images/work/granz.webp
+  archived: true
   techs:
     - crystal
   links:
@@ -239,6 +257,7 @@
 - name: Soft & Wet
   desc: A Discord Bot that uses advanced image manipulation to create new images from templates in under a second.
   image: /assets/images/work/snw.webp
+  archived: true
   techs:
     - nodejs
   links:
@@ -251,6 +270,7 @@
 - name: DNOME
   desc: Adwaita-inspired Discord Theme.
   image: dnome
+  archived: true
   techs:
     - less
   links:
@@ -260,6 +280,7 @@
 - name: Exorcism
   desc: Corrupt your mp4 videos.
   image: exorcism
+  archived: true
   techs:
     - nodejs
     - qt
@@ -271,6 +292,7 @@
 - name: PronounBird
   desc: Automatically add people's pronouns next to their name while browsing Twitter.
   image: pronounbird
+  archived: true
   techs:
     - javascript
   links:
@@ -301,6 +323,7 @@
 - name: action-accessibility
   desc: A GitHub action that creates alternative accessibility options on issues and PRs.
   icon: a11y
+  archived: true
   techs:
     - nodejs
   links:
@@ -310,6 +333,7 @@
 - name: discord-tanki
   desc: Discord Rich Presence for Tanki Online.
   image: discord_tanki
+  archived: true
   techs:
     - electron
     - express
@@ -319,6 +343,7 @@
       tooltip: GitHub Repo
 - name: SvelteGlass
   desc: Analyze Svelte Apps.
+  archived: true
   image: svelteglass
   techs:
     - vue

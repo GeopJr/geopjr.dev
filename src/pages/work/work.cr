@@ -7,6 +7,7 @@ module GeopJr
     property desc : String
     property icon : String?
     property image : String?
+    property archived : Bool = false
     property techs : Array(String)
     property links : Array(WorkLink)
   end

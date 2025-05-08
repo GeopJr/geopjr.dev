@@ -3,7 +3,8 @@
 </header>
 <main class="work-view">
     <%- @works.each do |work| -%>
-        <article class="card">
+        <% card_class = "card#{work.archived ? " archived" : nil}" %>
+        <article class="<%= card_class %>">
             <header class="card-title logo">
                 <section class="info">
                     <header>

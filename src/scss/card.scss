@@ -42,6 +42,23 @@
         transition-duration: 200ms;
     }
 
+    &.archived {
+        --stripe-color: #ffffff0a;
+
+        background-repeat: no-repeat;
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, var(--stripe-color) 30px, var(--stripe-color) 60px);
+        opacity: .8;
+        background-origin: border-box;
+
+        @media (prefers-color-scheme: light) {
+            --stripe-color: #0000000a;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
     &.banner {
         display: inline-flex;
         flex-direction: row;
