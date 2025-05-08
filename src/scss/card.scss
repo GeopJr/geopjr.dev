@@ -6,7 +6,7 @@
 
     a {
         color: var(--accent);
-        text-decoration: wavy var(--accent) underline;
+        text-decoration: wavy var(--accent) underline 2px;
         font-variation-settings: "wght" 700, "slnt" 0;
         font-weight: 700;
     }
@@ -34,6 +34,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    justify-content: space-between;
 
     .arrow {
         display: flex;
@@ -58,8 +59,6 @@
             display: block;
         }
     }
-
-    justify-content: space-between;
 
     >.card-title {
         transition-duration: 200ms;

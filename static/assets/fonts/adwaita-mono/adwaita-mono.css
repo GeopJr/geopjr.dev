@@ -1,0 +1,72 @@
+@font-face {
+	font-family: Adwaita Mono;
+	font-style: normal;
+	font-weight: 700;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Bold"), local("Adwaita-Mono-Bold"), url(adwaita-mono-bold-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215;
+}
+
+/* @font-face {
+	font-family: Adwaita Mono;
+	font-style: normal;
+	font-weight: 700;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Bold"), local("Adwaita-Mono-Bold"), url(adwaita-mono-bold-greek.woff2) format("woff2");
+	unicode-range: U+0370-03FF;
+} */
+
+@font-face {
+	font-family: Adwaita Mono;
+	font-style: italic;
+	font-weight: 700;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Bold Italic"), local("Adwaita-Mono-Bold-Italic"), url(adwaita-mono-bold-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215;
+}
+
+/* @font-face {
+	font-family: Adwaita Mono;
+	font-style: italic;
+	font-weight: 700;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Bold Italic"), local("Adwaita-Mono-Bold-Italic"), url(adwaita-mono-bold-italic-greek.woff2) format("woff2");
+	unicode-range: U+0370-03FF;
+} */
+
+@font-face {
+	font-family: Adwaita Mono;
+	font-style: italic;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Italic"), local("Adwaita-Mono-Italic"), url(adwaita-mono-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215;
+}
+
+/* @font-face {
+	font-family: Adwaita Mono;
+	font-style: italic;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("Adwaita Mono Italic"), local("Adwaita-Mono-Italic"), url(adwaita-mono-italic-greek.woff2) format("woff2");
+	unicode-range: U+0370-03FF;
+} */
+
+@font-face {
+	font-family: Adwaita Mono;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("Adwaita Mono"), local("Adwaita-Mono"), url(adwaita-mono-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215;
+}
+
+/* @font-face {
+	font-family: Adwaita Mono;
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("Adwaita Mono"), local("Adwaita-Mono"), url(adwaita-mono-greek.woff2) format("woff2");
+	unicode-range: U+0370-03FF;
+}
+ */

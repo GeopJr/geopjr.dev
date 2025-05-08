@@ -23,9 +23,10 @@ body>main {
 
     a {
         color: var(--accent);
-        text-decoration: wavy var(--accent) underline;
+        text-decoration: wavy var(--accent) underline 2px;
         font-variation-settings: "wght" 700, "slnt" 0;
         font-weight: 700;
+        text-decoration-thickness: 2px;
     }
 
     >header {
@@ -210,6 +211,7 @@ body>main {
             overflow-x: auto;
             background-color: var(--card-background);
             border-radius: 0.75rem;
+            font-size: large;
 
             >code {
                 display: inline-block;
