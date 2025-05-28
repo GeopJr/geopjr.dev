@@ -63,7 +63,7 @@ module GeopJr
 
     private def note(content : String) : String
       res = content
-      res.scan(/(^|\n)::: ?(?<title>.+)\n(?<content>(.|\n)+)\n:::(\n|$)/i) do |m|
+      res.scan(/(^|\n)::: ?(?<title>.+?)\n(?<content>(?:.|\n)+?)\n:::(?=\n|$)/i) do |m|
         tag = <<-HTML
 
           <article class="info-box">

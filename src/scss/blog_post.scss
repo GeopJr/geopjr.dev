@@ -190,6 +190,7 @@ body>main {
 
         figure img:not(.emote),
         p img:not(.emote),
+        video,
         .youtube img {
             border-radius: 0.75rem;
         }
