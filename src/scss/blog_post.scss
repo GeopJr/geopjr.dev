@@ -114,8 +114,13 @@ body>main {
 
 
     >div {
-        font-size: x-large;
+        font-size: large;
         margin: 2rem;
+
+        @media only screen and (min-width: 768px) {
+            font-size: x-large;
+            margin: 2rem 6rem;
+        }
 
         img {
             max-width: 100%;
@@ -159,6 +164,7 @@ body>main {
                 font-weight: 900;
                 text-decoration: none;
                 margin-right: 1rem;
+                filter: drop-shadow(0 0 0.1rem var(--accent))
             }
         }
 
