@@ -17,10 +17,19 @@ module GeopJr
     property css : Array(String)?
     property js : Array(String)?
     property cover : CoverImage
+    property noindex : Bool
 
     alias CoverImage = Tuple(String, String)
 
-    def initialize(title : String?, description : String, url : String | Symbol | Nil, style : Array(String)? = nil, script : Array(String)? = nil, cover : CoverImage? = nil)
+    def initialize(
+      title : String?,
+      description : String,
+      url : String | Symbol | Nil,
+      style : Array(String)? = nil,
+      script : Array(String)? = nil,
+      cover : CoverImage? = nil,
+      @noindex : Bool = false,
+    )
       if title.nil?
         @title = GeopJr::CONFIG.title
       else
@@ -64,6 +73,7 @@ module GeopJr
           <meta name="title" content="#{@title}">
           <meta name="description" content="#{@description}">
           <link rel="canonical" href="#{@url_full}">
+          #{noindex ? "<meta name=\"robots\" content=\"noindex\">" : nil}
           HTML
     end
 

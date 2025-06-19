@@ -153,7 +153,8 @@ module GeopJr
               "#{v.fm.subtitle.nil? ? nil : "#{v.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",
               "blog/#{v.filename}",
               Styles[:blog_post],
-              cover: v.fm.cover.nil? ? nil : {v.fm.cover.not_nil!, v.fm.cover_alt}
+              cover: v.fm.cover.nil? ? nil : {v.fm.cover.not_nil!, v.fm.cover_alt},
+              noindex: v.fm.hidden
             )
           ).to_s
         )
