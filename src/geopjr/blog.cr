@@ -12,6 +12,26 @@ module GeopJr
         h = "h#{i}"
       end
       HEADINGS[-1] = HEADINGS[-2]
+
+      def toc(node : Markd::Node)
+        return unless node.type.heading?
+
+        text = String.build do |str|
+          walker = node.walker
+          while (subnode = walker.next)
+            next if !subnode[1]
+            stripped_text = subnode[0].text.strip
+            next if stripped_text == ""
+
+            str << stripped_text
+          end
+        end
+
+        title = URI.encode_path_segment(text)
+        return if title == ""
+        @output_io << %(<a aria-hidden="true" id=") << title << %(" class="anchor" href="#) << title << %(">Ω</a>)
+        @last_output = ">"
+      end
     end
 
     class Youtube
@@ -84,12 +104,13 @@ module GeopJr
       res
     end
 
-    @@markd_options = Markd::Options.new
+    @@markd_options = Markd::Options.new(toc: true)
     @@markd_formatter = Tartrazine::Html.new(
       theme: Tartrazine.theme("gruvbox"),
       line_numbers: true,
       standalone: false,
     )
+
     def to_html : String
       @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
 

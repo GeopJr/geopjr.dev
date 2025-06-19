@@ -154,6 +154,12 @@ body>main {
             margin-top: 2em;
             font-variation-settings: "wght" 900, "slnt" 0;
             font-weight: 900;
+
+            >.anchor {
+                font-weight: 900;
+                text-decoration: none;
+                margin-right: 1rem;
+            }
         }
 
         p {
