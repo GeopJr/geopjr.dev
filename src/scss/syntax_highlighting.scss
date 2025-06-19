@@ -1,3 +1,19 @@
+.blog-post>div pre {
+    counter-reset: line;
+
+    >code span.line-no {
+        counter-increment: line;
+
+        &:before {
+            content: counter(line);
+            display: inline-block;
+            text-align: right;
+            width: 3rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
 .b {
     color: #ebdbb2;
     tab-size: 8

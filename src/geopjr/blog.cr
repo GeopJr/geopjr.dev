@@ -1,3 +1,10 @@
+class Tartrazine::Html < Tartrazine::Formatter
+  def line_label(i : Int32) : String
+    line_class = highlighted?(i + 1) ? " #{get_css_class("LineHighlight")}" : ""
+    "<span class=\"line-no#{line_class}\"></span>"
+  end
+end
+
 module GeopJr
   class BlogPostEntry
     class BlogRenderer < Markd::HTMLRenderer
