@@ -10,6 +10,10 @@
     }
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 ::view-transition-old(main) {
     animation: scaleUp 0.3s reverse;
 }
