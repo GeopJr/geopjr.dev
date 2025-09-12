@@ -14,7 +14,7 @@ module GeopJr
         XML
 
         BLOG_POSTS.each do |v|
-          next if i.fm.hidden
+          next if v.fm.hidden
 
           # we need to regenerate the blog posts
           # without all the styling and features
