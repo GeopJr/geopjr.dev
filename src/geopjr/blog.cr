@@ -176,7 +176,7 @@ module GeopJr
         res << BlogPostEntry.new(file_domain, fm, post_source)
       end
 
-      res
+      res.sort { |a, b| b.fm.date.to_unix <=> a.fm.date.to_unix }
     end
 
     def self.write_blog_posts

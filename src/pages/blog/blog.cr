@@ -7,7 +7,7 @@ module GeopJr
       max_pages = @posts.size.tdiv(GeopJr::CONFIG.max_posts_per_page + 1) + 1
       page = 1
 
-      @posts.sort { |a, b| b.fm.date.to_unix <=> a.fm.date.to_unix }.each_slice(GeopJr::CONFIG.max_posts_per_page) do |blog_page_entries|
+      @posts.each_slice(GeopJr::CONFIG.max_posts_per_page) do |blog_page_entries|
         @pages << Page::Blog.new(blog_page_entries, page, max_pages)
         page = page + 1
       end
