@@ -37,22 +37,127 @@ body>header {
 
     >h1 {
         font-size: clamp(2rem, 20vw, 10rem);
-        font-variation-settings: "wght" 700, "slnt" 0;
-        font-weight: 700;
-
+        font-variation-settings: "wght" 900, "slnt" 0;
+        font-weight: 900;
         margin-bottom: 2rem;
 
         >span.name {
             background-color: var(--navbar-item-background);
+            color: var(--navbar-item-foreground);
             display: inline-block;
             padding: 0 1rem;
             margin-top: 1rem;
-            border-radius: 1rem;
+            border-radius: var(--radius-medium);
             transition-duration: 200ms;
             position: relative;
+            border-top-left-radius: var(--radius-big);
 
-            &:hover {
-                border-radius: 2rem;
+            &:not(:hover) {
+                border-radius: var(--radius-big);
+                font-variation-settings: "wght" 200, "slnt" 0;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.press-container {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%);
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    display: flex;
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0%)
+        }
+
+        100% {
+            transform: translateX(-100%)
+        }
+    }
+
+    @media (prefers-reduced-motion) {
+        mask-image: none;
+
+        >.press:nth-child(2) {
+            display: none;
+        }
+    }
+
+    >.press {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        animation: scroll infinite linear 30s;
+        padding: 0 2rem;
+
+        @media (prefers-reduced-motion) {
+            animation: none;
+            flex-wrap: wrap;
+        }
+
+        .press-item {
+            margin: 0.4rem 0;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-property: color;
+            transition-duration: 250ms;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--accent-alt2);
+            }
+
+            >svg {
+                height: 96px;
+                max-width: 256px;
+
+                &.tonight_show_jimmy {
+                    aspect-ratio: 79.1 / 79.1;
+                }
+
+                &.bitdefender {
+                    aspect-ratio: 189.8 / 27.9;
+                }
+
+                &.forbes {
+                    aspect-ratio: 198.1 / 49.7;
+                }
+
+                &.dailydot {
+                    aspect-ratio: 189.2 / 36.8;
+                }
+
+                &.verge {
+                    aspect-ratio: 512 / 114.7;
+                }
+
+                &.mic {
+                    aspect-ratio: 214 / 262;
+                }
+
+                &.mashable {
+                    aspect-ratio: 27.1 / 25.8;
+                }
+
+                &.boingboing {
+                    aspect-ratio: 284.2 / 43.6;
+                }
+
+                &.gizmodo {
+                    aspect-ratio: 912.3 / 130.9;
+                }
+
+                &.metro {
+                    aspect-ratio: 247.7 / 60.8;
+                }
+
+                &.linuxformat {
+                    aspect-ratio: 600 / 274;
+                }
             }
         }
     }
@@ -75,7 +180,6 @@ body>header {
         align-items: center;
         z-index: 0;
         gap: 1rem;
-        color: var(--tech-icon-color);
 
         &:hover,
         &:focus-visible {
@@ -116,4 +220,5 @@ body>header {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-self: stretch;
 }

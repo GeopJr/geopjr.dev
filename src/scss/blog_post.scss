@@ -35,18 +35,20 @@ body>main {
         text-align: center;
         gap: 1rem;
         min-height: 25vh;
-        border-top-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
+        border-top-left-radius: var(--radius-big);
+        border-bottom-right-radius: var(--radius-big);
+        border-bottom-left-radius: var(--radius-big);
         // width: 100%;
         // position: absolute;
-        background-color: var(--card-background);
+        background-color: var(--accent);
+        color: var(--accent-text);
         // padding-top: 4rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        border-bottom-right-radius: 2rem;
         position: relative;
+        border: var(--outline-width) var(--accent) solid;
         // margin-bottom: 4rem;
 
         >h1 {
@@ -85,30 +87,15 @@ body>main {
 
         &::before {
             content: "";
-            position: absolute;
-            background-color: transparent;
-            bottom: -50px;
-            left: 0;
-            height: 50px;
-            width: 50px;
-            border-top-left-radius: 2rem;
-            box-shadow: 0px -25px 0 0 var(--card-background);
             z-index: -40;
-            transition-duration: .2s;
-        }
-
-        &::after {
-            content: "";
-            z-index: 51;
             position: absolute;
             background-color: transparent;
-            // margin-left: calc(-2rem - 50px);
-            right: 0;
-            top: -50px;
-            height: 50px;
+            right: calc(var(--outline-width) * -1);
+            top: calc(-60px - var(--outline-width));
+            height: 60px;
             width: 50px;
-            border-bottom-right-radius: 2rem;
-            box-shadow: 0px 25px 0 0 var(--card-background);
+            border-bottom-right-radius: var(--radius-big);
+            box-shadow: 0 25px 0 0 var(--accent), 0 35px 0 0 var(--accent);
         }
     }
 
@@ -172,6 +159,10 @@ body>main {
             line-height: 1.5;
         }
 
+        // >p + p {
+        //     margin-top: 2rem;
+        // }
+
         ul>*,
         ol>* {
             margin: .5rem 0rem;
@@ -184,8 +175,10 @@ body>main {
         :not(pre)>code {
             white-space: normal;
             background-color: var(--card-background);
-            border-radius: 0.75rem;
+            color: var(--card-foreground);
+            border-radius: var(--radius-small);
             padding: 0rem .3rem;
+            outline: 0.12rem var(--accent) solid;
         }
 
         figure {
@@ -204,7 +197,12 @@ body>main {
         p img:not(.emote),
         video,
         .youtube img {
-            border-radius: 0.75rem;
+            border-radius: var(--radius-small);
+        }
+
+        figure img:not(.emote),
+        p img:not(.emote) {
+            outline: 0.2rem var(--accent) solid;
         }
 
         .youtube {
@@ -223,8 +221,10 @@ body>main {
             white-space: pre;
             overflow-x: auto;
             background-color: var(--card-background);
-            border-radius: 0.75rem;
+            border-radius: var(--radius-small);
             font-size: large;
+            outline: 0.2rem var(--accent) solid;
+            border-top-left-radius: var(--radius-big);
 
             >code {
                 display: inline-block;
@@ -234,20 +234,24 @@ body>main {
 
         .info-box,
         blockquote {
-            background-color: var(--card-background);
             padding: .1rem 1rem;
-            border-radius: 0.75rem;
+            border-radius: var(--radius-small);
+            border-bottom-right-radius: var(--radius-big);
         }
 
         blockquote {
             font-style: italic;
+            background-color: var(--accent-alt2);
+            color: var(--accent-alt2-text);
         }
 
         .info-box {
             margin: 2rem 0rem;
+            background-color: var(--accent-alt);
 
             >p {
                 font-size: smaller;
+                color: var(--accent-alt-text);
 
                 &.title {
                     margin-bottom: .5rem;

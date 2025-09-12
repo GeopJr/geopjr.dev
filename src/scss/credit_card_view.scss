@@ -19,7 +19,7 @@
         background: var(--brand-body);
         align-items: flex-end;
         gap: 6rem;
-        border-radius: .75rem;
+        border-radius: var(--radius-small);
         transition-duration: 200ms;
         margin: 1rem;
 
@@ -40,8 +40,8 @@
             align-self: flex-start;
             background-color: var(--brand-head);
             padding: 1rem;
-            border-top-left-radius: .75rem;
-            border-top-right-radius: .75rem;
+            border-top-left-radius: var(--radius-small);
+            border-top-right-radius: var(--radius-small);
             width: 100%;
         }
 

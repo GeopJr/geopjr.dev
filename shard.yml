@@ -18,7 +18,9 @@ dependencies:
     github: MakeNowJust/crustache
   tartrazine:
     github: ralsina/tartrazine
-    version: ~> 0.12.0
+    version: ~> 0.13.0
+  crystar:
+    github: naqvis/crystar
 
 crystal: 1.7.3
 

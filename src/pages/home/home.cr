@@ -6,6 +6,7 @@ module GeopJr
     property interests : Array(String)
     property whatido : Array(String)
     property stack : Hash(String, Hash(String, String))
+    property press : Hash(String, String)
   end
 
   class Page::Home < Page::Base
@@ -51,8 +52,9 @@ module GeopJr
       source = ECR.render "#{__DIR__}/home.ecr"
       template = Crustache.parse source
       processed_source = Crustache.render template, {
-        "GEOPJR_WORK" => "<a href=\"/work#{GeopJr::CONFIG.ext}\">Work</a>",
-        "GEOPJR_2017" => Time.local(Time::Location.load("Europe/Athens")).year - 2017,
+        "GEOPJR_WORK"      => "<a href=\"/work#{GeopJr::CONFIG.ext}\">Work</a>",
+        "GEOPJR_BLOG_SLUG" => "/blog#{GeopJr::CONFIG.ext}",
+        "GEOPJR_2017"      => Time.local(Time::Location.load("Europe/Athens")).year - 2017,
       }
 
       io << processed_source

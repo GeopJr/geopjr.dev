@@ -54,8 +54,8 @@ badges:
   - filename: ublock.png
     alt: uBlock Origin Now!
     link: https://github.com/gorhill/uBlock
-  - filename: anarchy.gif
-    alt: ANARCHY Now!
+  # - filename: anarchy.gif # only 15 fit nicely unfortunately
+  #   alt: ANARCHY Now!
   - filename: masto.gif
     alt: LEAVE TWITTER, JOIN MASTODON
     link: https://joinmastodon.org/servers

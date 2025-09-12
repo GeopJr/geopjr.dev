@@ -1,18 +1,11 @@
-$card-background-dark: #3a341a;
-$card-background-light: #f9f1cc;
-
 @use 'sass:color';
-@import './_reset.scss';
-@import './_reduced_motion.scss';
-@import './_navbar.scss';
-@import './_footer.scss';
-@import './_view_transition.scss';
-
-// @import './wave.scss';
-// @import './about.scss';
-// @import './card_grid.scss';
-// @import './card.scss';
-// @import './blog_post.scss';
+@use 'sass:map';
+@use 'reset';
+@use 'reduced_motion';
+@use 'navbar';
+@use 'footer';
+@use 'view_transition';
+@use 'variables';
 
 :root {
     --geopjr-yellow: #f0db78;
@@ -21,93 +14,115 @@ $card-background-light: #f9f1cc;
     --geopjr-dark: #262329;
 }
 
-// :root {
-//     color-scheme: dark;
-
-//     --accent: var(--geopjr-yellow);
-//     --accent-text: var(--geopjr-dark);
-//     --tech-icon-color: var(--geopjr-red);
-
-//     --card-background: var(--geopjr-dark);
-//     --navbar-background:var(--geopjr-dark);
-
-//     --navbar-item-background: var(--geopjr-red);
-//     --navbar-item-color: var(--text-color);
-
-//     --navbar-item-background-hover: var(--geopjr-purple);
-//     --card-action-background-hover: var(--geopjr-purple);
-//     --card-action-color-hover: var(--geopjr-yellow);
-
-//     --focus-outline-color: #ffffff;
-//     --focus-outline-color-inner: var(--geopjr-dark);
-
-//     --background-color: #1a181b;
-//     --text-color: white;
-
-//     --focus-outline: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--focus-outline-color);
-// }
 
 :root {
     color-scheme: dark;
 
-    --accent: #dbc766;
-    --accent-text: black;
-    --tech-icon-color: #dbc766;
+    --radius-big: 2rem;
+    --radius-medium: 1rem;
+    --radius-small: .75rem;
+    --outline-width: .2rem;
 
-    --card-background: #{$card-background-dark};
-    --card-background-hover: #{color.scale($card-background-dark, $lightness: 10%)};
-    --navbar-background: #{$card-background-dark};
+    --accent: #{map.get(variables.$accent-background, "dark")};
+    --accent-text: #{map.get(variables.$accent-foreground, "dark")};
 
-    --navbar-item-background: #4e7c5d;
-    --navbar-item-color: var(--text-color);
-    --card-action-background: #4e7c5d;
+    --accent-alt: #{map.get(variables.$accent-alt-background, "dark")};
+    --accent-alt-text: #{map.get(variables.$accent-alt-foreground, "dark")};
 
-    --navbar-item-background-hover: #7d6c9b;
-    --card-action-background-hover: #7d6c9b;
-    --card-action-color-hover: var(--text-color);
+    --accent-alt2: #{map.get(variables.$accent-alt2-background, "dark")};
+    --accent-alt2-text: #{map.get(variables.$accent-alt2-foreground, "dark")};
 
-    --focus-outline-color: #ffffff;
+    // --accent-fixed-foreground: #{map.get(variables.$accent-fixed, "foreground")};
+    // --accent-fixed-background: #{map.get(variables.$accent-fixed, "background")};
+
+    --card-foreground: #{map.get(variables.$card-foreground, "dark")};
+    --card-background: #{map.get(variables.$card-background, "dark")};
+    --card-background-hover: var(--accent-alt2);
+    --card-foreground-hover: var(--accent-alt2-text);
+
+    --navbar-item-background: var(--accent-alt2);
+    --navbar-item-foreground: var(--accent-alt2-text);
+    --navbar-item-background-hover: var(--accent-alt);
+    --navbar-item-foreground-hover: var(--accent-alt-text);
+
+    --card-action-background: var(--accent-alt2);
+    --card-action-foreground: var(--accent-alt2-text);
+    --card-action-background-hover: var(--accent-alt);
+    --card-action-color-hover: var(--accent-alt-text);
+
+    --focus-outline-color: var(--accent);
     --focus-outline-color-inner: var(--background-color);
 
-    --background-color: #252215;
-    --text-color: white;
-
+    --background-color: #{map.get(variables.$background, "dark")};
+    --text-color: #{map.get(variables.$foreground, "dark")};
     --focus-outline: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--focus-outline-color);
+
+    @media (prefers-contrast: more) {
+        --accent: #{map.get(variables.$accent-background, "dark-hc")};
+        --accent-text: #{map.get(variables.$accent-foreground, "dark-hc")};
+
+        --accent-alt: #{map.get(variables.$accent-alt-background, "dark-hc")};
+        --accent-alt-text: #{map.get(variables.$accent-alt-foreground, "dark-hc")};
+
+        --accent-alt2: #{map.get(variables.$accent-alt2-background, "dark-hc")};
+        --accent-alt2-text: #{map.get(variables.$accent-alt2-foreground, "dark-hc")};
+
+        --card-foreground: #{map.get(variables.$card-foreground, "dark-hc")};
+        --card-background: #{map.get(variables.$card-background, "dark-hc")};
+
+        --background-color: #{map.get(variables.$background, "dark-hc")};
+        --text-color: #{map.get(variables.$foreground, "dark-hc")};
+    }
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light;
 
-        --accent: #706738;
-        --accent-text: white;
-        --tech-icon-color: #464023;
+        --accent: #{map.get(variables.$accent-background, "light")};
+        --accent-text: #{map.get(variables.$accent-foreground, "light")};
 
-        --card-background: #{$card-background-light};
-        --card-background-hover: #{color.scale($card-background-light, $lightness: -5%)};
-        --navbar-background: #{$card-background-light};
+        --accent-alt: #{map.get(variables.$accent-alt-background, "light")};
+        --accent-alt-text: #{map.get(variables.$accent-alt-foreground, "light")};
 
-        --navbar-item-background: #cbead3;
-        --navbar-item-color: var(--text-color);
-        --card-action-background: #cbead3;
+        --accent-alt2: #{map.get(variables.$accent-alt2-background, "light")};
+        --accent-alt2-text: #{map.get(variables.$accent-alt2-foreground, "light")};
 
-        --navbar-item-background-hover: #cbaff9;
-        --card-action-background-hover: #cbaff9;
-        --card-action-color-hover: var(--text-color);
+        --card-foreground: #{map.get(variables.$card-foreground, "light")};
+        --card-background: #{map.get(variables.$card-background, "light")};
 
-        --focus-outline-color: #201c08;
-        --focus-outline-color-inner: var(--background-color);
+        --background-color: #{map.get(variables.$background, "light")};
+        --text-color: #{map.get(variables.$foreground, "light")};
 
-        --background-color: #fcfbe8;
-        --text-color: #201c08;
+        @media (prefers-contrast: more) {
+            --accent: #{map.get(variables.$accent-background, "light-hc")};
+            --accent-text: #{map.get(variables.$accent-foreground, "light-hc")};
+
+            --accent-alt: #{map.get(variables.$accent-alt-background, "light-hc")};
+            --accent-alt-text: #{map.get(variables.$accent-alt-foreground, "light-hc")};
+
+            --accent-alt2: #{map.get(variables.$accent-alt2-background, "light-hc")};
+            --accent-alt2-text: #{map.get(variables.$accent-alt2-foreground, "light-hc")};
+
+            --card-foreground: #{map.get(variables.$card-foreground, "light-hc")};
+            --card-background: #{map.get(variables.$card-background, "light-hc")};
+
+            --background-color: #{map.get(variables.$background, "light-hc")};
+            --text-color: #{map.get(variables.$foreground, "light-hc")};
+        }
     }
 }
 
 @import url("/assets/fonts/adwaita-sans/adwaita-sans.css");
 @import url("/assets/fonts/adwaita-mono/adwaita-mono.css");
 
-code, pre, tt, kbd, samp, .nerd {
-  font-family: "Adwaita Mono", monospace;
+code,
+pre,
+tt,
+kbd,
+samp,
+.nerd {
+    font-family: "Adwaita Mono", monospace;
 }
 
 html {
@@ -195,7 +210,7 @@ a:active {
     }
 
     border-radius: .5rem;
-    padding: 0 .3rem;
+    padding: 0 .5rem;
     line-height: 1.5;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;

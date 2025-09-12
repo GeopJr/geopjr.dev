@@ -1,3 +1,4 @@
+require "option_parser"
 require "html"
 require "ecr"
 require "yaml"
@@ -55,6 +56,7 @@ class GeopJr::Config
     static: Path["static"],
     assets: Path["dist", "assets"],
     icons:  Path["static", "_icons"],
+    tools:  Path[".tools"],
   }
   getter data = Data.new
   getter emotes : Hash(String, String) = Hash(String, String).new
@@ -77,8 +79,47 @@ class GeopJr::Config
   end
 end
 
-should_serve = ARGV[0]? == "serve"
-GeopJr::Server.serve if should_serve && Dir.exists?(GeopJr::CONFIG.paths[:out])
+should_serve = false
+just_sass = false
+just_minify = false
+just_zip = false
+
+should_sass = true
+should_minify = true
+should_zip = true
+
+should_watch_sass = false
+OptionParser.parse do |parser|
+  parser.banner = "Usage: geopjr [arguments]"
+  parser.on("serve", "Spawns an HTTP serve that serves the output") { should_serve = true }
+  parser.on("sass", "Run the dart-sass command without re-compiling") do
+    should_sass = just_sass = true
+    parser.banner = "Usage: geopjr sass [arguments]"
+    parser.on("-w", "--watch", "Watch for changes") { should_watch_sass = true }
+  end
+  parser.on("minify", "Run the minify command without re-compiling") { should_minify = just_minify = true }
+  parser.on("zip", "Run zip the output without re-compiling") { should_zip = just_zip = true }
+  parser.on("--no-sass", "Doesn't compile the SCSS automatically") { should_sass = false }
+  parser.on("--no-minify", "Doesn't minify the output automatically") { should_minify = false }
+  parser.on("--no-zip", "Doesn't zip the output automatically") { should_zip = false }
+  parser.on("-h", "--help", "Show this help") do
+    puts parser
+    exit
+  end
+  parser.invalid_option do |flag|
+    STDERR.puts "🐱 ERROR: #{flag} is not a valid option."
+    STDERR.puts parser
+    exit(1)
+  end
+end
+
+# if it exists, serve (won't continue executing)
+# else output and then will run these
+if Dir.exists?(GeopJr::CONFIG.paths[:out]) && (just_sass || just_minify || just_zip || should_serve)
+  GeopJr::Tools.new(just_sass, just_minify, just_zip, should_watch_sass) if just_sass || just_minify || just_zip
+  GeopJr::Server.serve if should_serve
+  exit
+end
 
 module GeopJr
   CONFIG     = GeopJr::Config.new
@@ -117,10 +158,12 @@ module GeopJr
   File.write(GeopJr::CONFIG.paths[:out] / "sitemap.xml", SitemapXML.new.to_s)
 
   # rss.xml
-  File.write(GeopJr::CONFIG.paths[:out] / "rss.xml", RSSXML.new.to_s)
+  RSSXML.generate(GeopJr::CONFIG.paths[:out] / "rss.xml")
 
   # Delete underscore files
   FileUtils.rm_rf(Dir.glob(GeopJr::CONFIG.paths[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
+
+  GeopJr::Tools.new(should_sass, should_minify, should_zip)
 end
 
 GeopJr::Server.serve if should_serve

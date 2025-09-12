@@ -1,23 +1,24 @@
 body>nav {
     align-self: flex-start;
-    background-color: var(--navbar-background);
+    background-color: var(--card-background);
     max-width: 100%;
     height: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom-right-radius: 2rem;
+    border-bottom-right-radius: var(--radius-big);
+    outline: var(--outline-width) var(--accent) solid;
 
     &::before {
         content: "";
         position: absolute;
         background-color: transparent;
-        top: 4rem;
+        top: calc(4rem + var(--outline-width));
         left: 0;
-        height: 50px;
+        height: 60px;
         width: 50px;
-        border-top-left-radius: 2rem;
-        box-shadow: 0px -25px 0 0 var(--navbar-background);
+        border-top-left-radius: var(--radius-big);
+        box-shadow: -10px -25px 0 0 var(--accent);
         z-index: -40;
         transition-duration: .2s;
     }
@@ -27,7 +28,7 @@ body>nav {
         flex-direction: row;
         align-items: center;
         gap: 1rem;
-        border-right: 1px solid var(--accent);
+        border-right: var(--outline-width) solid var(--accent);
         height: 100%;
 
         >a {
@@ -138,11 +139,11 @@ body>nav {
 
         width: calc(100% - 4rem);
         height: calc(100% - 8rem);
-        background-color: var(--navbar-background);
+        background-color: var(--card-background);
         position: absolute;
         left: 2rem;
         top: 6rem;
-        border-radius: 2rem;
+        border-radius: var(--radius-big);
         padding: 2rem;
         overflow-y: auto;
         box-shadow: 0 0 0 0.1rem var(--focus-outline-color-inner), 0 0 0 0.3rem var(--accent);
@@ -157,12 +158,13 @@ body>nav {
 
                 width: 100%;
                 background-color: var(--navbar-item-background);
-                color: var(--navbar-item-color);
+                color: var(--navbar-item-foreground);
                 transition-duration: 100ms;
 
                 &:hover,
                 &:focus-visible {
                     background-color: var(--navbar-item-background-hover);
+                    color: var(--navbar-item-foreground-hover);
                 }
 
                 &.active {
@@ -174,6 +176,7 @@ body>nav {
                     &:hover,
                     &:focus-visible {
                         background-color: var(--navbar-item-background-hover);
+                        color: var(--navbar-item-foreground-hover);
                     }
                 }
 
@@ -207,7 +210,7 @@ body>nav {
             >a {
                 &:last-child {
                     &.text--block {
-                        border-bottom-right-radius: 1rem !important;
+                        border-bottom-right-radius: var(--radius-medium) !important;
                     }
                 }
 

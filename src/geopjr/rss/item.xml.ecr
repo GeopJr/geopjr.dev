@@ -1,0 +1,10 @@
+<item>
+    <title><![CDATA[<%= @title %>]]></title>
+    <link><%= @url %></link>
+    <pubDate><%= @date %></pubDate>
+    <guid><%= @url %></guid>
+    <description><![CDATA[<%= @content %>]]></description>
+    <%- @tags.each do |tag| -%>
+        <category><![CDATA[<%= GeopJr::CONFIG.data.dict.fetch(tag.downcase, tag.capitalize) %>]]></category>
+    <%- end -%>
+</item>

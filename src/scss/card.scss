@@ -1,8 +1,12 @@
 .card {
+    --border-color: var(--accent);
+
     border: 0.25rem solid transparent;
     transition-duration: 200ms;
     height: 100%;
     line-height: 1.5;
+    color: var(--card-foreground);
+    border: var(--outline-width) var(--border-color) solid;
 
     a {
         color: var(--accent);
@@ -11,26 +15,35 @@
         font-weight: 700;
     }
 
+    &.activatable {
+        color: var(--card-foreground);
+    }
+
     &:hover {
         .arrow {
-            color: var(--accent);
+            // color: var(--accent);
             transition-duration: 200ms;
         }
 
+        &.activatable {
+            --border-color: var(--card-foreground-hover);
+            background-color: var(--card-background-hover);
+            color: var(--card-foreground-hover);
+        }
+
         // border-color: var(--accent);
-        background-color: var(--card-background-hover);
+
         transition-duration: 200ms;
 
         >.card-title {
             transition-duration: 200ms;
-            color: var(--accent);
         }
     }
 
     font-size: x-large;
     padding: 2rem;
     background-color: var(--card-background);
-    border-radius: 0.75rem;
+    border-radius: var(--radius-medium);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -63,9 +76,18 @@
         display: inline-flex;
         flex-direction: row;
         gap: 2rem;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        border-top-left-radius: var(--radius-big);
+        border-top-right-radius: var(--radius-big);
+        border-bottom-right-radius: var(--radius-big);
         margin: 0 2rem;
+        background-color: var(--accent-alt2);
+        color: var(--accent-alt2-text);
+        border: none;
+
+        a {
+            color: var(--accent-alt2-text);
+            text-decoration-color: var(--accent-alt2-text);
+        }
 
         .arrow {
             align-items: center;
@@ -133,7 +155,7 @@
         }
 
         >.card-action {
-            color: var(--text-color);
+            color: var(--card-action-foreground);
             background-color: var(--card-action-background);
             border-radius: 0.5rem;
             padding: 0.5rem 0.5rem;

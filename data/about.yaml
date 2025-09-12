@@ -1,4 +1,4 @@
-about: "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">Freelancer</strong> &amp; a <strong class=\"accent\">CS Student</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{{GEOPJR_2017}}</strong> years! 🌐"
+about: "Hi, nice to meet you! I go by <strong class=\"accent\">GeopJr</strong> 🧙 online, but feel free to call me <strong class=\"accent\">Evan</strong>, <strong class=\"accent\">Evangelos</strong> or <strong class=\"accent\">Geop</strong>.<br />I am a <strong class=\"accent\">Freelancer</strong> &amp; a <strong class=\"accent\">CS Student</strong> 🧑‍🎓 from <strong class=\"accent\">Greece</strong> 🇬🇷 and have been in the space 🧑‍💻 for about <strong class=\"accent\">{{GEOPJR_2017}}</strong> years! 🌐"
 interests:
   - Accessibility
   - Ethical Tech
@@ -17,7 +17,9 @@ interests:
   - Operating Systems
 whatido:
   - Ever since I can remember myself, I've always been fascinated with technology and eventually grew up on the internet.
-  - Over the years, I started contributing a lot to open source projects as well as create my own, from custom Android ROMs & iOS jailbreak tweaks to fully client-side E2E encrypted text bins (see {{{GEOPJR_WORK}}}). Sometimes I do security research.
+  - Over the years, I started contributing a lot to open source projects as well as create my own, from custom Android ROMs & iOS jailbreak tweaks to fully client-side E2E encrypted text bins (see {{{GEOPJR_WORK}}}). Sometimes I do <a href="{{{GEOPJR_BLOG_SLUG}}}/how-i-hacked-an-anti-vaxxer-dating-and-bodily-fluid-marketplace-website">security research</a>.
+  - I'm always up for a challenge and ready to research any piece of software in order to <a href="{{{GEOPJR_BLOG_SLUG}}}/svg-icons-an-eternal-quest">completely optimize it</a> or <a rel="noopener noreferrer" target="_blank" href="https://github.com/GeopJr/Tuba/issues/553">implement newfound design patterns</a>.
+  - I've been a <a href="https://gnome.org/">GNOME</a> Foundation Member since 2020 and have contributed to many parts of the Linux desktop, first and third party libraries and applications. My research and experience often leads to <a href="{{{GEOPJR_BLOG_SLUG}}}">blog posts</a> &amp; <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=kKiLPm-Q7Lg">technical talks</a> for the wider community.
   - Moving forward I consciously choose to use the (limited) power I hold to ethically improve the lives of the people around me, fight climate change, protect activists and human rights and create accessible software for everyone.
 stack:
   Languages:
@@ -47,3 +49,15 @@ stack:
     Capacitor: https://capacitorjs.com/
     Flutter: https://flutter.dev/
     NativeScript: https://nativescript.org/
+press:
+  forbes: https://www.forbes.com/sites/brucelee/2022/07/30/does-unjected-a-dating-website-for-covid-19-unvaccinated-leave-data-exposed/
+  bitdefender: https://www.bitdefender.com/en-us/blog/hotforsecurity/tinder-for-unvaccinated-website-exposed-all-user-data
+  tonight_show_jimmy: https://www.youtube.com/watch?v=NcMMBAiNjz8&t=320s
+  dailydot: https://www.dailydot.com/debug/anti-vax-dating-site-unjected-private-user-data-dms/
+  verge: https://www.theverge.com/2022/7/25/23277788/unjected-anti-vax-dating-debug-mode-data-covid
+  mic: https://www.mic.com/life/unjected-anti-vaxx-dating-site-hacked
+  mashable: https://mashable.com/article/anti-vax-dating-site-data-breach
+  boingboing: https://boingboing.net/2022/07/30/unjected-is-a-dating-site-for-unvaccinated-safe-blood-people.html
+  gizmodo: https://gizmodo.com/anti-vax-dating-site-unjected-suffers-data-breach-covid-1849333490
+  metro: https://metro.co.uk/2022/07/26/anti-vax-dating-site-puts-data-of-3500-users-at-risk-17069986/
+  linuxformat: https://linuxformat.com/archives?issue=317

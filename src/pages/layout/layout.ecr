@@ -32,6 +32,7 @@
         <%= @content %>
         <%= @footer %>
         <script src="/assets/js/log.js"></script>
+        <script src="/assets/js/listenbrainz.js"></script>
         <%- if !(js = @tags.js).nil? %>
             <%- js.each do |script| -%>
                 <script src="/assets/js/<%= script %>.js"></script>

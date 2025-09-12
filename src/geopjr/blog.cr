@@ -13,8 +13,10 @@ module GeopJr
       end
       HEADINGS[-1] = HEADINGS[-2]
 
+      property anchors = true
+
       def toc(node : Markd::Node)
-        return unless node.type.heading?
+        return unless node.type.heading? && anchors
 
         text = String.build do |str|
           walker = node.walker
@@ -31,6 +33,14 @@ module GeopJr
         return if title == ""
         @output_io << %(<a aria-hidden="true" id=") << title << %(" class="anchor" href="#) << title << %(">Ω</a>)
         @last_output = ">"
+      end
+
+      def code_block(node : Markd::Node, entering : Bool, formatter : T?) : Nil forall T
+        if formatter.nil?
+          render_code_block_use_code_tag(node)
+        else
+          super
+        end
       end
     end
 
@@ -88,10 +98,19 @@ module GeopJr
       res
     end
 
-    private def note(content : String) : String
+    private def note(content : String, rss : Bool = false) : String
       res = content
       res.scan(/(^|\n)::: ?(?<title>.+?)\n(?<content>(?:.|\n)+?)\n:::(?=\n|$)/i) do |m|
-        tag = <<-HTML
+        tag = if rss
+                <<-HTML
+
+          <p>
+            <strong>#{m["title"]}</strong><br />#{m["content"]}
+          </p>
+
+        HTML
+              else
+                <<-HTML
 
           <article class="info-box">
             <p class="title">#{m["title"]}</p>
@@ -99,6 +118,8 @@ module GeopJr
           </article>
 
         HTML
+              end
+
         res = res.sub(m[0], tag)
       end
       res
@@ -111,19 +132,21 @@ module GeopJr
       standalone: false,
     )
 
-    def to_html : String
+    def to_html(rss : Bool = false) : String
       @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
 
       post_source = @io.gets_to_end
-      post_source = note(youtube(post_source))
+      post_source = note(youtube(post_source), rss)
       template = Crustache.parse post_source
       processed_source = Crustache.render template, {
-        "GEOPJR_BLOG_ASSETS" => "/assets/images/blog/#{@filename}",
+        "GEOPJR_BLOG_ASSETS" => "#{rss ? GeopJr::CONFIG.url : ""}/assets/images/blog/#{@filename}",
         "GEOPJR_EXT"         => GeopJr::CONFIG.ext,
       }.merge(GeopJr::CONFIG.emotes)
       return "" if processed_source.empty?
 
-      BlogRenderer.new(@@markd_options).render(Markd::Parser.parse(processed_source, @@markd_options), @@markd_formatter)
+      renderer = BlogRenderer.new(@@markd_options)
+      renderer.anchors = !rss
+      renderer.render(Markd::Parser.parse(processed_source, @@markd_options), rss ? nil : @@markd_formatter)
     end
   end
 

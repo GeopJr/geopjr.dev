@@ -251,9 +251,9 @@
     - icon: github
       url: https://github.com/GeopJr/Granz-cr
       tooltip: GitHub Repo
-    - icon: externallinkalt
-      url: https://granz.geopjr.dev/
-      tooltip: Website
+    # - icon: externallinkalt
+    #   url: https://granz.geopjr.dev/
+    #   tooltip: Website
 - name: Soft & Wet
   desc: A Discord Bot that uses advanced image manipulation to create new images from templates in under a second.
   image: /assets/images/work/snw.webp
@@ -264,9 +264,9 @@
     - icon: github
       url: https://github.com/Soft-Wet-Bot
       tooltip: GitHub Repo
-    - icon: externallinkalt
-      url: https://soft-wet.damon.sh/
-      tooltip: Website
+    # - icon: externallinkalt
+    #   url: https://soft-wet.damon.sh/
+    #   tooltip: Website
 - name: DNOME
   desc: Adwaita-inspired Discord Theme.
   image: dnome

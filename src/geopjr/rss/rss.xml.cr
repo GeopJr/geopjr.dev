@@ -1,15 +1,31 @@
 module GeopJr
-  class RSSXML
-    @entries : Array({url: String, date: String, title: String})
+  module RSSXML
+    def self.generate(path : Path)
+      File.open(path, "w") do |file|
+        file.print <<-XML
+          <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+            <channel>
+              <title>GeopJr's Blog</title>
+              <link>#{GeopJr::CONFIG.url}</link>
+              <description>#{HTML.escape(BLOG_DESCRIPTION)}</description>
+              <language>en-us</language>
+              <atom:link href="#{GeopJr::CONFIG.url}/rss.xml" rel="self" type="application/rss+xml" />
+              <generator>GeopJr #{GeopJr::CONFIG.version}</generator>
+        XML
 
-    def initialize(blog_posts = BLOG_POSTS)
-      @entries = [] of {url: String, date: String, title: String}
+        BLOG_POSTS.each do |v|
+          next if i.fm.hidden
 
-      blog_posts.reject { |i| i.fm.hidden }.each do |v|
-        @entries << {url: "#{GeopJr::CONFIG.url}/#{GeopJr::CONFIG.blog_out_path}/#{v.filename}#{GeopJr::CONFIG.ext}", date: v.fm.date.to_rfc2822, title: v.fm.title}
+          # we need to regenerate the blog posts
+          # without all the styling and features
+          file.print RSSXML::Item.new(v, v.to_html(rss: true)).to_s
+        end
+
+        file.print <<-XML
+            </channel>
+          </rss>
+        XML
       end
     end
-
-    ECR.def_to_s "#{__DIR__}/rss.xml.ecr"
   end
 end
