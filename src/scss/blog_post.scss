@@ -234,9 +234,16 @@ body>main {
 
         .info-box,
         blockquote {
+            --anchor-color: var(--accent-alt2-text);
+
             padding: .1rem 1rem;
             border-radius: var(--radius-small);
             border-bottom-right-radius: var(--radius-big);
+
+            a {
+                color: var(--anchor-color);
+                text-decoration-color: var(--anchor-color);
+            }
         }
 
         blockquote {
@@ -246,6 +253,7 @@ body>main {
         }
 
         .info-box {
+            --anchor-color: var(--accent-alt-text);
             margin: 2rem 0rem;
             background-color: var(--accent-alt);
 

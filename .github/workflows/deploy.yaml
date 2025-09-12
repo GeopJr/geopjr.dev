@@ -18,7 +18,7 @@ jobs:
       - name: Install shards
         run: shards install
       - name: Compile
-        run: make build run # no need to release=1 yet, debug is extremely fast
+        run: make build run no_zip=1 # no need to release=1 yet, debug is extremely fast
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
