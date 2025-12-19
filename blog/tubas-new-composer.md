@@ -36,7 +36,7 @@ But that's a very basic example, what happens if the platform doesn't support wh
 
 ## `ScrolledWindow` and `Scrollable`
 
-Let's talk about GTK's `ScrolledWindow`. It's a container that makes its child scrollable. That mean a lot of things but for this case, it means that the child's size won't affect the window size, if it exceeds a certain limit, scrollbars will appear.
+Let's talk about GTK's `ScrolledWindow`. It's a container that makes its child scrollable. That means a lot of things but for this case, it means that the child's size won't affect the window size, if it exceeds a certain limit, scrollbars will appear.
 
 A common pitfall with the `ScrolledWindow` is that users think of it as a typical container, like so: `ScrolledWindow -> Widget`. But that's not true, `ScrolledWindow` expects the child to implement the `Scrollable` interface which, in layman's terms, defines how scrolling works.
 

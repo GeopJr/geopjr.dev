@@ -3,6 +3,7 @@ title: "Snap: The Good, the Bad and the Ugly"
 subtitle: From an app developer perspective
 date: 2024-01-29
 updated: 2024-09-20
+hidden: true # don't want to keep track of its progress nor misinform anyone
 tags:
     - linux
 ---

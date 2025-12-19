@@ -1,5 +1,7 @@
 module GeopJr
   class Page::Donate < Page::Base
+    @hidden = true
+
     def description : String
       "Help me continue doing what I love"
     end

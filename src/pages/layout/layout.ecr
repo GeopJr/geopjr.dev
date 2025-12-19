@@ -18,6 +18,8 @@
         <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#706738">
         <meta name="msapplication-TileColor" content="#f9f1cc">
         <link rel="alternate" type="application/rss+xml" title="GeopJr's Blog" href="/rss.xml" />
+        <link rel="preload" href="/assets/images/dither-d.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/assets/images/dither-l.webp" as="image" type="image/webp" />
         <%= @tags.standard %>
         <%= @tags.og %>
         <link rel="stylesheet" href="/assets/css/global.css">
@@ -28,7 +30,13 @@
         <%- end -%>
     </head>
     <body>
-        <%= @navbar %>
+        <header>
+            <%= @navbar %>
+            <%- if !@header.nil? && @header != "" -%>
+                <section><%= @header %></section>
+            <%- end -%>
+            <%- if @header != "" -%><div class="dither-sep bottom" aria-hidden="true"></div><%- end -%>
+        </header>
         <%= @content %>
         <%= @footer %>
         <script src="/assets/js/log.js"></script>

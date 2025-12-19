@@ -1,29 +1,9 @@
 <nav>
-	<header>
-		<a draggable="false" href="/" aria-label="Home">
-			<img draggable="false" alt="Avatar" src="/assets/images/avi.webp" aria-label="My avatar - a yellow novakid from the game Starbound having a rainbow sword on their shoulder and the letter Omega as their face" />
-			<span>GeopJr</span>
-		</a>
-	</header>
-	<input type="checkbox" class="menu" id="menu">
-	<label for="menu">
-		<svg height="1.2em" width="1.2em" class="bars" aria-label="Hamburger menu">
-			<use xlink:href="/assets/icons/bars.svg#bars"></use>
-		</svg>
-		<svg height="1.2em" width="1.2em" class="times" aria-label="X button">
-			<use xlink:href="/assets/icons/times.svg#times"></use>
-		</svg>
-	</label>
-	<div>
-		<%- ROUTES.each_with_index do |route, i| -%>
-			<%- next if i == 0 -%>
-			<a
-				draggable="false"
-				href="/<%= route.tags.url %>" aria-label="<%= route.title %>"
-				class="text--block <%= @active_link == route.id.to_s ? " active" : nil %>"
-			>
-				<%= route.title %>
-			</a>
-		<%- end -%>
-	</div>
+	<%- ROUTES.each_with_index do |route, i| -%>
+		<a
+			draggable="false"
+			href="/<%= route.tags.url %>" aria-label="<%= route.title %>"
+			class="<%= @active_link == route.id.to_s ? "active" : nil %> <%= route.hidden ? " h" : nil %>"
+		><%= route.title.upcase %></a>
+	<%- end -%>
 </nav>

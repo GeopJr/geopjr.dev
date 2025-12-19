@@ -1,15 +1,18 @@
-// Since we conditionally inject css, this
-// will only apply when the page is a blog
-// post; so there's no need for :has or
-// other hacks
-@media only screen and (max-width: 500px) {
-    body>main {
+@use "mixins";
+@import url("/assets/fonts/instrument-serif/instrument-serif.css");
+
+body {
+    gap: 0;
+
+    >header {
+        background-color: var(--accent);
+    }
+
+    >main {
+        width: 100%;
+        margin: 0;
         max-width: 100%;
     }
-}
-
-body>main {
-    width: 60rem;
 }
 
 .blog-post {
@@ -17,99 +20,109 @@ body>main {
     flex-direction: column;
     min-height: 100vh;
     // gap: 4rem;
-    width: 100%;
     overflow-wrap: break-word;
     word-wrap: break-word;
-
-    a {
-        color: var(--accent);
-        text-decoration: wavy var(--accent) underline 2px;
-        font-variation-settings: "wght" 700, "slnt" 0;
-        font-weight: 700;
-        text-decoration-thickness: 2px;
-    }
+    width: 100%;
 
     >header {
-        padding: 2rem;
-        margin: 0 1rem;
-        text-align: center;
-        gap: 1rem;
-        min-height: 25vh;
-        border-top-left-radius: var(--radius-big);
-        border-bottom-right-radius: var(--radius-big);
-        border-bottom-left-radius: var(--radius-big);
-        // width: 100%;
-        // position: absolute;
-        background-color: var(--accent);
-        color: var(--accent-text);
-        // padding-top: 4rem;
+        @include mixins.reverse-accent;
+
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        position: relative;
-        border: var(--outline-width) var(--accent) solid;
-        // margin-bottom: 4rem;
+        text-align: center;
 
-        >h1 {
-            font-size: xxx-large;
-        }
-
-        @media only screen and (max-width: 700px) {
-            >h1 {
-                font-size: xx-large;
-            }
-        }
-
-        >.subtitle {
-            margin: 1rem 0;
-        }
-
-        >.blog-tags {
+        >section {
+            padding: 0 1rem .5rem 1rem;
             display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        >footer {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            column-gap: 2rem;
+            flex-direction: column;
+            gap: .5rem;
             justify-content: center;
+            align-items: center;
 
-            >span {
-                white-space: nowrap;
-                text-align: center;
+            >h1 {
+                font-family: "Instrument Serif", serif;
+                font-size: 4em;
+                font-weight: normal;
             }
-        }
 
-        &::before {
-            content: "";
-            z-index: -40;
-            position: absolute;
-            background-color: transparent;
-            right: calc(var(--outline-width) * -1);
-            top: calc(-60px - var(--outline-width));
-            height: 60px;
-            width: 50px;
-            border-bottom-right-radius: var(--radius-big);
-            box-shadow: 0 25px 0 0 var(--accent), 0 35px 0 0 var(--accent);
+            >section {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                >h2 {
+                    font-weight: normal;
+
+                    >span {
+                        @include mixins.reverse-reverse-accent;
+                    }
+                }
+
+                >span {
+                    font-family: 'Adwaita Mono', monospace;
+                }
+
+                >.blog-tags {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+            }
         }
     }
 
-
-    >div {
+    >section {
         font-size: large;
-        margin: 2rem;
+        margin: 110px 2rem;
+        align-self: center;
+        max-width: 100%;
 
         @media only screen and (min-width: 768px) {
-            font-size: x-large;
-            margin: 2rem 6rem;
+            font-size: large;
+            margin: 110px 6rem;
+            max-width: 50rem;
         }
 
-        img {
+        >.card,
+        >p:has(>img:last-child) {
+            &:first-child {
+                margin-top: calc(-110px / 2);
+            }
+
+            &:last-child {
+                margin-bottom: calc(-110px / 2);
+            }
+        }
+
+        >h2:first-child,
+        >p:first-child {
+            margin-top: 0;
+        }
+
+        >p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card {
+            margin: 2rem 0;
+
+            >section p {
+                line-height: 1.3;
+                margin: 0;
+
+                a {
+                    font-weight: normal;
+                }
+            }
+        }
+
+        img:not(.c) {
             max-width: 100%;
             max-height: 100%;
             display: block;
@@ -117,13 +130,9 @@ body>main {
             margin-right: auto !important;
 
             &.emote {
-                filter: drop-shadow(0 0 .2rem var(--accent));
+                filter: drop-shadow(1px 1px 0px var(--accent)) drop-shadow(-1px -1px 0px var(--accent));
             }
         }
-
-        // :global(.youtube-sveltekit-embed) {
-        //     border-radius: 0.5rem;
-        // }
 
         h1,
         h2,
@@ -131,7 +140,6 @@ body>main {
         h4,
         h5,
         h6,
-        pre,
         p,
         img {
             margin: 1rem 0rem;
@@ -151,17 +159,14 @@ body>main {
                 font-weight: 900;
                 text-decoration: none;
                 margin-right: 1rem;
-                filter: drop-shadow(0 0 0.1rem var(--accent))
+                color: var(--accent);
+                text-decoration: solid 1px underline var(--accent);
             }
         }
 
         p {
             line-height: 1.5;
         }
-
-        // >p + p {
-        //     margin-top: 2rem;
-        // }
 
         ul>*,
         ol>* {
@@ -173,12 +178,10 @@ body>main {
         }
 
         :not(pre)>code {
+            @include mixins.reverse-accent;
+
             white-space: normal;
-            background-color: var(--card-background);
-            color: var(--card-foreground);
-            border-radius: var(--radius-small);
             padding: 0rem .3rem;
-            outline: 0.12rem var(--accent) solid;
         }
 
         figure {
@@ -187,22 +190,23 @@ body>main {
             font-size: smaller;
             margin: 0.5em;
             padding: 0.5em;
+            border: 1px solid var(--accent);
         }
 
         img {
             pointer-events: all;
         }
 
-        figure img:not(.emote),
-        p img:not(.emote),
-        video,
-        .youtube img {
-            border-radius: var(--radius-small);
-        }
+        // figure img:not(.emote),
+        // p img:not(.emote),
+        // video,
+        // .youtube img {
+        //     border-radius: var(--radius-small);
+        // }
 
         figure img:not(.emote),
         p img:not(.emote) {
-            outline: 0.2rem var(--accent) solid;
+            outline: 1px var(--accent) solid;
         }
 
         .youtube {
@@ -218,54 +222,27 @@ body>main {
         }
 
         pre {
+            --theme-multiplier: 1;
+
+            @media (prefers-color-scheme: dark) {
+                --theme-multiplier: 2;
+            }
+
             white-space: pre;
             overflow-x: auto;
-            background-color: var(--card-background);
-            border-radius: var(--radius-small);
-            font-size: large;
-            outline: 0.2rem var(--accent) solid;
-            border-top-left-radius: var(--radius-big);
+            background-color: var(--background-color);
+            border: 1px solid hsl(from var(--theme-bg) h calc(s * 0.814 * var(--theme-multiplier)) calc(l * 0.814 * var(--theme-multiplier)));
+            border-radius: 2.4px;
 
             >code {
+                max-width: 0; // hack else overflows
                 display: inline-block;
-                margin: 2rem 2rem 2rem 0;
-            }
-        }
-
-        .info-box,
-        blockquote {
-            --anchor-color: var(--accent-alt2-text);
-
-            padding: .1rem 1rem;
-            border-radius: var(--radius-small);
-            border-bottom-right-radius: var(--radius-big);
-
-            a {
-                color: var(--anchor-color);
-                text-decoration-color: var(--anchor-color);
+                margin: 1rem 1rem 1rem 0;
             }
         }
 
         blockquote {
             font-style: italic;
-            background-color: var(--accent-alt2);
-            color: var(--accent-alt2-text);
-        }
-
-        .info-box {
-            --anchor-color: var(--accent-alt-text);
-            margin: 2rem 0rem;
-            background-color: var(--accent-alt);
-
-            >p {
-                font-size: smaller;
-                color: var(--accent-alt-text);
-
-                &.title {
-                    margin-bottom: .5rem;
-                    font-weight: bold;
-                }
-            }
         }
     }
 }

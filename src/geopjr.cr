@@ -41,12 +41,12 @@ class GeopJr::Config
     end
   end
 
-  getter version : String = "0.4.0"
+  getter version : String = "0.5.0"
   getter blog_out_path : String = "blog"
   getter url : String = "https://geopjr.dev"
-  getter title : String = "GeopJr"
+  getter title : String = "Evangelos “GeopJr” Paterakis"
   getter html_ext : Bool = false
-  getter max_posts_per_page : Int32 = 9
+  getter max_posts_per_page : Int32 = 25
 
   getter distro_name : String? = nil
   getter ext : String

@@ -25,11 +25,7 @@ module GeopJr
     end
 
     def description : String
-      "Personal Portfolio - CS - Ethical Tech - Blogs about programming, tech, ethics, climate & more"
-    end
-
-    def tags : GeopJr::Tags
-      @tags
+      "FOSS Maintainer, Software Engineer & Security Researcher focused on ethical tech"
     end
 
     protected def content : String
@@ -43,7 +39,8 @@ module GeopJr
           content,
           Layout::Navbar.new(id).to_s,
           Layout::Footer.new.to_s,
-          @tags
+          @tags,
+          @header
         ).to_s
       )
     end

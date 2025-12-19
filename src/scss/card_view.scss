@@ -3,11 +3,91 @@
     padding: 0 1rem;
     display: grid;
     gap: 2rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr);
 
     >article {
         height: 100%;
+    }
+
+    .card {
+        &.archived {
+            --theme-selected-bg: #FFB351;
+
+            opacity: .8;
+            transition-duration: 250ms;
+            transition-property: opacity;
+
+            >section {
+                --stripe-color: #ffffff0a;
+
+                background-repeat: no-repeat;
+                background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, var(--stripe-color) 30px, var(--stripe-color) 60px);
+                background-origin: border-box;
+
+                @media (prefers-color-scheme: light) {
+                    --stripe-color: #0000000a;
+                }
+            }
+
+
+            &:hover,
+            &:focus-within {
+                opacity: 1;
+            }
+        }
+
+        >section {
+            >.title {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                @media only screen and (min-width: 1400px),
+                only screen and (min-width: 511px) and (max-width: 767px) {
+                    flex-direction: row;
+                    gap: 1.5rem;
+                }
+
+                >section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .2rem;
+
+                    >p {
+                        overflow-wrap: break-word;
+                        word-wrap: break-word;
+                        width: 100%;
+
+                        &:first-of-type {
+                            font-size: large;
+                            font-weight: bold;
+                        }
+
+                        &:last-of-type {
+                            margin-bottom: .3rem;
+                        }
+                    }
+
+                    .card-badges {
+                        display: flex;
+                        font-size: 1.5rem;
+                        flex-direction: row;
+                        gap: .5rem;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            >p {
+                font-weight: bold;
+            }
+
+            >.buttons>.btn {
+                padding: 4px;
+                width: 32px;
+            }
+        }
     }
 
     img.sticker {

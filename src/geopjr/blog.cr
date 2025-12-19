@@ -14,6 +14,7 @@ module GeopJr
       HEADINGS[-1] = HEADINGS[-2]
 
       property anchors = true
+      property rss = false
 
       def toc(node : Markd::Node)
         return unless node.type.heading? && anchors
@@ -36,10 +37,88 @@ module GeopJr
       end
 
       def code_block(node : Markd::Node, entering : Bool, formatter : T?) : Nil forall T
+        if !rss
+          final_title = "Code"
+          languages = node.fence_language ? node.fence_language.split : nil
+
+          unless languages.nil?
+            lang = code_block_language(languages)
+            unless lang.nil?
+              if languages.size > 1
+                final_title = languages[1]
+              else
+                final_title = lang.size == 2 ? ".#{lang.downcase}" : lang.capitalize
+              end
+            end
+          end
+
+          make_window(true, final_title, "editor")
+        end
+
         if formatter.nil?
           render_code_block_use_code_tag(node)
         else
           super
+        end
+
+        if !rss
+          make_window(false)
+        end
+      end
+
+      def block_quote(node : Markd::Node, entering : Bool) : Nil
+        if rss
+          super
+        else
+          if entering
+            make_window(entering, "Quote", "quote")
+            tag("blockquote", attrs(node))
+          else
+            tag("blockquote", end_tag: true)
+            make_window(entering)
+          end
+        end
+      end
+
+      private def make_window(entering : Bool, title : String = "", icon : String = "")
+        if entering
+          tag("article", {"class" => "card"})
+          tag("header")
+          tag(
+            "img",
+            {
+              "class"       => "c",
+              "aria-hidden" => "true",
+              "alt"         => "",
+              "src"         => "/assets/images/tango/#{icon}.webp",
+            }
+          )
+
+          tag("span", {"aria-hidden" => "true"}) do
+            output(title)
+          end
+          tag(
+            "div",
+            {
+              "class"       => "window-controls",
+              "aria-hidden" => "true",
+            }
+          )
+          tag("span")
+          tag("span", end_tag: true)
+
+          tag("span")
+          tag("span", end_tag: true)
+
+          tag("span")
+          tag("span", end_tag: true)
+          tag("div", end_tag: true)
+
+          tag("header", end_tag: true)
+          tag("section")
+        else
+          tag("section", end_tag: true)
+          tag("article", end_tag: true)
         end
       end
     end
@@ -98,6 +177,15 @@ module GeopJr
       res
     end
 
+    private def note_style(title : String) : {String, String}
+      case title.downcase
+      when "disclaimer", "warning", "important"
+        {"warn.webp", "#FFB351"}
+      else
+        {"info.webp", "#ABB98B"}
+      end
+    end
+
     private def note(content : String, rss : Bool = false) : String
       res = content
       res.scan(/(^|\n)::: ?(?<title>.+?)\n(?<content>(?:.|\n)+?)\n:::(?=\n|$)/i) do |m|
@@ -110,12 +198,24 @@ module GeopJr
 
         HTML
               else
+                icon, color = note_style(m["title"])
                 <<-HTML
 
-          <article class="info-box">
-            <p class="title">#{m["title"]}</p>
-            <p class="content">#{m["content"]}</p>
-          </article>
+          <article class="card" style="--theme-selected-bg:#{color}">
+		      	<header>
+		      		<img class="c" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
+		      		<div class="window-controls" aria-hidden="true">
+		      			<span></span>
+		      			<span></span>
+		      			<span></span>
+		      		</div>
+		      	</header>
+		      	<section>
+		      		<p>
+		      				#{m["content"]}
+		      		</p>
+		      	</section>
+		      </article>
 
         HTML
               end
@@ -146,6 +246,7 @@ module GeopJr
 
       renderer = BlogRenderer.new(@@markd_options)
       renderer.anchors = !rss
+      renderer.rss = rss
       renderer.render(Markd::Parser.parse(processed_source, @@markd_options), rss ? nil : @@markd_formatter)
     end
   end
@@ -199,7 +300,8 @@ module GeopJr
               Styles[:blog_post],
               cover: v.fm.cover.nil? ? nil : {v.fm.cover.not_nil!, v.fm.cover_alt},
               noindex: v.fm.hidden
-            )
+            ),
+            ""
           ).to_s
         )
       end

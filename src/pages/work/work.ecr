@@ -1,53 +1,74 @@
-<header class="card banner">
-	<span class="card-title">You can find most of my FOSS projects on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/GeopJr">GitHub Profile</a>.</span>
-</header>
+<%
+    @header = <<-HTML
+        You can find most of my FOSS projects on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/GeopJr">GitHub profile</a>.
+    HTML
+%>
 <main class="work-view">
     <%- @works.each do |work| -%>
-        <% card_class = "card#{work.archived ? " archived" : nil}" %>
-        <article class="<%= card_class %>">
-            <header class="card-title logo">
-                <section class="info">
-                    <header>
-                        <strong class="text--block accent--block"><%= work.name %></strong>
-                    </header>
-                    <div class="card-badges">
-                        <%- work.techs.each do |tech| -%>
-                            <% tech_name = GeopJr::CONFIG.data.dict.fetch(tech.downcase, tech.capitalize) %>
-					        <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
-                                <title><%= tech_name %></title>
-                                <use xlink:href="/assets/icons/<%= tech %>.svg#<%= tech %>"></use>
-                            </svg>
-                        <%- end -%>
-                    </div>
-                </section>
-                <%- if !work.icon.nil? -%>
-                    <svg style="font-size: 80px;" height="1.2em" width="1.2em" class="sticker" aria-label="<%= work.name %> logo">
-                        <use xlink:href="/assets/icons/<%= work.icon %>.svg#<%= work.icon %>"></use>
-                    </svg>
-                <%- elsif !(work_image = work.image).nil? -%>
-                    <% work_image_url = work_image.includes?('/') ? work_image : "/assets/icons/#{work_image}.svg" %>
-                    <img draggable="false" style="width:100%;height:100%" src="<%= work_image_url %>" class="sticker" aria-label="<%= work.name %> logo" />
-                <%- end -%>
-            </header>
-            <p class="card-body">
-                 <%= work.desc %>
-            </p>
-            <footer>
-                <%- work.links.each do |link| -%>
-        			<a
-				        class="card-action"
-				        title="<%= link.tooltip %>"
-				        href="<%= link.url %>"
-				        target="_blank"
-				        rel="noopener noreferrer"
-				        aria-label="<%= link.tooltip %>"
-			        >
-				        <svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
-                            <use xlink:href="/assets/icons/<%= link.icon %>.svg#<%= link.icon %>"></use>
+        <% card_class = "#{work.archived ? " archived" : nil}" %>
+        <%
+            icon = "<img aria-hidden=\"true\" alt=\"\" src=\"/assets/images/tango/undefined.webp\" />"
+            if !work.icon.nil?
+                icon = "<svg height=\"16px\" width=\"16px\" aria-hidden=\"true\"><use xlink:href=\"/assets/icons/#{work.icon}.svg##{work.icon}\"></use></svg>"
+            elsif !(work_image = work.image).nil?
+                icon = "<img draggable=\"false\" src=\"#{work_image.includes?('/') ? work_image : "/assets/icons/#{work_image}.svg"}\" aria-hidden=\"true\" />"
+            end
+        %>
+        <article class="card <%= card_class %>">
+			<header>
+				<%= icon %><span aria-hidden="true"><%= work.name %></span><!-- its listed in the section below too, might as well skip it here -->
+				<div class="window-controls" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</header>
+			<section>
+                <section class="title">
+                    <%- if !work.icon.nil? -%>
+                        <svg style="font-size: 80px;" height="1.2em" width="1.2em" class="sticker" aria-label="<%= work.name %> logo">
+                            <use xlink:href="/assets/icons/<%= work.icon %>.svg#<%= work.icon %>"></use>
                         </svg>
-			        </a>
-                <%- end -%>
-            </footer>
-        </article>
+                    <%- elsif !(work_image = work.image).nil? -%>
+                        <% work_image_url = work_image.includes?('/') ? work_image : "/assets/icons/#{work_image}.svg" %>
+                        <img draggable="false" style="width:100%;height:100%" src="<%= work_image_url %>" class="sticker" aria-label="<%= work.name %> logo" />
+                    <%- end -%>
+				    <section>
+                        <p>
+				        	<%= work.name %>
+				        </p>
+                        <p>
+                            <%= work.desc %>
+                        </p>
+                        <section class="card-badges">
+                            <%- work.techs.each do |tech| -%>
+                                <% tech_name = GeopJr::CONFIG.data.dict.fetch(tech.downcase, tech.capitalize) %>
+				                <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
+                                    <title><%= tech_name %></title>
+                                    <use xlink:href="/assets/icons/<%= tech %>.svg#<%= tech %>"></use>
+                                </svg>
+                            <%- end -%>
+                        </section>
+                    </section>
+                </section>
+                <section class="buttons">
+                    <%- work.links.each do |link| -%>
+        		    	<a
+				            class="btn"
+                            draggable="false"
+				            title="<%= link.tooltip %>"
+				            href="<%= link.url %>"
+				            target="_blank"
+				            rel="noopener noreferrer"
+				            aria-label="<%= link.tooltip %>"
+			            >
+				            <svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
+                                <use xlink:href="/assets/icons/<%= link.icon %>.svg#<%= link.icon %>"></use>
+                            </svg>
+			            </a>
+                    <%- end -%>
+			    </section>
+			</section>
+		</article>
     <%- end -%>
 </main>

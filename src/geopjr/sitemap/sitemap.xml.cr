@@ -6,6 +6,7 @@ module GeopJr
       @entries = [] of {url: String, date: String?}
 
       routes.each do |v|
+        next if v.hidden
         @entries << {url: v.tags.url_full, date: nil}
       end
 

@@ -8,10 +8,6 @@ module GeopJr
       :contact
     end
 
-    def tags : GeopJr::Tags
-      @tags
-    end
-
     protected def content : String
       Page::CardGrid.new(GeopJr::CONFIG.data.contact, "Contact me on").to_s
     end

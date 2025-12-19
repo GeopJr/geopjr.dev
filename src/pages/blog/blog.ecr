@@ -1,48 +1,57 @@
 <main class="blog-container">
     <div class="blog-view">
     <%- @posts.each do |blog_post| -%>
-        <article class="final card">
-            <header class="card-title">
-                <section class="info">
-                    <header>
-                        <strong class="text--block accent--block"><%= blog_post.fm.title %></strong>
-                    </header>
-                    <div class="card-badges">
+        <article class="card">
+			<header>
+				<img aria-hidden="true" alt="" src="/assets/images/tango/text.webp" /><span><%= blog_post.filename %>.md</span>
+				<div class="window-controls" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</header>
+			<section>
+				<p>
+					<%= blog_post.fm.title %>
+				</p>
+                <article class="frame keyval">
+					<header>
+						Info
+					</header>
+                    <%- if blog_post.fm.subtitle -%>
+                        <p><span class="label">Subtitle: </span><span class="value"><%= blog_post.fm.subtitle %></span></p>
+                    <%- end -%>
+                    <% date_s = blog_post.fm.date.to_s("%Y-%m-%d") %>
+                    <%- unless (date = blog_post.fm.updated).nil? -%>
+                        <% date_s = date.to_s("%Y-%m-%d") %>
+                    <%- end -%>
+					<p><span class="label">Date: </span><span class="value"><time datetime="<%= date_s %>"><%= date_s %></time></span></p>
+                    <p><span class="label">Tags: </span><span class="value">
                         <%- blog_post.fm.tags.each do |tag| -%>
                             <% svg_icon = GeopJr::CONFIG.data.icons.fetch(tag, tag) %>
                             <% tech_name = GeopJr::CONFIG.data.dict.fetch(tag.downcase, tag.capitalize) %>
-	    				    <svg style="font-size: 25px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
+	    			        <svg style="font-size: 18px;" height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
                                 <title><%= tech_name %></title>
                                 <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
                             </svg>
                         <%- end -%>
-                    </div>
-                </section>
-            </header>
-            <%- if blog_post.fm.subtitle -%>
-                <p class="card-body">
-                     <%= blog_post.fm.subtitle %>
-                </p>
-            <%- end -%>
-            <footer>
-            	<a
-	    			class="card-action"
-                    draggable="false"
-	    			title="Read More"
-	    			href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= blog_post.filename %><%= GeopJr::CONFIG.ext %>"
-	    			aria-label="Read More"
-	    		>
-	    			<svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
-                        <use xlink:href="/assets/icons/eye.svg#eye"></use>
-                    </svg>
-	    		</a>
-                <% date_s = blog_post.fm.date.to_s("%Y-%m-%d") %>
-                <%- unless (date = blog_post.fm.updated).nil? -%>
-                    <% date_s = date.to_s("%Y-%m-%d") %>
-                <%- end -%>
-                <span class="date"><time datetime="<%= date_s %>"><%= date_s %></time></span>
-            </footer>
-        </article>
+					</span></p>
+				</article>
+
+                <section class="buttons">
+				    <a
+	    		    	class="btn"
+                        draggable="false"
+	    		    	href="/<%= GeopJr::CONFIG.blog_out_path %>/<%= blog_post.filename %><%= GeopJr::CONFIG.ext %>"
+                        title="Read More"
+	    		    >
+	    		    	<svg style="font-size: 25px;" height="1.2em" width="1.2em" aria-hidden="true">
+                            <use xlink:href="/assets/icons/eye.svg#eye"></use>
+                        </svg>
+	    		    </a>
+			    </section>
+			</section>
+		</article>
     <%- end -%>
     </div>
     <%- if @max_pages > 1 -%>

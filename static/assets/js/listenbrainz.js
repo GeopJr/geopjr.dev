@@ -1,5 +1,26 @@
 const details = document.querySelector("footer details");
 details.addEventListener('toggle', on_details_toggled);
+details.addEventListener('toggle', on_details_toggled_scroll);
+
+function addRow(label, value) {
+	const p = document.createElement("p")
+
+	const key = document.createElement("span")
+	key.className = "label"
+	key.textContent = label + ": "
+
+	const val = document.createElement("span")
+	val.className = "value"
+	val.textContent = value
+
+	p.append(key, val)
+    return p
+}
+
+function on_details_toggled_scroll() {
+    if (details.open) details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function on_details_toggled() {
     const listenbrainz = document.querySelector("footer details .listenbrainz")
     if (listenbrainz.dataset.loaded == "true" || !details.open) return
@@ -19,47 +40,46 @@ function on_details_toggled() {
                     if (artist != "" && track != "") {
                         listenbrainz.dataset.loaded = "true"
 
-                        let p = document.createElement("p")
-                        p.textContent = "Last Scrobble"
-                        listenbrainz.appendChild(p)
+                        const win = document.createElement("article")
+                        win.className = "card"
+                        win.innerHTML = `<header><img aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp"><span>Last Scrobble</span><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div></header>`
+                        const sec = document.createElement("section")
+                        win.appendChild(sec)
 
                         if (art != "") {
                             const img = document.createElement("img")
                             img.src = art
                             img.alt = ""
-                            listenbrainz.appendChild(img)
+                            sec.appendChild(img)
                         }
 
-                        const title_div = document.createElement("div")
-                        p = document.createElement("p")
-                        p.textContent = track
-                        p.title = track
-                        title_div.appendChild(p)
-
-                        p = document.createElement("p")
-                        p.textContent = artist
-                        p.title = artist
-                        title_div.appendChild(p)
-
-                        if (album != "") {
-                            p = document.createElement("p")
-                            p.textContent = album
-                            p.title = album
-                            title_div.appendChild(p)
+                        const title_div = document.createElement("article")
+                        title_div.className = "frame keyval"
+                        
+                        {
+                            const header = document.createElement("header")
+                            header.textContent = "Info"
+                            title_div.appendChild(header)
                         }
+
+                        title_div.append(
+                            addRow("Track", track),
+                            addRow("Artist", artist)
+                        )
+                        if (album != "") title_div.appendChild(addRow("Album", album))
 
                         let timestamp = x?.payload?.latest_listen_ts ?? scrobble.listened_at
                         if (timestamp > 1000) {
                             timestamp = (new Date(timestamp * 1000)).toISOString().split("T")
                             if (timestamp.length > 1) timestamp[1] = timestamp[1].slice(0, -5)
                             timestamp = timestamp.join(" ")
-                            p = document.createElement("p")
-                            p.classList.add("timestamp")
-                            p.textContent = timestamp
-                            title_div.appendChild(p)
+                            const tmstamp = addRow("Date", timestamp)
+                            tmstamp.classList.add("timestamp")
+                            title_div.appendChild(tmstamp)
                         }
+                        sec.appendChild(title_div)
 
-                        listenbrainz.appendChild(title_div)
+                        listenbrainz.appendChild(win)
                     }
                 }
             }

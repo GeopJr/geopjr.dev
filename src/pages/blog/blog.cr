@@ -42,10 +42,6 @@ module GeopJr
       BLOG_DESCRIPTION
     end
 
-    def tags : GeopJr::Tags
-      @tags
-    end
-
     protected def content : String
       self.to_s
     end
@@ -57,7 +53,8 @@ module GeopJr
           content,
           Layout::Navbar.new(id).to_s,
           Layout::Footer.new.to_s,
-          @tags
+          @tags,
+          @header
         ).to_s
       )
     end
@@ -76,10 +73,6 @@ module GeopJr
 
     def description : String
       BLOG_DESCRIPTION
-    end
-
-    def tags : GeopJr::Tags
-      @tags
     end
 
     protected def content : String

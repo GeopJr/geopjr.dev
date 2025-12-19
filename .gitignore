@@ -18,3 +18,4 @@ minify_linux_amd64.tar.gz*
 /repositories
 /dist.zip
 .tools/
+/blog/_*

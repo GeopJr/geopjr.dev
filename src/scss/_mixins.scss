@@ -1,0 +1,19 @@
+@mixin reverse-accent($with-td: false) {
+    background-color: var(--accent);
+    color: var(--accent-text);
+
+    &::selection, ::selection {
+        color: var(--accent) !important;
+        background-color: var(--accent-text) !important;
+    }
+}
+
+@mixin reverse-reverse-accent {
+    color: var(--accent) !important;
+    background-color: var(--accent-text) !important;
+
+    &::selection {
+        background-color: var(--accent) !important;
+        color: var(--accent-text) !important;
+    }
+}

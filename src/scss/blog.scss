@@ -1,30 +1,36 @@
 .blog-container {
     display: flex;
     flex-direction: column;
-    > nav {
-        border-radius: var(--radius-small);
-        background-color: var(--card-background);
+
+    >nav {
         padding: .5rem;
-    
-        > a {
-            display: inline-flex;
+        box-shadow: 0px -2px 10px rgb(from var(--accent) r g b / calc(alpha * 0.2));
+        background-color: var(--accent-text);
+        border-radius: 9999px;
+        // margin: 1rem;
+        color: var(--accent);
+        display: flex;
+        gap: .5rem;
+
+        >a {
+            display: flex;
             justify-content: center;
             align-items: center;
             width: 36px;
             height: 36px;
-            border-radius: 0.5rem;
+            border-radius: 9999px;
             color: var(--text-color);
-            transition-duration: 200ms;
-    
-            &.active {
+            transition-duration: 250ms;
+            font-weight: bold;
+
+            &.active,
+            &:hover {
                 background-color: var(--accent);
                 color: var(--accent-text);
-                font-variation-settings: "wght" 700, "slnt" 0;
-                font-weight: 700;
             }
 
-            &:hover {
-                background-color: var(--card-action-background-hover);
+            &:not(.active, :last-child, .active+a, .active+a+a, :first-child, a:has(+.active, +a+.active)) {
+                display: none;
             }
         }
     }

@@ -1,6 +1,8 @@
 module GeopJr
   abstract class Page::Base
-    @tags : Tags
+    getter tags : Tags
+    getter hidden : Bool = false
+    getter header : String? = nil
 
     def initialize
       @tags = GeopJr::Tags.new(
@@ -15,10 +17,6 @@ module GeopJr
       id.to_s.capitalize
     end
 
-    def tags
-      @tags
-    end
-
     def write
       File.write(
         GeopJr::CONFIG.paths[:out] / "#{id}.html",
@@ -26,7 +24,8 @@ module GeopJr
           content,
           Layout::Navbar.new(id).to_s,
           Layout::Footer.new.to_s,
-          tags
+          @tags,
+          @header
         ).to_s
       )
     end

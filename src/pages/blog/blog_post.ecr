@@ -1,31 +1,35 @@
 <main>
     <article class="blog-post">
         <header>
-            <h1><%= @post.title %></h1>
-            <%- unless @post.subtitle.nil? -%>
-                <h2 class="subtitle"><%= @post.subtitle %></h2>
-            <%- end -%>
-            <div class="blog-tags">
-                <%- @post.tags.each do |tag| -%>
-                    <% svg_icon = GeopJr::CONFIG.data.icons.fetch(tag, tag) %>
-                    <% tech_name = GeopJr::CONFIG.data.dict.fetch(tag.downcase, tag.capitalize) %>
-                    <svg height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
-                        <title><%= tech_name %></title>
-                        <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
-                    </svg>
+            <section>
+                <h1><%= @post.title %></h1>
+                <section>
+                <%- unless @post.subtitle.nil? -%>
+                    <h2><span><%= @post.subtitle %></span></h2>
                 <%- end -%>
-            </div>
-            <footer>
-                <% date_s = @post.date.to_s("%Y-%m-%d") %>
-                <span>Posted on: <time datetime="<%= date_s %>"><%= date_s %></time></span>
-                <%- unless (date = @post.updated).nil? -%>
-                    <% date_s = date.to_s("%Y-%m-%d") %>
-                    <span>Updated on: <time datetime="<%= date_s %>"><%= date_s %></time></span>
-                <%- end -%>
-            </footer>
+                    <section class="blog-tags">
+                        <%- @post.tags.each do |tag| -%>
+                            <% svg_icon = GeopJr::CONFIG.data.icons.fetch(tag, tag) %>
+                            <% tech_name = GeopJr::CONFIG.data.dict.fetch(tag.downcase, tag.capitalize) %>
+                            <svg height="1.2em" width="1.2em" title="<%= tech_name %>" aria-label="<%= tech_name %>">
+                                <title><%= tech_name %></title>
+                                <use xlink:href="/assets/icons/<%= svg_icon %>.svg#<%= svg_icon %>"></use>
+                            </svg>
+                        <%- end -%>
+                    </section>
+                    <% date_s = @post.date.to_s("%Y-%m-%d") %>
+                    <span><time title="Posted on" datetime="<%= date_s %>"><%= date_s %></time>
+                    <%- unless (date = @post.updated).nil? -%>
+                        <% date_s = date.to_s("%Y-%m-%d") %>
+                       (<time title="Updated on" datetime="<%= date_s %>"><%= date_s %></time>)
+                    <%- end -%>
+                    </span>
+                </section>
+            </section>
+            <div class="dither-sep bottom" aria-hidden="true"></div>
         </header>
-        <div>
+        <section>
             <%= @html %>
-        </div>
+        </section>
     </article>
 </main>

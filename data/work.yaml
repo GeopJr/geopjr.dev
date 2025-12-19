@@ -104,9 +104,9 @@
     - icon: github
       url: https://github.com/GeopJr/BeardBin
       tooltip: GitHub Repo
-    - icon: externallinkalt
-      url: https://milking.men/
-      tooltip: Website
+    # - icon: externallinkalt
+    #   url: https://milking.men/
+    #   tooltip: Website
 - name: Crycord
   desc: A Discord Client modification with plugins. Uses BeautifulDiscord's CSS injector.
   image: crycord
@@ -242,7 +242,7 @@
       url: https://github.com/GeopJr/asar-cr
       tooltip: GitHub Repo
 - name: Granz
-  desc: A Discord bot/framework(?) for Crystal.
+  desc: A Discord bot & framework for Crystal.
   image: /assets/images/work/granz.webp
   archived: true
   techs:

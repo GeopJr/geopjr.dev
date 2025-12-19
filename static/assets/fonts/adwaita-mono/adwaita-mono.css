@@ -1,5 +1,6 @@
 @font-face {
 	font-family: Adwaita Mono;
+	font-display: swap;
 	font-style: normal;
 	font-weight: 700;
 	font-stretch: 100%;
@@ -18,6 +19,7 @@
 
 @font-face {
 	font-family: Adwaita Mono;
+	font-display: swap;
 	font-style: italic;
 	font-weight: 700;
 	font-stretch: 100%;
@@ -36,6 +38,7 @@
 
 @font-face {
 	font-family: Adwaita Mono;
+	font-display: swap;
 	font-style: italic;
 	font-weight: 400;
 	font-stretch: 100%;
@@ -54,6 +57,7 @@
 
 @font-face {
 	font-family: Adwaita Mono;
+	font-display: swap;
 	font-style: normal;
 	font-weight: 400;
 	font-stretch: 100%;

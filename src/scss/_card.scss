@@ -1,0 +1,293 @@
+@use 'sass:string';
+@import url("/assets/fonts/DejaVuSans.css");
+
+@function shade($color, $factor, $multiplier: "") {
+    $multiplier_string: "";
+
+    @if $multiplier !="" {
+        $multiplier_string: "* #{$multiplier}"
+    }
+
+    @return string.unquote("hsl(from #{$color} h calc(s * #{$factor} #{$multiplier_string}) calc(l * #{$factor} #{$multiplier_string}))");
+}
+
+@function alpha($color, $factor) {
+    @return string.unquote("rgb(from #{$color} r g b / calc(alpha * #{$factor}))");
+}
+
+.card {
+    --theme-bg: #EDECEB;
+    --theme-fg: #000;
+    --theme-base: #FFF;
+    --theme-text: #1A1A1A;
+    --theme-selected-bg: #86ABD9;
+    --theme-selected-fg: #FFF;
+    --theme-shaded-bg: #{shade(var(--theme-selected-bg), 0.7)};
+    --theme-shade-multiplier: 1;
+
+    --button-border: #AB9888;
+    --button-glaze-top: #{alpha(shade(var(--theme-bg), 1.11, var(--theme-shade-multiplier)), 0.17)};
+    --button-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.105, var(--theme-shade-multiplier)), 0.75)};
+    --button-glaze-glow-edge: #{alpha(shade(var(--theme-bg), 0.995, var(--theme-shade-multiplier)), 0)};
+    --button-glaze-mida: #{alpha(shade(var(--theme-bg), 1.03, var(--theme-shade-multiplier)), 0.8)};
+    --button-glaze-midb: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.9)};
+    --button-glaze-bot: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0.9)};
+
+    --button-disabled-glaze-top: #{alpha(shade(var(--theme-bg), 1.05, var(--theme-shade-multiplier)), 0.2)};
+    --button-disabled-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.10, var(--theme-shade-multiplier)), 0.45)};
+    --button-disabled-glaze-glow-edge: #{alpha(var(--theme-bg, var(--theme-shade-multiplier)), 0)};
+    --button-disabled-glaze-mida: #{alpha(shade(var(--theme-bg), 1.03, var(--theme-shade-multiplier)), 0.2)};
+    --button-disabled-glaze-midb: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.2)};
+    --button-disabled-glaze-bot: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0.39)};
+
+    --button-active-glaze-top: #{alpha(shade(var(--theme-bg), 0.89, var(--theme-shade-multiplier)), 0.78)};
+    --button-active-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.10, var(--theme-shade-multiplier)), 0.4)};
+    --button-active-glaze-glow-edge: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0)};
+    --button-active-glaze-mida: #{alpha(shade(var(--theme-bg), 0.82, var(--theme-shade-multiplier)), 0.8)};
+    --button-active-glaze-midb: #{alpha(shade(var(--theme-bg), 0.76, var(--theme-shade-multiplier)), 0.8)};
+    --button-active-glaze-shadow: #{alpha(shade(var(--theme-bg), 0.85, var(--theme-shade-multiplier)), 0.3)};
+    --button-active-glaze-shadow-edge: #{alpha(shade(var(--theme-bg), 0.81, var(--theme-shade-multiplier)), 0.9)};
+    --button-active-glaze-bot: #{alpha(shade(var(--theme-bg), 0.8, var(--theme-shade-multiplier)), 0.79)};
+
+    --button-hover-glaze-top: #{alpha(shade(var(--theme-bg), 1.09, var(--theme-shade-multiplier)), 0.8)};
+    --button-hover-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.1, var(--theme-shade-multiplier)), 0.8)};
+    --button-hover-glaze-glow-edge: #{alpha(shade(var(--theme-bg), 1.1, var(--theme-shade-multiplier)), 0)};
+    --button-hover-glaze-mida: #{alpha(shade(var(--theme-bg), 1.05, var(--theme-shade-multiplier)), 0.8)};
+    --button-hover-glaze-midb: #{alpha(shade(var(--theme-bg), 0.96, var(--theme-shade-multiplier)), 0.8)};
+    --button-hover-glaze-bot: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.8)};
+
+    --button-focus-fill: #{alpha(shade(var(--theme-selected-bg), 1.6, var(--theme-shade-multiplier)), 0.15)};
+    --button-focus-fill-active: #{alpha(shade(var(--theme-selected-bg), 1.5, var(--theme-shade-multiplier)), 0.2)};
+
+    @media (prefers-color-scheme: dark) {
+        --theme-bg: #393939;
+        --theme-fg: #dcdccc;
+        --theme-base: #3f3f3f;
+        --theme-selected-bg: #964B00;
+        --theme-selected-fg: #1A1A1A;
+        --theme-shade-multiplier: 1.25;
+    }
+
+    font-family: "DejaVu Sans",
+    "Bitstream Vera Sans",
+    sans-serif;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.342));
+    font-size: medium;
+
+    >header {
+        font-weight: bold;
+        border-radius: 7px 7px 0 0;
+        height: 22px;
+        padding: 0 3px;
+        min-height: 22px;
+        color: #fff;
+        gap: 1rem;
+
+        border: 1px solid var(--theme-shaded-bg);
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to bottom,
+                shade(var(--theme-selected-bg), 1.08),
+                shade(var(--theme-selected-bg), 1.02) 50%,
+                shade(var(--theme-selected-bg), 1.0) 50%,
+                shade(var(--theme-selected-bg), 0.94));
+
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+
+        >span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        >img {
+            image-rendering: pixelated;
+            object-fit: contain;
+            width: 16px;
+            max-height: 16px;
+        }
+
+        >.window-controls {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+
+            >span {
+                width: 16px;
+                height: 16px;
+
+                image-rendering: pixelated;
+                border-radius: 4px;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: 1px solid rgba(0, 0, 0, 0.4);
+                position: relative;
+                box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+                &:nth-child(1) {
+                    background-image: url(data:image/webp;base64,UklGRioAAABXRUJQVlA4TB4AAAAvCUACEDUoattIGv6k53XuErAibvY/Ab4O3Vz2AAA=);
+                }
+
+                &:nth-child(2) {
+                    background-image: url(data:image/webp;base64,UklGRjIAAABXRUJQVlA4TCUAAAAvCUACEIWCtm2Y8Cfd/cMgQiCQRLu/wRNAU90uqCwA4KNMLU0BAA==);
+                }
+
+                &:nth-child(3) {
+                    background-image: url(data:image/webp;base64,UklGRkIAAABXRUJQVlA4TDUAAAAvCUACEFUwaBvJ0fInfeULhiSKEAgkUDntb/AEjEkAzXWCpZVWYq8CPuSfvYqVVlqC5VAADQA=);
+                }
+            }
+        }
+    }
+
+    >section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-top: none !important;
+        border: 1px solid #6F6358;
+        background-color: var(--theme-bg);
+        color: var(--theme-fg);
+        box-shadow:
+            inset 1px 0 shade(var(--theme-bg), 1.2),
+            inset -1px 0 shade(var(--theme-bg), 0.88),
+            inset 0 -1px shade(var(--theme-bg), 0.88);
+
+        &.frame-gallery {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        >.frame {
+            --frame-border: #{shade(var(--theme-bg), 0.775)};
+
+            @media (prefers-color-scheme: dark) {
+                --frame-border: #{shade(var(--theme-bg), 1.775)};
+            }
+
+            border: 1px solid var(--frame-border);
+            border-radius: 3px;
+            box-shadow: inset -1px -1px #{alpha(var(--theme-base), 0.27)},
+            inset 1px 1px #{alpha(var(--frame-border), 0.17)};
+            display: flex;
+            flex-direction: column;
+            padding: .75rem .5rem .5rem .5rem;
+            position: relative;
+
+            &.keyval {
+                p {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    column-gap: 0.5em;
+                }
+
+                .label {
+                    white-space: nowrap;
+                }
+
+                .value {
+                    word-wrap: anywhere;
+                }
+            }
+
+            >header {
+                position: absolute;
+                top: -10px;
+                left: 5px;
+                background-color: var(--theme-bg);
+                align-self: flex-start;
+            }
+        }
+
+        >p {
+            margin: 0;
+            line-height: 1.2;
+            font-size: large;
+        }
+
+        >.buttons {
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+            justify-content: flex-end;
+        }
+
+        a.btn {
+            margin: 1px;
+            padding: 4px 8px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            text-decoration: none;
+
+            text-decoration: none;
+            font-size: smaller;
+
+            background:
+                radial-gradient(ellipse 90% 50%,
+                    var(--button-glaze-glow-center),
+                    var(--button-glaze-glow-edge)),
+                linear-gradient(to bottom,
+                    var(--button-glaze-top),
+                    var(--button-glaze-mida) 49%,
+                    var(--button-glaze-midb) 49%,
+                    var(--button-glaze-bot));
+
+
+            border: 1px solid var(--button-border);
+            border-radius: 3px;
+            box-shadow:
+                -1px -1px alpha(var(--button-border), 0.13),
+                1px 1px alpha(var(--button-border), 0.13),
+                inset 1px 1px alpha(var(--button-border), 0.148);
+
+            &:focus-within {
+                outline: 1px solid var(--theme-selected-bg);
+                outline-offset: -4px;
+            }
+
+            &:hover {
+                background:
+                    radial-gradient(ellipse 110% 50%,
+                        var(--button-hover-glaze-glow-center),
+                        var(--button-hover-glaze-glow-edge)),
+                    linear-gradient(to bottom,
+                        var(--button-hover-glaze-top),
+                        var(--button-hover-glaze-mida) 49%,
+                        var(--button-hover-glaze-midb) 49%,
+                        var(--button-hover-glaze-bot));
+            }
+
+            &:active,
+            &:active:hover,
+            &:checked:focus,
+            &:checked:active:focus:hover {
+                background:
+                    no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px) linear-gradient(to bottom, var(--button-focus-fill), var(--button-focus-fill)),
+                    radial-gradient(ellipse 90% 50%,
+                        var(--button-glaze-glow-center),
+                        var(--button-glaze-glow-edge)),
+                    linear-gradient(to bottom,
+                        var(--button-glaze-top),
+                        var(--button-glaze-mida) 49%,
+                        var(--button-glaze-midb) 49%,
+                        var(--button-glaze-bot));
+            }
+        }
+    }
+}
+
+.sticker {
+    min-width: 100px;
+    margin: 0 0 1rem 0;
+    filter: drop-shadow(0 0 0.2rem rgb(from var(--accent) r g b / calc(alpha * 0.2)));
+
+    @media only screen and (min-width: 1400px),
+    only screen and (min-width: 511px) and (max-width: 767px) {
+        margin: 0 0 0 1rem;
+    }
+}

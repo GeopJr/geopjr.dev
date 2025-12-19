@@ -1,11 +1,11 @@
 module GeopJr
   Styles = {
-    about:     ["about", "wave", "card"],
+    about:     ["about"],
     blog_post: ["blog_post", "syntax_highlighting"],
-    blog:      ["card_view", "blog", "card"],
+    blog:      ["card_view", "blog"],
     donate:    ["credit_card_view"],
     contact:   ["credit_card_view"],
-    work:      ["card_view", "card"],
+    work:      ["card_view"],
     error:     ["error"],
   }
 

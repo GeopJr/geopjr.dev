@@ -2,7 +2,8 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: 0fr;
+    align-items: flex-start;
 
     // grid-template-rows: 1fr 1fr 1fr; // Make all heights equal
     @media only screen and (min-width: 1024px) {
@@ -19,13 +20,15 @@
         background: var(--brand-body);
         align-items: flex-end;
         gap: 6rem;
-        border-radius: var(--radius-small);
+        border-radius: .75rem;
         transition-duration: 200ms;
-        margin: 1rem;
+        transition-property: transform, box-shadow;
+        outline: 1px solid var(--accent);
 
         &:hover,
         &:active,
         &:focus-visible {
+            outline: none;
             transform: scale(1.05);
         }
 
@@ -40,8 +43,8 @@
             align-self: flex-start;
             background-color: var(--brand-head);
             padding: 1rem;
-            border-top-left-radius: var(--radius-small);
-            border-top-right-radius: var(--radius-small);
+            border-top-left-radius: .75rem;
+            border-top-right-radius: .75rem;
             width: 100%;
         }
 

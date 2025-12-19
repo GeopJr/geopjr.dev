@@ -10,7 +10,7 @@ Crystal's Windows support has been steadily getting more and more usable and wit
 
 I've been [involved](https://ultimate-gtk4-crystal-guide.geopjr.dev/) in the efforts to bring GTK to Crystal for years and I had the (dis)pleasure of bringing many [complex and dependency-hellish](https://github.com/GeopJr/Tuba/) apps to Windows, so I'd say I am qualified to write a quick guide on how to properly package said apps.
 
-:::WARNING
+:::Warning
 Before I continue however, I have to add a warning. I am <b>not</b> a Windows user or developer, the following information comes from me being tasked with bringing apps to Windows and might not represent the 'best practices' for either Windows or GTK.
 :::
 
@@ -45,7 +45,7 @@ MSYS2 uses pacman as its package manager, so the following command will update i
 $ pacman -Syyu git make zip wget mingw-w64-x86_64-desktop-file-utils mingw-w64-x86_64-imagemagick mingw-w64-x86_64-pkg-config mingw-w64-x86_64-libblake3 mingw-w64-x86_64-shards mingw-w64-x86_64-gobject-introspection mingw-w64-x86_64-crystal mingw-w64-x86_64-gtk4 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-gettext
 ```
 
-:::NOTE
+:::Note
 You might be asked to restart MSYS2 after updating, do it and run the command again. You might also need to run the command multiple times until everything is installed, follow the on-screen instructions.
 :::
 

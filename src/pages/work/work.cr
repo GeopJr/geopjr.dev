@@ -33,10 +33,6 @@ module GeopJr
       "Notable & interesting projects I authored"
     end
 
-    def tags : GeopJr::Tags
-      @tags
-    end
-
     protected def content : String
       self.to_s
     end
