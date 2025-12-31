@@ -1,5 +1,5 @@
 @use 'sass:string';
-@import url("/assets/fonts/DejaVuSans.css");
+@import url("/assets/fonts/dejavu-sans/DejaVuSans.css");
 
 @function shade($color, $factor, $multiplier: "") {
     $multiplier_string: "";
