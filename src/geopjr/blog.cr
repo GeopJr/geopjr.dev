@@ -144,10 +144,7 @@ module GeopJr
       return content if title.nil?
 
       <<-HTML
-      <figure>
-        #{content}
-        <figcaption>#{title}</figcaption>
-      </figure>
+      <figure>#{content}<figcaption>#{title}</figcaption></figure>
       HTML
     end
 
@@ -168,9 +165,9 @@ module GeopJr
       res.scan(/^#youtube +(\{.+\})$/mi) do |m|
         youtube_obj = Youtube.from_json(m[-1])
         tag = <<-HTML
-          <a title="Watch on YouTube" class="youtube" href="https://www.youtube.com/watch?v=#{youtube_obj.id}#{youtube_obj.time.nil? ? nil : "&t=#{youtube_obj.time}"}">
-            #{figure(youtube_obj.title, image("https://img.youtube.com/vi/#{youtube_obj.id}/mqdefault.jpg"))}
-          </a>
+        <a title="Watch on YouTube" class="youtube" href="https://www.youtube.com/watch?v=#{youtube_obj.id}#{youtube_obj.time.nil? ? nil : "&t=#{youtube_obj.time}"}">
+          #{figure(youtube_obj.title, image("https://img.youtube.com/vi/#{youtube_obj.id}/mqdefault.jpg"))}
+        </a>
         HTML
         res = res.sub(m[0], tag)
       end
@@ -189,12 +186,11 @@ module GeopJr
     private def note(content : String, rss : Bool = false) : String
       res = content
       res.scan(/(^|\n)::: ?(?<title>.+?)\n(?<content>(?:.|\n)+?)\n:::(?=\n|$)/i) do |m|
+        rendered_content = render(m["content"].strip.split("\n").map(&.strip).join("\n"), rss)
         tag = if rss
                 <<-HTML
 
-          <p>
-            <strong>#{m["title"]}</strong><br />#{m["content"]}
-          </p>
+          <p><strong>#{m["title"]}</strong><br />#{rendered_content}</p>
 
         HTML
               else
@@ -210,11 +206,7 @@ module GeopJr
 		      			<span></span>
 		      		</div>
 		      	</header>
-		      	<section>
-		      		<p>
-		      				#{m["content"]}
-		      		</p>
-		      	</section>
+		      	<section>#{rendered_content}</section>
 		      </article>
 
         HTML
@@ -243,11 +235,14 @@ module GeopJr
         "GEOPJR_EXT"         => GeopJr::CONFIG.ext,
       }.merge(GeopJr::CONFIG.emotes)
       return "" if processed_source.empty?
+      render(processed_source, rss)
+    end
 
+    def render(source : String, rss : Bool) : String
       renderer = BlogRenderer.new(@@markd_options)
       renderer.anchors = !rss
       renderer.rss = rss
-      renderer.render(Markd::Parser.parse(processed_source, @@markd_options), rss ? nil : @@markd_formatter)
+      renderer.render(Markd::Parser.parse(source, @@markd_options), rss ? nil : @@markd_formatter)
     end
   end
 
