@@ -38,11 +38,11 @@
         </header>
         <%= @content %>
         <%= @footer %>
-        <script src="/assets/js/log.js"></script>
-        <script src="/assets/js/listenbrainz.js"></script>
+        <script type="module" src="/assets/js/log.js"></script>
+        <script type="module" src="/assets/js/listenbrainz.js"></script>
         <%- if !(js = @tags.js).nil? %>
             <%- js.each do |script| -%>
-                <script src="/assets/js/<%= script %>.js"></script>
+                <script type="module" src="/assets/js/<%= script %>.js"></script>
             <%- end -%>
         <%- end -%>
     </body>
