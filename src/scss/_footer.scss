@@ -85,6 +85,10 @@ body>footer {
                 align-items: center;
                 padding: 1rem;
 
+                >code {
+                    display: none;
+                }
+
                 >section {
                     max-width: 100%;
 
