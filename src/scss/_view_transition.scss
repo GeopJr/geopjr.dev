@@ -1,32 +1,5 @@
-@keyframes scaleUp {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-old(main) {
-    animation: scaleUp 0.2s reverse;
-}
-
-::view-transition-new(main) {
-    animation: scaleUp 0.3s;
-}
-
-@media (prefers-reduced-motion) {
-
-    ::view-transition-group(*),
-    ::view-transition-old(*),
-    ::view-transition-new(*) {
-        animation: none !important;
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
     }
 }
