@@ -1,0 +1,18 @@
+steps:
+  build:
+    image: crystallang/crystal:latest
+    commands:
+      - shards install
+      - crystal tool format
+      - make build run no_zip=1 # no need to release=1 yet, debug is extremely fast
+    when:
+      - event: pull_request
+      - event: push
+        branch: main
+  push:
+    image: node:alpine
+    commands:
+      - npx wrangler pages deploy ./dist/ --project-name=geopjr --no-bundle
+    when:
+      - event: push
+        branch: main

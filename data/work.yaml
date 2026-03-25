@@ -21,9 +21,9 @@
     - gtk
     - vala
   links:
-    - icon: gnome
-      url: https://gitlab.gnome.org/GeopJr/Archives
-      tooltip: Git Repo
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Archives
+      tooltip: Codeberg Repo
     - icon: flathub
       url: https://flathub.org/apps/details/dev.geopjr.Archives
       tooltip: Flathub
@@ -85,9 +85,9 @@
     - gtk
     - python
   links:
-    - icon: gnome
-      url: https://gitlab.gnome.org/GeopJr/Calligraphy
-      tooltip: Git Repo
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Calligraphy
+      tooltip: Codeberg Repo
     - icon: flathub
       url: https://flathub.org/apps/details/dev.geopjr.Calligraphy
       tooltip: Flathub
@@ -101,6 +101,9 @@
     - crystal
     - vue
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/BeardBin
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/BeardBin
       tooltip: GitHub Repo
@@ -113,6 +116,9 @@
   techs:
     - crystal
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Crycord
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/Crycord
       tooltip: GitHub Repo
@@ -126,6 +132,9 @@
     - nodejs
     - docker
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/CO2
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/marketplace/actions/co2-ci
       tooltip: GitHub Marketplace
@@ -136,6 +145,9 @@
     - vue
     - nuxt
   links:
+    - icon: codeberg
+      url: https://codeberg.org/SHRP/shrp-theme-builder-web
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/SHRP/shrp-theme-builder-web
       tooltip: GitHub Repo
@@ -148,6 +160,9 @@
   techs:
     - crystal
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/sabo-tabby
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/sabo-tabby
       tooltip: GitHub Repo
@@ -160,6 +175,9 @@
   techs:
     - crystal
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/create-crystal-app
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/create-crystal-app
       tooltip: GitHub Repo
@@ -170,6 +188,9 @@
     - vue
     - nuxt
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/argyle
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/argyle
       tooltip: GitHub Repo
@@ -183,6 +204,9 @@
     - vite
     - dart
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/vite-plugin-dart
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/vite-plugin-dart
       tooltip: GitHub Repo
@@ -196,6 +220,9 @@
     - crystal
     - gtk
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/libadwaita.cr
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/libadwaita.cr
       tooltip: GitHub Repo
@@ -211,6 +238,9 @@
   techs:
     - svelte
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Shipwreck
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/Shipwreck
       tooltip: GitHub Repo
@@ -223,6 +253,9 @@
   techs:
     - nodejs
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/pixelfed-js
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/pixelfed-js
       tooltip: GitHub Repo
@@ -238,6 +271,9 @@
   techs:
     - crystal
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/asar-cr
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/asar-cr
       tooltip: GitHub Repo
@@ -286,6 +322,9 @@
     - qt
     - svelte
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/exorcism
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/exorcism
       tooltip: GitHub Repo
