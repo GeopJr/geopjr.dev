@@ -37,6 +37,9 @@
     - crystal
     - gtk
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/Collision
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/Collision
       tooltip: GitHub Repo
@@ -56,6 +59,9 @@
     - qt
     - flutter
   links:
+    - icon: codeberg
+      url: https://codeberg.org/GeopJr/SveltePress
+      tooltip: Codeberg Repo
     - icon: github
       url: https://github.com/GeopJr/SveltePress
       tooltip: GitHub Repo
