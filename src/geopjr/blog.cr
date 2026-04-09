@@ -199,7 +199,7 @@ module GeopJr
 
           <article class="card" style="--theme-selected-bg:#{color}">
 		      	<header>
-		      		<img class="c" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
+		      		<img aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
 		      		<div class="window-controls" aria-hidden="true">
 		      			<span></span>
 		      			<span></span>
