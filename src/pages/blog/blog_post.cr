@@ -3,6 +3,14 @@ module GeopJr
   class BlogPostFrontmatter
     include YAML::Serializable
 
+    @[YAML::Serializable::Options(emit_nulls: true)]
+    class Bandcamp
+      include YAML::Serializable
+
+      property album : Int64
+      property track : Int64? = nil
+    end
+
     property title : String
     property subtitle : String?
     property date : Time
@@ -12,6 +20,7 @@ module GeopJr
     property hidden : Bool = false
     property cover : String? = nil
     property cover_alt : String = ""
+    property bandcamp : Bandcamp? = nil
   end
 
   class Page::Blog::Post

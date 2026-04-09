@@ -4,9 +4,9 @@
             <section>
                 <h1><%= @post.title %></h1>
                 <section>
-                <%- unless @post.subtitle.nil? -%>
-                    <h2><span><%= @post.subtitle %></span></h2>
-                <%- end -%>
+                    <%- unless @post.subtitle.nil? -%>
+                        <h2><span><%= @post.subtitle %></span></h2>
+                    <%- end -%>
                     <section class="blog-tags">
                         <%- @post.tags.each do |tag| -%>
                             <% svg_icon = GeopJr::CONFIG.data.icons.fetch(tag, tag) %>
@@ -24,6 +24,25 @@
                        (<time title="Updated on" datetime="<%= date_s %>"><%= date_s %></time>)
                     <%- end -%>
                     </span>
+                    <%- unless (bandcamp = @post.bandcamp).nil? -%>
+                        <details class="music" title="Music">
+                            <summary><img aria-hidden="true" alt="" src="/assets/images/tango/audio-x-generic.webp" /></summary>
+                            <article class="card">
+		      	                <header>
+                                    <img class="c" aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp" /><span>Music</span>
+		      	                	<div class="window-controls" aria-hidden="true">
+		      	                		<span></span>
+		      	                		<span></span>
+		      	                		<span></span>
+		      	                	</div>
+		      	                </header>
+		      	                <section>
+                                    <% track = bandcamp.track.nil? ? "" : "track=#{bandcamp.track}/" %>
+                                    <iframe loading="lazy" src="https://bandcamp.com/EmbeddedPlayer/album=<%= bandcamp.album %>/size=large/bgcol=ffffff/linkcol=0000ff/<%= track %>tracklist=false/artwork=small/transparent=true/" seamless></iframe>
+                                </section>
+		                    </article>
+                        </details>
+                    <%- end -%>
                 </section>
             </section>
             <div class="dither-sep bottom" aria-hidden="true"></div>

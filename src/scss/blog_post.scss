@@ -75,6 +75,39 @@ body {
                 }
             }
         }
+
+        .music {
+            &[open] {
+                flex-basis: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            >summary {
+                cursor: pointer;
+                list-style: none;
+
+                >img {
+                    image-rendering: pixelated;
+                    object-fit: contain;
+                    width: 16px;
+                    max-height: 16px;
+                }
+            }
+
+            .card {
+                width: 512px;
+                max-width: 90vw;
+
+                iframe {
+                    border: 0;
+                    width: 100%;
+                    height: 120px;
+                }
+            }
+        }
     }
 
     >section {
