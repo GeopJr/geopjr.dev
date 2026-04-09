@@ -2,7 +2,7 @@
 @font-face {
 	font-family: "Instrument Serif";
 	font-style: normal;
-	font-display: fallback;
+	font-display: swap;
 	font-weight: 400;
 	font-stretch: 100%;
 	src: local("Instrument Serif Regular"), local("InstrumentSerif-Regular"), url(instrument-serif-latin.woff2) format("woff2");
