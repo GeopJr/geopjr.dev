@@ -2,11 +2,12 @@
 
 release ?=
 no_zip ?=
+no_vips ?=
 
 all: build
 
 build:
-	TT_THEMES=gruvbox,gruvbox-light SIXTEEN_THEMES=default-dark shards build -Dnothemes $(if $(release),--release,)
+	TT_THEMES=gruvbox,gruvbox-light SIXTEEN_THEMES=default-dark shards build -Dnothemes $(if $(no_vips),-Dnovips,) $(if $(release),--release,)
 
 run:
 	./bin/geopjr $(if $(no_zip),--no-zip,)

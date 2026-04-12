@@ -83,6 +83,7 @@ should_serve = false
 just_sass = false
 just_minify = false
 just_zip = false
+just_vips = false
 
 should_sass = true
 should_minify = true
@@ -99,6 +100,9 @@ OptionParser.parse do |parser|
   end
   parser.on("minify", "Run the minify command without re-compiling") { should_minify = just_minify = true }
   parser.on("zip", "Run zip the output without re-compiling") { should_zip = just_zip = true }
+  {% unless flag?(:novips) %}
+    parser.on("vips", "Run vips-related operations") { just_vips = true }
+  {% end %}
   parser.on("--no-sass", "Doesn't compile the SCSS automatically") { should_sass = false }
   parser.on("--no-minify", "Doesn't minify the output automatically") { should_minify = false }
   parser.on("--no-zip", "Doesn't zip the output automatically") { should_zip = false }
@@ -112,6 +116,13 @@ OptionParser.parse do |parser|
     exit(1)
   end
 end
+
+{% unless flag?(:novips) %}
+  if just_vips
+    (GeopJr::OGCovers.new).generate(GeopJr::Blog.new(Path["blog"]).generate_blog_posts, GeopJr::CONFIG.paths[:static], true)
+    exit
+  end
+{% end %}
 
 # if it exists, serve (won't continue executing)
 # else output and then will run these
@@ -162,10 +173,12 @@ module GeopJr
   end
   puts "🐱 Moved static files"
 
-  # OpenGraph covers
-  puts "🐱 Generating OpenGraph covers"
-  (GeopJr::OGCovers.new).generate
-  puts "🐱 Generated OpenGraph covers"
+  {% unless flag?(:novips) %}
+    # OpenGraph covers
+    puts "🐱 Generating OpenGraph covers"
+    (GeopJr::OGCovers.new).generate
+    puts "🐱 Generated OpenGraph covers"
+  {% end %}
 
   # sitemap.xml
   puts "🐱 Generating sitemap"

@@ -1,3 +1,5 @@
+{% skip_file if flag?(:novips) %}
+
 require "vips"
 
 module Vips
@@ -70,10 +72,10 @@ class GeopJr::OGCovers
     final_im.write_to_file(out_path)
   end
 
-  def generate
-    BLOG_POSTS.each do |v|
-      out_path = GeopJr::CONFIG.paths[:out] / "assets" / "images" / "opengraph" / "#{v.filename}.png"
-      next if File.exists?(out_path)
+  def generate(blog_posts = BLOG_POSTS, out_parent : Path = GeopJr::CONFIG.paths[:out], force_overwrite : Bool = false)
+    blog_posts.each do |v|
+      out_path = out_parent / "assets" / "images" / "opengraph" / "#{v.filename}.png"
+      next if !force_overwrite && File.exists?(out_path)
       generate_og_image(out_path.to_s, v.fm.title, v.fm.subtitle)
     end
   end
