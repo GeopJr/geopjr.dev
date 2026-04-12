@@ -34,7 +34,7 @@ class GeopJr::OGCovers
       "<span foreground=\"white\">#{HTML.escape(title)}</span>",
       width: 980,
       font: "Instrument Serif 105",
-      fontfile: (GeopJr::CONFIG.paths[:static] / "assets" / "fonts" / "instrument-serif" / "instrument-serif-latin.woff2").to_s,
+      fontfile: (GeopJr::CONFIG.paths[:static] / "assets" / "fonts" / "instrument-serif" / "_InstrumentSerif-Regular.ttf").expand(home: true).to_s,
       rgba: true,
       spacing: -10,
       align: 1 # center
@@ -52,7 +52,7 @@ class GeopJr::OGCovers
         "<span background=\"blue\" foreground=\"blue\">_</span><span background=\"blue\" foreground=\"white\">#{HTML.escape(sub)}</span><span background=\"blue\" foreground=\"blue\">_</span>",
         width: 980,
         font: "Adwaita Mono 40",
-        fontfile: (GeopJr::CONFIG.paths[:static] / "assets" / "fonts" / "adwaita-mono" / "adwaita-mono-bold-latin.woff2").to_s,
+        fontfile: (GeopJr::CONFIG.paths[:static] / "assets" / "fonts" / "adwaita-mono" / "_AdwaitaMono-Bold.ttf").expand(home: true).to_s,
         rgba: true,
         spacing: -10,
         align: 1 # center

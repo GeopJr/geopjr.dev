@@ -1,18 +1,19 @@
 <p align="center">
- <img alt="" src="./banner.svg" />
+ <img alt="Evangelos geopjr Paterakis" src="./static/assets/images/opengraph/ogimage.png" />
 </p>
-<h1 align="center">geopjr.dev</h1>
 
-# 🐱
+# 🖥️
 
-This is just my personal website.
+This is just my personal website's SSG.
 
-# 😼 Icons
+# 🪴 Icons
 
 - Font Awesome [CC-BY 4.0]
 - Simple Icons [CC0-1.0]
 - Material Design Icons [Apache 2.0]
 
-# 😻 Fonts
+# ⌨️ Fonts
 
 - Adwaita Fonts [OFL-1.1]
+- Instrument Serif [OFL-1.1]
+- DejaVu [Part Bitstream Vera, part public domain]
