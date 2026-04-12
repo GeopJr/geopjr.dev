@@ -2,6 +2,7 @@ steps:
   build:
     image: crystallang/crystal:latest
     commands:
+      - apt install libvips-dev
       - shards install
       - crystal tool format
       - make build run no_zip=1 # no need to release=1 yet, debug is extremely fast
@@ -12,7 +13,6 @@ steps:
   push:
     image: node:alpine
     commands:
-      - add --no-cache vips-dev vips-jxl
       - npx wrangler pages deploy ./dist/ --project-name=geopjr --no-bundle
     when:
       - event: push
