@@ -2,7 +2,7 @@ steps:
   build:
     image: crystallang/crystal:latest
     commands:
-      - apt update && apt install libvips-dev
+      - apt update && apt install libvips-dev -y
       - shards install
       - crystal tool format
       - make build run no_zip=1 # no need to release=1 yet, debug is extremely fast
