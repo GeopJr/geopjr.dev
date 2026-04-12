@@ -19,7 +19,17 @@ module GeopJr
     property cover : CoverImage
     property noindex : Bool
 
-    alias CoverImage = Tuple(String, String)
+    alias CoverImage = Tuple(String, String?, Bool) # Bool => whether it should be cover sized
+    COVER_SMALL = {
+      "#{GeopJr::CONFIG.url}/assets/favicons/avi.webp",
+      "My avatar, a yellow Novakid from the game Starbound",
+      false,
+    }
+    COVER_BIG = {
+      "assets/images/opengraph/ogimage.png",
+      "Blue background with white centered text. Top left 'Evangelos', middle 'geopjr' in ascii art, bottom right 'Paterakis'. At the bottom left there's an ordered-dithered old white monitor, keyboard and mouse with some tulips in a pot.",
+      true,
+    }
 
     def initialize(
       title : String?,
@@ -55,14 +65,12 @@ module GeopJr
       @js = script
 
       if cover.nil?
-        @cover = {
-          "#{GeopJr::CONFIG.url}/assets/favicons/avi.webp",
-          "My avatar, a yellow Novakid from the game Starbound",
-        }
+        @cover = COVER_SMALL
       else
         @cover = {
           "#{GeopJr::CONFIG.url}/#{cover[0]}",
-          "#{cover[1]}",
+          cover[1],
+          cover[2],
         }
       end
     end
@@ -78,12 +86,20 @@ module GeopJr
     end
 
     def og
+      cover_alt = @cover[1].nil? || @cover[1].try &.strip == "" ? nil : "<meta property=\"og:image:alt\" content=\"#{@cover[1]}\">"
+      cover_full = @cover[2] == false ? nil : <<-HTML
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta name="twitter:card" content="summary_large_image">
+      HTML
+
       <<-HTML
           <meta property="og:title" content="#{@title}">
           <meta property="og:description" content="#{@description}">
           <meta property="og:url" content="#{@url_full}">
           <meta property="og:image" content="#{@cover[0]}">
-          <meta property="og:image:alt" content="#{@cover[1]}">
+          #{cover_alt}
+          #{cover_full}
           HTML
     end
   end

@@ -122,17 +122,20 @@ if Dir.exists?(GeopJr::CONFIG.paths[:out]) && (just_sass || just_minify || just_
 end
 
 module GeopJr
-  CONFIG     = GeopJr::Config.new
+  CONFIG = GeopJr::Config.new
   GeopJr::Utils.prepare_output_dir
+
+  puts "🐱 Generating blog"
   BLOG_POSTS = Blog.new(Path["blog"]).generate_blog_posts
+  Blog.write_blog_posts # Blog Posts
+  puts "🐱 Generated blog"
 
-  Page::NotFound.new.write # 404.html
-  Blog.write_blog_posts    # Blog Posts
-
+  puts "🐱 Generating routes"
   BLOG_PAGES = BlogPagination.new(BLOG_POSTS)
   BLOG_PAGES.write
 
   # Routes
+  Page::NotFound.new.write # 404.html
   ROUTES = {
     Page::Home.new,
     Page::Work.new,
@@ -144,26 +147,44 @@ module GeopJr
   ROUTES.each do |route|
     route.write
   end
+  puts "🐱 Generated routes"
 
   # Icons to sprites
+  puts "🐱 Generating spritesheets"
   GeopJr::Icons.new(GeopJr::CONFIG.paths[:icons], GeopJr::CONFIG.paths[:assets] / "icons").generate_sprites
+  puts "🐱 Generated spritesheets"
 
   # Move static files to /assets/
+  puts "🐱 Moving static files"
   Dir.each_child(GeopJr::CONFIG.paths[:static]) do |static_sub|
     next if static_sub.starts_with?("_")
     FileUtils.cp_r(GeopJr::CONFIG.paths[:static] / static_sub, GeopJr::CONFIG.paths[:out])
   end
+  puts "🐱 Moved static files"
+
+  # OpenGraph covers
+  puts "🐱 Generating OpenGraph covers"
+  (GeopJr::OGCovers.new).generate
+  puts "🐱 Generated OpenGraph covers"
 
   # sitemap.xml
+  puts "🐱 Generating sitemap"
   File.write(GeopJr::CONFIG.paths[:out] / "sitemap.xml", SitemapXML.new.to_s)
+  puts "🐱 Generated sitemap"
 
   # rss.xml
+  puts "🐱 Generating RSS"
   RSSXML.generate(GeopJr::CONFIG.paths[:out] / "rss.xml")
+  puts "🐱 Generated RSS"
 
   # Delete underscore files
+  puts "🐱 Removing unnecessary files"
   FileUtils.rm_rf(Dir.glob(GeopJr::CONFIG.paths[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
+  puts "🐱 Removed unnecessary files"
 
+  puts "🐱 Running tools"
   GeopJr::Tools.new(should_sass, should_minify, should_zip)
+  puts "🐱 Ran tools"
 end
 
 GeopJr::Server.serve if should_serve

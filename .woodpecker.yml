@@ -12,6 +12,7 @@ steps:
   push:
     image: node:alpine
     commands:
+      - add --no-cache vips-dev vips-jxl
       - npx wrangler pages deploy ./dist/ --project-name=geopjr --no-bundle
     when:
       - event: push

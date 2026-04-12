@@ -21,6 +21,8 @@ dependencies:
     version: ~> 0.13.0
   crystar:
     github: naqvis/crystar
+  vips:
+    github: naqvis/crystal-vips
 
 crystal: 1.7.3
 
