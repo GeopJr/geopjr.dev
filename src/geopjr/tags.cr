@@ -21,12 +21,12 @@ module GeopJr
 
     alias CoverImage = Tuple(String, String?, Bool) # Bool => whether it should be cover sized
     COVER_SMALL = {
-      "#{GeopJr::CONFIG.url}/assets/favicons/avi.webp",
+      "assets/favicons/avi.webp",
       "My avatar, a yellow Novakid from the game Starbound",
       false,
     }
     COVER_BIG = {
-      "assets/images/opengraph/ogimage.png",
+      "#{GeopJr::CONFIG.url}/assets/images/opengraph/ogimage.png",
       "Blue background with white centered text. Top left 'Evangelos', middle 'geopjr' in ascii art, bottom right 'Paterakis'. At the bottom left there's an ordered-dithered old white monitor, keyboard and mouse with some tulips in a pot.",
       true,
     }
@@ -65,7 +65,7 @@ module GeopJr
       @js = script
 
       if cover.nil?
-        @cover = COVER_SMALL
+        @cover = COVER_BIG
       else
         @cover = {
           "#{GeopJr::CONFIG.url}/#{cover[0]}",

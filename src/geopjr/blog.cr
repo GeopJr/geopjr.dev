@@ -318,7 +318,7 @@ module GeopJr
               "#{v.fm.subtitle.nil? ? nil : "#{v.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",
               "blog/#{v.filename}",
               Styles[:blog_post],
-              cover: v.fm.cover == false ? nil : {
+              cover: v.fm.cover == false ? GeopJr::Tags::COVER_SMALL : {
                 "assets/images/opengraph/#{v.filename}.png",
                 v.fm.cover.is_a?(String) ? v.fm.cover.to_s : nil,
                 true,

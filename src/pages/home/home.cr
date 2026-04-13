@@ -16,8 +16,7 @@ module GeopJr
         description,
         nil,
         Styles[:about],
-        ["egg_basket"],
-        cover: GeopJr::Tags::COVER_BIG
+        ["egg_basket"]
       )
     end
 
