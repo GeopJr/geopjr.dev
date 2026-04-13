@@ -282,7 +282,8 @@
 }
 
 .sticker {
-    min-width: 100px;
+    width: 100px;
+    height: 100px;
     margin: 0 0 1rem 0;
     filter: drop-shadow(0 0 0.2rem rgb(from var(--accent) r g b / calc(alpha * 0.2)));
 
