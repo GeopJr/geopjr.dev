@@ -43,7 +43,7 @@ Detailed metrics for currently active users are very helpful. You can see at any
 It also hosts your apps' screenshots which I've come to really appreciate after I had to move away from imgur ever since I was notified that it's blocked in some countries.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
   <figcaption>FYI, linux distros have a <b>really</b> hard time dealing with git-lfs</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ If you search `snap xdg desktop portal`, one of the top results will be [my post
 
 That's right, since the portal doesn't work from Snap's side, the solution is to just open a hole in the sandbox... This would never fly on Flathub (unless the app doesn't support portals). What's the point of a sandboxed environment if the moment something doesn't work, the solution is to just open a hole in it?
 
-<img src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
 
 Snap developers were tagged, and after more debugging, nothing came of it. The replies slowed down to 2 per 1–3 months. Until GTK added FileDialog and fixed it. This was the biggest disappointment I had with Snap, it's difficult to compare it to Flatpak when the second one of the key benefits (sandboxing) has issues, the solution is to disable it.
 
@@ -75,7 +75,7 @@ Are Snaps even host-independent? I wasn't sure from the start. I knew they depen
 
 Here's an issue I received: [snap nightly does not connect to any instance (time out)](https://github.com/GeopJr/Tuba/issues/210). I can't reproduce it. I can't reproduce it on my machine; I can't reproduce it on an Ubuntu VM; I can't reproduce it on a live image; I just can't. How do I even debug this without asking the user to run a bunch of random debug commands that were suggested to me previously? Sure, it's network related, but since the Snap has the required permissions, why does it differ from the host? 🤷
 
-<img src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
 
 To this day, I don't think I've ever come across a Flatpak bug that I couldn't reproduce on my machine (except some font related ones).
 
@@ -84,14 +84,14 @@ To this day, I don't think I've ever come across a Flatpak bug that I couldn't r
 I've seen multiple times Spotify being mentioned as one of the reasons Snap is widely used. I don't doubt that. Now imagine if the SDK Spotify uses shipped a modified version of their libraries or a modification that injected CSS that changes their beloved green accent to orange. Do you think Spotify would stay? No.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
   <figcaption>More like "Ubuntu" SDK</figcaption>
 </figure>
 
 Somehow, that's totally appropriate for GNOME apps. The "GNOME" SDK includes an **1101-line** libadwaita patch that enables Yaru accent colors, among other things. I'm not targeting Ubuntu, I'm not testing on Ubuntu and the Snap team definitely does not test my app. So what's the point of shipping a patch that can (and does when certain accent colors are used) break my app that nobody will help me fix, as shown previously? Again, I'm targeting GNOME, not Ubuntu. Why is it okay to break my app for the sake of your **own** branding? Just split them into a GNOME and an Ubuntu SDK; otherwise, you won't see many GNOME apps in the store published by their developers.
 
 <figure>
-  <img src="{{GEOPJR_BLOG_ASSETS}}/2.webp" alt="A poll on Tuba under Ubuntu using the green/grey accent color. The poll result is not that clear on the winning choice as its a small grey text on grey/green background" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_BLOG_ASSETS}}/2.webp" alt="A poll on Tuba under Ubuntu using the green/grey accent color. The poll result is not that clear on the winning choice as its a small grey text on grey/green background" />
   <figcaption>This is why we need named accent colors by the way</figcaption>
 </figure>
 
@@ -114,7 +114,7 @@ Unless someone already knows that the checkmark and the star badges are meant to
 There are so many apps on the store by Star Developers that even I, someone who knows that they are not verified, subconsciously treat them as such. And honestly, I cannot see the point of this. Why aren't individual developers allowed to verify themselves? Why are trusted community members treated more highly than the actual app developers? I trust an app's authors 100% more than community members to know what their app needs.
 
 <figure>
-  <img src="{{GEOPJR_BLOG_ASSETS}}/4.webp" alt="Screenshot of the snapcraft main page showing 3 apps. Beekeeper Studio by BEEKEEPER STUDIO (no icon next to the name), Sublime Text by SNAPCRAFTERS (star icon next to the name), pycharm-community by JETBRAINS (checkmark next to the name)" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_BLOG_ASSETS}}/4.webp" alt="Screenshot of the snapcraft main page showing 3 apps. Beekeeper Studio by BEEKEEPER STUDIO (no icon next to the name), Sublime Text by SNAPCRAFTERS (star icon next to the name), pycharm-community by JETBRAINS (checkmark next to the name)" />
   <figcaption>Beekeeper Studio by Beekeeper Studio does not have a checkmark <b>but</b> unofficially packaged Sublime Text by Snapcrafters does have a star</figcaption>
 </figure>
 

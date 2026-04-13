@@ -1,5 +1,4 @@
 @use "mixins";
-@import url("/assets/fonts/instrument-serif/instrument-serif.css");
 
 body {
     gap: 0;
@@ -43,7 +42,7 @@ body {
             align-items: center;
 
             >h1 {
-                font-family: "Instrument Serif", serif;
+                font-family: "Instrument Serif", "Instrument Serif Fallback", Georgia, 'Times New Roman', serif;
                 font-size: 4em;
                 font-weight: normal;
             }

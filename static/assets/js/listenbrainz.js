@@ -1,19 +1,29 @@
 const details = document.querySelector("footer details");
-details.addEventListener('toggle', on_details_toggled);
-details.addEventListener('toggle', on_details_toggled_scroll);
+const runIdle = (cb, timeout = 2000) => {
+    if ("requestIdleCallback" in window) {
+        requestIdleCallback(cb, { timeout });
+    } else {
+        setTimeout(cb, 1);
+    }
+}
+
+runIdle(() => {
+    details.addEventListener('toggle', on_details_toggled);
+    details.addEventListener('toggle', on_details_toggled_scroll);
+})
 
 function addRow(label, value) {
-	const p = document.createElement("p")
+    const p = document.createElement("p")
 
-	const key = document.createElement("span")
-	key.className = "label"
-	key.textContent = label + ": "
+    const key = document.createElement("span")
+    key.className = "label"
+    key.textContent = label + ": "
 
-	const val = document.createElement("span")
-	val.className = "value"
-	val.textContent = value
+    const val = document.createElement("span")
+    val.className = "value"
+    val.textContent = value
 
-	p.append(key, val)
+    p.append(key, val)
     return p
 }
 
@@ -42,7 +52,7 @@ function on_details_toggled() {
 
                         const win = document.createElement("article")
                         win.className = "card"
-                        win.innerHTML = `<header><img aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp"><span>Last Scrobble</span><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div></header>`
+                        win.innerHTML = `<header><img loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp"><span>Last Scrobble</span><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div></header>`
                         const sec = document.createElement("section")
                         win.appendChild(sec)
 
@@ -50,12 +60,14 @@ function on_details_toggled() {
                             const img = document.createElement("img")
                             img.src = art
                             img.alt = ""
+                            img.decoding = "async"
+                            img.loading = "lazy"
                             sec.appendChild(img)
                         }
 
                         const title_div = document.createElement("article")
                         title_div.className = "frame keyval"
-                        
+
                         {
                             const header = document.createElement("header")
                             header.textContent = "Info"

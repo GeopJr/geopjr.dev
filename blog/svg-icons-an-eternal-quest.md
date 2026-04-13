@@ -14,7 +14,7 @@ The website you are currently reading this on, has had more iterations than Goog
 Just like with images, websites that feature a lot of SVG icons, need to make sure they are cached. That way users don't re-download MBs of SVG icons for no reason every time they visit a website or navigate through its pages.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
   <figcaption>Icons being visible is essential for a good user experience and far more important than MBs of JS boilerplate. Minimizing their data transfer impact is important, especially for users in metered connections.</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ IMG elements can easily display SVG icons and cache them, but the SVGs then lose
 
 Here's Collision's icon in an IMG element:
 
-<img src="/assets/icons/collision.svg" style="width:256px" alt="Collision's logo" />
+<img loading="lazy" decoding="async" src="/assets/icons/collision.svg" style="width:256px" alt="Collision's logo" />
 
 - Embedding in HTML
 
@@ -74,7 +74,7 @@ Now let me make it clearer, replace everything on the `App.svelte` side with `<h
 As you've probably noticed now, Svelte will re-construct the DOM in JavaScript, no matter if it's completely static or compiles to something static.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
   <figcaption>This is not entirely an issue! If you want to ship static websites then... don't use a framework I guess. This was brought up just to showcase my issue. SvelteKit and alternatives offer a way to disable this behavior but that has other disadvantages.</figcaption>
 </figure>
 

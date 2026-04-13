@@ -32,7 +32,7 @@ module GeopJr
 
         title = URI.encode_path_segment(text)
         return if title == ""
-        @output_io << %(<a aria-hidden="true" id=") << title << %(" class="anchor" href="#) << title << %(">Ω</a>)
+        @output_io << %(<a aria-label="Link to this" id=") << title << %(" class="anchor" href="#) << title << %(">Ω</a>)
         @last_output = ">"
       end
 
@@ -80,6 +80,29 @@ module GeopJr
         end
       end
 
+      def image(node : Markd::Node, entering : Bool)
+        if entering
+          if @disable_tag == 0
+            destination = node.data["destination"].as(String)
+            if @options.safe? && potentially_unsafe(destination)
+              literal(%(<img loading="lazy" decoding="async" src="" alt=""))
+            else
+              destination = resolve_uri(destination, node)
+              literal(%(<img loading="lazy" decoding="async" src="#{escape(destination)}" alt="))
+            end
+          end
+          @disable_tag += 1
+        else
+          @disable_tag -= 1
+          if @disable_tag == 0
+            if (title = node.data["title"].as(String)) && !title.empty?
+              literal(%(" title="#{escape(title)}))
+            end
+            literal(%(" />))
+          end
+        end
+      end
+
       private def make_window(entering : Bool, title : String = "", icon : String = "")
         if entering
           tag("article", {"class" => "card"})
@@ -91,6 +114,8 @@ module GeopJr
               "aria-hidden" => "true",
               "alt"         => "",
               "src"         => "/assets/images/tango/#{icon}.webp",
+              "loading"     => "lazy",
+              "decoding"    => "async",
             }
           )
 
@@ -150,7 +175,7 @@ module GeopJr
 
     private def image(url : String, alt : String = "")
       <<-HTML
-        <img alt="#{alt}" src="#{url}" />
+        <img alt="#{alt}" loading="lazy" decoding="async" src="#{url}" />
       HTML
     end
 
@@ -199,7 +224,7 @@ module GeopJr
 
           <article class="card" style="--theme-selected-bg:#{color}">
 		      	<header>
-		      		<img class="c" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
+		      		<img class="c" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
 		      		<div class="window-controls" aria-hidden="true">
 		      			<span></span>
 		      			<span></span>

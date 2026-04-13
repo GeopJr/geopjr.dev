@@ -38,15 +38,12 @@
     }
 }
 
-@import url("/assets/fonts/adwaita-sans/adwaita-sans.css");
-@import url("/assets/fonts/adwaita-mono/adwaita-mono.css");
-
 code,
 pre,
 tt,
 kbd,
 samp {
-    font-family: "Adwaita Mono", monospace;
+    font-family: "Adwaita Mono", "Adwaita Mono Fallback", monospace;
 }
 
 html {
@@ -55,7 +52,7 @@ html {
     background-color: var(--background-color);
     color: var(--text-color);
     // transition-duration: 200ms;
-    font-family: 'Adwaita Sans', 'Cantarell', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Noto Sans',
+    font-family: 'Adwaita Sans', 'Inter', 'Cantarell', "Adwaita Sans Fallback", system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Noto Sans',
         sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     scrollbar-color: var(--accent) var(--background-color);
 }

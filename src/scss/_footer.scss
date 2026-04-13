@@ -8,7 +8,7 @@ body>footer {
     position: relative;
     transition-duration: 200ms;
     width: 100%;
-    font-family: "Adwaita Mono", monospace;
+    font-family: "Adwaita Mono", "Adwaita Mono Fallback", monospace;
 
     .dm {
         width: 256px;

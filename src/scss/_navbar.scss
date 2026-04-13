@@ -75,7 +75,7 @@ body {
             @include mixins.reverse-accent;
 
             font-size: large;
-            font-family: "Adwaita Mono", monospace;
+            font-family: "Adwaita Mono", "Adwaita Mono Fallback", monospace;
             text-align: center;
 
             a {

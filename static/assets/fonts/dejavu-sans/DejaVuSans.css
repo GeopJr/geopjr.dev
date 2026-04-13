@@ -17,3 +17,13 @@
     font-weight: 600 900;
     font-stretch: normal;
 }
+
+@font-face {
+  font-family: "DejaVu Sans Fallback";
+  src: local("system-ui");
+  size-adjust: 102.5%;
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+

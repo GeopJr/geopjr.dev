@@ -1,5 +1,4 @@
 @use 'sass:string';
-@import url("/assets/fonts/dejavu-sans/DejaVuSans.css");
 
 @function shade($color, $factor, $multiplier: "") {
     $multiplier_string: "";
@@ -80,6 +79,7 @@
         color: #fff;
         gap: 1rem;
         font-family: "DejaVu Sans",
+            "DejaVu Sans Fallback",
             "Bitstream Vera Sans",
             sans-serif;
 

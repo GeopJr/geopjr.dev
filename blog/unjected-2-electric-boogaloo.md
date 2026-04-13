@@ -30,7 +30,7 @@ A few days after the Daily Dot published my findings, the Unjected Team went on 
 No Unjected, I do not do this for a living. It doesn't require a PhD for someone to use their web browser's inspector and see that that the API returns private user data. And no, I am not anonymous. My full name and country is available in many places, including this website. I don't have to constantly show my face or overshare because that's not my goal. I am not trying to be an influencer, podcast host, youtuber or instragram model. I work with computers, that's all.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
   <figcaption>Maybe your users should ask you why you are on podcasts instead of securing your website?</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ You also claimed that you've done pentesting before. I hope you can still ask fo
 Lastly, I find it ironic that you said and I quote "Our legal team is currently investigating the situation and are ready to take action, so we are certain that the situation ends here". Are you threatening me with legal action because I... found security issues with your website, let you know about it *and* told you how to fix them?
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_DEFAULT_HOODIE_Ω}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_DEFAULT_HOODIE_Ω}}" alt="" class="emote pixelated" />
   <figcaption>As a sidenote, my avatar features <a href="https://starbound.fandom.com/wiki/Rainbow_Cape" rel="noopener noreferrer" target="_blank">a rare item in the game Starbound called Rainbow Cape</a>. I'm sure it was worth pointing out to your listeners, 👻 BOO 🌈</figcaption>
 </figure>
 
@@ -60,14 +60,14 @@ The important ones are: `email`, `hidden_birthday`, `longitude`, `latitude`, `de
 
 Getting that info requires 0 authentication and the frontend requests it whenever it has to load a profile, anyone's profile, by doing a GET request at `/<user id>`. This information wasn't gathered using any sophisticated hacking tool or similar, any browser's inspector 'Network' tab will show you any requests a website does.
 
-<img src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
 
 Why was this done? I assume partially to avoid another request when editing your own profile and perhaps the developers behind this not realizing that it's available for the whole world to see.
 
 Okay, you might be wondering now why the other entries are important. When `hidden_birthday` is true, it won't show your birthday on your profile, but the API still includes it. **108** users had set their birthday to hidden. Similarly for `deactivated`, deactivated accounts are not accessible on the website *but* the API will still return them in full (GDPR who?). **1989** users had deactivated their accounts.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
   <figcaption>Deleting your account is never enough, you shouldn't have made it in the first place.</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ Okay, you might be wondering now why the other entries are important. When `hidd
 Last but not least, `images` is one I cannot even explain. It's an array of objects that had a boolean key letting you know if an image had been deleted. The 'deleted' images are still available in their CDN. I repeat, deleted images are NOT removed. To be fair, they do get removed from the `images` array but the URLs are still very much alive.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
   <figcaption>Why? Just delete them?!?!</figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ When writing an API that requires authentication, you check that the token provi
 In my 2022 report, I noted that I could block anyone as anyone, since endpoints not only accepted *who* did an action but required it. This is the exact same situation.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
   <figcaption>Seriously, how many times will you repeat this mistake?</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ I contacted the only person I trust when this happens, [Mikael Thalen](https://t
 The solutions were easy to follow and very straightforward like "Don't return e-mails unless a token that matches the requested user was provided". Nobody should have trouble following that. Nobody except the people working at Unjected.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_OK}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_OK}}" alt="" class="emote pixelated" />
   <figcaption>Essential oils do not in-fact work on technology.</figcaption>
 </figure>
 
@@ -130,7 +130,7 @@ console.log(decryptData("SUPER ENCRYPTED API RESPONSE", "SUPER SECRET DECRYPTION
 And just like that, e-mails are still there. A bandage over the problem.
 
 <figure>
-  <img src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
+  <img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_?}}" alt="" class="emote pixelated" />
   <figcaption>I really cannot understand why they chose client-side decryption over just not sending everyone's e-mails with their profile.</figcaption>
 </figure>
 

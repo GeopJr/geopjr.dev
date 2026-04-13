@@ -1,9 +1,11 @@
 <nav>
 	<%- ROUTES.each_with_index do |route, i| -%>
+		<% is_active = @active_link == route.id.to_s %>
 		<a
 			draggable="false"
 			href="/<%= route.tags.url %>" aria-label="<%= route.title %>"
-			class="<%= @active_link == route.id.to_s ? "active" : nil %> <%= route.hidden ? " h" : nil %>"
+			<%- if is_active -%>aria-current="page"<%- end -%>
+			class="<%= is_active ? "active" : nil %> <%= route.hidden ? " h" : nil %>"
 		><%= route.title.upcase %></a>
 	<%- end -%>
 </nav>

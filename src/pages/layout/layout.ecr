@@ -5,6 +5,7 @@
         <link rel="icon" href="/assets/favicons/favicon.ico">
         <meta name="keywords" content="CS, IT, Software, Developer, Programming, Blog, Portfolio, Work, GeopJr">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
         <link rel="me" href="https://tech.lgbt/@GeopJr">
         <meta name="fediverse:creator" content="@GeopJr@tech.lgbt">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
@@ -12,8 +13,8 @@
         <meta name="theme-color" content="#0000ff" media="(prefers-color-scheme: light)">
         <meta name="theme-color" content="#ffff00" media="(prefers-color-scheme: dark)">
         <meta name="googlebot" content="notranslate" />
-        <meta name="og:type" content="website">
-        <meta name="og:image:type" content="image/png">
+        <meta property="og:type" content="website">
+        <meta property="og:image:type" content="image/png">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
         <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#706738">
         <meta name="msapplication-TileColor" content="#f9f1cc">
@@ -22,6 +23,10 @@
         <link rel="preload" href="/assets/images/dither-l.webp" as="image" type="image/webp" />
         <%= @tags.standard %>
         <%= @tags.og %>
+        <link rel="stylesheet" href="/assets/fonts/adwaita-sans/adwaita-sans.css">
+        <link rel="stylesheet" href="/assets/fonts/adwaita-mono/adwaita-mono.css">
+        <link rel="stylesheet" href="/assets/fonts/instrument-serif/instrument-serif.css">
+        <link rel="stylesheet" href="/assets/fonts/dejavu-sans/DejaVuSans.css">
         <link rel="stylesheet" href="/assets/css/global.css">
         <%- if !(css = @tags.css).nil? %>
             <%- css.each do |stylesheet| -%>

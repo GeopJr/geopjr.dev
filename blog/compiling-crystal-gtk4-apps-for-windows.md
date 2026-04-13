@@ -20,7 +20,7 @@ If you installed Crystal (or C or many other languages) on Windows you probably 
 
 MSYS2 is especially important for GTK (even though it's [only one of the ways to get started](https://www.gtk.org/docs/installations/windows/)) because you often have to use libraries and tools that expect a unix-like environment or only exist there. After all, the MSYS2 maintainers compile and test many libraries that their maintainers have never used outside of Linux.
 
-<img src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_!}}" alt="" class="emote pixelated" />
 
 While GTK (GLib and the whole ecosystem) is cross platform, the main focus is Linux and sometimes that entails bringing a Linux mindset when doing things outside of it. At the start I mentioned a complex and dependency-hellish app, Tuba. Tuba is written in Vala which doesn't really have an stdlib on its own, its stdlib is GLib. That means that it depends on *many* libraries, from parsing json to counting graphemes. Additionally, as an app it does a lot and has many runtime requirements like gstreamer for audio visualization, libspelling for spell checking and libsecret for securely saving passwords in a keyring. If Tuba was able to come to Windows then the workflow can be assumed to be somewhat battle-tested.
 
@@ -62,7 +62,7 @@ Before we get into the next part, be ready to face issues. Crystal's Windows sup
 
 ...
 
-<img src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_X}}" alt="" class="emote pixelated" />
 
 It didn't work. The issue seems to be blake3, I have a forked shard for it ([blake3.cr](https://github.com/GeopJr/blake3.cr)) which is responsible for building the correct variant using macros and C but I never tested for Windows and it doesn't seem to be able to. I would spend time fixing it but as we discovered, `libblake3` is something MSYS2 packages so we don't have to.
 
@@ -75,7 +75,7 @@ It still doesn't work? This time it's an issue with the `run` macro for the `lic
 - `$ BLAKE3_CR_DO_NOT_BUILD=1 shards build -Dpreview_mt`
 - `$ ./bin/collision.exe`
 
-<img src="{{GEOPJR_EMOTES_OK}}" alt="" class="emote pixelated" />
+<img loading="lazy" decoding="async" src="{{GEOPJR_EMOTES_OK}}" alt="" class="emote pixelated" />
 
 Aaaaand here it is in all its glory:
 
