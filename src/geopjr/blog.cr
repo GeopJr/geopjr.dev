@@ -116,6 +116,8 @@ module GeopJr
               "src"         => "/assets/images/tango/#{icon}.webp",
               "loading"     => "lazy",
               "decoding"    => "async",
+              "width"       => "16",
+              "height"      => "16",
             }
           )
 
@@ -224,7 +226,7 @@ module GeopJr
 
           <article class="card" style="--theme-selected-bg:#{color}">
 		      	<header>
-		      		<img class="c" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
+		      		<img width="16" height="16" class="c" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
 		      		<div class="window-controls" aria-hidden="true">
 		      			<span></span>
 		      			<span></span>

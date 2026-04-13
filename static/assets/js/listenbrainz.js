@@ -52,7 +52,7 @@ function on_details_toggled() {
 
                         const win = document.createElement("article")
                         win.className = "card"
-                        win.innerHTML = `<header><img loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp"><span>Last Scrobble</span><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div></header>`
+                        win.innerHTML = `<header><img width="16" height="16" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/banshee.webp"><span>Last Scrobble</span><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div></header>`
                         const sec = document.createElement("section")
                         win.appendChild(sec)
 
@@ -62,6 +62,8 @@ function on_details_toggled() {
                             img.alt = ""
                             img.decoding = "async"
                             img.loading = "lazy"
+                            img.width = 266
+                            img.height = 266
                             sec.appendChild(img)
                         }
 
