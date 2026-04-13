@@ -6,7 +6,11 @@
         <meta name="keywords" content="CS, IT, Software, Developer, Programming, Blog, Portfolio, Work, GeopJr">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="color-scheme" content="light dark">
-        <link rel="me" href="https://tech.lgbt/@GeopJr">
+        <%- {"mastodon", "codeberg", "github"}.each do |platform| -%>
+            <%- if GeopJr::CONFIG.data.contact.has_key?(platform) -%>
+                <link rel="me" href="<%= GeopJr::CONFIG.data.contact[platform] %>">
+            <%- end -%>
+        <%- end -%>
         <meta name="fediverse:creator" content="@GeopJr@tech.lgbt">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">

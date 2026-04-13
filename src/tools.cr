@@ -5,10 +5,10 @@ require "process"
 require "crystar"
 
 class GeopJr::Tools
-  SASS_VERSION   = "1.92.1"
+  SASS_VERSION   = "1.99.0"
   SASS_PATH      = GeopJr::CONFIG.paths[:tools] / "dart-sass" / "sass"
   SASS_OUT       = GeopJr::CONFIG.paths[:out] / "assets" / "css"
-  MINIFY_VERSION = "v2.24.3"
+  MINIFY_VERSION = "v2.24.12"
   MINIFY_PATH    = GeopJr::CONFIG.paths[:tools] / "minify" / "minify"
 
   getter has_sass : Bool = false

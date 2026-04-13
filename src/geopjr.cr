@@ -41,7 +41,7 @@ class GeopJr::Config
     end
   end
 
-  getter version : String = "0.5.0"
+  getter version : String = "0.6.0"
   getter blog_out_path : String = "blog"
   getter url : String = "https://geopjr.dev"
   getter title : String = "Evangelos “GeopJr” Paterakis"
