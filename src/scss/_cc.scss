@@ -1,0 +1,121 @@
+// file managed by crystal, do not modify
+:root[theme='blue'] {
+  --accent: #0461be;
+  --dither-image: url(/assets/images/dither/l-blue.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='blue'] {
+    --accent: #3584e4;
+    --accent-color: #81d0ff;
+    --dither-image: url(/assets/images/dither/d-blue.webp);
+  }
+}
+:root[theme='teal'] {
+  --accent: #007184;
+  --dither-image: url(/assets/images/dither/l-teal.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='teal'] {
+    --accent: #2190a4;
+    --accent-color: #7bdff4;
+    --dither-image: url(/assets/images/dither/d-teal.webp);
+  }
+}
+:root[theme='green'] {
+  --accent: #15772e;
+  --dither-image: url(/assets/images/dither/l-green.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='green'] {
+    --accent: #3a944a;
+    --accent-color: #8de698;
+    --dither-image: url(/assets/images/dither/d-green.webp);
+  }
+}
+:root[theme='yellow'] {
+  --accent: #905300;
+  --dither-image: url(/assets/images/dither/l-yellow.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='yellow'] {
+    --accent: #c88800;
+    --accent-color: #ffc057;
+    --dither-image: url(/assets/images/dither/d-yellow.webp);
+  }
+}
+:root[theme='orange'] {
+  --accent: #b62200;
+  --dither-image: url(/assets/images/dither/l-orange.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='orange'] {
+    --accent: #ed5b00;
+    --accent-color: #ff9c5b;
+    --dither-image: url(/assets/images/dither/d-orange.webp);
+  }
+}
+:root[theme='red'] {
+  --accent: #c00023;
+  --dither-image: url(/assets/images/dither/l-red.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='red'] {
+    --accent: #e62d42;
+    --accent-color: #ff888c;
+    --dither-image: url(/assets/images/dither/d-red.webp);
+  }
+}
+:root[theme='pink'] {
+  --accent: #a2326c;
+  --dither-image: url(/assets/images/dither/l-pink.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='pink'] {
+    --accent: #d56199;
+    --accent-color: #ffa0d8;
+    --dither-image: url(/assets/images/dither/d-pink.webp);
+  }
+}
+:root[theme='purple'] {
+  --accent: #8939a4;
+  --dither-image: url(/assets/images/dither/l-purple.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='purple'] {
+    --accent: #9141ac;
+    --accent-color: #fba7ff;
+    --dither-image: url(/assets/images/dither/d-purple.webp);
+  }
+}
+:root[theme='slate'] {
+  --accent: #526678;
+  --dither-image: url(/assets/images/dither/l-slate.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='slate'] {
+    --accent: #6f8396;
+    --accent-color: #bbd1e5;
+    --dither-image: url(/assets/images/dither/d-slate.webp);
+  }
+}
+:root[theme='brown'] {
+  --accent: #7c5c36;
+  --dither-image: url(/assets/images/dither/l-brown.webp);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme='brown'] {
+    --accent: #b39169;
+    --accent-color: #ebc79d;
+    --dither-image: url(/assets/images/dither/d-brown.webp);
+  }
+}

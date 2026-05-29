@@ -212,10 +212,16 @@ body {
     align-self: stretch;
 
     .accent {
-        color: var(--accent);
+        color: var(--accent-color);
     }
 
     .card {
+        --theme-selected-bg: #86ABD9;
+
+        @media (prefers-color-scheme: dark) {
+            --theme-selected-bg: #729fcf;
+        }
+
         >section>p {
             line-height: 1.4;
         }

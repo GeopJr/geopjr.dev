@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use 'reset';
 @use 'reduced_motion';
+@use 'cc';
 @use 'card';
 @use 'navbar';
 @use 'footer';
@@ -20,8 +21,10 @@
 
     --accent: #00f;
     --accent-text: #fff;
+    --accent-color: var(--accent);
     --background-color: white;
     --text-color: black;
+    --dither-image: url("/assets/images/dither-l.webp");
 
     --focus-outline-color: var(--accent);
     --focus-outline-color-inner: var(--background-color);
@@ -36,6 +39,7 @@
         --accent-text: #000;
         --background-color: black;
         --text-color: white;
+        --dither-image: url("/assets/images/dither-d.webp");
     }
 }
 
@@ -92,8 +96,10 @@ body {
         a:link,
         a:active {
             &:not([class]) {
-                color: var(--accent);
-                text-decoration: solid var(--accent) underline 1px;
+                // color: var(--accent);
+                color: var(--accent-color);
+                // text-decoration: solid var(--accent) underline 1px;
+                text-decoration: solid var(--accent-color) underline 1px;
 
                 &::selection {
                     color: var(--accent-text);
@@ -132,7 +138,7 @@ a:active {
 }
 
 .dither-sep {
-    background-image: url("/assets/images/dither-d.webp");
+    background-image: var(--dither-image);
     image-rendering: pixelated;
     height: 110px;
     width: 100%;
@@ -148,9 +154,5 @@ a:active {
 
     &.bottom {
         bottom: -110px;
-    }
-
-    @media (prefers-color-scheme: light) {
-        background-image: url("/assets/images/dither-l.webp");
     }
 }

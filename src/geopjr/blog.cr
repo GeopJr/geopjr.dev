@@ -204,7 +204,7 @@ module GeopJr
     private def note_style(title : String) : {String, String}
       case title.downcase
       when "disclaimer", "warning", "important"
-        {"warn.webp", "#FFB351"}
+        {"warn.webp", "#faa546"}
       else
         {"info.webp", "#ABB98B"}
       end
@@ -304,8 +304,7 @@ module GeopJr
 
     def self.write_blog_posts
       blog_navbar = Layout::Navbar.new("blog").to_s
-      blog_post_footer_icon = FooterIcon.new
-      blog_post_footer_image = FooterImage.new
+      # blog_post_footer_image = FooterImage.new
 
       BLOG_POSTS.each do |v|
         html = v.to_html
@@ -314,7 +313,8 @@ module GeopJr
           Layout::Page.new(
             Page::Blog::Post.new(v.fm, html).to_s,
             blog_navbar,
-            Layout::Footer.new(blog_post_footer_icon.next_icon, blog_post_footer_image.next_image).to_s,
+            Layout::Footer.new # blog_post_footer_image.next_image
+              .to_s,
             GeopJr::Tags.new(
               v.fm.title,
               "#{v.fm.subtitle.nil? ? nil : "#{v.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",

@@ -19,7 +19,7 @@
     --theme-fg: #000;
     --theme-base: #FFF;
     --theme-text: #1A1A1A;
-    --theme-selected-bg: #86ABD9;
+    --theme-selected-bg: var(--accent);
     --theme-selected-fg: #FFF;
     --theme-shaded-bg: #{shade(var(--theme-selected-bg), 0.7)};
     --theme-shade-multiplier: 1;
@@ -62,7 +62,6 @@
         --theme-bg: #393939;
         --theme-fg: #dcdccc;
         --theme-base: #3f3f3f;
-        --theme-selected-bg: #964B00;
         --theme-selected-fg: #1A1A1A;
         --theme-shade-multiplier: 1.25;
     }
@@ -107,6 +106,7 @@
             object-fit: contain;
             width: 16px;
             max-height: 16px;
+            filter: drop-shadow(0 0 0.03rem var(--accent-text));
         }
 
         >.window-controls {

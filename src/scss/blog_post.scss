@@ -191,7 +191,8 @@ body {
                 font-weight: 900;
                 text-decoration: none;
                 margin-right: 1rem;
-                color: var(--accent);
+                // color: var(--accent);
+                color: var(--accent-color);
                 text-decoration: solid 1px underline var(--accent);
             }
         }
