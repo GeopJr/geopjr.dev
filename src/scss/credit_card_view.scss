@@ -7,7 +7,9 @@
 
     // grid-template-rows: 1fr 1fr 1fr; // Make all heights equal
     @media only screen and (min-width: 1024px) {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        // grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
