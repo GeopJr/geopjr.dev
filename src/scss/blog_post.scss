@@ -211,7 +211,11 @@ body {
         }
 
         :not(pre)>code {
-            @include mixins.reverse-accent;
+            background-color: #ececef;
+
+            @media (prefers-color-scheme: dark) {
+                background-color: #4c4b51;
+            }
 
             white-space: normal;
             padding: 0rem .3rem;
