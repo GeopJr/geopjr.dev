@@ -155,7 +155,21 @@
             inset -1px 0 shade(var(--theme-bg), 0.88),
             inset 0 -1px shade(var(--theme-bg), 0.88);
 
-        &.frame-gallery {
+        &.talks {
+            justify-content: space-around;
+            text-align: center;
+
+            a {
+                max-width: 320px;
+            }
+
+            img {
+                margin-bottom: 0.3em;
+            }
+        }
+
+        &.frame-gallery,
+        &.talks {
             flex-direction: row;
             flex-wrap: wrap;
         }

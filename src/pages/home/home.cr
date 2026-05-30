@@ -7,6 +7,7 @@ module GeopJr
     property whatido : Array(String)
     property stack : Hash(String, Hash(String, String))
     property press : Hash(String, String)
+    property talks : Hash(String, String)
   end
 
   class Page::Home < Page::Base

@@ -74,6 +74,26 @@
 		</article>
 		<article class="card">
 			<header>
+				<img width="16" height="16" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/Internet-group-help-faq.webp" /><span>Talks</span>
+				<div class="window-controls" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</header>
+			<section class="talks">
+				<%- @about.talks.each do |title, video| -%>
+					<a title="Watch on YouTube" href="<%= video %>">
+        			  <figure>
+					  	<img alt="" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/yt/<%= video.split("watch?v=")[-1] %>.jpg" />
+					  	<figcaption><%= title %></figcaption>
+					  </figure>
+        			</a>
+				<%- end -%>
+			</section>
+		</article>
+		<article class="card">
+			<header>
 				<img width="16" height="16" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/stack.webp" /><span>My Stack</span>
 				<div class="window-controls" aria-hidden="true">
 					<span></span>
