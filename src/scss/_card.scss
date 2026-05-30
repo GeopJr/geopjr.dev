@@ -32,12 +32,13 @@
     --button-glaze-midb: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.9)};
     --button-glaze-bot: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0.9)};
 
-    --button-disabled-glaze-top: #{alpha(shade(var(--theme-bg), 1.05, var(--theme-shade-multiplier)), 0.2)};
-    --button-disabled-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.10, var(--theme-shade-multiplier)), 0.45)};
-    --button-disabled-glaze-glow-edge: #{alpha(var(--theme-bg, var(--theme-shade-multiplier)), 0)};
-    --button-disabled-glaze-mida: #{alpha(shade(var(--theme-bg), 1.03, var(--theme-shade-multiplier)), 0.2)};
-    --button-disabled-glaze-midb: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.2)};
-    --button-disabled-glaze-bot: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0.39)};
+    // Unused
+    // --button-disabled-glaze-top: #{alpha(shade(var(--theme-bg), 1.05, var(--theme-shade-multiplier)), 0.2)};
+    // --button-disabled-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.10, var(--theme-shade-multiplier)), 0.45)};
+    // --button-disabled-glaze-glow-edge: #{alpha(var(--theme-bg, var(--theme-shade-multiplier)), 0)};
+    // --button-disabled-glaze-mida: #{alpha(shade(var(--theme-bg), 1.03, var(--theme-shade-multiplier)), 0.2)};
+    // --button-disabled-glaze-midb: #{alpha(shade(var(--theme-bg), 0.93, var(--theme-shade-multiplier)), 0.2)};
+    // --button-disabled-glaze-bot: #{alpha(shade(var(--theme-bg), 0.95, var(--theme-shade-multiplier)), 0.39)};
 
     --button-active-glaze-top: #{alpha(shade(var(--theme-bg), 0.89, var(--theme-shade-multiplier)), 0.78)};
     --button-active-glaze-glow-center: #{alpha(shade(var(--theme-bg), 1.10, var(--theme-shade-multiplier)), 0.4)};
