@@ -15,7 +15,7 @@
         <meta name="fediverse:creator" content="@GeopJr@tech.lgbt">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-        <meta name="theme-color" content="#0000ff" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="<%= palette.nil? ? "#0000ff" : palette.current_color[:light] %>" media="(prefers-color-scheme: light)">
         <meta name="theme-color" content="<%= palette.nil? ? "#ffff00" : palette.current_color[:dark] %>" media="(prefers-color-scheme: dark)">
         <meta name="googlebot" content="notranslate" />
         <meta property="og:type" content="website">
