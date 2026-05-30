@@ -119,6 +119,7 @@ body>footer {
                     width: 512px;
                     border: 15px solid;
                     border-image: url("/assets/images/footer/dandelionborder.webp") 10 / 15px / 0 round;
+                    image-rendering: pixelated;
                 }
 
                 .gwf {
