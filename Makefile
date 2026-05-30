@@ -14,3 +14,7 @@ run:
 
 serve:
 	./bin/geopjr serve
+
+purgecss:
+	pnpx purgecss --css dist/**/*.css --content dist/**/*.html dist/**/*.js --rejected --rejected-css --variables --font-face --keyframes 
+
