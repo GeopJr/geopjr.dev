@@ -199,7 +199,7 @@ module GeopJr
   puts "🐱 Removed unnecessary files"
 
   puts "🐱 Running tools"
-  GeopJr::Tools.new(should_sass, should_minify, should_zip)
+  GeopJr::Tools.new(should_sass, should_minify, should_zip).run
   puts "🐱 Ran tools"
 end
 

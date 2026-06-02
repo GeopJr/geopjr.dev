@@ -20,8 +20,9 @@ class GeopJr::Tools
     Dir.mkdir(GeopJr::CONFIG.paths[:tools]) unless Dir.exists?(GeopJr::CONFIG.paths[:tools])
     @has_sass = install_sass() if @sass
     @has_minify = install_minify() if @minify
+  end
 
-    # No need to not do them in construct
+  def run
     sass()
     minify()
     zip() if @zip
