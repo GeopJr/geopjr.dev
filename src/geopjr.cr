@@ -87,6 +87,7 @@ just_vips = false
 should_sass = true
 should_minify = true
 should_zip = true
+should_vips = true
 
 should_watch_sass = false
 OptionParser.parse do |parser|
@@ -100,11 +101,12 @@ OptionParser.parse do |parser|
   parser.on("minify", "Run the minify command without re-compiling") { should_minify = just_minify = true }
   parser.on("zip", "Run zip the output without re-compiling") { should_zip = just_zip = true }
   {% unless flag?(:novips) %}
-    parser.on("vips", "Run vips-related operations") { just_vips = true }
+    parser.on("vips", "Run vips-related operations") { should_vips = just_vips = true }
   {% end %}
   parser.on("--no-sass", "Doesn't compile the SCSS automatically") { should_sass = false }
   parser.on("--no-minify", "Doesn't minify the output automatically") { should_minify = false }
   parser.on("--no-zip", "Doesn't zip the output automatically") { should_zip = false }
+  parser.on("--no-vips", "Doesn't run vips-related operations") { should_vips = false }
   parser.on("-h", "--help", "Show this help") do
     puts parser
     exit
@@ -178,9 +180,11 @@ module GeopJr
 
   {% unless flag?(:novips) %}
     # OpenGraph covers
-    puts "🐱 Generating OpenGraph covers"
-    (GeopJr::OGCovers.new).generate
-    puts "🐱 Generated OpenGraph covers"
+    if should_vips
+      puts "🐱 Generating OpenGraph covers"
+      (GeopJr::OGCovers.new).generate
+      puts "🐱 Generated OpenGraph covers"
+    end
   {% end %}
 
   # sitemap.xml
