@@ -31,7 +31,7 @@ shards:
 
   sixteen:
     git: https://github.com/ralsina/sixteen.git
-    version: 0.5.2
+    version: 0.5.2+git.commit.430a9f46a4c61c83a2080acdee5b8dcc9b8a37f7
 
   stumpy_core:
     git: https://github.com/stumpycr/stumpy_core.git
@@ -47,7 +47,7 @@ shards:
 
   tartrazine:
     git: https://github.com/ralsina/tartrazine.git
-    version: 0.13.0
+    version: 0.13.0+git.commit.c8de4c219488d98b759652ddc8d0f06b4e88df75
 
   vips:
     git: https://github.com/naqvis/crystal-vips.git
