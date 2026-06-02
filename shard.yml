@@ -22,6 +22,8 @@ dependencies:
     github: naqvis/crystar
   vips:
     github: naqvis/crystal-vips
+  file_watcher:
+    github: stephannv/file_watcher
 
 crystal: 1.7.3
 

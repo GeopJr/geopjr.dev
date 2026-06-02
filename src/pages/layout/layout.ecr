@@ -43,6 +43,54 @@
                 <link rel="stylesheet" href="/assets/css/<%= stylesheet %>.css">
             <%- end -%>
         <%- end -%>
+        <%- if GeopJr::Config.watch_mode %>
+            <script>
+                function normalizeUrl(link) {
+                    let url = link
+                    url = url.replace(/\/index(?:\.html)?$/, "/")
+                    url = url.replace(/\.html$/, "")
+
+                    if (url !== "/") {
+                      url = url.replace(/\/$/, "")
+                    }
+
+                    return url
+                }
+
+                function connect() {
+                  const ws = new WebSocket("ws://localhost:<%= GeopJr::Server::PORT %>")
+                  ws.onmessage = function(e) {
+                    const msg = JSON.parse(e.data)
+                    if (msg.command !== "reload") return
+
+                    let current = normalizeUrl(window.location.pathname)
+                    const shouldReload = msg.paths.some(({ path, full }) => {
+                        let p = normalizeUrl(path)
+
+                        return full ? current.startsWith(p) : current === p
+                    });
+
+                    if (shouldReload) {
+                        window.location.reload()
+                    }
+                  }
+
+                  ws.onclose = function(e) {
+                    console.log("Websocket has been closed. Reconnecting...", e.reason ?? "")
+                    setTimeout(function() {
+                      connect()
+                    }, 1000)
+                  }
+
+                  ws.onerror = function(err) {
+                    if (err.message) console.error(err.message)
+                    ws.close()
+                  }
+                }
+
+                connect();
+            </script>
+        <%- end -%>
     </head>
     <body>
         <header>

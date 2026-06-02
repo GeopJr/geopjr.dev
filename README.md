@@ -6,6 +6,14 @@
 
 This is just my personal website's SSG.
 
+- Markdown, mustache, sitemap, rss
+- Icon sheets generator
+- Sass and minify downloader
+- Built-in server and zipping
+- File watcher with real-time updates and live-reloading
+- Dynamic opengraph images generator
+- Minimal dependencies & more
+
 # 🪴 Icons
 
 - Font Awesome [CC-BY 4.0]

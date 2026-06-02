@@ -20,6 +20,9 @@ shards:
     git: https://github.com/chenkovsky/docopt.cr.git
     version: 0.2.1+git.commit.59d798cda314ec0fe53d257d17c4e8f69ca0961d
 
+  file_watcher:
+    git: https://github.com/stephannv/file_watcher.git
+    version: 0.1.0+git.commit.b3ab345b1e422eb62ee4cd68bba38d0df1dcc02a
 
   markd:
     git: https://github.com/icyleaf/markd.git

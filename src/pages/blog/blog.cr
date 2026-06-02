@@ -17,6 +17,17 @@ module GeopJr
       @pages.each(&.write)
     end
 
+    def write_page_including_entry(entry : BlogPostEntry)
+      if !(page = page_of(entry)).nil?
+        page.write
+        main.write if page.@page == 1
+      end
+    end
+
+    def page_of(entry : BlogPostEntry) : Page::Blog?
+      @pages.find { |x| x.@posts.includes?(entry) }
+    end
+
     def main : Page::Blog::Main
       Page::Blog::Main.new(@pages[0])
     end

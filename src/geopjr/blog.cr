@@ -303,33 +303,35 @@ module GeopJr
 
     def self.write_blog_posts
       blog_navbar = Layout::Navbar.new("blog").to_s
-      # blog_post_footer_image = FooterImage.new
 
       BLOG_POSTS.each do |v|
-        html = v.to_html
-        File.write(
-          GeopJr::CONFIG.paths[:out] / "blog" / "#{v.filename}.html",
-          Layout::Page.new(
-            Page::Blog::Post.new(v.fm, html).to_s,
-            blog_navbar,
-            Layout::Footer.new # blog_post_footer_image.next_image
-              .to_s,
-            GeopJr::Tags.new(
-              v.fm.title,
-              "#{v.fm.subtitle.nil? ? nil : "#{v.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",
-              "blog/#{v.filename}",
-              Styles[:blog_post],
-              cover: v.fm.cover == false ? GeopJr::Tags::COVER_SMALL : {
-                "assets/images/opengraph/#{v.filename}.png",
-                v.fm.cover.is_a?(String) ? v.fm.cover.to_s : nil,
-                true,
-              },
-              noindex: v.fm.hidden
-            ),
-            ""
-          ).to_s
-        )
+        write_blog_post(v, blog_navbar)
       end
+    end
+
+    def self.write_blog_post(entry : BlogPostEntry, blog_navbar : String = Layout::Navbar.new("blog").to_s)
+      html = entry.to_html
+      File.write(
+        GeopJr::CONFIG.paths[:out] / "blog" / "#{entry.filename}.html",
+        Layout::Page.new(
+          Page::Blog::Post.new(entry.fm, html).to_s,
+          blog_navbar,
+          Layout::Footer.new.to_s,
+          GeopJr::Tags.new(
+            entry.fm.title,
+            "#{entry.fm.subtitle.nil? ? nil : "#{entry.fm.subtitle} - "}#{BlogPostEntry.remove_tags(html)[0..100]}...",
+            "blog/#{entry.filename}",
+            Styles[:blog_post],
+            cover: entry.fm.cover == false ? GeopJr::Tags::COVER_SMALL : {
+              "assets/images/opengraph/#{entry.filename}.png",
+              entry.fm.cover.is_a?(String) ? entry.fm.cover.to_s : nil,
+              true,
+            },
+            noindex: entry.fm.hidden
+          ),
+          ""
+        ).to_s
+      )
     end
   end
 end

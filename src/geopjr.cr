@@ -8,6 +8,7 @@ require "crustache"
 require "csv"
 require "file_utils"
 require "uri"
+require "file_watcher"
 
 require "./**"
 
@@ -28,6 +29,7 @@ class GeopJr::Config
     getter footer : Footer
 
     def initialize
+      # files close after from_yaml is done
       @dict = Hash(String, String).from_yaml(load_or_embed("./data/dict.yaml"))
       @colors = Hash(String, {background: String, text: String}).from_yaml(load_or_embed("./data/colors.yaml"))
       @brands = Hash(String, {background: String, text: String}).from_yaml(load_or_embed("./data/brands.yaml"))
@@ -40,12 +42,23 @@ class GeopJr::Config
     end
   end
 
-  getter version : String = "0.6.0"
+  @@watch_mode = false
+
+  def self.watch_mode
+    @@watch_mode
+  end
+
+  def self.enable_watch_mode
+    @@watch_mode = true
+  end
+
+  getter version : String = "0.8.0"
   getter blog_out_path : String = "blog"
   getter url : String = "https://geopjr.dev"
   getter title : String = "Evangelos “GeopJr” Paterakis"
   getter html_ext : Bool = false
   getter max_posts_per_page : Int32 = 25
+  getter watch_mode : Bool = @@watch_mode
 
   getter distro_name : String? = nil
   getter ext : String
@@ -76,6 +89,10 @@ class GeopJr::Config
       end
     end
   end
+
+  def update_data
+    @data = Data.new
+  end
 end
 
 should_serve = false
@@ -83,6 +100,7 @@ just_sass = false
 just_minify = false
 just_zip = false
 just_vips = false
+just_watch = false
 
 should_sass = true
 should_minify = true
@@ -103,6 +121,15 @@ OptionParser.parse do |parser|
   {% unless flag?(:novips) %}
     parser.on("vips", "Run vips-related operations") { should_vips = just_vips = true }
   {% end %}
+  parser.on("watch", "Watch and re-build changed parts") do
+    GeopJr::Config.enable_watch_mode
+    just_watch = true
+    should_minify = false
+    should_zip = false
+    should_vips = false
+    should_watch_sass = false
+  end
+
   parser.on("--no-sass", "Doesn't compile the SCSS automatically") { should_sass = false }
   parser.on("--no-minify", "Doesn't minify the output automatically") { should_minify = false }
   parser.on("--no-zip", "Doesn't zip the output automatically") { should_zip = false }
@@ -166,17 +193,25 @@ module GeopJr
   puts "🐱 Generated routes"
 
   # Icons to sprites
-  puts "🐱 Generating spritesheets"
-  GeopJr::Icons.new(GeopJr::CONFIG.paths[:icons], GeopJr::CONFIG.paths[:assets] / "icons").generate_sprites
-  puts "🐱 Generated spritesheets"
+  def self.generate_spritesheets
+    puts "🐱 Generating spritesheets"
+    GeopJr::Icons.new(GeopJr::CONFIG.paths[:icons], GeopJr::CONFIG.paths[:assets] / "icons").generate_sprites
+    puts "🐱 Generated spritesheets"
+  end
+
+  generate_spritesheets
 
   # Move static files to /assets/
-  puts "🐱 Moving static files"
-  Dir.each_child(GeopJr::CONFIG.paths[:static]) do |static_sub|
-    next if static_sub.starts_with?("_")
-    FileUtils.cp_r(GeopJr::CONFIG.paths[:static] / static_sub, GeopJr::CONFIG.paths[:out])
+  def self.move_static_files
+    puts "🐱 Moving static files"
+    Dir.each_child(GeopJr::CONFIG.paths[:static]) do |static_sub|
+      next if static_sub.starts_with?("_")
+      FileUtils.cp_r(GeopJr::CONFIG.paths[:static] / static_sub, GeopJr::CONFIG.paths[:out])
+    end
+    puts "🐱 Moved static files"
   end
-  puts "🐱 Moved static files"
+
+  move_static_files
 
   {% unless flag?(:novips) %}
     # OpenGraph covers
@@ -198,13 +233,18 @@ module GeopJr
   puts "🐱 Generated RSS"
 
   # Delete underscore files
-  puts "🐱 Removing unnecessary files"
-  FileUtils.rm_rf(Dir.glob(GeopJr::CONFIG.paths[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
-  puts "🐱 Removed unnecessary files"
+  def self.remove_underscores # April, noooooo
+    puts "🐱 Removing unnecessary files"
+    FileUtils.rm_rf(Dir.glob(GeopJr::CONFIG.paths[:out] / "**" / "*").select { |x| File.basename(x).starts_with?("_") })
+    puts "🐱 Removed unnecessary files"
+  end
+
+  remove_underscores
 
   puts "🐱 Running tools"
   GeopJr::Tools.new(should_sass, should_minify, should_zip).run
   puts "🐱 Ran tools"
 end
 
+GeopJr::Watcher.watch if just_watch
 GeopJr::Server.serve if should_serve
