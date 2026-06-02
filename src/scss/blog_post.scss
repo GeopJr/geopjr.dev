@@ -121,6 +121,7 @@ body {
             max-width: 50rem;
         }
 
+        >figure,
         >.card,
         >p:has(>img:last-child) {
             &:first-child {
