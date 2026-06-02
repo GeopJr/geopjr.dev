@@ -32,7 +32,7 @@ module GeopJr
 
         title = URI.encode_path_segment(text)
         return if title == ""
-        @output_io << %(<a aria-label="Link to this" id=") << title << %(" class="anchor" href="#) << title << %(">Ω</a>)
+        @output_io << %(<a aria-label="Link to this" id=") << title << %(" class="anchor" href="#) << title << %(">#</a>)
         @last_output = ">"
       end
 
