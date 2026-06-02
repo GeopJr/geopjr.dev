@@ -6,11 +6,7 @@ shards:
 
   base58:
     git: https://github.com/crystal-china/base58.cr.git
-    version: 0.1.0+git.commit.f7193c497efff614cf87b03f0bd07741915a592f
-
-  cor:
-    git: https://github.com/watzon/cor.git
-    version: 0.1.0+git.commit.9c9e51ac6168f3bd4fdc51d679b65de09ef76cac
+    version: 0.1.0+git.commit.0e2c44d16a8098b00d8bf0b74add8bb9ea2f1c5f
 
   crustache:
     git: https://github.com/makenowjust/crustache.git
@@ -22,7 +18,8 @@ shards:
 
   docopt:
     git: https://github.com/chenkovsky/docopt.cr.git
-    version: 0.2.0+git.commit.620fce4f334ff15d7321e5ecb6665ad258fe9297
+    version: 0.2.1+git.commit.59d798cda314ec0fe53d257d17c4e8f69ca0961d
+
 
   markd:
     git: https://github.com/icyleaf/markd.git

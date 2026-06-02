@@ -2,7 +2,6 @@ require "option_parser"
 require "html"
 require "ecr"
 require "yaml"
-require "cor"
 require "tartrazine"
 require "markd"
 require "crustache"
@@ -134,7 +133,11 @@ end
 
 module GeopJr
   CONFIG = GeopJr::Config.new
-  GeopJr::Utils.prepare_output_dir
+
+  # Prepare output dir
+  FileUtils.rm_rf(GeopJr::CONFIG.paths[:out]) if Dir.exists?(GeopJr::CONFIG.paths[:out])
+  Dir.mkdir(GeopJr::CONFIG.paths[:out])
+  Dir.mkdir(GeopJr::CONFIG.paths[:out] / GeopJr::CONFIG.blog_out_path)
 
   puts "🐱 Generating blog"
   BLOG_POSTS = Blog.new(Path["blog"]).generate_blog_posts

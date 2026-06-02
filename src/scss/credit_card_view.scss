@@ -19,7 +19,7 @@
     >article>.credit-card {
         display: flex;
         flex-direction: column;
-        background: var(--brand-body);
+        background: var(--brand);
         align-items: flex-end;
         gap: 6rem;
         border-radius: .75rem;
@@ -43,7 +43,7 @@
 
         >header {
             align-self: flex-start;
-            background-color: var(--brand-head);
+            background-color: hsl(from var(--brand) h calc(s * 0.85) calc(l * 0.85));
             padding: 1rem;
             border-top-left-radius: .75rem;
             border-top-right-radius: .75rem;

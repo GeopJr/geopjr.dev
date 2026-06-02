@@ -9,8 +9,6 @@ targets:
     main: src/geopjr.cr
 
 dependencies:
-  cor:
-    github: watzon/cor
   markd:
     github: icyleaf/markd
     commit: 588b172e9194efa591901f910afa9f3718130384
