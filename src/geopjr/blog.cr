@@ -161,10 +161,7 @@ module GeopJr
     getter filename : String
     getter fm : BlogPostFrontmatter
 
-    @io_pos_content : Int32 | Int64
-
-    def initialize(@filename : String, @fm : BlogPostFrontmatter, @io : IO)
-      @io_pos_content = @io.pos
+    def initialize(@filename : String, @fm : BlogPostFrontmatter, @path : Path, @io_pos_content : Int32 | Int64)
     end
 
     private def figure(title : String?, content : String)
@@ -182,23 +179,7 @@ module GeopJr
     end
 
     def self.remove_tags(content : String) : String
-      content.gsub(/<[^>]*>/, "").gsub("\n", " ").gsub("  ", " ")
-    end
-
-    # Turns <youtube> custom elements into
-    # an anchor with its thumbnail
-    private def youtube(content : String) : String
-      res = content
-      res.scan(/^#youtube +(\{.+\})$/mi) do |m|
-        youtube_obj = Youtube.from_json(m[-1])
-        tag = <<-HTML
-        <a title="Watch on YouTube" class="youtube" href="https://www.youtube.com/watch?v=#{youtube_obj.id}#{youtube_obj.time.nil? ? nil : "&t=#{youtube_obj.time}"}">
-          #{figure(youtube_obj.title, image("https://img.youtube.com/vi/#{youtube_obj.id}/mqdefault.jpg"))}
-        </a>
-        HTML
-        res = res.sub(m[0], tag)
-      end
-      res
+      content.gsub(/<[^>]*>/, "").gsub("\n", " ").gsub("  ", " ").strip
     end
 
     private def note_style(title : String) : {String, String}
@@ -211,37 +192,33 @@ module GeopJr
     end
 
     private def note(content : String, rss : Bool = false) : String
-      res = content
-      res.scan(/(^|\n)::: ?(?<title>.+?)\n(?<content>(?:.|\n)+?)\n:::(?=\n|$)/i) do |m|
-        rendered_content = render(m["content"].strip.split("\n").map(&.strip).join("\n"), rss)
-        tag = if rss
-                <<-HTML
+      split_content = content.split("\n", 2, remove_empty: true)
+      title = split_content[0].strip
 
-          <p><strong>#{m["title"]}</strong><br />#{rendered_content}</p>
+      if rss
+        return <<-HTML
 
-        HTML
-              else
-                icon, color = note_style(m["title"])
-                <<-HTML
-
-          <article class="card" style="--theme-selected-bg:#{color}">
-		      	<header>
-		      		<img width="16" height="16" class="c" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{m["title"]}</span>
-		      		<div class="window-controls" aria-hidden="true">
-		      			<span></span>
-		      			<span></span>
-		      			<span></span>
-		      		</div>
-		      	</header>
-		      	<section>#{rendered_content}</section>
-		      </article>
+          <p><strong>#{title}</strong><br /><p>#{split_content[-1]}</p></p>
 
         HTML
-              end
-
-        res = res.sub(m[0], tag)
       end
-      res
+
+      icon, color = note_style(title)
+      <<-HTML
+
+        <article class="card" style="--theme-selected-bg:#{color}">
+		    	<header>
+		    		<img width="16" height="16" class="c" loading="lazy" decoding="async" aria-hidden="true" alt="" src="/assets/images/tango/#{icon}" /><span>#{title}</span>
+		    		<div class="window-controls" aria-hidden="true">
+		    			<span></span>
+		    			<span></span>
+		    			<span></span>
+		    		</div>
+		    	</header>
+		    	<section><p>#{split_content[-1]}</p></section>
+		    </article>
+
+      HTML
     end
 
     @@markd_options = Markd::Options.new(toc: true)
@@ -252,15 +229,30 @@ module GeopJr
     )
 
     def to_html(rss : Bool = false) : String
-      @io.seek(@io_pos_content, IO::Seek::Set) if @io.pos != @io_pos_content
+      processed_source = File.open(@path) do |io|
+        io.pos = @io_pos_content if io.pos != @io_pos_content
 
-      post_source = @io.gets_to_end
-      post_source = note(youtube(post_source), rss)
-      template = Crustache.parse post_source
-      processed_source = Crustache.render template, {
-        "GEOPJR_BLOG_ASSETS" => "#{rss ? GeopJr::CONFIG.url : ""}/assets/images/blog/#{@filename}",
-        "GEOPJR_EXT"         => GeopJr::CONFIG.ext,
-      }.merge(GeopJr::CONFIG.emotes)
+        template = Crustache.parse io
+        Crustache.render template, {
+          "GEOPJR_BLOG_ASSETS" => "#{rss ? GeopJr::CONFIG.url : ""}/assets/images/blog/#{@filename}",
+          "GEOPJR_EXT"         => GeopJr::CONFIG.ext,
+          # Turns <youtube> custom elements into
+          # an anchor with its thumbnail
+          "YOUTUBE" => ->(tmpl : String, render : String -> String) {
+            obj = render.call(tmpl)
+            youtube_obj = Youtube.from_json(obj)
+            <<-HTML
+            <a title="Watch on YouTube" class="youtube" href="https://www.youtube.com/watch?v=#{youtube_obj.id}#{youtube_obj.time.nil? ? nil : "&t=#{youtube_obj.time}"}">
+              #{figure(youtube_obj.title, image("https://img.youtube.com/vi/#{youtube_obj.id}/mqdefault.jpg"))}
+            </a>
+            HTML
+          },
+          "NOTE" => ->(tmpl : String, render : String -> String) {
+            note(render.call(tmpl), rss)
+          },
+        }.merge(GeopJr::CONFIG.emotes)
+      end
+
       return "" if processed_source.empty?
       render(processed_source, rss)
     end
@@ -279,7 +271,7 @@ module GeopJr
 
     # Splits a blog post with frontmatter
     # into BlogPostFrontmatter and frontmatter unparsed
-    private def frontmatter(io : IO) : BlogPostFrontmatter
+    private def self.frontmatter(io : IO) : BlogPostFrontmatter
       fm = IO::Delimited.new(io, "\n---").gets_to_end
       BlogPostFrontmatter.from_yaml(fm)
     end
@@ -287,19 +279,26 @@ module GeopJr
     def generate_blog_posts : Array(BlogPostEntry)
       res = [] of BlogPostEntry
       Dir.each_child(@blog_path) do |post|
-        next if post.starts_with?("_")
-
-        post_path = @blog_path / post
-        post_source = File.open(post_path)
-        file_domain = post_path.basename(".md")
-
-        fm = frontmatter(post_source)
-        next if fm.skip == true
-
-        res << BlogPostEntry.new(file_domain, fm, post_source)
+        entry = Blog.generate_blog_post(@blog_path / post)
+        res << entry unless entry.nil?
       end
 
       res.sort { |a, b| b.fm.date.to_unix <=> a.fm.date.to_unix }
+    end
+
+    def self.generate_blog_post(path : Path) : BlogPostEntry?
+      file_domain = path.basename(".md")
+      return if file_domain.starts_with?("_")
+
+      io_fm_pos = 0
+      fm = File.open(path) do |post_source|
+        res = frontmatter(post_source)
+        io_fm_pos = post_source.pos
+        res
+      end
+      return if fm.skip == true
+
+      BlogPostEntry.new(file_domain, fm, path, io_fm_pos)
     end
 
     def self.write_blog_posts

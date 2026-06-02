@@ -19,9 +19,9 @@ The website is currently under maintenance (foreshadowing) which means it's the 
 
 > "We are experiencing a little problem after our last server migration. We have now detected the issue and we are working on it. We will be back very soon. - Team Unjected"
 
-:::Disclaimer
+{{#NOTE}} Disclaimer
 I'll try not to provide further info than what was published on the <a href="https://www.dailydot.com/debug/anti-vax-dating-site-unjected-data-leak/" rel="noopener noreferrer" target="_blank">original article at DailyDot</a> outside of some technical aspects. Additionally, I won't provide the endpoints used - Unjected took over 4 days to change a single variable from `True` to `False` (on which I provided a step-by-step guide), I doubt they patched all the endpoints I used (even though I did mention every single one to them).
-:::
+{{/NOTE}}
 
 # Why & How?
 
@@ -173,7 +173,7 @@ I hope at least one person there decided to run away from this conspiracy after 
 
 The article (well not the original / the DailyDot one) ended up on The Tonight Show Starring Jimmy Fallon:
 
-#youtube {"id":"NcMMBAiNjz8","time":"320s","title":"Biden Pledges to Plant 1 Billion Trees, Trump Returns to D.C. | The Tonight Show"}
+{{#YOUTUBE}}{"id":"NcMMBAiNjz8","time":"320s","title":"Biden Pledges to Plant 1 Billion Trees, Trump Returns to D.C. | The Tonight Show"}{{/YOUTUBE}}
 
 plus I got a new bio:
 

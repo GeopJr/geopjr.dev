@@ -14,6 +14,7 @@ dependencies:
     commit: 588b172e9194efa591901f910afa9f3718130384
   crustache:
     github: MakeNowJust/crustache
+    commit: fdfab02464f12b38c1cb15742de2f0b259c4ab87
   tartrazine:
     github: ralsina/tartrazine
     commit: c8de4c219488d98b759652ddc8d0f06b4e88df75

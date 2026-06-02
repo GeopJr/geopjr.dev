@@ -10,7 +10,7 @@ shards:
 
   crustache:
     git: https://github.com/makenowjust/crustache.git
-    version: 2.4.4
+    version: 2.4.3+git.commit.fdfab02464f12b38c1cb15742de2f0b259c4ab87
 
   crystar:
     git: https://github.com/naqvis/crystar.git

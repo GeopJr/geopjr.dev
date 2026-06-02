@@ -8,11 +8,11 @@ tags:
     - linux
 ---
 
-:::Update 2024-09-20
+{{#NOTE}} Update 2024-09-20
 As of 2024-09-18, I managed to push the Tuba snap to 0.8.4. Even after the required libraries had landed, they were behind a flag which made it impossible to build on Snapcraft's servers (or at least that's what I gathered from the person that was moving this forward). GNOME 47 is out now and the next Tuba release will depend on libadwaita 1.6. I doubt it will land in time on Snap :/
 
 Libadwaita 1.6 introduced accent colors too, only time will tell if the Snap libadwaita patch is going to be removed.
-:::
+{{/NOTE}}
 
 Ten months ago, I was asked to package Tuba into a Snap. Being unfamiliar with it my initial thought was to decline but knowing how difficult it is to work with some package maintainers - especially if it would make it into the store of one of the most popular distributions - I decided to give it a try. This is my experience with it.
 

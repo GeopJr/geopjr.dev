@@ -35,11 +35,11 @@ Security had to pat me down, but my electronics & I managed to go through. Welp.
 
 ![aegean airlines airplane from right outside of the left side, as I was about to go inside]({{GEOPJR_BLOG_ASSETS}}/4.webp)
 
-:::Quote
+{{#NOTE}} Quote
 *What's the deal with airplane food?*
 
-I don't know, I quite enjoyed the free omelet and desert snack!
-:::
+I don't know, I quite enjoyed the free omelet and dessert snack!
+{{/NOTE}}
 
 I'm too tall for the airplane seat spacing however, ouch...
 
