@@ -112,5 +112,6 @@ module GeopJr
     end
   end
 
-  File.write(Path[__DIR__, "..", "scss", "_cc.scss"], Palette.to_sass)
+  cc_file = Path[__DIR__, "..", "scss", "_cc.scss"]
+  File.write(cc_file, Palette.to_sass) unless File.exists?(cc_file)
 end
