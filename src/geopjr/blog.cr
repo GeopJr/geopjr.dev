@@ -194,11 +194,12 @@ module GeopJr
     private def note(content : String, rss : Bool = false) : String
       split_content = content.split("\n", 2, remove_empty: true)
       title = split_content[0].strip
+      content = render(split_content[-1].strip.split("\n").map(&.strip).join("\n"), rss)
 
       if rss
         return <<-HTML
 
-          <p><strong>#{title}</strong><br /><p>#{split_content[-1]}</p></p>
+          <p><strong>#{title}</strong><br />#{content}</p>
 
         HTML
       end
@@ -215,7 +216,7 @@ module GeopJr
 		    			<span></span>
 		    		</div>
 		    	</header>
-		    	<section><p>#{split_content[-1]}</p></section>
+		    	<section>#{content}</section>
 		    </article>
 
       HTML
