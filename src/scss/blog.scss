@@ -22,11 +22,12 @@
             color: var(--text-color);
             transition-duration: 250ms;
             font-weight: bold;
+            text-decoration: none;
 
             &.active,
             &:hover {
                 background-color: var(--accent);
-                color: var(--accent-text);
+                color: var(--accent-text) !important;
             }
 
             &:not(.active, :last-child, .active+a, .active+a+a, :first-child, a:has(+.active, +a+.active)) {
