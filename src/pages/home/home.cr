@@ -3,7 +3,6 @@ module GeopJr
     include YAML::Serializable
 
     property about : String
-    property interests : Array(String)
     property whatido : Array(String)
     property stack : Hash(String, Hash(String, String))
     property press : Hash(String, String)

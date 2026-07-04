@@ -305,7 +305,7 @@ module GeopJr
     def self.write_blog_posts
       blog_navbar = Layout::Navbar.new("blog").to_s
 
-      BLOG_POSTS.each do |v|
+      GeopJr::GENERATOR.@blog_posts.each do |v|
         write_blog_post(v, blog_navbar)
       end
     end

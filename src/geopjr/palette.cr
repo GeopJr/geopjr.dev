@@ -58,12 +58,20 @@ module GeopJr
     @current_color_key : Symbol
 
     def initialize
-      @current_color_key = SHUFFLED_KEYS.sample
+      # homepage color, something not too bright or vibrant
+      @current_color_key = {:blue, :teal, :yellow, :slate, :brown}.sample
+      previous
     end
 
     def next
       keys = SHUFFLED_KEYS
       next_index = keys.index!(@current_color_key) + 1
+      @current_color_key = keys[next_index % keys.size]
+    end
+
+    def previous
+      keys = SHUFFLED_KEYS
+      next_index = keys.index!(@current_color_key) - 1
       @current_color_key = keys[next_index % keys.size]
     end
 

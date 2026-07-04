@@ -43,7 +43,7 @@
                 <link rel="stylesheet" href="/assets/css/<%= stylesheet %>.css">
             <%- end -%>
         <%- end -%>
-        <%- if GeopJr::Config.watch_mode %>
+        <%- if OPTION_PARSER.just_watch %>
             <script>
                 function normalizeUrl(link) {
                     let url = link

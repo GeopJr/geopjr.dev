@@ -11,11 +11,11 @@ body>footer {
     font-family: "Adwaita Mono", "Adwaita Mono Fallback", monospace;
 
     .dm {
-        width: 256px;
+        width: 80px;
         max-width: 100%;
         image-rendering: pixelated;
 
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: light) {
             filter: string.unquote("invert()");
         }
     }

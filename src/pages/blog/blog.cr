@@ -33,7 +33,7 @@ module GeopJr
     end
   end
 
-  BLOG_DESCRIPTION = "Blog posts about programming, tech, ethics, climate, politics & more"
+  BLOG_DESCRIPTION = "Blog posts about programming, tech, security, politics & more, but mostly yelling at clouds"
 
   class Page::Blog < Page::Base
     def initialize(@posts : Array(BlogPostEntry), @page : Int32, @max_pages : Int32)

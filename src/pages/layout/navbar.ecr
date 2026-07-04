@@ -1,5 +1,5 @@
 <nav>
-	<%- ROUTES.each_with_index do |route, i| -%>
+	<%- GeopJr::GENERATOR.@routes.each_with_index do |route, i| -%>
 		<% is_active = @active_link == route.id.to_s %>
 		<a
 			draggable="false"

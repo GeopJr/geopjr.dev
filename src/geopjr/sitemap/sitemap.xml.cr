@@ -2,7 +2,7 @@ module GeopJr
   class SitemapXML
     @entries : Array({url: String, date: String?})
 
-    def initialize(routes = ROUTES, blog_posts = BLOG_POSTS)
+    def initialize(routes, blog_posts)
       @entries = [] of {url: String, date: String?}
 
       routes.each do |v|

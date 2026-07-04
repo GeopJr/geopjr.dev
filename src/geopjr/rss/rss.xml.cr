@@ -13,7 +13,7 @@ module GeopJr
               <generator>GeopJr #{GeopJr::CONFIG.version}</generator>
         XML
 
-        BLOG_POSTS.each do |v|
+        GeopJr::GENERATOR.@blog_posts.each do |v|
           next if v.fm.hidden
 
           # we need to regenerate the blog posts

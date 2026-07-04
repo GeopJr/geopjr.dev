@@ -19,3 +19,4 @@ minify_linux_amd64.tar.gz*
 /dist.zip
 .tools/
 /blog/_*
+blog_stress_generator.py

@@ -1,25 +1,9 @@
-about: "Hi, I'm <strong class=\"accent\">Evan (aka GeopJr)</strong>, a software engineer, FOSS maintainer, and security researcher from <strong class=\"accent\">Greece</strong> 🇬🇷. I’ve been passionate about technology for as long as I can remember, and I’ve spent the last <strong class=\"accent\">{{GEOPJR_2017}}</strong> years building, breaking, and improving software across diverse platforms, ecosystems and communities 🌐."
-interests:
-  - Accessibility
-  - Ethical Tech
-  - Privacy
-  - Ecology
-  - Hacktivism
-  - FOSS
-  - InfoSec
-  - Decentralization
-  - Encryption
-  - P2P
-  - Sandboxing
-  - Design
-  - User Experience
-  - Compilers
-  - Operating Systems
+about: "Hi, I'm <strong class=\"accent\">Evangelos Paterakis (aka GeopJr)</strong>, a software engineer, FOSS maintainer, and security researcher from <strong class=\"accent\">Greece</strong> 🇬🇷. I’ve been passionate about technology for as long as I can remember, and I’ve spent the last <strong class=\"accent\">{{GEOPJR_2017}}</strong> years building, breaking, and improving software across platforms, ecosystems and communities 🌐"
 whatido:
-  - I love contributing to open source and building projects from scratch; from LLVM-based programming languages, custom Android ROMs and iOS tweaks to fully client-side E2E encrypted tools and decentralized social media platforms. Along the way, I document and share my experiences, writing <a href="{{{GEOPJR_BLOG_SLUG}}}">blog posts</a> and giving <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/watch?v=kKiLPm-Q7Lg">talks</a> on software development, open source, and technology in general.
-  - As a <a href="https://gnome.org/">GNOME</a> Foundation member since 2020, I’ve contributed to Linux desktop applications, libraries, and tools, helping improve usability, accessibility, and reliability across the ecosystem. Collaborating with communities and fellow developers has been one of the most rewarding parts of this journey.
-  - The security research experience I’ve gained in the open has proven useful in multiple contexts, including <a href="{{{GEOPJR_BLOG_SLUG}}}/how-i-hacked-an-anti-vaxxer-dating-and-bodily-fluid-marketplace-website">unexpected ways</a>.
-  - Beyond code, I’m driven by ethical technology. I focus on building software that respects users, supports privacy, empowers activists, and addresses climate change. I enjoy <a href="{{{GEOPJR_BLOG_SLUG}}}/svg-icons-an-eternal-quest">tackling complex problems</a>, learning deeply, and <a rel="noopener noreferrer" target="_blank" href="https://github.com/GeopJr/Tuba/issues/553">turning ideas into real-world solutions</a> that make a difference. I'm also very passionate about music 🧑‍🎤
+  - I love contributing to open source and building projects from scratch; from LLVM-based programming languages, custom Android ROMs and iOS tweaks to fully client-side E2E encrypted tools and decentralized social media platforms. Along the way, I document and share my experiences, writing <a href="{{{GEOPJR_BLOG_SLUG}}}">blog posts</a> and giving <a rel="noopener noreferrer" href="#talks">talks</a> on software development, open source, and technology in general.
+  - As a <a href="https://gnome.org/">GNOME</a> Foundation member since 2020, I’ve contributed to Linux desktop applications, libraries, and tools, helping improve usability, accessibility, and reliability across the ecosystem.
+  - The security research experience I’ve gained has proven useful in multiple contexts, including <a href="{{{GEOPJR_BLOG_SLUG}}}/how-i-hacked-an-anti-vaxxer-dating-and-bodily-fluid-marketplace-website">unexpected ways</a>.
+  - Beyond code, I’m driven by ethical technology. I focus on building software that respects users, supports privacy and empowers activists. I enjoy <a href="{{{GEOPJR_BLOG_SLUG}}}/svg-icons-an-eternal-quest">tackling complex problems</a> and <a rel="noopener noreferrer" target="_blank" href="https://github.com/GeopJr/Tuba/issues/553">turning ideas into real-world solutions</a> that make a difference. I'm also very passionate about music 🧑‍🎤
 stack:
   Languages:
     Crystal: https://crystal-lang.org/

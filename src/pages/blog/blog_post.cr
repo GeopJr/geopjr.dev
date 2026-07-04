@@ -20,6 +20,7 @@ module GeopJr
     property hidden : Bool = false
     property cover : Bool | String = true # string is for alt text
     property bandcamp : Bandcamp? = nil
+    property starred : Bool = false
   end
 
   class Page::Blog::Post
