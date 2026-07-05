@@ -65,7 +65,7 @@ The plan is simple:
 Since the label was created in January of this year and it's now July, our data covers only 7 months. To judge whether a repo was "maintained" I only included PRs made before `2026-04-01` and marked them as unmaintained if there was no activity in the last 2-3 months, while ignoring trivial commits such as README changes or dependabot.
 
 {{#NOTE}} Disclaimer
-It's important to note that this is not 100% accurate. It's impossible to know for sure if something is still maintained based on the amount of commits per time period, unless it has been declared as such. Software is sometimes is "done" and needs no further changes, other times the maintainers are taking a break. However, considering that they were submitted a few months earlier, I would expect that there would be at least a few commits every month.
+It's important to note that this is not 100% accurate. It's impossible to know for sure if something is still maintained based on the amount of commits per time period, unless it has been declared as such. Software sometimes is "done" and needs no further changes, other times the maintainers are taking a break. However, considering that they were submitted a few months earlier, I would expect that there would be at least a few commits every month.
 {{/NOTE}}
 
 ## CODE.md
