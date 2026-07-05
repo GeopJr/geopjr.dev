@@ -18,7 +18,8 @@ module GeopJr
     property tags : Array(String)
     property skip : Bool?
     property hidden : Bool = false
-    property cover : Bool | String = true # string is for alt text
+    # redesign covers and re-enable
+    property cover : Bool | String = false # string is for alt text
     property bandcamp : Bandcamp? = nil
     property starred : Bool = false
   end
