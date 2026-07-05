@@ -18,7 +18,7 @@ On May 29, 2026, [Bart announced that Flathub would no longer accept LLM-generat
 
 Well, not exactly. This wasn't surprising to anyone even slightly involved. You see, reviewing Flathub submissions is a very tiring and thankless volunteer responsibility. Every manifest needs to be the most optimal it can be before getting merged, that means: minimal permissions, building from source, building for aarch64 alongside x86-64, proper cleanup, upstreaming and validating metadata, pinning everything to commits, validating app ids, domains, following build and translation best practices and so much more... Need to open a hole in the sandbox? You better have a good enough reason on why you are too good for the portals and then make a PR requesting an exception before the submission can proceed.
 
-It didn't start like this, but over the years the requirements got stricter to match Flathub's increasing amount of users and submissions. I can assure you that many of my early-day submissions would *NEVER* get accept nowadays. The rules around submitting also got stricter, now submitters have to provide screen recordings of their flatpaked apps, verify that they built it successfully locally etc.
+It didn't start like this, but over the years the requirements got stricter to match Flathub's increasing amount of users and submissions. I can assure you that many of my early-day submissions would *NEVER* get accepted nowadays. The rules around submitting also got stricter, now submitters have to provide screen recordings of their flatpaked apps, verify that they built it successfully locally etc.
 
 ## The AI Slop tag
 
