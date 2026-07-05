@@ -30,6 +30,10 @@ module GeopJr::Watcher
         GeopJr::Server.request_reload(pages_to_reload)
       end
     else # when a blog file is either modified or created
+      if event.type.added?
+        return unless File.read(event.path).includes?("title")
+      end
+
       # generate it
       entry = GeopJr::Blog.generate_blog_post(Path[event.path])
       unless entry.nil?
